@@ -1,0 +1,7 @@
+# Push Notifications
+
+Push Notifications play a pivotal role in engaging users and delivering timely information directly to their mobile devices. These notifications are sent from a mobile app to a user's phone screen, ensuring that important messages and updates capture their attention. It's important to note that users must have downloaded the corresponding mobile app and opted into receiving push notifications from the app in order to receive these alerts. Let's explore the dynamic fields available for customisation within push notifications:
+
+1. User ID: The User ID field enables you to specify the recipient of the in-app notification. It corresponds to the user ID property in the @Model.EventData namespace. By dynamically populating this field with the appropriate user ID value, you can ensure that the notification is delivered to the intended recipient.
+2. Title: The Title field enables you to provide a concise a title for your in-app notification. This field supports dynamic content, allowing you to personalise the title based on user-specific information or contextual data.
+3. Message: The Message field allows you to compose the main body of the in-app notification. It provides an opportunity to deliver detailed information, instructions, or any other relevant content to the user. By utilising dynamic content, you can personalise the message based on user-specific data or contextual information.
