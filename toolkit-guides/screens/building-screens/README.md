@@ -26,7 +26,7 @@ In addition to the hierarchical structure, there are two types of screens that f
 
 1\. **System Screens**: These screens are predefined within the system and serve specific, often administrative or functional roles. Commonly used to manage authentication within the solution, these screens are critical and should not be deleted. They are not part of the hierarchical structure but are essential for managing the core functionality of the application.
 
-2\. **Additional Screens**: These screens are custom screens that do not conform to the hierarchical structure of the app. They can either be built by users or shipped as part of a starter sample. Additional Screens are typically Form Pages that handle tasks like data entry or processing user input. These screens can only be linked to Form Pages and act as leaf nodes in the hierarchy, terminating a branch since they do not support child nodes. However, developers can link one Form Page to another using Additional Screens, ensuring the flow between Form Pages without disrupting the main hierarchy.
+2\. **Additional Screens**: These screens are custom screens that do not conform to the hierarchical structure of the app. They can either be built by users or shipped as part of a starter template. Additional Screens are typically **Form Pages** that handle tasks like data entry or processing user input. These screens can only be linked to Form Pages and act as leaf nodes in the hierarchy, terminating a branch since they do not support child nodes. However, developers can link one Form Page to another using Additional Screens, ensuring the flow between Form Pages without disrupting the main hierarchy.
 
 ## Managing Screens
 
