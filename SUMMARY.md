@@ -1,6 +1,6 @@
 # Table of contents
 
-* [ComUnity Technical Overview](README.md)
+* [ComUnity Technical OverviewWe](README.md)
 
 ## Getting Started
 
@@ -81,6 +81,7 @@
   * [APIs](toolkit-guides/third-party-services/apis.md)
 * [Services](toolkit-guides/services/README.md)
   * [Media Server](toolkit-guides/services/media-server.md)
+* [Web sites](toolkit-guides/web-sites.md)
 
 ## General Information
 
