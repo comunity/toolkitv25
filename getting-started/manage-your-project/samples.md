@@ -28,7 +28,7 @@ The platform supports the following types of  templates :
 
 ### **To add a** templates **to an existing project**
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Add a template to an existing project</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Add a template to an existing project</p></figcaption></figure>
 
 1. Go to **Project Settings** > **Templates** .
 2. All the templates  that are already included in your project will have their checkboxes ticked.

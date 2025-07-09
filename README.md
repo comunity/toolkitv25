@@ -1,23 +1,9 @@
 ---
 cover: .gitbook/assets/logo with background new.png
 coverY: 0
-layout:
-  cover:
-    visible: true
-    size: hero
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
-# ComUnity Technical Overview
+# ComUnity Technical Overviewmedi
 
 ### ComUnity Digital Service Delivery Platform <a href="#ytzuxy6wlum8" id="ytzuxy6wlum8"></a>
 
