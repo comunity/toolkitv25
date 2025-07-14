@@ -5,8 +5,8 @@
 From version **25.2** onwards, the ComUnity Developer Toolkit supports full extension of the auto-generated Visual Studio project. Developers can now:
 
 * Add custom files and folders
-* Reference external **NuGet packages**
-* Include additional **.NET Framework references**
+* Reference external [**NuGet packages**](https://www.nuget.org/)
+* Include additional [**.NET Framework references**](https://learn.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files)
 
 These enhancements remove the previous limitation where customisation beyond basic code injection required direct server access. Projects downloaded from the Toolkit can now reflect a much broader range of development use cases.
 
