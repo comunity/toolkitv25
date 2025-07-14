@@ -1,6 +1,6 @@
 # Table of contents
 
-* [ComUnity Technical Overviewmedi](README.md)
+* [ComUnity Technical Overview](README.md)
 
 ## Getting Started
 
@@ -9,6 +9,10 @@
   * [Manage your account: Profile, Settings, and Actions](getting-started/comunity-developer-toolkit/account-settings.md)
 * [Manage your project](getting-started/manage-your-project/README.md)
   * [Create a project](getting-started/manage-your-project/create-a-project.md)
+  * [Deploy](getting-started/manage-your-project/deploy/README.md)
+    * [Environments](getting-started/manage-your-project/deploy/environments.md)
+    * [Manual Project Deployment Across Environments](getting-started/manage-your-project/deploy/manual-project-deployment-across-environments.md)
+    * [Configuration](getting-started/manage-your-project/deploy/configuration.md)
   * [Project Settings](getting-started/manage-your-project/settings.md)
   * [General](getting-started/manage-your-project/general.md)
   * [Build and launch your project](getting-started/manage-your-project/build-and-launch-your-project.md)
@@ -18,10 +22,7 @@
   * [Versions](getting-started/manage-your-project/app-versioning.md)
   * [Icon Management](getting-started/manage-your-project/icon-management.md)
   * [Store URLs](getting-started/manage-your-project/store-urls.md)
-  * [Deploy](getting-started/manage-your-project/deploy/README.md)
-    * [Environments](getting-started/manage-your-project/deploy/environments.md)
-    * [Manual Project Deployment Across Environments](getting-started/manage-your-project/deploy/manual-project-deployment-across-environments.md)
-    * [Configuration](getting-started/manage-your-project/deploy/configuration.md)
+  * [Extending Visual Studio Projects](getting-started/manage-your-project/extending-visual-studio-projects.md)
 * [Organisations](getting-started/organisations/README.md)
   * [Roles and Permissions](getting-started/organisations/roles-and-permissions.md)
   * [Organisational Management](getting-started/organisations/organisational-management.md)
