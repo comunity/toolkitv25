@@ -1,4 +1,4 @@
-# Web sites
+# Web site
 
 The Web sites feature in the ComUnity Developer Toolkit allows developers to integrate static frontend sites directly into their project environment. It is designed to eventually replace the older ‘Custom Web’ interface, although both are currently supported.
 
@@ -75,12 +75,25 @@ To create a Web site within your project, follow these steps:
     ```
 
     \
+    Example URL:\
+    [https://toolkitv3.comunity.me/sw/pokeman/games/index.html](https://toolkitv3.comunity.me/sw/pokeman/games/index.html)\
 
-6. \
-   \
 
+    | Segment                       | Description                                                               |
+    | ----------------------------- | ------------------------------------------------------------------------- |
+    | https://toolkitv3.comunity.me | Base domain of the Toolkit environment (e.g. QA or production).           |
+    | /sw/                          | Static Web Handler – routes the request to a static website.              |
+    | pokeman                       | Project name or app identifier – the name of your Toolkit project.        |
+    | games                         | URL suffix defined when creating the website.                             |
+    | index.html                    | Default entry point – must be placed at the root level of uploaded files. |
+6.
+7.
 
+{% hint style="info" %}
 Future update will support setting a custom default file (e.g., home.html) and changing it post-creation.
+{% endhint %}
+
+
 
 #### Testing & Default Behaviour
 
