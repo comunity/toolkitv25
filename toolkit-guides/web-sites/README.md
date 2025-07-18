@@ -1,12 +1,6 @@
----
-hidden: true
----
-
 # Web sites
 
-#### Overview
-
-The Websites feature in the ComUnity Developer Toolkit allows developers to integrate static frontend sites directly into their project environment. It is designed to eventually replace the older ‘Custom Web’ interface, although both are currently supported.
+The Web sites feature in the ComUnity Developer Toolkit allows developers to integrate static frontend sites directly into their project environment. It is designed to eventually replace the older ‘Custom Web’ interface, although both are currently supported.
 
 Websites can be used to deploy lightweight frontends, custom tools, or portals like Community Central. Projects are created and managed entirely within the Toolkit and are accessible through a unique URL path.
 
@@ -48,8 +42,6 @@ Example
 
 * [https://toolkitv3.comunity.me/sw/pokeman/games/index.html](https://toolkitv3.comunity.me/sw/pokeman/games/index.html)
 
-#### `code`
-
 #### Handler Prefixes (Routing Conventions)
 
 The platform uses dedicated handlers to route requests:
@@ -66,15 +58,28 @@ The platform uses dedicated handlers to route requests:
 
 These handlers are not namespaces—they are internal URL routing tools (“handlers”) used by the platform to distinguish between services.
 
-#### Creating a Website
+## Creating a Web site
 
-1. Navigate to Websites under your project.
-2. Provide a URL suffix (e.g., myportal).
-3. Upload your static files.
-4. Ensure index.html is placed in the root folder.
-5. Click Open Website to launch it in a new tab.
+To create a Web site within your project, follow these steps:
 
-\
+1. Open your project in the Toolkit and navigate to the Web sites section.
+2. Scroll to the section labelled Web sites (below the ComUnity Central tile).
+3. If you don’t already have any websites, you will see an action with the option to **+Add web site**.
+4. Click **+Add web site** to begin the setup process.
+5.  In the dialog that appears, enter a URL suffix (e.g., myportal, tools, or games). This suffix will be used to generate the site’s unique URL:\
+    \
+
+
+    ```
+    https://toolkitv3.comunity.me/sw/<project-name>/<suffix>/
+    ```
+
+    \
+
+6. \
+   \
+
+
 Future update will support setting a custom default file (e.g., home.html) and changing it post-creation.
 
 #### Testing & Default Behaviour

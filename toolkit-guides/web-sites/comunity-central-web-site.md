@@ -13,7 +13,7 @@ Community Central is a specialised website project type within the ComUnity Deve
 * Download project: Once the build completes, a “Download Project” button becomes available, allowing you to customise the Community Central app outside the Toolkit.
 * Accessible via a URL: Like regular websites, the app is accessible through a /sw/ static web handler.
 
-## Creating a Community Central Website
+## Creating a Community Central Web site
 
 To create a ComUnity Central Website follow these steps,
 
