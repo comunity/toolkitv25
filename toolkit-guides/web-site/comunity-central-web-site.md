@@ -27,6 +27,13 @@ To create a ComUnity Central Website follow these steps,
 
 Once your Community Central Website has been created, you can manage its content and customise the boilerplate directly within the Toolkit.
 
+### Customise site content
+
+1. Download the archive&#x20;
+2. Unzip it
+3. Open it in your IDE
+4. Follow instructions listed in you README.md
+
 ### Edit or Upload Files
 
 Click Edit on the Community Central tile to open the file manager.
