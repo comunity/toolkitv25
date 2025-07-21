@@ -1,7 +1,7 @@
 # Web sites & ComUnity Central
 
 {% hint style="info" %}
-The features described in this guide, including both[ Standard Web Sites ](web-sites-and-comunity-central.md#standard-web-sites)and [Community Central](web-sites-and-comunity-central.md#community-central), are available in Toolkit v25.2 and later.
+The features described in this guide, including both[ Standard Web sites ](web-sites-and-comunity-central.md#standard-web-sites)and [Community Central](web-sites-and-comunity-central.md#community-central), are available in Toolkit v25.2 and later.
 {% endhint %}
 
 The ComUnity Developer Toolkit provides a powerful low-code environment for rapidly building the core of your digital service. But what happens when your project has a unique requirement that goes beyond the standard components?
