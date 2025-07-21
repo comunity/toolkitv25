@@ -134,7 +134,7 @@ For major changes, work with the project on your local machine:
 3.  Follow the instructions in the `README.md` file to install dependencies and run the local development server (e.g., `npm install`, then `npm run dev`).\
 
 
-    {% code title="Typical folder structure of a downloaded ComUnity Central project (excluding node_modules, .git, and build artifacts)." %}
+    {% code title="Typical folder structure of a downloaded ComUnity Central project (excluding node_modules, and build artefacts)." %}
     ```
     ├── index.html
     ├── lib
