@@ -82,8 +82,7 @@
   * [APIs](toolkit-guides/third-party-services/apis.md)
 * [Services](toolkit-guides/services/README.md)
   * [Media Server](toolkit-guides/services/media-server.md)
-* [Web Site](toolkit-guides/web-site/README.md)
-  * [ComUnity Central Web Site](toolkit-guides/web-site/comunity-central-web-site.md)
+* [Web sites & ComUnity Central](toolkit-guides/web-sites-and-comunity-central.md)
 
 ## General Information
 

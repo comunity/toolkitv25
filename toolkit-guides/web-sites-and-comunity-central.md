@@ -1,13 +1,26 @@
-# Web Site
+# Web sites & ComUnity Central
 
-The ComUnity Developer Toolkit allows you to host static front-end sites and dynamic web portals directly within your project. This feature is ideal for deploying lightweight user interfaces, custom administration tools, or rich, interactive user portals.
+{% hint style="info" %}
+The features described in this guide, including both[ Standard Web Sites ](web-sites-and-comunity-central.md#standard-web-sites)and [Community Central](web-sites-and-comunity-central.md#community-central), are available in Toolkit v25.2 and later.
+{% endhint %}
 
-This guide covers two types of web hosting options:
+The ComUnity Developer Toolkit provides a powerful low-code environment for rapidly building the core of your digital service. But what happens when your project has a unique requirement that goes beyond the standard components?
 
-* Web Sites: For hosting standard static sites (HTML, CSS, JavaScript).
-* Community Central: A specialised option for creating a modern, React-based central portal for your solution.
+This is where the **Web sites** and **ComUnity Central** features provides the essential leeway. It is the Toolkit's dedicated extensibility layer, serving as a powerful "escape hatch" that allows you to build any custom front-end experience you can imagine.
 
-## Standard Web Sites
+Whether you need to create a simple admin panel, a specific back-office tool, or a complete customer-facing portal, this feature allows you to build and embed a self-contained "site within a site." It gives you the ultimate flexibility to extend our core offering and meet any use-case-specific need.\
+
+
+To address these needs, the Toolkit provides two distinct features for creating custom front-ends:
+
+* [**Standard Web sites**](web-sites-and-comunity-central.md#standard-web-sites): For deploying self-contained static sites using HTML, CSS, and JavaScript. This feature is best suited for content-driven pages or simple tools that do not require a client-side build process.
+* [**Community Central**](web-sites-and-comunity-central.md#community-central): For deploying a complete React application. This feature is the designated solution for building complex, interactive Single Page Applications (SPAs) that can handle sophisticated UI, state management, and client-side calls to any third-party API.
+
+
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Web sites in the ComUnity Developer Toolkit</p></figcaption></figure>
+
+## Standard Web sites
 
 The Web Sites feature allows you to deploy and manage static web content directly from your Toolkit project. It is the perfect choice for simple landing pages, documentation, or basic front-end interfaces that don't require a complex build process.
 
@@ -40,7 +53,7 @@ Every website you create is assigned a unique URL based on the following pattern
 
 Example URL: `https://toolkitv3.comunity.me/w/pokemon/games/index.html`
 
-### **Creating a Web Site**
+### **Creating a Web site**
 
 1. Open your project and navigate to the Web sites section.
 2. Scroll past the "Community Central" tile to the Web sites area.
@@ -48,7 +61,7 @@ Example URL: `https://toolkitv3.comunity.me/w/pokemon/games/index.html`
 4. In the dialog, enter a URL suffix (e.g., `my-app`, `tools`, `admin`).
 5. Click Create. Your website is now ready for you to upload content.
 
-### **Managing Your Web Site**
+### **Managing Your Web site**
 
 Once a website is created, you can click  **Edit** on its tile to access the file manager. From here you can:
 
@@ -57,9 +70,9 @@ Once a website is created, you can click  **Edit** on its tile to access the fil
 * Upload archive: Import a `.zip` file containing your entire site structure. This is the most efficient way to deploy a complete site.
 * Download site archive: Export the current site files as a `.zip` archive.
 
-> Note: Default File Requirement
->
-> The default entry point for any website must be an index.html file placed at the root level of your uploaded files. If this file is missing or in a sub-folder, the site will not load correctly.
+{% hint style="warning" %}
+The default entry point for any website must be an index.html file placed at the root level of your uploaded files. If this file is missing or in a sub-folder, the site will not load correctly.
+{% endhint %}
 
 ## Community Central
 
@@ -69,6 +82,7 @@ Community Central is a specialised web site project type within the ComUnity Dev
 
 While standard web sites are excellent for simple content, modern user portals demand complex UIs and streamlined development workflows. Community Central was built to meet these needs by providing:
 
+* **Go Beyond Toolkit APIs**: Overcome backend limitations. Because Community Central is a complete React application, it can call _any_ remote API, not just those provided by the Toolkit. This allows you to integrate third-party services (e.g., Stripe for payments, Google Maps for location data, or any other REST API) directly into your user-facing portal, giving you limitless integration possibilities.
 * **Accelerated Setup**: Get a complete, build-ready React application with a single click, saving you from complex manual configuration.
 * A "Golden Path" for Development: Start with a project scaffold that follows industry best practices, ensuring a solid, maintainable foundation.
 * Streamlined Workflow: Easily download the project to work in a rich IDE like VS Code, then deploy your production build back to the Toolkit with a simple archive upload.
@@ -79,12 +93,9 @@ While standard web sites are excellent for simple content, modern user portals d
 * Customer Self-Service Portal: A full-featured portal for users to log in, manage their accounts, and view data.
 * Interactive Data Dashboard: A dynamic Single Page Application (SPA) that presents data from your project's APIs with interactive charts and tables.
 * Partner or Vendor Platform: A central hub for third-party partners to onboard and interact with your solution.
-* The Primary UI for Your Solution: Build the complete, primary user-facing application for your entire project.
-
-&#x20;React-based app with project scaffolding and local development capabilities.
 
 {% hint style="warning" %}
-> You can only create one Community Central site per project. If your solution requires multiple web portals, use the standard Web Site feature for any additional sites.
+You can only create one Community Central site per project. If your solution requires multiple web portals, use the standard Web Site feature for any additional sites.
 {% endhint %}
 
 **Key Features**
@@ -106,11 +117,11 @@ While standard web sites are excellent for simple content, modern user portals d
    * Click Open web site to preview your new portal.
    * Click Edit to start managing your project files.
 
-### **Managing Your  ComUnity Central Web Site**
+### **Managing Your  ComUnity Central Web site**
 
 You have two primary ways to manage and customise your ComUnity Central site: directly within the Toolkit for quick edits, or by downloading the project for advanced development.
 
-#### **Quick Edits of the ComUnity Central Web Site in the Toolkit**
+#### **Quick Edits of the ComUnity Central Web site in the Toolkit**
 
 For simple changes, click Edit on the Community Central tile. From the file manager, you can perform basic operations like Add file, Add folder, Upload archive, and Download site archive.
 
@@ -120,7 +131,31 @@ For major changes, work with the project on your local machine:
 
 1. In the file manager view, click Download project archive.
 2. Unzip the file and open the project folder in your preferred code editor (e.g., VS Code).
-3. Follow the instructions in the `README.md` file to install dependencies and run the local development server (e.g., `npm install`, then `npm run dev`).
+3.  Follow the instructions in the `README.md` file to install dependencies and run the local development server (e.g., `npm install`, then `npm run dev`).\
+
+
+    {% code title="Typical folder structure of a downloaded ComUnity Central project (excluding node_modules, .git, and build artifacts)." %}
+    ```
+    ├── index.html
+    ├── lib
+    |  └── comunity_central-0.0.1.tgz
+    ├── package-lock.json
+    ├── package.json
+    ├── public
+    |  └── favicon.ico
+    ├── readme.md
+    ├── src
+    |  ├── components
+    |  ├── config
+    |  ├── index.jsx
+    |  └── reducers
+    ├── structure.txt
+    └── vite.config.js
+
+    ```
+    {% endcode %}
+
+
 4. Make your code changes and test them locally.
 5. When ready, run the build command (e.g., `npm run build`) to generate a `build` or `dist` folder.
 6. Return to the Toolkit's file manager and use Upload archive to upload a `.zip` of the contents of your build folder. This deploys your changes.
