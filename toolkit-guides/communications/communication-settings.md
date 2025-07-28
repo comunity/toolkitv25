@@ -1,81 +1,129 @@
 # Communication Settings
 
-When defining communication events within the Toolkit, it is essential to consider the associated metadata to ensure effective and efficient message delivery. Settings can be applied at two levels: Global and Environment-Specific.
+This section outlines how to configure communication settings within the ComUnity Toolkit. It includes:
+
+* Global and environment-specific configuration
+* Supported communication channels
+* Provider setup requirements
+* Best practices for secure and reliable messaging workflows
+
+{% hint style="info" %}
+**Version Note**
+
+> The features in this section are available from ComUnity Toolkit version 25.2 onwards.
+>
+> If you’re planning to manage communication credentials independently for QA, Dev, and Production environments, upgrading to v25.2 or later is strongly recommended.
+{% endhint %}
+
+## Configuration Overview
+
+The Toolkit supports communication via multiple channels, including [**Email**](configuring-dynamic-action-templates-for-event-driven-communication-channels/email.md), [**SMS**](configuring-dynamic-action-templates-for-event-driven-communication-channels/sms-and-whatsapp.md), [**INAPP**](configuring-dynamic-action-templates-for-event-driven-communication-channels/inapp.md),[ **Push Notifications**](configuring-dynamic-action-templates-for-event-driven-communication-channels/push-notifications.md), and [**WhatsApp**](configuring-dynamic-action-templates-for-event-driven-communication-channels/sms-and-whatsapp.md).
+
+Configurations are managed at two levels:
+
+* [**Global Settings**](communication-settings.md#global-settings): Application-wide constants and default priorities used across all environments.
+* [**Environment-Specific Settings**](communication-settings.md#environment-specific-settings-v25.2-update): Channel and provider configurations tailored for each environment (e.g., Development, QA, Production).
+
+{% hint style="warning" %}
+In deployed environments, users are fully responsible for setting up third-party providers and securely managing all credentials.
+{% endhint %}
 
 ## **Global Settings**
 
-Global settings typically contain application-wide constants. These are managed under the
+Global settings define the baseline behaviour and default data for communications across your project.
 
-Project Settings > Configuration tab. This section is where you define constants for your application-level data, such as
+1\. **Channel Priorities**
 
-`AppName` and `BaseUrl`. For each setting, you can use a toggle to specify whether its value should apply globally across all environments or be set individually for a specific environment.
+* Access: **Project Settings** > **Global** > **Communications**
+* Description: These settings establish the default delivery importance for each channel.
 
-## **Environment-Specific Settings**
+| Channel  | Example Priority |
+| -------- | ---------------- |
+| Email    | Medium           |
+| In-App   | Medium           |
+| SMS      | Medium           |
+| WhatsApp | Medium           |
 
-Environment-specific settings allow you to use different services and credentials for each deployment environment (e.g., Development, QA, Production) as of v25.2, these are primarily managed under the **Project Settings** > **Communications** tab.
+2\. **Custom Values**
 
-### Provider-Based Configuration (available from v25.2)
+* Access: **Project Settings** > **Communications** > **Custom Values**
+* Description: Used to define and inject global constants into your application logic. Each value can be toggled to apply globally or be overridden per environment. Sensitive values can be marked with a secrecy shield.
 
-The management of communication settings has been significantly enhanced to provide granular, provider-based control for each environment.
+| Setting Name       | Example Value                  | Description                          |
+| ------------------ | ------------------------------ | ------------------------------------ |
+| Tenant             | `ComUnityTest`                 | Identifier for multi-tenant setup.   |
+| SourceEmailAddress | `noreply@comunityplatform.com` | Default sender address.              |
+| ReplyToAddress     | `noreply@comunityplatform.com` | Email used for replies.              |
+| ReplyToEntity      | `MessageEvent`                 | Binds replies to a messaging entity. |
+| Namespace          | `comcity`                      | Logical grouping for communications. |
+| LogLevel           | `3`                            | Verbosity of system logging.         |
+| FromAddress        | `noreply@comunityplatform.com` | Alias used for outbound messages.    |
 
-Channel-Based Tabs: Settings are organised into tabs for each communication channel, such as **Email**, **SMS**, **Push**, **InApp**, and **WhatsApp**.
+## Environment-Specific Settings (v25.2 Update)
 
-#### **Provider Selection**
+From version 25.2, the ComUnity Toolkit provides an enhanced interface for managing communication settings independently for each environment. This allows you to define a specific communication provider and its unique credentials for each supported channel, ensuring a clear separation between your Development, QA, and Production configurations.
 
-&#x20;Within each channel, you can now select a specific `ServiceProvider` (e.g., SendGrid, Twilio, Office 365) for each environment. For testing, a `Mocked` or sandbox provider is also available.
+**Configuration Steps**
 
-#### **Provider Requirements**
+1. Navigate to the **Communications** hub
+   * Access the settings via **Project Settings** > **Communications**.
+   * Select the tab for the environment you wish to configure: Dev, QA, or Prod.
+2. Select a Communication Channel
+   * Within the chosen environment, select the tab for the channel you want to set up (e.g., Email, SMS, Push, In-App, WhatsApp).
+3. Choose a Service Provider
+   * From the **ServiceProvider** dropdown list, select the provider you want to use for that channel.
+   * A Mock Service option is available, which is recommended for all local development and testing purposes.
+4. Enter Provider Credentials
+   * Once a provider is selected, the required configuration fields (e.g., API keys, usernames, base URIs) will be displayed.
+   * You must obtain these credentials from the provider’s official administration portal and enter them securely into the fields provided.
 
-To use most third-party providers, such as Twilio and Office 365, you must have your own active subscription with that service.&#x20;
+## **Provider Requirements & Setup Guides**
 
-* For some providers, like SendGrid and Bulk SMS, a pre-configured community option is available, but you can also choose to configure your own.&#x20;
-* Dynamic Fields & Credentials:  Selecting a provider will reveal the specific settings required for that service.
-* You must obtain the necessary credentials (e.g., API keys, tokens, IDs) from the provider's administration portal to enter into these fields. This documentation includes guidance with screenshots on how to locate these values for supported providers.
+To integrate external services, you must have an active account with the provider and obtain the necessary credentials.
 
-Based on the provided screenshots, here is a consolidated overview of the settings required for the supported communication providers:
+### Microsoft Office 365 (Email)
 
-## Supported Communication Provider Settings
+1. Register an application in the Azure Portal.
+2. From the app's Overview page, collect the:
+   * `Application (client) ID`&#x20;
+   * `Directory (tenant) ID`&#x20;
+3.  In the
 
-**Microsoft Office 365**
+    API Permissions tab, grant permissions for Microsoft Graph, including `Mail.Send`, `User.Read`, and `offline_access`.
+4. In the Certificates & secrets tab, generate a new `client secret` and copy the Value.
 
-To configure Office 365 as a provider, you need to register an application within Microsoft Azure. The configuration requires the following steps:
 
-* App Registration:
-  * Navigate to your app registration's overview page in Azure.&#x20;
-  * You will need the `Application (client) ID` and the `Directory (tenant) ID`.&#x20;
-* API Permissions:
-  * From the API permissions tab, you must grant the necessary permissions for your application.
-  * Required permissions may include `Mail.Send`, `Mail.ReadWrite`, `User.Read`, and `offline_access` for Microsoft Graph.
-* Client Secret:
-  * Go to the Certificates & secrets tab.&#x20;
-  * Create aNew client secret.&#x20;
-  * The `Value` of this secret will be used as the application password.&#x20;
 
-**Twilio**
+### Twilio (SMS & WhatsApp)
 
-For Twilio integration, you will need credentials from your Twilio account dashboard.
+1. Login to your [Twilio Console](https://www.twilio.com/console).
+2. From the main account dashboard, copy your:
+   * `Account SID`
+   * `Auth Token`
+3. For WhatsApp integration, you must also:
+   * Configure approved Senders in your Twilio account.
+   * Set the `TwilioWhatsAppUser`, `Password`, `From`, and `Callback` values within the Toolkit.
 
-* Account SID: This is your account identifier.&#x20;
-* Auth Token: This is the authentication token for your account.
+References: [Twilio SMS Guide](https://www.twilio.com/en-us/guidelines/sms) | [Twilio WhatsApp Guide](https://www.twilio.com/docs/whatsapp/tutorial)
 
-**SendGrid**
+### SendGrid (Email)
 
-SendGrid configuration requires an API Key.
+1. Login to your [SendGrid Dashboard.](https://login.sendgrid.com/)
+2. Navigate to Settings > API Keys.
+3. Create an API Key with the necessary permissions and copy the generated key.
 
-* Navigate to Settings and then API Keys in your SendGrid account.
-* You can create and manage your `API Keys` from this page. The key itself is used for authentication.&#x20;
+Docs: [API Key Setup](https://www.google.com/search?q=%23)
 
-**BulkSMS**
+### BulkSMS (SMS)
 
-BulkSMS provides credentials through its advanced settings.
+1. In the BulkSMS Portal, navigate to **Settings** > **Advanced Settings** > **API Tokens**.
+2. Create and manage tokens for use with the JSON API. For legacy EAPI support, the required URL is available on the EAPI tab.
 
-* API Tokens:
-  *   You can manage API tokens under
+## **Best Practices**
 
-      Settings > Advanced Settings > API Tokens.&#x20;
-  * These tokens provide alternative credentials for the JSON API.&#x20;
-* EAPI (Legacy):
-  *   The legacy EAPI settings are found under
+* Secure Storage: Always store sensitive values securely and mark them with the secrecy shield in the Toolkit.
+* Limited Permissions: When creating API keys, grant only the minimum permissions necessary for the integration to function.
+* Regular Audits: Periodically review provider permissions and credentials to ensure ongoing compliance and security.
+* Use Mock Services: Use the built-in mock services for all local development and testing to avoid incurring costs or sending unintended communications.
 
-      Settings > Advanced Settings > EAPI.&#x20;
-  * The `EAPI URL` for this service is `https://api-legacy.bulksms.com/eapi`.&#x20;
+For further assistance, please refer to the official provider documentation or contact your system administrator.
