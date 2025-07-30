@@ -85,8 +85,6 @@ From version 25.2, the ComUnity Toolkit provides an enhanced interface for manag
 
 To integrate external services, you must have an active account with the provider and obtain the necessary credentials.
 
-Understood. Sticking strictly to the information provided, here is the polished version of your instructions.
-
 ## Microsoft 365
 
 Follow these steps to register an application in Azure and configure it with the necessary credentials and permissions.
@@ -118,6 +116,8 @@ The client secret value is only displayed once upon creation. Ensure you copy an
    * `User.Read`
    * `offline_access`
 4. After adding the permissions, ensure you Grant admin consent for your directory.
+
+References: [Learn Microsoft](https://learn.microsoft.com/en-us/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365)
 
 ### Twilio (SMS & WhatsApp)
 
@@ -155,12 +155,16 @@ Docs: [API Key Setup](https://www.google.com/search?q=%23)
 
 <div align="center"><figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure></div>
 
-#### Toolkit Configuration
+#### BulkSMS Toolkit Configuration
 
 When configuring the Bulk SMS toolkit, map your credentials as follows:
 
 * **BulkSMSUser**: Use the Token ID.
 * **BulkSMSPassword**: Use the Token Secret.
+
+## **CellSys**
+
+The CellSys integration is not self-service. Unlike providers such as BulkSMS or SendGrid, CellSys does not expose full setup documentation publicly. To integrate with engage their support team through their [website](https://cellsys.co.za/). Upon account registration and payment they will provide  API credentials you can ue the the platform.
 
 ## **Best Practices**
 
