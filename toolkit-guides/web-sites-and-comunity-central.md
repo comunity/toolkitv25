@@ -18,7 +18,7 @@ To address these needs, the Toolkit provides two distinct features for creating 
 
 
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Web sites in the ComUnity Developer Toolkit</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Web sites in the ComUnity Developer Toolkit</p></figcaption></figure>
 
 ## Standard Web sites
 

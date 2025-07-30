@@ -32,32 +32,35 @@ In deployed environments, users are fully responsible for setting up third-party
 
 Global settings define the baseline behaviour and default data for communications across your project.
 
-1\. **Channel Priorities**
+1.  **Channel Priorities**
 
-* Access: **Project Settings** > **Global** > **Communications**
-* Description: These settings establish the default delivery importance for each channel.
+    * Access: **Project Settings** > **Global** > **Communications**
+    * Description: These settings establish the default delivery importance for each channel.
 
-| Channel  | Example Priority |
-| -------- | ---------------- |
-| Email    | Medium           |
-| In-App   | Medium           |
-| SMS      | Medium           |
-| WhatsApp | Medium           |
+    | Channel  | Example Priority |
+    | -------- | ---------------- |
+    | Email    | Medium           |
+    | In-App   | Medium           |
+    | SMS      | Medium           |
+    | WhatsApp | Medium           |
 
-2\. **Custom Values**
 
-* Access: **Project Settings** > **Communications** > **Custom Values**
-* Description: Used to define and inject global constants into your application logic. Each value can be toggled to apply globally or be overridden per environment. Sensitive values can be marked with a secrecy shield.
+2.  **Custom Values**
 
-| Setting Name       | Example Value                  | Description                          |
-| ------------------ | ------------------------------ | ------------------------------------ |
-| Tenant             | `ComUnityTest`                 | Identifier for multi-tenant setup.   |
-| SourceEmailAddress | `noreply@comunityplatform.com` | Default sender address.              |
-| ReplyToAddress     | `noreply@comunityplatform.com` | Email used for replies.              |
-| ReplyToEntity      | `MessageEvent`                 | Binds replies to a messaging entity. |
-| Namespace          | `comcity`                      | Logical grouping for communications. |
-| LogLevel           | `3`                            | Verbosity of system logging.         |
-| FromAddress        | `noreply@comunityplatform.com` | Alias used for outbound messages.    |
+    * Access: **Project Settings** > **Communications** > **Custom Values**
+    * Description: Used to define and inject global constants into your application logic. Each value can be toggled to apply globally or be overridden per environment. Sensitive values can be marked with a secrecy shield.
+
+    | Setting Name       | Example Value                  | Description                          |
+    | ------------------ | ------------------------------ | ------------------------------------ |
+    | Tenant             | `ComUnityTest`                 | Identifier for multi-tenant setup.   |
+    | SourceEmailAddress | `noreply@comunityplatform.com` | Default sender address.              |
+    | ReplyToAddress     | `noreply@comunityplatform.com` | Email used for replies.              |
+    | ReplyToEntity      | `MessageEvent`                 | Binds replies to a messaging entity. |
+    | Namespace          | `comcity`                      | Logical grouping for communications. |
+    | LogLevel           | `3`                            | Verbosity of system logging.         |
+    | FromAddress        | `noreply@comunityplatform.com` | Alias used for outbound messages.    |
+
+
 
 ## Environment-Specific Settings (v25.2 Update)
 
@@ -67,12 +70,13 @@ From version 25.2, the ComUnity Toolkit provides an enhanced interface for manag
 
 1. Navigate to the **Communications** hub
    * Access the settings via **Project Settings** > **Communications**.
-   * Select the tab for the environment you wish to configure: Dev, QA, or Prod.
+   * Select the tab for the environment you wish to configure: **Dev**, **QA**, or **Prod**.
 2. Select a Communication Channel
    * Within the chosen environment, select the tab for the channel you want to set up (e.g., Email, SMS, Push, In-App, WhatsApp).
 3. Choose a Service Provider
-   * From the **ServiceProvider** dropdown list, select the provider you want to use for that channel.
-   * A Mock Service option is available, which is recommended for all local development and testing purposes.
+   * From the Service Provider dropdown, select the provider you wish to use for the chosen channel.
+   * Click the Save icon to apply your selection — any dynamic fields required by the selected provider will then appear automatically.
+   * For local development and testing, it’s recommended to use the Mock Service option.
 4. Enter Provider Credentials
    * Once a provider is selected, the required configuration fields (e.g., API keys, usernames, base URIs) will be displayed.
    * You must obtain these credentials from the provider’s official administration portal and enter them securely into the fields provided.
@@ -81,18 +85,39 @@ From version 25.2, the ComUnity Toolkit provides an enhanced interface for manag
 
 To integrate external services, you must have an active account with the provider and obtain the necessary credentials.
 
-### Microsoft Office 365 (Email)
+Understood. Sticking strictly to the information provided, here is the polished version of your instructions.
 
-1. Register an application in the Azure Portal.
-2. From the app's Overview page, collect the:
-   * `Application (client) ID`&#x20;
-   * `Directory (tenant) ID`&#x20;
-3.  In the
+## Microsoft 365
 
-    API Permissions tab, grant permissions for Microsoft Graph, including `Mail.Send`, `User.Read`, and `offline_access`.
-4. In the Certificates & secrets tab, generate a new `client secret` and copy the Value.
+Follow these steps to register an application in Azure and configure it with the necessary credentials and permissions.
 
+**1. Register the Application**
 
+1. Navigate to the **Azure Portal** → **Azure Active Directory** → **App registrations**.
+2. Click + New registration and create a new application (e.g., ComUnityEmailClient).
+
+**2. Record Credentials & Secrets**
+
+1. From the application's Overview page, copy the following IDs:
+   * Application (client) ID → Use this for the `O365Client` field.
+   * Directory (tenant) ID → Use this for the `O365Tenant` field.
+2. Go to the Certificates & secrets tab.
+3. Click + New client secret. After creating it, copy the secret's Value.
+   * Use this value for the `O365ClientSecret` field.
+
+{% hint style="warning" %}
+The client secret value is only displayed once upon creation. Ensure you copy and store it in a secure location immediately.
+{% endhint %}
+
+**3. Set API Permissions**
+
+1. Go to the API Permissions tab.
+2. Click + Add a permission, select Microsoft Graph, and choose Delegated permissions.
+3. Add the following permissions:
+   * `Mail.Send`
+   * `User.Read`
+   * `offline_access`
+4. After adding the permissions, ensure you Grant admin consent for your directory.
 
 ### Twilio (SMS & WhatsApp)
 
@@ -116,8 +141,26 @@ Docs: [API Key Setup](https://www.google.com/search?q=%23)
 
 ### BulkSMS (SMS)
 
-1. In the BulkSMS Portal, navigate to **Settings** > **Advanced Settings** > **API Tokens**.
-2. Create and manage tokens for use with the JSON API. For legacy EAPI support, the required URL is available on the EAPI tab.
+#### Generating a BulkSMS API Token
+
+1. Log in to the [BulkSMS Portal](https://www.bulksms.com/account/ui/index.html#/login).
+2. Navigate to **Settings** > **Advanced Settings** > **API Tokens.**
+3. Click **Create Token**.
+4. Enter a descriptive name for the token (e.g., ComUnityIntegration).
+5. Immediately copy the Token ID and Token Secret.
+
+{% hint style="warning" %}
+&#x20;For security reasons, the Token Secret will only be displayed once. Please store these credentials in a secure location, like a password manager
+{% endhint %}
+
+<div align="center"><figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure></div>
+
+#### Toolkit Configuration
+
+When configuring the Bulk SMS toolkit, map your credentials as follows:
+
+* **BulkSMSUser**: Use the Token ID.
+* **BulkSMSPassword**: Use the Token Secret.
 
 ## **Best Practices**
 
