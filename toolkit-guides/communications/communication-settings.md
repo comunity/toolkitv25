@@ -164,7 +164,7 @@ When configuring the Bulk SMS toolkit, map your credentials as follows:
 
 ## **CellSys**
 
-The CellSys integration is not self-service. Unlike providers such as BulkSMS or SendGrid, CellSys does not expose full setup documentation publicly. To integrate with engage their support team through their [website](https://cellsys.co.za/). Upon account registration and payment they will provide  API credentials you can ue the the platform.
+The CellSys integration is not self-service. Unlike providers such as BulkSMS or SendGrid, CellSys does not expose full setup documentation publicly. To integrate with engage their support team through their [website](https://cellsys.co.za/). Upon account registration and payment they will provide  API credentials you can use the the platform.
 
 ## **Best Practices**
 
@@ -173,4 +173,4 @@ The CellSys integration is not self-service. Unlike providers such as BulkSMS or
 * Regular Audits: Periodically review provider permissions and credentials to ensure ongoing compliance and security.
 * Use Mock Services: Use the built-in mock services for all local development and testing to avoid incurring costs or sending unintended communications.
 
-For further assistance, please refer to the official provider documentation or contact your system administrator.
+**For further assistance, please refer to the official provider documentation or contact your system administrator.**
