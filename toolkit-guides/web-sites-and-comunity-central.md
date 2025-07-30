@@ -18,8 +18,6 @@ To address these needs, the Toolkit provides two distinct features for creating 
 
 
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Web sites in the ComUnity Developer Toolkit</p></figcaption></figure>
-
 ## Standard Web sites
 
 The Web Sites feature allows you to deploy and manage static web content directly from your Toolkit project. It is the perfect choice for simple landing pages, documentation, or basic front-end interfaces that don't require a complex build process.
@@ -42,7 +40,7 @@ The Web Sites feature allows you to deploy and manage static web content directl
 
 Every website you create is assigned a unique URL based on the following pattern:
 
-`https://<domain>/w/<project-name>/<url-suffix>`
+**https://\<domain>/w/\<project-name>/\<url-suffix>**
 
 | Component          | Description                                    | Example                         |
 | ------------------ | ---------------------------------------------- | ------------------------------- |
@@ -51,15 +49,24 @@ Every website you create is assigned a unique URL based on the following pattern
 | `<project-name>`   | The unique identifier of your Toolkit project. | `pokemon`                       |
 | `<url-suffix>`     | A custom path you define during creation.      | `games`                         |
 
-Example URL: `https://toolkitv3.comunity.me/w/pokemon/games/index.html`
+Example URL: **https://toolkitv3.comunity.me/w/pokemon/games/index.html**
 
 ### **Creating a Web site**
 
-1. Open your project and navigate to the Web sites section.
-2. Scroll past the "Community Central" tile to the Web sites area.
-3. Click **+Add** web site to open the creation dialog.
+1.  Open your project and navigate to the Web sites section.
+
+    <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+2. Scroll past the **Community Central** tile to the Web sites area.
+3.  Click **+Add** web site to open the creation dialog.
+
+    <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 4. In the dialog, enter a URL suffix (e.g., `my-app`, `tools`, `admin`).
-5. Click Create. Your website is now ready for you to upload content.
+5.  Click **Add**, this action will create your web site and after sucessful creation it will appear as a tile under Web Sites:\
+
+
+    <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+6. Click **Edit** to customise your web site content
+7. Click Open web site to view your site on the browser.
 
 ### **Managing Your Web site**
 
@@ -109,8 +116,8 @@ You can only create one Community Central site per project. If your solution req
 
 ### **Creating Your Community Central Site**
 
-1. From your project's dashboard, navigate to the Web sites section.
-2. Locate the Community Central web site tile at the top.
+1. From your project's dashboard, navigate to the **Web sites** section.
+2. Locate the **Community Central** web site tile at the top.
 3. Click **Add Community Central** to begin the setup process.
 4. Please be patient. The Toolkit is now generating the React project and running the initial build. This may take a few moments.
 5. Once complete, the tile will update. You can now:
