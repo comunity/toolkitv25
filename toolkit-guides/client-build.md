@@ -133,4 +133,112 @@ Some platform-level configuration must be completed by the ComUnity platform tea
 * Use **unique Maps API and Firebase keys** for each environment to avoid quota issues.
 * Test early on **physical devices** to check UI behaviour.
 * Optimise icon design for both square and circular cropping.
-* Keep signing certificates securely stored in **Azure DevOps Secure Files**.
+* Keep signing certificates securely stored in **Azure DevOps Secure Files**.\
+
+
+### Installing and Running the Android App via the `/d` Handler
+
+After building your Android client, you can install it directly on your device using the **download handler URL**.
+
+#### 1. Access the Download Handler
+
+In your Android browser (e.g., Chrome), visit the `/d` handler for your project:
+
+```
+https://toolkitv3.comunity.me/d/{projectname}/
+```
+
+**Example:**
+
+* Web Client: `https://toolkitv3.comunity.me/p/myproject/`
+* Android Download: `https://toolkitv3.comunity.me/d/myproject/`
+
+> **Note:** If your organisation runs its own Toolkit environment, replace `https://toolkitv3.comunity.me` with your own domain
+
+<figure><img src="../.gitbook/assets/Screenshot_20250807_162712_Chrome.jpg" alt="" width="188"><figcaption></figcaption></figure>
+
+#### 2. Download the APK
+
+* On the **Install {projectname}** page, tap **Install application**.
+* A download prompt will appear. Confirm to download the `.apk` file.
+* File size and name will match your project (e.g., `myproject.apk`).
+
+#### 3. Handle "Install Unknown Apps" Security Settings
+
+* If prompted with _“Your phone isn’t allowed to install unknown apps from this source”_, tap **Settings**.
+*   On the **Install unknown apps** screen for your browser (e.g., Chrome), enable **Allow permission**.\
+    \
+
+
+    <figure><img src="../.gitbook/assets/Screenshot_20250807_162856_Android System.jpg" alt="" width="188"><figcaption></figcaption></figure>
+* On Samsung devices, **Auto Blocker** may also prevent installation.
+  *   Disable it via:\
+      `Settings › Security and privacy › Auto Blocker`.\
+      \
+
+
+      <div align="left" data-full-width="true"><figure><img src="../.gitbook/assets/Screenshot_20250807_162800_Package installer.jpg" alt="" width="375"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/Screenshot_20250807_162821_Settings.jpg" alt="" width="375"><figcaption></figcaption></figure></div>
+
+#### 4. Install the App
+
+* Return to the APK prompt and tap **Install**.
+*   If your phone runs a security scan, approve the result.\
+    \
+
+
+    <figure><img src="../.gitbook/assets/Screenshot_20250807_162839_Package installer (1).jpg" alt="" width="188"><figcaption></figcaption></figure>
+
+#### 5. First Launch
+
+* Open the app after installation.
+* Accept the **Terms / Disclaimer** if presented.
+*   If your build includes Firebase configuration (`google-services.json`), you’ll see a **Allow Notifications** prompt, choose **Allow** or **Don’t allow**.\
+    \
+
+
+    <figure><img src="../.gitbook/assets/Screenshot_20250807_163021_Permission controller.jpg" alt="" width="188"><figcaption></figcaption></figure>
+
+#### 6. Log In or Register
+
+* Complete your app’s login or registration flow.
+
+### Running the iOS App
+
+Once your iOS client build is complete, you can install and test it on Apple devices using **TestFlight** or direct provisioning.
+
+#### 1. Using TestFlight
+
+* Ensure your Apple Developer account and **App Store Connect** are set up correctly.
+* Upload the signed `.ipa` build to **App Store Connect**.
+* In App Store Connect, enable **TestFlight** for your app.
+* Add internal or external testers:
+  * **Internal testers** can access immediately after upload.
+  * **External testers** must be approved through Apple’s beta review process.
+* Invite testers via email or by sharing the TestFlight public link.
+* Testers must install the **TestFlight** app from the **App Store** and accept the invitation.
+
+**Apple Documentation:**\
+[TestFlight Overview – Apple Developer](https://developer.apple.com/testflight/)
+
+#### 2. Installing on Provisioned Devices
+
+* If you have provisioning profiles configured in your Apple Developer account:
+  * Connect the iOS device to a Mac.
+  * Open **Xcode**.
+  * Select the device in the **Devices and Simulators** window.
+  * Drag and drop the signed `.ipa` file onto the device.
+
+**Apple Documentation:**\
+[Distributing Your App to Registered Devices – Apple Developer](https://developer.apple.com/documentation/xcode/distributing-your-app-to-registered-devices)
+
+### Conclusion
+
+The **Client Build** feature streamlines the process of producing ready-to-install Android and iOS applications directly from the ComUnity Toolkit, eliminating the need for complex local development setups. By following the prerequisites, platform setup, and build steps, teams can quickly deploy test-ready mobile clients for demonstrations, QA, and stakeholder reviews.
+
+Whether distributing via the `/d` handler for Android, TestFlight for iOS, or pushing to public app stores, the process ensures a smooth path from configuration to installation. For best results:
+
+* Keep assets optimised.
+* Maintain separate API keys per environment.
+* Test thoroughly on physical devices early in the project cycle.
+
+By integrating Client Build into your workflow, you reduce turnaround time, improve feedback loops, and accelerate delivery of your mobile solutions to users.
