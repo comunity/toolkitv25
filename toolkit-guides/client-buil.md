@@ -1,4 +1,4 @@
-# Client Build
+# Client Buil
 
 The **Client Build** feature enables you to generate Android and iOS mobile clients directly from the ComUnity Toolkit without installing or configuring a local development environment. From **version 25.2 onwards**, every project without build errors can be packaged into native clients. This capability is included in the core Toolkit offering, no additional licensing or modules are required.
 
@@ -218,7 +218,13 @@ https://toolkitv3.comunity.me/d/{projectname}/
 
 ### Running the iOS App
 
-Once your iOS client build is complete, you can install and test it on Apple devices using **TestFlight** or direct provisioning.
+**Build Output Preparation**\
+After building your iOS client in the Toolkit:
+
+1. Download and unzip the build archive.
+2. In the `src/project` folder, open `<project>.xcworkspace` in **Xcode**.
+3. Use Xcode’s **Archive** function to build for distribution.
+4. Then proceed with one of the following distribution methods:
 
 #### 1. Using TestFlight
 
