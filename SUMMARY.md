@@ -93,6 +93,7 @@
 
 * [Build a Simple Blog App: The Beginner's Guide to ComUnity Development](toolkit-tutorials/building-and-extending-applications-with-the-comunity-developer-toolkit.md)
 * [Building a Comprehensive News App: Integrating In-App Messaging, Push Notifications, SMS, and Email](toolkit-tutorials/building-a-comprehensive-news-app-integrating-in-app-messaging-push-notifications-sms-and-email.md)
+* [Bulk SMS Campaigns](toolkit-tutorials/bulk-sms-campaigns.md)
 * [APIs](toolkit-tutorials/apis/README.md)
   * [JSON Placeholder Todos API Integration in a Simple Blog App](toolkit-tutorials/apis/json-placeholder-todos-api-integration-in-a-simple-blog-app.md)
   * [Countries GraphQL API Integration Using the APIs feature in the Toolkit](toolkit-tutorials/apis/countries-graphql-api-integration-using-the-apis-feature-in-the-toolkit.md)
