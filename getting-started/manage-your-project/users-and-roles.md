@@ -8,10 +8,15 @@ description: >-
 
 This section details managing user access, roles, and authentication credential settings via the **App Users & Roles** panel in Project Settings. Learn the practical steps for configuring these options directly in the Toolkit, keeping in mind that settings are applied per-environment (accessed under the Development, QA, or Production tabs).
 
+When working with roles in the Toolkit, it’s important to note that there are two categories:
+
+* Platform Authorization Roles – system-defined roles (e.g., Administrator, Staff, User) that enforce security and access at the platform level.
+* Application Roles (via the UserRoles template)– project-specific roles that live in your app’s data model and are used for grouping, segmentation, and business logic.
+
 Within this section, you will learn how to use the **App Users & Roles** panel to:
 
 * **Manage User Accounts:** View registered users, assign or remove roles from specific users, and manage user account status (e.g., deletion, password resets \[if applicable here]).
-* **Define and Manage Roles:** Understand the default roles (Administrator, Staff, User), create and delete custom roles tailored to your project's needs.
+* **Define and Manage Platfrom Authorization Roles:** Understand the default roles (Administrator, Staff, User), create and delete custom roles tailored to your project's needs.
 * **Understand User Group Categories:** Learn about the **Registered Users** and **Anonymous Users** groups (introduced in v25.1) and how they function alongside roles in the permission model.
 * **View Role Permissions:** Use the Role-Centric view to see which data entities a specific role currently has access to.
 * **Configure Authentication Credentials:** Customise the validation rules enforced for user logins and password requirements (e.g., length, complexity, lifetime).
@@ -80,6 +85,57 @@ Version 25.1 introduced two special group categories that simplify applying perm
 Both individual **User Roles** (Default and Custom) and the **User Group Categories** (**Registered Users**, **Anonymous Users**) serve as targets when you define access permissions for specific data entities using **Table Security**.
 
 _(Refer to the \[Link to Permissions/Table Security Documentation] for detailed instructions on configuring Table Security rules.)_
+
+## Platform Roles vs Application Roles
+
+It's important to distinguish between two kinds of roles in the ComUnity ecosystem:
+
+**Platform Authorization Roles** - Defined and managed by the platform's authorization service.
+
+* Used for **security and access control** (e.g., which screens, tables, or functions a user can access).
+* Included in the login payload (e.g., `"roles": ["Administrator", "Staff"]`).
+* Always validated server-side; the front end cannot bypass these checks.
+* **Not available in your project's OData model**. You cannot `$expand` or filter them directly in `UserProfile`.
+
+{% code title="Platform roles retrieved as  part of login payload" lineNumbers="true" %}
+```
+{
+    "Id": "6F8D39F7-BDCB-4D0C-B737-DB6B9BE5BEDC",
+    "userguid": "6F8D39F7-BDCB-4D0C-B737-DB6B9BE5BEDC",
+    "Identifier": "user@example.com",
+    "profile": {
+        "Id": "6F8D39F7-BDCB-4D0C-B737-DB6B9BE5BEDC",
+        "Email": "user@example.com",
+        "Photo": null,
+        "Name": "Jack",
+        "Surname": "Sparrow",
+        "Created": "2025-09-01T03:44:19.667",
+        "Modified": "2025-09-01T03:44:20.823",
+        "Deleted": null,
+        "Cell": null,
+        "ContactByMobile": true,
+        "ContactByEmail": true,
+        "ContactByPush": true,
+        "StreetAddress": null
+    },
+    "roles": [
+        "Staff"
+    ]
+}
+```
+{% endcode %}
+
+**Application Roles (UserRoles Template)** - Introduced when you add the **UserRoles template** to your project.
+
+* Stored in your application's data model (tables such as  **UserRole**, joined to **UserProfile** and **UserMenu)**
+* Intended for **business logic and segmentation** (e.g., "Recipient", "VIP", "Moderator").
+* Fully queryable in OData:\
+  `/UserProfile?$expand=UserRoles&$filter=UserRoles/any(r: r/RoleName eq 'Recipient')` - Can be customised, renamed, or extended depending on your project's requirements.
+* Optionally, app roles can be mapped to platform roles if you want alignment, but they remain distinct.
+
+**When to use each** - Use **Platform Roles** for **securing access** and enforcing permissions.
+
+* Use **Application Roles** for **grouping users in app logic**, filtering, categorisation, or applying business workflows.
 
 ## **Managing Users (Users Tab)**
 

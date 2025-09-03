@@ -10,10 +10,11 @@ This guide details the process for creating an administrative screen to broadcas
 
 Before proceeding, confirm the project environment is configured as follows:
 
-* Project Template: The project was created using the News Feed template and includes the Notifications sample.
+* Project Template: The project was created using the News Feed template and includes the Notifications and the UserRoles templates
 * Entities:
-  * UserProfile (platform): Contains the fields `Id` (Guid), `Cell` (string), `ContactByMobile` (bool), `Name`, `Surname`, `Email`, and a navigation property to `Roles`.
+  * UserProfile (platform): Contains the fields `Id` (Guid), `Cell` (string), `ContactByMobile` (bool), `Name`, `Surname` and `Email`.
   * Campaign (custom): Contains the fields `CampaignId` (int) and `Message` (string).
+  *
 * Roles: Two user roles, Staff and Recipient, must exist in the project, Staff is provided by default create the Recipient role.
 * SMS Provider: By default a South African SMS provider has been configured under Project Settings → Communications → SMS, update this to meet your specific needs.&#x20;
 *   User Data Model: The UserProfile entity is a standard part of the platform's data model that holds a user's personal details. A user's assigned roles are stored in a related collection. The OData query used later in this tutorial (`$expand=Roles`) is the key to linking a user's profile to their roles for filtering. For context, a typical user data object from the system looks like this:
@@ -50,7 +51,7 @@ Before proceeding, confirm the project environment is configured as follows:
 
 #### Step 1: Configure User Roles and Permissions
 
-The first step is to configure the necessary user roles. The **Staff** role grants permission to create and send campaigns, while the **Recipient** role identifies the target audience for these campaigns.
+The first step is to configure the necessary platform user roles. The **Staff** role grants permission to create and send campaigns, while the **Recipient** role identifies the target audience for these campaigns.
 
 1. Navigate to Project Settings → App users & roles → Roles.
 2. Verify that both Admin and Recipient roles are present.
