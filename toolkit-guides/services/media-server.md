@@ -127,7 +127,7 @@ To upload a media file:
 1.  Navigate to Project Settings > Media Server.\
 
 
-    <figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 2. Select the appropriate environment tab (e.g., _Development environment_).
 3. Optionally enter an Upload path (subdirectory under /u/).
 4. Drag and drop a file or use the Select a file button.

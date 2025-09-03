@@ -4,73 +4,74 @@ hidden: true
 
 # Bulk SMS Campaigns
 
-This guide details the process for creating an administrative screen to broadcast bulk SMS messages. The system will target all **UserProfile** records that meet three conditions: they are assigned the Recipient role, have opted-in to mobile communications **(ContactByMobile** is true), and have a valid South African phone number (the **Cell** field starts with `+27`).
+This guide details the process for creating an administrative screen to broadcast bulk SMS messages. The system will target all **UserProfile** records that meet three conditions: they are assigned the Recipient  user role, have opted-in to mobile communications **(ContactByMobile** is true), and have a valid South African phone number (the **Cell** field starts with `+27`).
 
 #### Prerequisites
 
 Before proceeding, confirm the project environment is configured as follows:
 
-* Project Template: The project was created using the News Feed template and includes the Notifications and the UserRoles templates
+* Project Template: The project was created using the **News Feed** template and includes the **Notifications** and the **UserRoles** templates, refer to&#x20;
 * Entities:
   * UserProfile (platform): Contains the fields `Id` (Guid), `Cell` (string), `ContactByMobile` (bool), `Name`, `Surname` and `Email`.
   * Campaign (custom): Contains the fields `CampaignId` (int) and `Message` (string).
-  *
-* Roles: Two user roles, Staff and Recipient, must exist in the project, Staff is provided by default create the Recipient role.
-* SMS Provider: By default a South African SMS provider has been configured under Project Settings → Communications → SMS, update this to meet your specific needs.&#x20;
-*   User Data Model: The UserProfile entity is a standard part of the platform's data model that holds a user's personal details. A user's assigned roles are stored in a related collection. The OData query used later in this tutorial (`$expand=Roles`) is the key to linking a user's profile to their roles for filtering. For context, a typical user data object from the system looks like this:
+* SMS Provider: By default a MeSMS provider has been configured under Project Settings → Communications → SMS, update this to meet your specific needs.&#x20;
+* Successfully build your project.
 
-    JSON
+### Validate Platform Roles, Application Roles, and Permissions
 
-    ```
-    {
-        "Id": "6F8D39F7-BDCB-4D0C-B737-DB6B9BE5BEDC",
-        "userguid": "6F8D39F7-BDCB-4D0C-B737-DB6B9BE5BEDC",
-        "Identifier": "jacquelineb@comunityplatform.com",
-        "profile": {
-            "Id": "6F8D39F7-BDCB-4D0C-B737-DB6B9BE5BEDC",
-            "Email": "user@example.com",
-            "Photo": null,
-            "Name": "Jack",
-            "Surname": "Sparrow",
-            "Created": "2025-09-01T03:44:19.667",
-            "Modified": "2025-09-01T03:44:20.823",
-            "Deleted": null,
-            "Cell": null,
-            "ContactByMobile": true,
-            "ContactByEmail": true,
-            "ContactByPush": true,
-            "StreetAddress": null
-        },
-        "roles": [
-            "Staff"
-        ]
-    }
-    ```
+The first step is to confirm that the correct platform authorisation roles and application roles exist and are configured with the right permissions.
+
+* Platform Roles: These are default authorisation roles available to all projects.
+  * The Staff role is particularly important, as it grants permission to create and send campaigns.
+* Application Roles: These are project-specific roles introduced via the UserRoles template.
+  * Create a role called Recipient to identify the target audience for campaigns.
+  * This role is stored in the UserRole entity and allows you to segment users and query them in the Data Model.
+
+{% hint style="info" %}
+When you build your project, the platform roles are automatically used to populate application roles, which are then persisted in the UserRole table.
+{% endhint %}
+
+### Build Your Project
+
+Build your project to ensure that platform and application roles are correctly generated and available for assignment.
+
+#### Create and Assign User Accounts
+
+1. Create two user accounts with different email addresses.
+2. Navigate to App Users & Roles in Project Settings, then open the Development environment tab.
+3.  Assign the Staff role to one user — this grants the necessary authorisation to manage and send campaigns. You can confirm this capability by going to **Screens** > **Administration** > **User Admin Options** > **Edit User Role**, this screen helps you manage user roles and its added to the project as part of the UserRole template:\
 
 
+    <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-#### Step 1: Configure User Roles and Permissions
+### Assign Application Roles in the Web App
 
-The first step is to configure the necessary platform user roles. The **Staff** role grants permission to create and send campaigns, while the **Recipient** role identifies the target audience for these campaigns.
+1. Open the web app you just built and log in with your Staff account.
+2. Navigate to: **Administration** > **Users**.
+3. Select your second user account and click **Edit User Role**.
+4. Assign the **Recipient** role to this user.
 
-1. Navigate to Project Settings → App users & roles → Roles.
-2. Verify that both Admin and Recipient roles are present.
-3. Assign the Admin role to your administrative user account.
-4. Assign the Recipient role to all user profiles that should be eligible to receive SMS broadcasts.
+This ensures you now have:
 
-#### Step 2: Build the Admin Campaign Screen
+* One account with the **Staff** role (authorised to create and send campaigns).
+* One account with the **Recipient** role (the target audience for campaigns).
+
+### Build the Admin Campaign Screen
 
 This step involves creating the user interface for composing and sending campaign messages.
 
-1. Navigate to Screens → Add screen and select the Form page template.
-2. Set the form's Entity to Campaign and its Title to **Campaign**.
-3. Add an Input control and bind it to the Message field. It is recommended to set the control's Type to Text Area.
-4. In the screen's Properties → Permissions, restrict screen visibility to the Admin role.
-5. Save the screen.
+1. Navigate to **Screens** > **Administration** > **Sent Messages** .
+2. Click the ellipsis (⋮) next to Sent Messages, then select “Add screen below”.
+3. Choose Form page as the screen type and set the page title to Campaigns.
+4. Select the newly created Campaign screen set its Target URL to /Campaign
+5. In the Campaigns screen structure, add the following controls:
+   * Auto Inputs (to automatically bind to the Campaign entity fields).
+   * Button (to allow the user to submit the form).
+6. Save the screen.
 
 Saving a record from this form creates a new row in the **Campaign** entity, which triggers the **OnAdd** event configured in the subsequent steps.
 
-#### Step 3: Create the SMS Broadcast Event
+### Create the SMS Broadcast Event
 
 This step configures the communication event that defines the target audience and message content.
 
@@ -117,7 +118,7 @@ Define the SMS message template. The communication engine will generate and send
 
     This expression pulls the message content from the `Campaign` record that triggered the event.
 
-#### Step 4: Trigger the Event with a Custom Interceptor
+#### Trigger the Event with a Custom Interceptor
 
 An interceptor is custom code that executes when a data event occurs. You will add code to the `OnAdd` event of the `Campaign` entity to trigger the communication event when a new campaign is saved.
 
@@ -138,9 +139,9 @@ An interceptor is custom code that executes when a data event occurs. You will a
         Config.ComsServicePassword()
     );
     ```
-4. Save the custom code.
+4. Save the Custom Code.
 
-#### Step 5: Configure the SMS Provider
+#### Configure the SMS Provider
 
 Ensure the project is correctly linked to the configured SMS service.
 
@@ -149,7 +150,7 @@ Ensure the project is correctly linked to the configured SMS service.
 3. Enter the required API credentials and sender ID.
 4. Save the configuration and build the project.
 
-#### Step 6: Implement Data Validation
+#### Implement Data Validation
 
 To ensure data integrity and prevent delivery errors, add a client-side validation rule to the `Cell` input on the `UserProfile` form.
 
@@ -162,7 +163,7 @@ To ensure data integrity and prevent delivery errors, add a client-side validati
 
 Optional Enhancement: To improve user experience, consider adding server-side code (to the `OnUpdate`/`OnAdd` events of `UserProfile`) to automatically sanitize the input by stripping characters like spaces or dashes before validation.
 
-#### Step 7: Perform End-to-End Testing
+### Perform End-to-End Testing
 
 The final step is to test the system to ensure it functions as expected.
 
