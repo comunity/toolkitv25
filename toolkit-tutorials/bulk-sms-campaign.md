@@ -1,8 +1,4 @@
----
-hidden: true
----
-
-# Bulk SMS Campaigns
+# Bulk SMS Campaign
 
 This guide details the process for creating an administrative screen to broadcast bulk SMS messages. The system will target all **UserProfile** records that meet three conditions: they are assigned the Recipient  user role, have opted-in to mobile communications **(ContactByMobile** is true), and have a valid South African phone number (the **Cell** field starts with `+27`).
 
