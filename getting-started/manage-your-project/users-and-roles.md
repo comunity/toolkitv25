@@ -84,16 +84,16 @@ Version 25.1 introduced two special group categories that simplify applying perm
 
 Both individual **User Roles** (Default and Custom) and the **User Group Categories** (**Registered Users**, **Anonymous Users**) serve as targets when you define access permissions for specific data entities using **Table Security**.
 
-_(Refer to the \[Link to Permissions/Table Security Documentation] for detailed instructions on configuring Table Security rules.)_
+_(Refer to the_ [_Setting up Role-Based Permissions for Entities: Access Control Configuration_](../../toolkit-guides/data/setting-up-role-based-permissions-for-entities-access-control-configuration.md) _documentation for detailed instructions on configuring Table Security rules.)_
 
 ## Platform Roles vs Application Roles
 
-It's important to distinguish between two kinds of roles in the ComUnity ecosystem:
+It's important to distinguish between two kinds of roles in the ComUnity platform ecosystem:
 
 **Platform Authorization Roles** - Defined and managed by the platform's authorization service.
 
 * Used for **security and access control** (e.g., which screens, tables, or functions a user can access).
-* Included in the login payload (e.g., `"roles": ["Administrator", "Staff"]`).
+* Included in the login payload (e.g., `"roles": ["Administrator", "Staff", "User"]`).
 * Always validated server-side; the front end cannot bypass these checks.
 * **Not available in your project's OData model**. You cannot `$expand` or filter them directly in `UserProfile`.
 
