@@ -17,6 +17,10 @@ Before proceeding, confirm the project environment is configured as follows:
 * SMS Provider: By default a MeSMS provider has been configured under Project Settings → Communications → SMS, update this to meet your specific needs.&#x20;
 * Successfully build your project.
 
+## Building a Bulk SMS Campaign service
+
+In this section, you will set up the components required to send bulk SMS messages from your application. The process combines platform authorization roles (to secure who can create and send campaigns) with application roles (to define the recipient audience). You will then build the administrative Campaign screen, configure a communication event for SMS broadcasts, and add a custom interceptor to trigger message delivery when a campaign is created. Finally, you will connect the project to an SMS provider and run end-to-end tests to verify delivery.
+
 ### Validate Platform Roles, Application Roles, and Permissions
 
 The first step is to confirm that the correct platform authorisation roles and application roles exist and are configured with the right permissions.
@@ -35,7 +39,7 @@ When you build your project, the platform roles are automatically used to popula
 
 Build your project to ensure that platform and application roles are correctly generated and available for assignment.
 
-#### Create and Assign User Accounts
+### Create and Assign User Accounts
 
 1. Create two user accounts with different email addresses.
 2. Navigate to App Users & Roles in Project Settings, then open the Development environment tab.
@@ -61,9 +65,9 @@ This ensures you now have:
 This step involves creating the user interface for composing and sending campaign messages.
 
 1. Navigate to **Screens** > **Administration** > **Sent Messages** .
-2. Click the ellipsis (⋮) next to Sent Messages, then select “Add screen below”.
-3. Choose Form page as the screen type and set the page title to Campaigns.
-4. Select the newly created Campaign screen set its Target URL to /Campaign
+2. Click the ellipsis (⋮) next to Sent Messages, then select **Add screen below**.
+3. Choose Form page as the screen type and set the page title to **Campaigns**.
+4. Select the newly created Campaign screen set its Target URL to `/Campaign`.
 5. In the Campaigns screen structure, add the following controls:
    * Auto Inputs (to automatically bind to the Campaign entity fields).
    * Button (to allow the user to submit the form).
@@ -88,10 +92,10 @@ Define the target audience using an OData query that filters the **UserProfile**
 
 *   Member OData List URL:
 
-    Code snippet
+
 
     ```
-    @Model.App.DataServiceUrl/UserProfile?$expand=Roles&$filter=Roles/any(r: r/Name eq 'Recipient') and ContactByMobile eq true and length(Cell) gt 0 and startswith(Cell,'+27')
+    @Model.App.DataServiceUrl/UserRole('Recipient')/UserProfiles
     ```
 *   Member ID OData field:
 
@@ -106,7 +110,7 @@ Define the SMS message template. The communication engine will generate and send
 *   Cell Number:
 
     ```
-    @Model.Member.Cell
+    @Model.Profile.Cell
     ```
 
     This expression pulls the cell number from each individual user record identified by the audience query.
@@ -122,58 +126,81 @@ Define the SMS message template. The communication engine will generate and send
 
 An interceptor is custom code that executes when a data event occurs. You will add code to the `OnAdd` event of the `Campaign` entity to trigger the communication event when a new campaign is saved.
 
-1. Navigate to Data → List → Campaign.
-2. Select More Settings → Custom Code → OnAdd.
-3.  Add the following C# code below the auto-generated line:
+1. Navigate to **Data** >  **List** > **Campaign**.
+2. Select **More Settings** >  **Custom Code** .
+3.  Copy and add the following C# code below the auto-generated line:
 
-    C#
 
+
+    {% code title="Triggers the Action Template" lineNumbers="true" %}
+    ```csharp
+     // START auto-generated - OnAdd
+    public override void OnAdd(campaign010920250515Context context) {
+        base.OnAdd(context);
+        // END auto-generated, add custom code below this line
+
+        // Resolve app + comms service
+        var appName = Config.AppName();
+        var cs      = Config.ComsService();
+        if (appName == null || cs == null) return;
+
+        // Minimal payload: just the message body for the campaign
+        var data = new
+        {
+            Message = Message
+        };
+        var payload = ComsServices.JsonSerialize(data);
+
+        // Trigger the bulk-sms event
+        ComsServices.TriggerEvent(
+            appName,
+            "OnAddCampaignDefault",
+            payload,
+            cs,
+            Config.ComsServiceUsername(),
+            Config.ComsServicePassword()
+        );
+    }	 
+    	
     ```
-    // Triggers the Action Template; the audience query handles the fan-out.
-    ComsServices.TriggerEvent(
-        Config.AppName(),
-        "OnAddCampaignDefault", // Must match the event name from Step 3
-        ComsServices.JsonSerialize(new { Message = Message }),
-        Config.ComsService(),
-        Config.ComsServiceUsername(),
-        Config.ComsServicePassword()
-    );
-    ```
+    {% endcode %}
 4. Save the Custom Code.
+5. Build your project to persist these changes.
 
-#### Configure the SMS Provider
+### Configure the Communications channel &  SMS Provider
 
 Ensure the project is correctly linked to the configured SMS service.
 
-1. Navigate to Project Settings → Communications → SMS.
-2. Select the configured South African provider (or Mock Service for development).
-3. Enter the required API credentials and sender ID.
-4. Save the configuration and build the project.
+1. Go to Project Setting > Communications > Global
+2. Click **Add channe**l property button
+3. Under **Channel Priority Name** select **SMS**
+4. By default the channel property is then set to **Medium** - this setting is necessary to ensure delivery of SMSs.
+5. Navigate to **Project Settings** > **Communications** > **SMS**.
+6. To validate or else set SMS provider settings, click the **Development** > **Communications > Sms**
+7. Select the SMS provider of your or else select Mock service that sends your SMSes to **MeSMS**.
+8. Enter the required API credentials and sender ID.
+9. Save the configuration.
 
-#### Implement Data Validation
 
-To ensure data integrity and prevent delivery errors, add a client-side validation rule to the `Cell` input on the `UserProfile` form.
-
-1. Open the `UserProfile` form for editing.
-2. Select the input control bound to the Cell field.
-3. Add a Regex validation rule with the following settings:
-   * Label: `Mobile`
-   * Regex Rule: `^\+27\d{9}$`
-   * Error Message: `Enter a valid South African mobile number, e.g. +27821234567.`
-
-Optional Enhancement: To improve user experience, consider adding server-side code (to the `OnUpdate`/`OnAdd` events of `UserProfile`) to automatically sanitize the input by stripping characters like spaces or dashes before validation.
 
 ### Perform End-to-End Testing
 
-The final step is to test the system to ensure it functions as expected.
+The final step is to verify that the system works as expected from start to finish.
 
-1. Prepare a test user profile that meets all the targeting criteria:
-   * The user must be assigned the Recipient role.
-   * The `ContactByMobile` boolean field must be set to `true`.
-   * The `Cell` field must contain a valid South African number (e.g., `+27821234567`).
-2. Log in to the application with an Admin user account.
-3. Navigate to the Campaign screen.
-4. Enter a test message and Save the form.
+1. Log in with the test user
+   * Sign in to the web app using the test user profile created earlier in the _Create and Assign User Accounts_ section.
+   * Navigate to My Profile.
+   * Click Edit and enter a valid South African mobile number in the Mobile field.
+   * Click Save, then Sign Out.
+2. Log in with the Staff user
+   * Sign in to the web app using the Staff user profile created earlier.
+   * Navigate to Administration > Campaigns.
+   * Enter a text message in the Message field.
+   * Click Save.
+3. Verify delivery
+   * An SMS should be delivered to the test user’s device.
+   * If you are using the Mock Service, confirm that the request was sent by checking MeSMS service.
 
-An SMS should be delivered to the test device. If using the Mock Service, verify the request was sent by checking the provider's logs or developer console.
+## Conclusion
 
+You now have a working bulk SMS campaign feature in the ComUnity Toolkit. Staff users can create campaigns, Recipient users can be targeted, and messages are delivered via your configured SMS provider or the Mock service. This setup provides a solid foundation you can extend with additional channels, filters, or scheduling as your project grows.
