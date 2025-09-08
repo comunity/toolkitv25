@@ -42,3 +42,8 @@ To learn more about event details and configuring specific communication channel
 * [INAPP](inapp.md)
 * [Push Notifications](push-notifications.md)
 * [HTTP](http.md)
+
+{% hint style="warning" %}
+**Next Steps**\
+Defining Communication Events and templates in the Communications section does not automatically deliver messages. You must manually trigger the corresponding event from the relevant entity change interceptor(s) in your Data model. For full details on the flow and required parameters, see [Triggering the Communication Service](../triggering-the-communication-service.md).
+{% endhint %}

@@ -6,9 +6,9 @@ The [CommsService.TriggerEvent()](triggering-the-communication-service.md#commss
 
 To trigger the Communication Service, follow these steps:
 
-1. Open your project and navigate to Data.
-2. Select Diagram or List to view your Data Model.
-3. Locate and select the entity for which you want to configure communications. In a Diagram view, click on the entity's header section with a grey background colour. An active entity is identified by a blue border, and none of its entity fields are active (active entity fields have a blue background colour).&#x20;
+1. Open your project and navigate to **Data**.
+2. Select **Diagram** or **List** to view your **Data** model.
+3. Locate and select the entity for which you want to configure communications. In a **Diagram** view, click on the entity's header section with a grey background colour. An active entity is identified by a blue border, and none of its entity fields are active (active entity fields have a blue background colour).&#x20;
 4. This action will open a properties dialog that displays the entity's global properties.
 5. Within the properties dialog, locate **Custom Code** you can expand the text editor by clicking on the ![](<../../.gitbook/assets/image (238).png>) icon.  &#x20;
 6. Now, you need to identify and select a change interceptor to initiate the `ComsService.Trigger()` function. If the custom code has already been auto-generated, you can proceed with selecting an appropriate change interceptor. However, if the custom code hasn't been auto-generated, you have the option to define your own partial class. Within this class, you can invoke the `ComsService.Trigger()` function using the interceptor of your choice as show&#x6E;_(check line 66 in the code block below)_:
