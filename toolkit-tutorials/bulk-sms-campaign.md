@@ -8,14 +8,14 @@ Before proceeding, confirm the project environment is configured as follows:
 
 * Project Template: The project was created using the **News Feed** template and includes the **Notifications** and the **UserRoles** templates, refer to&#x20;
 * Entities:
-  * UserProfile (platform): Contains the fields `Id` (Guid), `Cell` (string), `ContactByMobile` (bool), `Name`, `Surname` and `Email`.
-  * Campaign (custom): Contains the fields `CampaignId` (int) and `Message` (string).
-* SMS Provider: By default a MeSMS provider has been configured under Project Settings → Communications → SMS, update this to meet your specific needs.&#x20;
+  * **UserProfile** (platform): Contains the fields `Id` (Guid), `Cell` (string), `ContactByMobile` (bool), `Name`, `Surname` and `Email`.
+  * **Campaign** (custom): Defines the fields `CampaignId (int)` and `Message (string)`. Insert permission is enabled under **Table Security**. For details on configuring access, see [Setting Up Role-Based Permissions for Entities: Access Control Configuration](../toolkit-guides/data/setting-up-role-based-permissions-for-entities-access-control-configuration.md).
+* SMS Provider: By default a MeSMS provider has been configured under **Project Settings** > **Communications** > **SMS**, update this to meet your specific needs.&#x20;
 * Successfully build your project.
 
 ## Building a Bulk SMS Campaign service
 
-In this section, you will set up the components required to send bulk SMS messages from your application. The process combines platform authorization roles (to secure who can create and send campaigns) with application roles (to define the recipient audience). You will then build the administrative Campaign screen, configure a communication event for SMS broadcasts, and add a custom interceptor to trigger message delivery when a campaign is created. Finally, you will connect the project to an SMS provider and run end-to-end tests to verify delivery.
+In this section, you will set up the components required to send bulk SMS messages from your application. The process combines platform authorisation roles (to secure who can create and send campaigns) with application roles (to define the recipient audience). You will then build the administrative Campaign screen, configure a communication event for SMS broadcasts, and add a custom interceptor to trigger message delivery when a campaign is created. Finally, you will connect the project to an SMS provider and run end-to-end tests to verify delivery.
 
 ### Validate Platform Roles, Application Roles, and Permissions
 
@@ -28,7 +28,7 @@ The first step is to confirm that the correct platform authorisation roles and a
   * This role is stored in the UserRole entity and allows you to segment users and query them in the Data Model.
 
 {% hint style="info" %}
-When you build your project, the platform roles are automatically used to populate application roles, which are then persisted in the UserRole table.
+When you build your project, the platform roles are automatically used to populate application roles, which are then persisted in the **UserRole** table.
 {% endhint %}
 
 ### Build Your Project
@@ -38,8 +38,8 @@ Build your project to ensure that platform and application roles are correctly g
 ### Create and Assign User Accounts
 
 1. Create two user accounts with different email addresses.
-2. Navigate to App Users & Roles in Project Settings, then open the Development environment tab.
-3.  Assign the Staff role to one user — this grants the necessary authorisation to manage and send campaigns. You can confirm this capability by going to **Screens** > **Administration** > **User Admin Options** > **Edit User Role**, this screen helps you manage user roles and its added to the project as part of the UserRole template:\
+2. Navigate to **App Users & Roles** in **Project Settings**, then open the **Development** environment tab.
+3.  Assign the **Staff** role to one user — this grants the necessary authorisation to manage and send campaigns. You can confirm this capability by going to **Screens** > **Administration** > **User Admin Options** > **Edit User Role**, this screen helps you manage user roles and its added to the project as part of the UserRole template:\
 
 
     <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
