@@ -228,6 +228,10 @@ The final step is to verify that the system works as expected from start to fini
    * An SMS should be delivered to the test user’s device.
    * If you are using the **Mock Service**, confirm that the request was sent by checking **MeSMS** service.
 
+## Integrating the Bulk SMS Service - Final Step
+
+The last part of the tutorial will demonstrate how you to send SMS to an actual device/s using the [BulkSMS](https://www.bulksms.com/) provider by following these steps outlined in the section [BulkSMS](../toolkit-guides/communications/communication-settings.md#bulksms-sms) . Ensure you have sufficient credits then repeat steps 2 - 3 above. A successful test will ensure that SMSes are delivered to actual devices.
+
 ## Conclusion
 
 You now have a working bulk SMS campaign feature in the ComUnity Toolkit. Staff users can create campaigns, Recipient users can be targeted, and messages are delivered via your configured SMS provider or the Mock service. This setup provides a solid foundation you can extend with additional channels, filters, or scheduling as your project grows.

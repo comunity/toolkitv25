@@ -162,6 +162,11 @@ When configuring the Bulk SMS toolkit, map your credentials as follows:
 * **BulkSMSUser**: Use the Token ID.
 * **BulkSMSPassword**: Use the Token Secret.
 
+{% hint style="success" %}
+**Try it out** \
+Follow this tutorial to learn how to send SMS messages to real devices using the BulkSMS service in a [Bulk SMS Campaign](../../toolkit-tutorials/bulk-sms-campaign.md#integrating-the-bulk-sms-service-final-step).
+{% endhint %}
+
 ## **CellSys**
 
 The CellSys integration is not self-service. Unlike providers such as BulkSMS or SendGrid, CellSys does not expose full setup documentation publicly. To integrate with engage their support team through their [website](https://cellsys.co.za/). Upon account registration and payment they will provide  API credentials you can use the the platform.
