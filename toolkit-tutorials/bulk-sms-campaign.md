@@ -10,7 +10,7 @@ Before proceeding, confirm the project environment is configured as follows:
 * Entities:
   * **UserProfile** (platform): Contains the fields `Id` (Guid), `Cell` (string), `ContactByMobile` (bool), `Name`, `Surname` and `Email`.
   * **Campaign** (custom): Defines the fields `CampaignId (int)` and `Message (string)`. Insert permission is enabled under **Table Security**. For details on configuring access, see [Setting Up Role-Based Permissions for Entities: Access Control Configuration](../toolkit-guides/data/setting-up-role-based-permissions-for-entities-access-control-configuration.md).
-* SMS Provider: By default a MeSMS provider has been configured under **Project Settings** > **Communications** > **SMS**, update this to meet your specific needs.&#x20;
+* SMS Provider: By default a **MeSMS** provider has been configured under **Project Settings** > **Communications** > **SMS**, update this to meet your specific needs.&#x20;
 * Successfully build your project.
 
 ## Building a Bulk SMS Campaign service
@@ -22,14 +22,45 @@ In this section, you will set up the components required to send bulk SMS messag
 The first step is to confirm that the correct platform authorisation roles and application roles exist and are configured with the right permissions.
 
 * Platform Roles: These are default authorisation roles available to all projects.
-  * The Staff role is particularly important, as it grants permission to create and send campaigns.
-* Application Roles: These are project-specific roles introduced via the UserRoles template.
-  * Create a role called Recipient to identify the target audience for campaigns.
+  * The **Staff role** is particularly important, as it grants permission to create and send campaigns.
+* Application Roles: These are project-specific roles introduced via the **UserRoles** template.
+  * We need to dynamically create an application role called **Recipient,** this role to identify and segment the target audience for campaigns.
   * This role is stored in the UserRole entity and allows you to segment users and query them in the Data Model.
+  *   To seed the **Recipient** role in the **UserRole** in the table go to **Data** > **List** and select the **UserRole** entity in the **Properties Editor** click to expand **Custom Code** and identify a function called **onSeed** and update its logic as shown in the code- snippet below:\
 
-{% hint style="info" %}
-When you build your project, the platform roles are automatically used to populate application roles, which are then persisted in the **UserRole** table.
-{% endhint %}
+
+      {% code title="Dynamically seeding the Recipient role in the UserRoles table" %}
+      ```csharp
+      // START auto-generated - OnSeed
+      public static void OnSeed(testcampaigns0842042025Context context)
+      {
+      	var requiredRoles = new List<string>
+      	{
+      		"User",
+      		"Staff",
+      		"Recipient"
+      	};
+
+      	if (context.UserRole.Count() < requiredRoles.Count)
+      	{
+      		foreach (var role in requiredRoles)
+      		{
+      			if (context.UserRole.Find(role) == null)
+      			{
+      				context.UserRole.Add(new UserRole 
+      				{ 
+      					RoleName = role 
+      				});
+      			}
+      		}
+      	}
+
+      	// END auto-generated, add custom code below this line
+      }
+
+      ```
+      {% endcode %}
+  * Save your changes
 
 ### Build Your Project
 
