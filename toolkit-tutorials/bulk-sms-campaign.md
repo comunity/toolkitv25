@@ -1,4 +1,4 @@
-# Bulk SMS Campaignulk
+# Bulk SMS Campaign
 
 This guide details the process for creating an administrative screen to broadcast bulk SMS messages. The system will target all **UserProfile** records that meet three conditions: they are assigned the Recipient  user role, have opted-in to mobile communications **(ContactByMobile** is true), and have a valid South African phone number (the **Cell** field starts with `+27`).
 
@@ -191,8 +191,8 @@ An interceptor is custom code that executes when a data event occurs. You will a
     	
     ```
     {% endcode %}
-4. Save the Custom Code.
-5. Build your project to persist these changes.
+4. **Save** the **Custom Code**.
+5. **Build your project** to persist these changes.
 
 ### Configure the Communications channel &  SMS Provider
 
@@ -215,7 +215,7 @@ Ensure the project is correctly linked to the configured SMS service.
 The final step is to verify that the system works as expected from start to finish.
 
 1. Log in with the test user
-   * Sign in to the web app using the test user profile created earlier in the [_**Create and Assign User Accounts**_ ](bulk-sms-campaignulk.md#create-and-assign-user-accounts)section.
+   * Sign in to the web app using the test user profile created earlier in the [_**Create and Assign User Accounts**_ ](bulk-sms-campaign.md#create-and-assign-user-accounts)section.
    * Navigate to **My Profile**.
    * Click Edit and enter a valid South African mobile number in the **Mobile** field.
    * Click **Save**, then Sign Out.
