@@ -1,4 +1,4 @@
-# Bulk SMS Campaign
+# Bulk SMS Campaignulk
 
 This guide details the process for creating an administrative screen to broadcast bulk SMS messages. The system will target all **UserProfile** records that meet three conditions: they are assigned the Recipient  user role, have opted-in to mobile communications **(ContactByMobile** is true), and have a valid South African phone number (the **Cell** field starts with `+27`).
 
@@ -215,18 +215,18 @@ Ensure the project is correctly linked to the configured SMS service.
 The final step is to verify that the system works as expected from start to finish.
 
 1. Log in with the test user
-   * Sign in to the web app using the test user profile created earlier in the _Create and Assign User Accounts_ section.
-   * Navigate to My Profile.
-   * Click Edit and enter a valid South African mobile number in the Mobile field.
-   * Click Save, then Sign Out.
-2. Log in with the Staff user
+   * Sign in to the web app using the test user profile created earlier in the [_**Create and Assign User Accounts**_ ](bulk-sms-campaignulk.md#create-and-assign-user-accounts)section.
+   * Navigate to **My Profile**.
+   * Click Edit and enter a valid South African mobile number in the **Mobile** field.
+   * Click **Save**, then Sign Out.
+2. Log in as a Staff user
    * Sign in to the web app using the Staff user profile created earlier.
-   * Navigate to Administration > Campaigns.
-   * Enter a text message in the Message field.
-   * Click Save.
+   * Navigate to **Administration** > **Campaign**s.
+   * Enter a text message in the **Message** field.
+   * Click **Save**.
 3. Verify delivery
    * An SMS should be delivered to the test user’s device.
-   * If you are using the Mock Service, confirm that the request was sent by checking MeSMS service.
+   * If you are using the **Mock Service**, confirm that the request was sent by checking **MeSMS** service.
 
 ## Conclusion
 
