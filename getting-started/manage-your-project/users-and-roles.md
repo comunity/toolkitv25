@@ -129,7 +129,7 @@ It's important to distinguish between two kinds of roles in the ComUnity platfor
 
 * Stored in your application's data model (tables such as  **UserRole**, joined to **UserProfile** and **UserMenu)**
 * Intended for **business logic and segmentation** (e.g., "Recipient", "VIP", "Moderator").
-* Relevant user roles must be manually seeded into the UserRoles table; see the tutorial section [Validate Platform Roles, Application Roles, and Permissions ](../../toolkit-tutorials/bulk-sms-campaign.md#validate-platform-roles-application-roles-and-permissions)for detailed steps on how to do this
+* Relevant user roles must be manually seeded into the UserRoles table to expand user roles offered by default which include **Staff** and **User**; see the tutorial section [Validate Platform Roles, Application Roles, and Permissions ](../../toolkit-tutorials/bulk-sms-campaign.md#validate-platform-roles-application-roles-and-permissions)for detailed steps on how to do this
 * Fully queryable in [OData](../../reference-articles/odata.md):\
   `/UserProfile?$expand=UserRoles&$filter=UserRoles/any(r: r/RoleName eq 'Recipient')` - Can be customised, renamed, or extended depending on your project's requirements.
 * Optionally, app roles can be mapped to platform roles if you want alignment, but they remain distinct.
