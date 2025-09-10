@@ -1,6 +1,6 @@
 # Bulk SMS Campaign
 
-This guide details the process for creating an administrative screen to broadcast bulk SMS messages. The system will target all **UserProfile** records that meet three conditions: they are assigned the Recipient  user role, have opted-in to mobile communications **(ContactByMobile** is true), and have a valid South African phone number (the **Cell** field starts with `+27`).
+This guide details the process for creating an administrative screen to broadcast bulk SMS messages. The system will target all **UserProfile** records that meet three conditions: they are assigned the Recipient  user role, have opted in to mobile communications **(ContactByMobile** is true), and have a valid South African phone number (the **Cell** field starts with `+27`).
 
 #### Prerequisites
 
@@ -9,7 +9,7 @@ Before proceeding, confirm the project environment is configured as follows:
 * Project Template: The project was created using the **News Feed** template and includes the **Notifications** and the **UserRoles** templates, refer to&#x20;
 * Entities:
   * **UserProfile** (platform): Contains the fields `Id` (Guid), `Cell` (string), `ContactByMobile` (bool), `Name`, `Surname` and `Email`.
-  * **Campaign** (custom): Defines the fields `CampaignId (int)` and `Message (string)`. Insert permission is enabled under **Table Security**. For details on configuring access, see [Setting Up Role-Based Permissions for Entities: Access Control Configuration](../toolkit-guides/data/setting-up-role-based-permissions-for-entities-access-control-configuration.md).
+  * **Campaign** (custom):  Add a custom entity to your **Data** model  with the name **Campaign** with fields `CampaignId (int)` and `Message (string)`. Enable **Insert** permission under **Edit Table Security** for the **Staff role.** For details on configuring access, see [Setting Up Role-Based Permissions for Entities: Access Control Configuration](../toolkit-guides/data/setting-up-role-based-permissions-for-entities-access-control-configuration.md).
 * SMS Provider: By default a **MeSMS** provider has been configured under **Project Settings** > **Communications** > **SMS**, update this to meet your specific needs.&#x20;
 * Successfully build your project.
 
