@@ -211,19 +211,28 @@ You can remove custom roles that are no longer needed:
 This tab also provides a way to see which data entities a specific role has been granted access to via Table Security:
 
 1. Find the role (either default or custom) in the list whose permissions you want to review.
-2. Click on the role name or an associated **"Edit" / "View Permissions"** button (the exact UI may vary).
-3. This action typically opens a view listing all the tables/entities within your Data Model that this particular role has specific permissions (Create, Read, Update, Delete) configured for.
-   * This provides a "Role-Centric" perspective on permissions, answering the question: "What can this role access?".
-
-**Important Limitation:**
-
-* While you can **view** the summary of assigned permissions here, the actual **configuration** (granting or denying Create, Read, Update, Delete permissions for specific roles/groups on specific tables) is performed using **Table Security**.
-* _(Please refer to the Table Security documentation for instructions on how to configure these permissions.)_
-
-Using the **Roles** tab effectively allows you to tailor the available roles to your project's structure and quickly audit the scope of access granted to each role.\
+2. In the Roles tab, locate the role you want to review (system role or project role). Next to the role name, click the pencil icon. The tooltip will display Edit table security, indicating that this action will open the permissions editor for that role.
+3.  This action opens the **Edit table security view** for the selected role. Here you will see a list of all tables/entities in your **Data** model displayed in a grid. Each entity is shown in the left-hand column, with corresponding permission types (**Delete**, **Insert**, **Replace**, **Update**, **View**, **All**) as columns across the top.
 
 
-**Managing Authentication Credentials (Credentials Tab)**
+
+    <figure><img src="../../.gitbook/assets/image (488).png" alt=""><figcaption></figcaption></figure>
+
+
+
+    * A checkmark in a box indicates that the role currently has that specific permission on the entity.
+    * You can toggle permissions by selecting or clearing the checkboxes.
+    * Once changes are made, click **Save** to apply them.\
+
+
+    This layout gives you a clear, role-centric overview of what the selected role can do across entities and provides a direct way to update those permissions in one place.
+
+
+
+    For more detailed configuration at the entity level, refer to [Setting Up Role-Based Permissions for Entities: Access Control Configuration](../../toolkit-guides/data/setting-up-role-based-permissions-for-entities-access-control-configuration.md). This guide explains how to manage permissions directly in the Table Security interface by selecting an entity in the Data Model and adjusting role-based permissions in its properties dialog.\
+
+
+### **Managing Authentication Credentials (Credentials Tab)**
 
 The **Credentials** tab within the **App Users & Roles** panel allows you to configure specific validation rules and policies that are enforced during user authentication and password management processes for the selected environment. This helps enhance security by ensuring credentials meet your organization's standards.
 
