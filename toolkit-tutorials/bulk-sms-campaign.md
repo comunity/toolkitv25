@@ -25,7 +25,7 @@ The first step is to confirm that the correct platform authorisation roles and a
   * The **Staff role** is particularly important, as it grants permission to create and send campaigns.
 * Application Roles: These are project-specific roles introduced via the **UserRoles** template.
   * We need to dynamically create an application role called **Recipient,** this role to identify and segment the target audience for campaigns.
-  * This role is stored in the UserRole entity and allows you to segment users and query them in the Data Model.
+  * This role is stored in the UserRole entity and allows you to segment users and query them in the **Data** model.
   *   To seed the **Recipient** role in the **UserRole** in the table go to **Data** > **List** and select the **UserRole** entity in the **Properties Editor** click to expand **Custom Code** and identify a function called **onSeed** and update its logic as shown in the code- snippet below:\
 
 
@@ -202,8 +202,8 @@ Ensure the project is correctly linked to the configured SMS service.
 2. Click **Add channe**l property button
 3. Under **Channel Priority Name** select **SMS**
 4. By default the channel property is then set to **Medium** - this setting is necessary to ensure delivery of SMSs.
-5. Navigate to **Project Settings** > **Communications** > **SMS**.
-6. To validate or else set SMS provider settings, click the **Development** > **Communications > Sms**
+5. Navigate to **Project Settings** > **Development environment** > **Communications.**
+6. To validate or else set **SMS** provider settings, select the **Sms** tab
 7. Select the SMS provider of your or else select Mock service that sends your SMSes to **MeSMS**.
 8. Enter the required API credentials and sender ID.
 9. Save the configuration.
