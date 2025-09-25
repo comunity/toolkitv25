@@ -1,6 +1,6 @@
 # Table of contents
 
-* [ComUnity Technical Overview](README.md)
+* [ComUnity Technical Overvie](README.md)
 
 ## Getting Started
 

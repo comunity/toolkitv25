@@ -607,6 +607,10 @@
 
 > The property type specifies the kind of data that can be stored in an entity property. It defines the format and constraints for the data, such as text, number, boolean, date, and relationship.
 
+### Service Provider
+
+> An external communications service (e.g., BulkSMS, Twilio, SendGrid, Microsoft 365) that the Toolkit connects to in order to send messages (SMS, email, WhatsApp, etc.). Each provider requires its own account and credentials, which must be configured in the Toolkit before use.
+
 ### QA/Testing Environment
 
 > A vibrant purple environment used for testing code after the development phase. This environment closely mimics the production environment to identify potential issues and ensure the application functions correctly before it reaches end users.
@@ -711,6 +715,10 @@
 > • High: Requires prompt attention.
 >
 > • Critical: Urgent action needed to prevent significant issues or failures.
+
+### SMS Providers
+
+
 
 ### Structured Data
 

@@ -81,7 +81,7 @@ From version 25.2, the ComUnity Toolkit provides an enhanced interface for manag
    * Once a provider is selected, the required configuration fields (e.g., API keys, usernames, base URIs) will be displayed.
    * You must obtain these credentials from the provider’s official administration portal and enter them securely into the fields provided.
 
-## **Provider Requirements & Setup Guides**
+## **Service Provider Requirements & Setup Guides**
 
 To integrate external services, you must have an active account with the provider and obtain the necessary credentials.
 
