@@ -55,18 +55,55 @@ Example URL: **https://toolkitv3.comunity.me/w/pokemon/games/index.html**
 
 1.  Open your project and navigate to the Web sites section.
 
-    <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
-2. Scroll past the **Community Central** tile to the Web sites area.
-3.  Click **+Add** web site to open the creation dialog.
-
-    <figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
-4. In the dialog, enter a URL suffix (e.g., `my-app`, `tools`, `admin`).
-5.  Click **Add**, this action will create your web site and after sucessful creation it will appear as a tile under Web Sites:\
-
-
     <figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+2. Scroll past the **Community Central** tile to the Web sites area.
+3.  Click **+Add** web site to open the creation dialog.\
+
+
+    <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+4. In the dialog, enter a URL suffix (e.g., `my-app`, `tools`, `admin`).
+5.  Click **Add**, this action will create your web site and after successful creation it will appear as a tile under **Web sites**:\
+
+
+    <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 6. Click **Edit** to customise your web site content
-7. Click Open web site to view your site on the browser.
+7.  Edit Web sites - Preview \
+
+
+    The Preview pane provides a visual inspection area for website files within the Toolkit. It allows developers to verify file contents without downloading or opening them externally. The feature supports limited file types and is intended for verification, not for navigation or editing.
+
+    &#x20;
+
+    <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+    \
+
+
+    **Functionality**
+
+    * Displays HTML and image files in a simple rendered view.
+    * Supports scrolling for large HTML files.
+    * Lists files when a folder is uploaded and allows selection of individual files for preview.
+    * Automatically opens the index.html file if present.
+    * Operates in read-only mode; no in-place editing is available.
+
+
+
+    **Current Behaviour**
+
+    * HTML files are displayed as rendered pages without applied CSS or JavaScript.
+    * Image files (e.g. .jpg, .png) are displayed directly in the pane.
+    * Other file types are listed but not rendered.
+    * The Preview Pane is not a browser and does not support navigation between pages.\
+
+
+    **Known Limitations**
+
+    * Styling (CSS) and script execution are not supported.
+    * The pane does not combine assets or show fully rendered websites.
+    * Only a limited set of file types can be previewed.
+    * Navigation links inside the HTML are not functional.
+8. Click Open web site to view your site on the browser.
 
 ### **Managing Your Web site**
 

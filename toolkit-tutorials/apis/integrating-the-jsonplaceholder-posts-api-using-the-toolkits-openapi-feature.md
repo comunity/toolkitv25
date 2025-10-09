@@ -68,13 +68,13 @@ To configure the OpenAPI API in the ComUnity Developer Toolkit, follow these ste
     4.  Click the **Select** file button and upload the OpenAPI specification file for JSONPlaceholder Posts, which is provided in the [Resources](integrating-the-jsonplaceholder-posts-api-using-the-toolkits-openapi-feature.md#resources) section.\
 
 
-        <figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Registering the OpenAPI API in the Toolkit</p></figcaption></figure>
+        <figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption><p>Registering the OpenAPI API in the Toolkit</p></figcaption></figure>
     5. Click the **Add Azure API to your project** button to register and configure the API in Azure API Management (APIM).
 
     This process ensures the API is properly registered and available for further integration within the Toolkit.\
 
 
-    <figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption><p>An OpenAPI API that has been registered in Azure API Management (APIM) and had its operations manually retrieved into the Toolkit by selecting “<strong>Fetch operations from Azure</strong>” from the API options ellipsis  (⋮)  menu.</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>An OpenAPI API that has been registered in Azure API Management (APIM) and had its operations manually retrieved into the Toolkit by selecting “<strong>Fetch operations from Azure</strong>” from the API options ellipsis  (⋮)  menu.</p></figcaption></figure>
 2. **Verify the API Registration in Azure**:
    1. After the API is registered, click the ellipsis (⋮) button next to the API in the Toolkit and select **View in Azure Portal**.
    2. You will be redirected to **Azure API Management (APIM)**.
@@ -408,4 +408,4 @@ To configure the OpenAPI API in the ComUnity Developer Toolkit, follow these ste
 7.  Build and launch your project to view your posts in the application. Click **Add Post** to navigate to the **Add Post** screen, where you can fill out a form to create a new post. Click on any post in the list to be redirected to the **Post by ID** page, where you can view the post’s details.\
 
 
-    <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Posts screen in the application</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Posts screen in the application</p></figcaption></figure>
