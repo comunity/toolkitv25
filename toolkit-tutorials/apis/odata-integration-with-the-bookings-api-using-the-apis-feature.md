@@ -89,11 +89,13 @@ Once registered, click the ellipsis (⋮) next to the API and select Fetch opera
 1. After the API is registered, click the ellipsis (⋮) button next to the API in the Toolkit and select **View in Azure Portal**.
 2. You will be redirected to **Azure API Management (APIM)**.
 3. Locate your newly created API under **APIs** (use the search function if needed).
-4.  Once you select your API, the Entity Sets and Functions tab will open. Click the ellipsis (⋮) next to the Bookings entity set and select Test. You will be redirected to the testing screen. Scroll down and click the Send button to execute the request. This action will fetch all bookings from the Bookings API and display the response data.\
+4.  Once you select your API, the **Entity Sets and Functions** tab will open. Click the ellipsis (⋮) next to the Bookings entity set and select Test. You will be redirected to the testing screen. Scroll down and click the **Send** button to execute the request. This action will fetch all bookings from the Bookings API and display the response data.\
     \
 
 
     <figure><img src="../../.gitbook/assets/image (467).png" alt=""><figcaption><p>The Bookings Entity Set as shown on Azure API Management platform</p></figcaption></figure>
+
+    <div align="center"><figure><img src="../../.gitbook/assets/image (492).png" alt=""><figcaption><p>User Interface on APIM for Testing oData endpoints</p></figcaption></figure></div>
 
 ## Define the Virtual Entity
 
@@ -106,10 +108,11 @@ Once registered, click the ellipsis (⋮) next to the API and select Fetch opera
    5. Modified → datetime
    6. IsDeleted → bool
 3. Ensure that View permissions are granted to your User role for more details on setting up table permission view the section [Setting Up Role-Based Permissions for Entities: Access Control Configuration](../../toolkit-guides/data/setting-up-role-based-permissions-for-entities-access-control-configuration.md).
+4. Build your project.
 
 ## Expose the API via Custom Classes
 
-1.  Go to **Custom Classes** in the Toolkit. Select the **WebApiConfig** class and register your **Booking** Virtual Entity as shown below (line 23):\
+1.  Go to **Custom Classes** in the Toolkit. Select the **WebApiConfig** class and register your **Booking** Virtual Entity as shown below (line 22):\
 
 
     <pre class="language-csharp" data-title="WebApiConfig" data-line-numbers><code class="lang-csharp"><strong>using System;
@@ -117,7 +120,7 @@ Once registered, click the ellipsis (⋮) next to the API and select Fetch opera
     using System.Web.Http.OData.Extensions;
     using odataapiintegration.Custom;
 
-    namespace odataapiintegration
+    namespace //***"Application Name"***//.Custom
     {
         /*
         For additional details on using OData in ASP.NET Web API, visit the following link.
@@ -143,8 +146,7 @@ Once registered, click the ellipsis (⋮) next to the API and select Fetch opera
     </code></pre>
 
 
-2.  Update the **Booking** entity class as shown below:\
-
+2.  Extend the **Booking class** (which was auto-generated under _Custom Classes_ when the Virtual Entity was created in the preceding steps) with new properties: Description, BookingDate, Created, Modified, and IsDeleted as shown below:
 
     <pre class="language-csharp" data-title="" data-line-numbers><code class="lang-csharp"><strong>using System;
     </strong>using System.Collections.Generic;
@@ -153,7 +155,7 @@ Once registered, click the ellipsis (⋮) next to the API and select Fetch opera
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    namespace odataapiintegration.Custom
+    namespace //***"Application Name"***//.Custom
     {
         /*
         The following code should be added to the WebApiConfig class to add this class to the Service Root
@@ -176,42 +178,42 @@ Once registered, click the ellipsis (⋮) next to the API and select Fetch opera
 3.  Update your controller class as shown below, ensure that you also update all your packages on your file:\
 
 
-    {% code title="BookingController" lineNumbers="true" %}
-    ```csharp
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web;
-            
-    namespace odataapiintegration.Custom
-    {
-        public class BookingController : System.Web.Http.OData.ODataController
-        {
-        /**To replace the API’s URL comment below, navigate to Third Party Services > APIs in the Toolkit, locate your API, and copy its URL.**/
-              static string _baseUrl =  //***"API_URL"***//;
-            // GET: odata/Booking
-            [System.Web.Http.OData.EnableQuery]
-            public IQueryable<Booking> GetBooking()
-            {
-                using (var httpClient = new ComUnity.DataServices.ServiceUtility.ComUnityHttpClient(//***"Application Name"***//, //***"Azure API name"***//);
-                {
-                    var res = httpClient.GetAsync($"{_baseUrl}/Bookings").Result;
-                    res.EnsureSuccessStatusCode();
-                    var content = res.Content.ReadAsStringAsync().Result;
-                    var response = Newtonsoft.Json.JsonConvert.DeserializeAnonymousType(content, new
-                    {
-                        value = new List<Booking>(),
-                    });
-                    var bookings = response.value;
-                    return bookings.AsQueryable();
-                }
-            }
-           
-        }
-    }
-
-    ```
-    {% endcode %}
+    <pre class="language-csharp" data-title="BookingController" data-line-numbers><code class="lang-csharp"><strong>using System;
+    </strong><strong>using System.Collections.Generic;
+    </strong><strong>using System.Linq;
+    </strong><strong>using System.Web;
+    </strong><strong>
+    </strong><strong>namespace //***"Application Name"***//.Custom
+    </strong><strong>{
+    </strong><strong>    public class BookingController : System.Web.Http.OData.ODataController
+    </strong><strong>    {
+    </strong><strong>        /**To replace the API’s URL comment below, navigate to Third Party Services > APIs in the Toolkit, locate your API, and copy its URL.*/
+    </strong><strong>        static string _baseUrl = //***"API_URL"***//;
+    </strong><strong>
+    </strong><strong>        // GET: odata/Booking
+    </strong><strong>        [System.Web.Http.OData.EnableQuery]
+    </strong><strong>        public IQueryable&#x3C;Booking> GetBooking()
+    </strong><strong>        {
+    </strong><strong>            using (var httpClient = new ComUnity.DataServices.ServiceUtility.ComUnityHttpClient(//***"Application Name"***//;, //***"API_URL"***//;))
+    </strong><strong>            {
+    </strong><strong>                var res = httpClient.GetAsync($"{_baseUrl}/Bookings").Result;
+    </strong><strong>                res.EnsureSuccessStatusCode();
+    </strong><strong>
+    </strong><strong>                var content = res.Content.ReadAsStringAsync().Result;
+    </strong><strong>                var response = Newtonsoft.Json.JsonConvert.DeserializeAnonymousType(content, new
+    </strong><strong>                {
+    </strong><strong>                    value = new List&#x3C;Booking>(),
+    </strong><strong>                });
+    </strong><strong>
+    </strong><strong>                var bookings = response.value;
+    </strong><strong>                return bookings.AsQueryable();
+    </strong><strong>            }
+    </strong><strong>        }
+    </strong><strong>    }
+    </strong><strong>}
+    </strong><strong>
+    </strong><strong>
+    </strong></code></pre>
 
 
 4. Build your project after updating your  **Data** model and **Custom Classes** so as to publish your changes and as well as to confirm that there are no errors in your build, if any exist debug and resolve them before proceeding to the next step.
