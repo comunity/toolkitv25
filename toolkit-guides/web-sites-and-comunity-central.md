@@ -45,7 +45,7 @@ Every website you create is assigned a unique URL based on the following pattern
 | Component          | Description                                    | Example                         |
 | ------------------ | ---------------------------------------------- | ------------------------------- |
 | `https://<domain>` | The base domain of your Toolkit environment.   | `https://toolkitv3.comunity.me` |
-| `/w/`              | The platform's internal Static Web Handler.    | `/w/`                           |
+| `/sw/`             | The platform's internal Static Web Handler.    | `/sw/`                          |
 | `<project-name>`   | The unique identifier of your Toolkit project. | `pokemon`                       |
 | `<url-suffix>`     | A custom path you define during creation.      | `games`                         |
 
