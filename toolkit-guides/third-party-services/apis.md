@@ -56,6 +56,73 @@ API Management in the Toolkit extends beyond simple configurations—it allows d
 
 For more information, refer to the [Virtual Entities](../data/creating-entities-in-the-data-model-step-by-step-guide.md#virtual-entities) & [Custom Classes](../custom-classes.md) documentation.
 
+## &#x20;Code Generation (v25.3)
+
+The Toolkit provides a built-in **code generation feature** that creates ready-to-use C# classes for registered APIs.\
+This eliminates the need for manual boilerplate coding and ensures consistent integration across **HTTP**, **OData**, and **OpenAPI** endpoints.
+
+After registering an API under **Azure APIs**, developers can use the **Generate Code** function to automatically create controller and model classes or API wrappers based on the selected API type.\
+Generated files are stored under **Custom Classes**, where they can be extended or modified for specific business logic.
+
+**Accessing Code Generation**
+
+1. Navigate to **Third Party Services > Azure APIs**.
+2. Select an API from the list to open its configuration screen.
+3.  Click the **`</>` Generate code** icon next to the API name.\
+    \
+
+
+    <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+This opens the **Generate Code** dialog for the selected API:
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+**Generation Options**
+
+Inside the **Generate Code** dialog, select the desired generation mode:
+
+| Option                                            | Description                                                                                                                                                                      | Applies To    |
+| ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| **API Interface Class**                           | Creates a single wrapper class that exposes available endpoints as callable methods. Use this to integrate external REST or OpenAPI services.                                    | HTTP, OpenAPI |
+| **Virtual Entity (Model and Controller Classes)** | Creates a Virtual Entity with a data model and controller automatically derived from OData metadata. Use this to expose structured data from OData endpoints within the Toolkit. | OData         |
+
+**Workflow**
+
+1. **Select API Type** – Choose the API (HTTP, OData, or OpenAPI) from **Azure APIs**.
+2. **Fetch Operations or Entities** –
+   * For HTTP/OpenAPI: click **Fetch Operations** to retrieve endpoints.
+   * For OData: click **Fetch Entities from Azure** to load entity metadata.
+3. **Generate Code** – Choose one of the available options:
+   * _API Interface Class_
+   * _Virtual Entity (Model and Controller)_
+4. **Controller Class Name** – Provide or confirm the default name.
+5. **Select Methods or Entities** – Tick the operations or entities to include.
+6. Click **Generate Code**.
+7. Review and click **Save Code** to insert the generated files under **Custom Classes**.
+   * A corresponding configuration entry is created in **Config Hub**.
+8. The new class or entity can now be used directly in logic, screens, or workflows.
+
+**Behaviour**
+
+* The generator interprets API metadata to build the appropriate class structure.
+* For OData APIs, multiple entities are previewed together and saved as separate files.
+* HTTP and OpenAPI APIs generate a single API Interface Class that includes all selected endpoints.
+* Generated code can be safely modified within **Custom Classes**.
+* Re-running the generator does not overwrite existing files unless the same class name is used.
+
+**Example Use**
+
+* **API Interface Class:** Integrate with REST or OpenAPI endpoints using strongly typed method calls.
+* **Virtual Entity and Controller:** Represent an OData service as a native Toolkit entity and surface it in screens.
+* Combine these generated components with intercept methods or workflow logic to extend API functionality.
+
+**Notes**
+
+* **GraphQL APIs** are not yet supported for code generation.
+* Duplicate class names must be resolved before regenerating code.
+* Verify **Config Hub** entries before deploying to QA or Production environments.
+
 {% hint style="success" %}
 **Try it out** 💡\
 Learn how to use Virtual Entities by following this step-by-step tutorial: [JSONPlaceholder Todos API Integration in a Simple Blog App](../../toolkit-tutorials/apis/json-placeholder-todos-api-integration-in-a-simple-blog-app.md)
