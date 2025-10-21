@@ -543,9 +543,9 @@
 
 > A _Page Link_ is a screen control in the ComUnity Developer Toolkit used to extend the navigation hierarchy by linking Navigation pages to Form pages. This control facilitates the creation of system-generated Form pages, configurable with properties such as layout type, icons, and access permissions. By using Page Links, developers can efficiently connect different sections within the application, optimising navigation flow and enhancing the user experience.
 
-### Page Analytics Configuration
+### Client Analytics Configuration
 
-> A setup process initiated by clicking "Create Page Analytics Configuration" in the environment settings. This action activates observability features, allowing data collection for analytics, metrics, and traces.
+> A setup process initiated by clicking "Create Client Analytics Configuration" in the environment settings. This action activates observability features, allowing data collection for analytics, metrics, and traces.
 
 ### Partial Deployment
 
