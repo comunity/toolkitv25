@@ -55,17 +55,17 @@ Example URL: **https://toolkitv3.comunity.me/w/pokemon/games/index.html**
 
 1.  Open your project and navigate to the Web sites section.
 
-    <figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 2. Scroll past the **Community Central** tile to the Web sites area.
 3.  Click **+Add** web site to open the creation dialog.\
 
 
-    <figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 4. In the dialog, enter a URL suffix (e.g., `my-app`, `tools`, `admin`).
 5.  Click **Add**, this action will create your web site and after successful creation it will appear as a tile under **Web sites**:\
 
 
-    <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 6. Click **Edit** to customise your web site content
 7.  Edit Web sites - Preview \
 
@@ -74,7 +74,7 @@ Example URL: **https://toolkitv3.comunity.me/w/pokemon/games/index.html**
 
     &#x20;
 
-    <figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
     \
 

@@ -121,7 +121,7 @@ By following these steps, you will integrate an external API, expose it within t
    3.  Click **Send** to execute the request.\
 
 
-       <figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+       <figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
    4. Scroll down to verify the response data containing the Todos list fetched from the JSON Placeholder API
 5. **Configure Properties and Security of the Todo Virtual Entity in the Data model**
    1. Go back to the ComUnity Developer Toolkit under **Data**.

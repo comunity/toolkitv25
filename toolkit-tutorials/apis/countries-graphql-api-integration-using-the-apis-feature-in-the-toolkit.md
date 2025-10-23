@@ -103,7 +103,7 @@ To configure the GraphQL API in the ComUnity Developer Toolkit, follow these ste
    3.  &#x20;Click **Send** to execute the query.\
 
 
-       <figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+       <figure><img src="../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
    4. &#x20;Verify the response data to confirm that the API is correctly retrieving country details. Once confirmed, you can proceed to define a Virtual Entity for structured interaction with the API within the Toolkit.
 5.  **Configure Properties and Security of the Country Virtual Entity in the Data model:** Go back to the ComUnity Developer Toolkit under **Data**. Create a Virtual Entity named Country. For detailed instructions on creating virtual entities in the Toolkit, refer to the [Virtual Entities](../../toolkit-guides/data/creating-entities-in-the-data-model-step-by-step-guide.md#virtual-entities) section, take note to include these properties for the entity.&#x20;
 
@@ -269,7 +269,7 @@ To configure the GraphQL API in the ComUnity Developer Toolkit, follow these ste
 8.  Build and Launch your project and view your countries in your application.\
 
 
-    <figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption><p>Countries served from the Countries GraphQL API in an app</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (9) (1).png" alt=""><figcaption><p>Countries served from the Countries GraphQL API in an app</p></figcaption></figure>
 
 ## Conclusion
 

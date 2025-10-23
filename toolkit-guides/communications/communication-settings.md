@@ -153,7 +153,7 @@ Docs: [API Key Setup](https://www.google.com/search?q=%23)
 &#x20;For security reasons, the Token Secret will only be displayed once. Please store these credentials in a secure location, like a password manager
 {% endhint %}
 
-<div align="center"><figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure></div>
+<div align="center"><figure><img src="../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure></div>
 
 #### BulkSMS Toolkit Configuration
 
