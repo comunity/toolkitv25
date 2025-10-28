@@ -73,7 +73,7 @@ Build your project to ensure that platform and application roles are correctly g
 3.  Assign the **Staff** role to one user — this grants the necessary authorisation to manage and send campaigns. You can confirm this capability by going to **Screens** > **Administration** > **User Admin Options** > **Edit User Role**, this screen helps you manage user roles and its added to the project as part of the UserRole template:\
 
 
-    <figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Assign Application Roles in the Web App
 
