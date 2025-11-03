@@ -4,6 +4,12 @@
 
 > The ComUnity Platform's metrics functionality is a crucial component for monitoring your project's performance, providing an in-depth view of various operational aspects through the Metrics dashboard. This dashboard presents critical data points and trends that are vital for maintaining and optimising your project's health and performance.
 
+The ComUnity Platform’s metrics functionality is a crucial component for monitoring your project’s performance, providing an in-depth view of various operational aspects through the Metrics dashboard. This dashboard presents critical data points and trends that are vital for maintaining and optimising your project’s health and performance.
+
+The Metrics dashboard is one of three core components of the ComUnity Platform’s Observability framework, alongside [Traces](traces.md) and [Client Analytics](client-analytics.md).
+
+While metrics focus on system performance, traces provide detailed request-level insights, and client analytics capture user behaviour and interaction data.
+
 ## **Key Benefits**
 
 * **Comprehensive Performance Monitoring**: Gain insights into key performance indicators such as server response times, enabling you to detect and address performance issues proactively.
@@ -19,8 +25,21 @@
 
 ## **Accessing Your Project's Metrics Dashboard**
 
-1. **Enable Observability**: First, ensure that the observability feature is active for your project. Consult the Observability Integration guide for instructions on enabling this feature.
-2.  **Navigate to the Dashboard**: With observability enabled, access the "**Metrics**" tab in the Observability section. The Metrics dashboard will automatically display, offering a detailed overview of your project's key performance metrics.\
+By default, the Metrics dashboard includes a set of standard panels that provide insights such as cumulative users and system performance statistics.
+
+The available dashboards may change over time as new metrics are introduced or existing ones are refined. Some metrics may be temporarily disabled to reduce data noise or improve performance.
+
+Metrics are configured and visualised through [Grafana](https://grafana.com/).
+
+The default dashboards are automatically generated, but additional or customised dashboards can be created directly in[ Grafana](https://grafana.com/) where access permissions allow.
+
+In shared or hosted environments, users may not have rights to modify or add dashboards.
+
+Alerts can be configured in [Grafana](https://grafana.com/)  to notify your team when key thresholds are reached, for example, when disk usage or response times exceed defined limits.
+
+Future updates will expand available dashboards and may allow users to select or configure which metrics are displayed directly within the platform.
+
+1.  &#x20;Access the "**Metrics**" tab in the **Observability** section. The Metrics dashboard will automatically display, offering a detailed overview of your project's key performance metrics.\
     \
 
 
