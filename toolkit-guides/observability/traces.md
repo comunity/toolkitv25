@@ -2,6 +2,12 @@
 
 > The ComUnity Developer Toolkit offers tracing capabilities through the integration of [Jaeger](https://www.jaegertracing.io/docs/1.55/) and [OpenTelemetry](https://opentelemetry.io/docs/what-is-opentelemetry/), providing a robust and user-friendly interface for monitoring and troubleshooting your projects. This integration provides a rich set of features to enhance your observability strategy, particularly in identifying and resolving issues efficiently.
 
+The ComUnity Developer Toolkit offers powerful tracing capabilities through the integration of [Jaeger ](https://www.jaegertracing.io/docs/1.23/architecture/apis/)and [OpenTelemetry](https://opentelemetry.io/), providing a robust and intuitive interface for monitoring and troubleshooting your projects.
+
+Tracing is a key part of the ComUnity Platform’s Observability framework, complementing Metrics (system performance data) and Client Analytics (user activity insights).
+
+While [Metrics](metrics.md) present aggregated performance indicators, Traces capture the complete journey of individual requests across the system, from the user interface through backend services, giving teams detailed visibility into how each component interacts during execution.
+
 ## **Key Benefits**
 
 1. **Detailed Insight**: Obtain a granular view of your application's transactions and workflows. Tracing allows you to follow individual requests as they travel through your application, providing visibility into the lifecycle of each request and how different components interact.
@@ -18,8 +24,7 @@
 
 To fully utilise the Traces dashboard for your project, please adhere to the following instructions:
 
-1. **Enable Observability**: Activate the observability feature in your project. For detailed instructions on enabling observability within the Toolkit, refer to the [Observability Integration](./#observability-integration) guide.
-2.  **Access the Dashboard**: Once observability is enabled, navigate to the "**Observability**" tab. Here, select the "**Traces**" tab. You will then be presented with the Traces dashboard, which provides a comprehensive view of your project's trace data.\
+1.  **Access the Dashboard**: Navigate to the "**Observability**" menu item in the Toolkit. Here, select the "**Traces**" tab. You will then be presented with the Traces dashboard, which provides a comprehensive view of your project's trace data.\
 
 
-    <figure><img src="../../.gitbook/assets/image (392).png" alt=""><figcaption><p>Traces</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Traces</p></figcaption></figure>
