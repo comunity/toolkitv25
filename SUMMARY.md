@@ -81,6 +81,7 @@
   * [Integrations](toolkit-guides/third-party-services/integrations.md)
   * [Microsoft Fabric](toolkit-guides/third-party-services/microsoft-fabric.md)
   * [APIs](toolkit-guides/third-party-services/apis.md)
+  * [Reports](toolkit-guides/third-party-services/reports.md)
 * [Services](toolkit-guides/services/README.md)
   * [Media Server](toolkit-guides/services/media-server.md)
 * [Web sites & ComUnity Central](toolkit-guides/web-sites-and-comunity-central.md)
