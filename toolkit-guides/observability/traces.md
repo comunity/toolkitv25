@@ -27,4 +27,4 @@ To fully utilise the Traces dashboard for your project, please adhere to the fol
 1.  **Access the Dashboard**: Navigate to the "**Observability**" menu item in the Toolkit. Here, select the "**Traces**" tab. You will then be presented with the Traces dashboard, which provides a comprehensive view of your project's trace data.\
 
 
-    <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Traces</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Traces</p></figcaption></figure>

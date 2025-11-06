@@ -1,13 +1,13 @@
 # Reports
 
-The Reports feature provides a seamless way to embed and display PowerBI reports directly within your Toolkit project interface. By integrating your custom analytics and dashboards into the Toolkit, you create a unified workspace where project management, monitoring, and data analysis coexist, eliminating the need to switch between multiple tools and platforms.
+The Reports feature enables you to embed and display [PowerBI](https://www.microsoft.com/en-us/power-platform/products/power-bi) reports directly within your Toolkit project interface. By integrating your custom analytics and dashboards into the Toolkit, you create a unified workspace where project management, monitoring, and data analysis coexist, eliminating the need to switch between multiple tools and platforms.
 
 ### Key Features
 
-1. **PowerBI Integration**: Embed PowerBI reports directly into your Toolkit interface, providing seamless access to your analytics alongside your project management tools.
-2. **Custom Analytics**: Build and display reports tailored to your specific project needs, whether tracking business metrics, operational data, user behavior, or any other domain-specific analytics.
+1. **PowerBI Integration**: Embed [PowerBI](https://www.microsoft.com/en-us/power-platform/products/power-bi) reports directly into your Toolkit interface, providing seamless access to your analytics alongside your project management tools.
+2. **Custom Analytics**: Build and display reports tailored to your specific project needs, whether tracking business metrics, operational data, user behaviour, or any other domain-specific analytics.
 3. **Environment-Specific Reporting**: Configure different reports for each deployment environment (Development, QA, Production), allowing you to monitor environment-specific data and maintain proper data isolation.
-4. **Interactive Dashboards**: Leverage PowerBI's full capabilities including interactive visualizations, date filtering, drill-down analytics, and real-time data updates.
+4. **Interactive Dashboards**: Leverage PowerBI's full capabilities including interactive visualisations, date filtering, drill-down analytics, and real-time data updates.
 5. **Unified Interface**: Access all your analytics within the Toolkit without switching to external tools, streamlining your workflow and improving productivity.
 
 ### Understanding Your Data Architecture
@@ -19,21 +19,24 @@ Your Toolkit project automatically collects and stores data as your application 
 * **Usage analytics**: Web and mobile client interaction data
 * **Media and files**: Stored in Azure Blob Storage (referenced in the database)
 
-PowerBI reports connect to your project's MS SQL Database to access this data and transform it into meaningful visualisations and insights.
+[PowerBI](https://www.microsoft.com/en-us/power-platform/products/power-bi) reports connect to your project's MS SQL Database to access this data and transform it into meaningful visualisations and insights.
 
 ### Prerequisites
 
 Before configuring Reports in your Toolkit project, ensure you have:
 
-1. **PowerBI Workspace**: An active PowerBI workspace in your Azure environment where you can create and publish reports.
-2. **PowerBI License**: PowerBI Pro or Premium licenses for users who will create and publish reports.
-3. **Database Connection Details**: Access to your Toolkit project's MS SQL Database connection information, including:
-   * SQL Server hostname/address
-   * Database name
-   * Authentication credentials (username and password, or integrated authentication)
-   * Firewall rules configured to allow PowerBI to connect
-4. **Report Creation Skills**: Familiarity with PowerBI Desktop or PowerBI Service for creating reports and dashboards.
-5. **Data Schema Knowledge**: Understanding of your project's database schema and the tables/views available for reporting.
+1. **PowerBI Workspace**: An active PowerBI workspace in your Azure environment where you can create and publish reports. For guidance on creating and managing workspaces, see the [official PowerBI workspace documentation](https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-create-the-new-workspaces).
+2. **PowerBI License**: PowerBI Pro or Premium licenses for users who will create and publish reports. For detailed information about licensing options and requirements, refer to the [PowerBI licensing documentation](https://learn.microsoft.com/en-us/power-bi/fundamentals/service-features-license-type).
+3.  **Database Connection Details**: Access to your Toolkit project's MS SQL Database connection information, including:
+
+    * SQL Server hostname/address
+    * Database name
+    * Authentication credentials (username and password, or integrated authentication)
+    * Firewall rules configured to allow PowerBI to connect
+
+    For instructions on connecting PowerBI to SQL Server databases, consult the [PowerBI SQL Server connector documentation](https://learn.microsoft.com/en-us/power-bi/connect-data/service-azure-sql-database-with-direct-connect).
+4. **Report Creation Skills**: Familiarity with PowerBI Desktop or PowerBI Service for creating reports and dashboards. If you're new to PowerBI, start with the [PowerBI getting started guide](https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-getting-started).
+5. **Data Schema Knowledge**: Understanding of your project's database schema and the tables/views available for reporting. Consult your Toolkit project's database documentation or use SQL Server Management Studio to explore the available data structures.
 
 ### Creating PowerBI Reports for Your Project
 
@@ -106,14 +109,17 @@ The Toolkit's Reports feature is environment-specific, allowing you to configure
 1. **Log In**: Access the Toolkit by entering your credentials.
 2. **Open Your Project**: Locate and select your project within the Toolkit.
 3. **Navigate to Project Settings**: Click the settings icon to access your project's configuration options.
-4. **Access Reports Settings**: From the settings menu, find and click on "Reports". This will display the Report Settings interface.
-5. **Select Environment**: Choose the environment (Development, QA, or Production) where you want to configure reports. Note that each environment typically has its own database, so you'll need separate PowerBI reports for each environment.
+4. **Access Reports Settings**: From the settings menu, find and click on "Reports". This will display the Report settings interface.
+5. **Select Environment**: Choose the environment (Development, QA, or Production) where you want to configure reports. Note that each environment typically has is isolated, so you'll need separate PowerBI reports for each environment.
 6. **Add a Report**: Click the "Add a report" button to create a new report configuration.
-7. **Configure Report Details**: In the "Edit Report" dialog, provide the following information:
-   * **Report name**: Enter a descriptive name for your report (e.g., "Sales Dashboard", "Communications Analytics", "User Engagement Metrics")
-   * **Report Id**: Enter the PowerBI Report ID from your PowerBI workspace (found in the report URL in PowerBI Service)
-   * **Dataset Id**: Enter the corresponding PowerBI Dataset ID (found in your PowerBI workspace dataset settings)
-   * **Embedded URL**: Provide the PowerBI embed URL for the report (optional, depending on your PowerBI configuration)
+7.  **Configure Report Details**: In the "Edit Report" dialog, provide the following information:
+
+    * **Report name**: Enter a descriptive name for your report (e.g., "Sales Dashboard", "Communications Analytics", "User Engagement Metrics")
+    * **Report Id**: Enter the PowerBI Report ID from your PowerBI workspace (found in the report URL in PowerBI Service)
+    * **Dataset Id**: Enter the corresponding PowerBI Dataset ID (found in your PowerBI workspace dataset settings)
+    * **Embedded URL**: Provide the PowerBI embed URL for the report (optional, depending on your PowerBI configuration)
+
+    <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 8. **Save Configuration**: Click "Save changes" to complete the report setup. The Toolkit will validate and store your configuration.
 9. **Repeat for Additional Reports**: Add as many reports as needed for your project by repeating steps 6-8.
 
@@ -121,7 +127,7 @@ The Toolkit's Reports feature is environment-specific, allowing you to configure
 
 Once configured, your reports become accessible through the Toolkit's main interface:
 
-1. **Navigate to Reports**: From the main menu sidebar, click on "Reports".
+1. **Navigate to Reports**: From the main menu sidebar, click on **Reports**.
 2. **Select Environment**: Ensure you're viewing the correct environment (Development, QA, or Production) using the environment selector at the top of the page.
 3. **Choose Report**: Use the report dropdown menu to select which report you want to view.
 4. **Interact with Reports**: Once displayed, you can:

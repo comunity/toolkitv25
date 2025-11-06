@@ -60,7 +60,7 @@ Example URL: **https://toolkitv3.comunity.me/w/pokemon/games/index.html**
 3.  Click **+Add** web site to open the creation dialog.\
 
 
-    <figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 4. In the dialog, enter a URL suffix (e.g., `my-app`, `tools`, `admin`).
 5.  Click **Add**, this action will create your web site and after successful creation it will appear as a tile under **Web sites**:\
 

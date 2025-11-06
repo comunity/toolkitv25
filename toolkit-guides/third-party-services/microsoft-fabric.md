@@ -52,7 +52,7 @@ To create a Fabric Mirror follow these steps:
 1.  Navigate to **Third Party Services** > **Microsoft Fabric** in the Toolkit. \
 
 
-    <figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Microsoft Fabric integration in the ComUnity Developer Toolkit</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>Microsoft Fabric integration in the ComUnity Developer Toolkit</p></figcaption></figure>
 2.  Click **"Create a Microsoft Fabric mirror"** to open the Microsoft Fabric mirror creation dialog.&#x20;
 
     <figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
