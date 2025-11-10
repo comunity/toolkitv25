@@ -23,6 +23,7 @@
   * [Icon Management](getting-started/manage-your-project/icon-management.md)
   * [Store URLs](getting-started/manage-your-project/store-urls.md)
   * [Extending Visual Studio Projects](getting-started/manage-your-project/extending-visual-studio-projects.md)
+  * [Infrastructure Management](getting-started/manage-your-project/infrastructure-management.md)
 * [Organisations](getting-started/organisations/README.md)
   * [Roles and Permissions](getting-started/organisations/roles-and-permissions.md)
   * [Organisational Management](getting-started/organisations/organisational-management.md)
