@@ -19,7 +19,7 @@ Your Toolkit project automatically collects and stores data as your application 
 * **Usage analytics**: Web and mobile client interaction data
 * **Media and files**: Stored in Azure Blob Storage (referenced in the database)
 
-[PowerBI](https://www.microsoft.com/en-us/power-platform/products/power-bi) reports connect to your project's MS SQL Database to access this data and transform it into meaningful visualisations and insights.
+&#x20;Users with Microsoft Fabric capacity licensing can create Fabric Mirrors of their project databases (available from Toolkit version 24.5). This mirroring functionality allows you to replicate database tables into Microsoft Fabric, where you can connect [PowerBI](https://www.microsoft.com/en-us/power-platform/products/power-bi)  reports to the mirrored data instead of directly to the SQL Server database. This approach enables data transformation and querying in a separate mirrored environment without directly impacting the operational database. For complete details on setting up and using Fabric Mirrors, see the [Microsoft Fabric integration ](microsoft-fabric.md)documentation.
 
 ### Prerequisites
 
@@ -108,11 +108,21 @@ The Toolkit's Reports feature is environment-specific, allowing you to configure
 
 1. **Log In**: Access the Toolkit by entering your credentials.
 2. **Open Your Project**: Locate and select your project within the Toolkit.
-3. **Navigate to Project Settings**: Click the settings icon to access your project's configuration options.
-4. **Access Reports Settings**: From the settings menu, find and click on "Reports". This will display the Report settings interface.
-5. **Select Environment**: Choose the environment (Development, QA, or Production) where you want to configure reports. Note that each environment typically has is isolated, so you'll need separate PowerBI reports for each environment.
-6. **Add a Report**: Click the "Add a report" button to create a new report configuration.
-7.  **Configure Report Details**: In the "Edit Report" dialog, provide the following information:
+3.  **Navigate to Reports Settings** using one of the following methods:
+
+    **Quick Access (Recommended)**:
+
+    * Click the cog icon adjacent to the **Reports** menu item in the main navigation
+    * This takes you directly to the Reports settings for the Development environment
+
+    **Via Project Settings**:
+
+    * Click the **settings icon** to access your project's configuration options
+    * From the settings menu, select the deployment environment (Development, QA, or Production)
+    * Find and click on **Reports** to display the Reports settings interface
+4. **Select Environment**: If you used the quick access method, you can switch between environments using the environment selector. Each environment is isolated, so you'll need to configure separate PowerBI reports for each environment.
+5. **Add a Report**: Click the "Add a report" button to create a new report configuration.
+6.  **Configure Report Details**: In the "Edit Report" dialog, provide the following information:
 
     * **Report name**: Enter a descriptive name for your report (e.g., "Sales Dashboard", "Communications Analytics", "User Engagement Metrics")
     * **Report Id**: Enter the PowerBI Report ID from your PowerBI workspace (found in the report URL in PowerBI Service)
@@ -120,8 +130,8 @@ The Toolkit's Reports feature is environment-specific, allowing you to configure
     * **Embedded URL**: Provide the PowerBI embed URL for the report (optional, depending on your PowerBI configuration)
 
     <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
-8. **Save Configuration**: Click "Save changes" to complete the report setup. The Toolkit will validate and store your configuration.
-9. **Repeat for Additional Reports**: Add as many reports as needed for your project by repeating steps 6-8.
+7. **Save Configuration**: Click "Save changes" to complete the report setup. The Toolkit will validate and store your configuration.
+8. **Repeat for Additional Reports**: Add as many reports as needed for your project by repeating steps 6-8.
 
 ### Accessing and Using Reports
 
