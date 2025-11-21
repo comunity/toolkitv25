@@ -18,8 +18,7 @@ In the ComUnity Toolkit, an event represents any significant occurrence or chang
    * Click on the bell icon located in the top-right corner of the dashboard to access the notification panel.
    * The notification panel displays the latest notifications, categorised by their severity (low, medium, high, critical) and at the bottom has options to **Show all unread notifications** or **Show all events and notifications**.&#x20;
 2. **Events Page**:
-   *   To view all events, click on the **Show all events and notifications** link at the bottom of the notification panel. This will take you to the comprehensive events management page.\
-
+   *   To view all events, click on the **Show all events and notifications** link at the bottom of the notification panel. This will take you to the comprehensive events management page.<br>
 
        <figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Events Management</p></figcaption></figure>
 

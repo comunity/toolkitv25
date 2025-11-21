@@ -30,8 +30,7 @@ To set up your app version information, follow these steps:
 1. **Login to the ComUnity Developer Toolkit**
 2. **Select your Project**: From the dashboard, select the project you wish to manage.
 3. Open Project Settings: After opening your project in the Toolkit, click the cog icon labelled Project Settings (displayed with a tooltip reading “Project settings”). For additional details on accessing Project Settings, refer to the [General ](general.md)section.
-4.  **Navigate to Versions**: In the Project Settings menu, click on the "Versions" option.\
-
+4.  **Navigate to Versions**: In the Project Settings menu, click on the "Versions" option.<br>
 
     <figure><img src="../../.gitbook/assets/image (476).png" alt=""><figcaption><p>Manage app version and change details</p></figcaption></figure>
 5. Specify the version in the **Android Version(x.y.z)**, **IOS Version(x.y.z)** and the **Windows Version(x.y.z)** boxes where it is applicable.

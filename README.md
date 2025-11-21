@@ -3,7 +3,7 @@ cover: .gitbook/assets/logo with background new.png
 coverY: 0
 ---
 
-# ComUnity Technical Overviewmedi
+# ComUnity Technical Overview
 
 ### ComUnity Digital Service Delivery Platform <a href="#ytzuxy6wlum8" id="ytzuxy6wlum8"></a>
 
@@ -23,8 +23,7 @@ Platform engineering allows an autonomous delivery team to use the platform to d
 * Reduced cost of development
 * &#x20;Improves engagement between IT and business stakeholders
 * Standardised user experience
-* &#x20;Ease of maintenance\
-
+* &#x20;Ease of maintenance<br>
 
 <figure><img src=".gitbook/assets/layers_of_comunity.png" alt=""><figcaption></figcaption></figure>
 

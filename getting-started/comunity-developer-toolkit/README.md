@@ -61,4 +61,4 @@ In addition to the development life cycle, the ComUnity Developer Toolkit offers
 
 <figure><img src="../../.gitbook/assets/comm_dia.png" alt=""><figcaption><p>ComUnity Platform high level architecture diagram</p></figcaption></figure>
 
-By following this comprehensive software development life cycle and leveraging the configurable components of the Toolkit, developers can efficiently create and deploy robust digital services across multiple platforms.\
+By following this comprehensive software development life cycle and leveraging the configurable components of the Toolkit, developers can efficiently create and deploy robust digital services across multiple platforms.<br>

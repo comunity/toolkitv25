@@ -50,8 +50,7 @@ This section walks you through quickly setting up a blog application in just thr
 To quickly build your blog, follow these steps:
 
 1. &#x20;Login into the ComUnity Developer Toolkit.
-2.  Create a project using the Blog Project template with a unique title, an illustration is shown in the following diagram:\
-
+2.  Create a project using the Blog Project template with a unique title, an illustration is shown in the following diagram:<br>
 
     <figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption><p>Creating a Blog app from a template</p></figcaption></figure>
 
@@ -84,13 +83,11 @@ By following these steps, you will integrate an external API, expose it within t
         ```
     6. Click **Add Azure API button to your project**  button to deploy the API to Azure API Management (APIM).
 
-    **Note**: The Toolkit will handle API registration and deployment based on your specifications.\
-
+    **Note**: The Toolkit will handle API registration and deployment based on your specifications.<br>
 
     <figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption><p>Create a new Azure API<br></p></figcaption></figure>
 2. **Access and Review the API in  Azure API Management (APIM)**
-   1.  Once the API is deployed, click the ellipsis (⋮) button next to **View Details** and select **View in Azure Portal**.\
-
+   1.  Once the API is deployed, click the ellipsis (⋮) button next to **View Details** and select **View in Azure Portal**.<br>
 
        <figure><img src="../../.gitbook/assets/image (460).png" alt=""><figcaption><p>View an API in Azure Portal</p></figcaption></figure>
 
@@ -111,15 +108,13 @@ By following these steps, you will integrate an external API, expose it within t
        ```
        /todos
        ```
-   5.  Click the **Save** button to register the operation.\
-
+   5.  Click the **Save** button to register the operation.<br>
 
        <figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption><p>Defining an operation on Azure (APIM)</p></figcaption></figure>
 4. **Test the API Operation in Azure**
    1. Go to the **Test** tab in the Azure API Management Portal.
    2. Select the operation created in the previous step (/todos).
-   3.  Click **Send** to execute the request.\
-
+   3.  Click **Send** to execute the request.<br>
 
        <figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
    4. Scroll down to verify the response data containing the Todos list fetched from the JSON Placeholder API
@@ -127,16 +122,14 @@ By following these steps, you will integrate an external API, expose it within t
    1. Go back to the ComUnity Developer Toolkit under **Data**.
    2. Create a Virtual Entity named `Todo`. For detailed instructions on creating virtual entities in the Toolkit, refer to the [Virtual Entities](../../toolkit-guides/data/creating-entities-in-the-data-model-step-by-step-guide.md#virtual-entities) section.
       1. Leave the default options selected for **Add Entity class**, **Add Controller class** and **Add controller template code**.
-      2.  Click the **Add** button to create the Todo Virtual Entity\
-
+      2.  Click the **Add** button to create the Todo Virtual Entity<br>
 
           <figure><img src="../../.gitbook/assets/image (21).png" alt=""><figcaption><p>Add a virtual entity - Todo<br></p></figcaption></figure>
    3. Add the following entity fields and properties with their respective data types ensure that you delete the default primary key `TodoId` and replace it with `id` , refer to  the section [Adding Entity Fields and Configuring Field Settings for further details on how to configure](../../toolkit-guides/data/creating-entities-in-the-data-model-step-by-step-guide.md#adding-entity-fields-and-configuring-field-settings) fields on an entity:
       1. userId → int
       2. id → int
       3. title → string
-      4.  completed → bool\
-
+      4.  completed → bool<br>
 
           <figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption><p>Todo entity with its properties configured<br></p></figcaption></figure>
 
@@ -146,17 +139,13 @@ By following these steps, you will integrate an external API, expose it within t
    4. Set the permissions of the Todo Virtual Entity refer the section [Setting Up Role-Based Permissions for Entities: Access Control Configuration](../../toolkit-guides/data/setting-up-role-based-permissions-for-entities-access-control-configuration.md) for more information about configuring Table Security:
       1. Select the **Todo entity** to activate it.
       2. Locate **Table Security**  setting in the Properties Editor.
-      3.  Set **View** permission only for the **User** role.\
-
+      3.  Set **View** permission only for the **User** role.<br>
 
           <figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption><p>Configuring role based access for the User role<br></p></figcaption></figure>
 6. **Expose the Todos JSON Placeholder API via an Virtual Entities and Custom Classes**
-   1.  Go to Custom Classes in the Toolkit select the WebConfigApi class and register your Virtual Entity as shown below (line 23):\
+   1.  Go to Custom Classes in the Toolkit select the WebConfigApi class and register your Virtual Entity as shown below (line 23):<br>
 
-
-       {% code title="WebApiConfig" lineNumbers="true" %}
-       ```csharp
-       using System;
+       <pre class="language-csharp" data-title="WebApiConfig" data-line-numbers><code class="lang-csharp">using System;
        using System.Web.Http;
        using System.Web.Http.OData.Extensions;
 
@@ -176,25 +165,21 @@ By following these steps, you will integrate an external API, expose it within t
        			config.MapHttpAttributeRoutes();
 
        			System.Web.Http.OData.Builder.ODataConventionModelBuilder builder = new System.Web.Http.OData.Builder.ODataConventionModelBuilder();
-       			//builder.EntitySet<ClassName>("ClassName");
-                               builder.EntitySet<Custom.Todo>("Todo");
+       			//builder.EntitySet&#x3C;ClassName>("ClassName");
+                               builder.EntitySet&#x3C;Custom.Todo>("Todo");
 
-       			builder.EntitySet<Custom.NotificationView>("NotificationView");
+       			builder.EntitySet&#x3C;Custom.NotificationView>("NotificationView");
                    config.Routes.MapODataServiceRoute("odata", "odata", builder.GetEdmModel());
        		}
        	}
        }
 
-       ```
-       {% endcode %}
+       </code></pre>
 
 
-   2.  Create a TodosAPI class add the code below:\
+   2.  Create a TodosAPI class add the code below:<br>
 
-
-       {% code title="TodosAPI" lineNumbers="true" %}
-       ```csharp
-       using System;
+       <pre class="language-csharp" data-title="TodosAPI" data-line-numbers><code class="lang-csharp">using System;
        using System.Collections.Generic;
        using System.Linq;
        using System.Web;
@@ -208,14 +193,14 @@ By following these steps, you will integrate an external API, expose it within t
            {
                private static readonly string _baseUrl = //***"API_URL"***//;
            
-               public static List<Todo> GetTodos()
+               public static List&#x3C;Todo> GetTodos()
                {
                  var httpClient = new ComUnity.DataServices.ServiceUtility.ComUnityHttpClient("todos120003022025", "todos1200030testing-todosdev");
                    
                    var res = httpClient.GetAsync($"{_baseUrl}/todos").Result;
                    res.EnsureSuccessStatusCode();
                    var content = res.Content.ReadAsStringAsync().Result;
-                   var todos = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Todo>>(content);
+                   var todos = Newtonsoft.Json.JsonConvert.DeserializeObject&#x3C;List&#x3C;Todo>>(content);
                    return todos.ToList();
                    
                }
@@ -227,7 +212,7 @@ By following these steps, you will integrate an external API, expose it within t
                    var response = httpClient.GetAsync($"{_baseUrl}/todos/{id}").Result;
                    response.EnsureSuccessStatusCode();
                    var content = response.Content.ReadAsStringAsync().Result;
-                   return  Newtonsoft.Json.JsonConvert.DeserializeObject<Todo>(content);
+                   return  Newtonsoft.Json.JsonConvert.DeserializeObject&#x3C;Todo>(content);
                }
 
                public static bool AddTodo(string body)
@@ -245,18 +230,14 @@ By following these steps, you will integrate an external API, expose it within t
            }
        }
 
-       ```
-       {% endcode %}
+       </code></pre>
 
 
 
        1. To replace the comment on **Line 13** with your API’s URL, navigate to **Third Party Services** > **APIs** in the Toolkit, locate **your API**, and copy its **URL**.
-   3.  Update the Todo entity class as shown below:\
+   3.  Update the Todo entity class as shown below:<br>
 
-
-       {% code lineNumbers="true" %}
-       ```csharp
-       using System;
+       <pre class="language-csharp" data-line-numbers><code class="lang-csharp">using System;
        using System.Collections.Generic;
        using System.Linq;
        using System.Web;
@@ -275,16 +256,12 @@ By following these steps, you will integrate an external API, expose it within t
            }
            
        }
-       ```
-       {% endcode %}
+       </code></pre>
 
 
-   4.  Update your controller class as shown below:\
+   4.  Update your controller class as shown below:<br>
 
-
-       {% code title="TodoController" lineNumbers="true" %}
-       ```csharp
-       using System.Linq;
+       <pre class="language-csharp" data-title="TodoController" data-line-numbers><code class="lang-csharp">using System.Linq;
        using System.Web.Http.OData;
        using System.Web.Http.OData.Query;
        using System.Web.Http.OData.Routing;
@@ -295,7 +272,7 @@ By following these steps, you will integrate an external API, expose it within t
            {
                 // GET: odata/Todos
                [EnableQuery]
-               public IQueryable<Todo> GetTodo()
+               public IQueryable&#x3C;Todo> GetTodo()
                {
                    return TodosAPI.GetTodos().AsQueryable();
                }
@@ -317,8 +294,7 @@ By following these steps, you will integrate an external API, expose it within t
            }
        }
 
-       ```
-       {% endcode %}
+       </code></pre>
 
 
 7. **Build the UI -** for more information on how to build lists in Navigation pages refer to the section [Dynamic List Rendering in Navigation pages](../../toolkit-guides/screens/building-screens/navigation/lists-in-navigation-pages/dynamic-list-rendering-in-a-navigation-page.md)
@@ -338,8 +314,7 @@ By following these steps, you will integrate an external API, expose it within t
           {{= title }}
           ```
 8.  Build and Launch your project and view your todos in your application.\
-    \
-
+    <br>
 
     <figure><img src="../../.gitbook/assets/image (461).png" alt="" width="315"><figcaption><p>JSON Placeholder API Todos displayed in a Blog app</p></figcaption></figure>
 
@@ -355,8 +330,7 @@ Beyond this example, you can further enhance your integration skills by:
   * View a single Todo by configuring a GET operation with parameters.
   * Update or delete Todos by implementing PUT and DELETE operations.
 
-• Customising the UI – Improve the presentation of Todos \
-
+• Customising the UI – Improve the presentation of Todos <br>
 
 By applying these additional enhancements, you can deepen your understanding of API integrations and extend the functionality of your application to meet real-world requirements.
 

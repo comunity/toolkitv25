@@ -14,8 +14,7 @@ ComUnity Platform also serves as a domain registrar, contact sales for more info
 
 To add a custom binding, follow these steps:
 
-1.  Open your project in the Toolkit and navigate to Custom Website then select the **Bindings** tab.\
-
+1.  Open your project in the Toolkit and navigate to Custom Website then select the **Bindings** tab.<br>
 
     <figure><img src="../../.gitbook/assets/image (263).png" alt=""><figcaption></figcaption></figure>
 2. Locate the **Add New Binding**  button and click on it to add a new class.

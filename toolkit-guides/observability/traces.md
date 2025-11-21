@@ -24,7 +24,6 @@ While [Metrics](metrics.md) present aggregated performance indicators, Traces ca
 
 To fully utilise the Traces dashboard for your project, please adhere to the following instructions:
 
-1.  **Access the Dashboard**: Navigate to the "**Observability**" menu item in the Toolkit. Here, select the "**Traces**" tab. You will then be presented with the Traces dashboard, which provides a comprehensive view of your project's trace data.\
-
+1.  **Access the Dashboard**: Navigate to the "**Observability**" menu item in the Toolkit. Here, select the "**Traces**" tab. You will then be presented with the Traces dashboard, which provides a comprehensive view of your project's trace data.<br>
 
     <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Traces</p></figcaption></figure>

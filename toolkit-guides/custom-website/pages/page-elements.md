@@ -10,15 +10,12 @@ To access the page settings and leverage the Page Elements, follow these steps:
 2. Select the Pages tab to view a comprehensive list of all existing pages within your Custom Website.
 3. Choose the specific page you want to customise, and an array of icons will be displayed.
 4. Locate and click the ![](<../../../.gitbook/assets/image (304).png>) icon associated with that page.
-5.  A modal window titled **Add a Page Element** will appear on your screen. \
-
+5.  A modal window titled **Add a Page Element** will appear on your screen. <br>
 
     <div align="left"><figure><img src="../../../.gitbook/assets/image (211).png" alt="" width="375"><figcaption></figcaption></figure></div>
 6.  In the modal window, provide a name for the page element and select the desired type. You can choose between two available types: **Element** and **Form Element**
 
-    {% hint style="info" %}
-    **Form elements** are designed to facilitate the posting of form-related data to the platform. However, it is worth noting that this feature is currently underutilised, and may require removal. As a best practice, use **Elements** for all form-related tasks.
-    {% endhint %}
+    <div data-gb-custom-block data-tag="hint" data-style="info" class="hint hint-info"><p><strong>Form elements</strong> are designed to facilitate the posting of form-related data to the platform. However, it is worth noting that this feature is currently underutilised, and may require removal. As a best practice, use <strong>Elements</strong> for all form-related tasks.</p></div>
 
 
 7. After successfully creating the page element, it will be added to the page hierarchy.
@@ -28,8 +25,7 @@ To access the page settings and leverage the Page Elements, follow these steps:
 
 Page Element Settings in the ComUnity Developer Toolkit offer developers the ability to fine-tune and customise various aspects of their page elements. These settings play a crucial role in configuring the behaviour and display of dynamic content within web pages.
 
-In order to explore these settings in detail, developers can refer to the comprehensive guide on Dynamic List Rendering in a Navigation Page, which provides in-depth information and examples. This guide covers essential topics related to Page Element Settings, including the properties and their functionalities.\
-
+In order to explore these settings in detail, developers can refer to the comprehensive guide on Dynamic List Rendering in a Navigation Page, which provides in-depth information and examples. This guide covers essential topics related to Page Element Settings, including the properties and their functionalities.<br>
 
 Let's explore the details of the individual Page Element Settings:
 

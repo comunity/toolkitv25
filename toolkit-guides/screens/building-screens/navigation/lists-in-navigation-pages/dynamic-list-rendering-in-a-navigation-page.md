@@ -77,17 +77,14 @@ This Max Items property is used to specify limit of the records to display on th
 To improve performance the system supports caching for all read operations. The Stale After property allows you to specify the number of seconds the cached data is persisted in cache memory in the current session.
 
 {% hint style="warning" %}
-Caching is only supported for [OData URL](https://www.odata.org/documentation/odata-version-3-0/url-conventions/) without the query options parameter.\
-
+Caching is only supported for [OData URL](https://www.odata.org/documentation/odata-version-3-0/url-conventions/) without the query options parameter.<br>
 {% endhint %}
 
 #### **Search Fields**&#x20;
 
-This property allows you to specify entity properties to be used for filtering the dynamic list. It accepts a comma delimited string of entity properties:\
+This property allows you to specify entity properties to be used for filtering the dynamic list. It accepts a comma delimited string of entity properties:<br>
 
-
-`Property1,Property2,Navigation_Property`\
-
+`Property1,Property2,Navigation_Property`<br>
 
 ```
 // An example of a Search Field associated with a list fetched from the Fault Entity

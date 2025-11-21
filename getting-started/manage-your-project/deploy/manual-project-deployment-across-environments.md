@@ -187,14 +187,9 @@ To prepare your project archive for deployment, follow these carefully outlined 
     </code></pre>
 3. **Update Configuration Settings**:
    * Within the `Web.config` file, remove keys 13-19 under `<appSettings>` that are pertinent only to local development.
-   *   Modify the `ConfigDeployment` key to reflect the deployment environment, for example: `value="<app_name>_qa"` for QA deployments and `value="<app_name>_prod"` for Production deployments. The updated section should resemble the following:\
+   *   Modify the `ConfigDeployment` key to reflect the deployment environment, for example: `value="<app_name>_qa"` for QA deployments and `value="<app_name>_prod"` for Production deployments. The updated section should resemble the following:<br>
 
-
-       {% hint style="info" %}
-       Go to **Project Settings** > **General** and then locate **Application Name** to view your `<app_name>`. Refer to the **General** section for more details.
-
-       It is crucial to adhere to the naming convention for the ConfigDeployment key to accurately reflect the deployment environment (e.g., `<app_name>_qa` for QA and `<app_name>_prod` for Production) to otherwise failure to do so will result in deployment errors
-       {% endhint %}
+       <div data-gb-custom-block data-tag="hint" data-style="info" class="hint hint-info"><p>Go to <strong>Project Settings</strong> > <strong>General</strong> and then locate <strong>Application Name</strong> to view your <code>&#x3C;app_name></code>. Refer to the <strong>General</strong> section for more details.</p><p>It is crucial to adhere to the naming convention for the ConfigDeployment key to accurately reflect the deployment environment (e.g., <code>&#x3C;app_name>_qa</code> for QA and <code>&#x3C;app_name>_prod</code> for Production) to otherwise failure to do so will result in deployment errors</p></div>
 
 {% code title="Updated Web.config" %}
 ````csharp

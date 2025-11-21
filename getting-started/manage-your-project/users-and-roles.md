@@ -222,15 +222,13 @@ This tab also provides a way to see which data entities a specific role has been
 
     * A checkmark in a box indicates that the role currently has that specific permission on the entity.
     * You can toggle permissions by selecting or clearing the checkboxes.
-    * Once changes are made, click **Save** to apply them.\
-
+    * Once changes are made, click **Save** to apply them.<br>
 
     This layout gives you a clear, role-centric overview of what the selected role can do across entities and provides a direct way to update those permissions in one place.
 
 
 
-    For more detailed configuration at the entity level, refer to [Setting Up Role-Based Permissions for Entities: Access Control Configuration](../../toolkit-guides/data/setting-up-role-based-permissions-for-entities-access-control-configuration.md). This guide explains how to manage permissions directly in the Table Security interface by selecting an entity in the Data Model and adjusting role-based permissions in its properties dialog.\
-
+    For more detailed configuration at the entity level, refer to [Setting Up Role-Based Permissions for Entities: Access Control Configuration](../../toolkit-guides/data/setting-up-role-based-permissions-for-entities-access-control-configuration.md). This guide explains how to manage permissions directly in the Table Security interface by selecting an entity in the Data Model and adjusting role-based permissions in its properties dialog.<br>
 
 ### **Managing Authentication Credentials (Credentials Tab)**
 

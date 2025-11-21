@@ -8,8 +8,7 @@ The ComUnity Developer Toolkit provides a powerful low-code environment for rapi
 
 This is where the **Web sites** and **ComUnity Central** features provides the essential leeway. It is the Toolkit's dedicated extensibility layer, serving as a powerful "escape hatch" that allows you to build any custom front-end experience you can imagine.
 
-Whether you need to create a simple admin panel, a specific back-office tool, or a complete customer-facing portal, this feature allows you to build and embed a self-contained "site within a site." It gives you the ultimate flexibility to extend our core offering and meet any use-case-specific need.\
-
+Whether you need to create a simple admin panel, a specific back-office tool, or a complete customer-facing portal, this feature allows you to build and embed a self-contained "site within a site." It gives you the ultimate flexibility to extend our core offering and meet any use-case-specific need.<br>
 
 To address these needs, the Toolkit provides two distinct features for creating custom front-ends:
 
@@ -57,18 +56,15 @@ Example URL: **https://toolkitv3.comunity.me/w/pokemon/games/index.html**
 
     <figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 2. Scroll past the **Community Central** tile to the Web sites area.
-3.  Click **+Add** web site to open the creation dialog.\
-
+3.  Click **+Add** web site to open the creation dialog.<br>
 
     <figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 4. In the dialog, enter a URL suffix (e.g., `my-app`, `tools`, `admin`).
-5.  Click **Add**, this action will create your web site and after successful creation it will appear as a tile under **Web sites**:\
-
+5.  Click **Add**, this action will create your web site and after successful creation it will appear as a tile under **Web sites**:<br>
 
     <figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 6. Click **Edit** to customise your web site content
-7.  Edit Web sites - Preview \
-
+7.  Edit Web sites - Preview <br>
 
     The Preview pane provides a visual inspection area for website files within the Toolkit. It allows developers to verify file contents without downloading or opening them externally. The feature supports limited file types and is intended for verification, not for navigation or editing.
 
@@ -76,8 +72,7 @@ Example URL: **https://toolkitv3.comunity.me/w/pokemon/games/index.html**
 
     <figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-    \
-
+    <br>
 
     **Functionality**
 
@@ -94,8 +89,7 @@ Example URL: **https://toolkitv3.comunity.me/w/pokemon/games/index.html**
     * HTML files are displayed as rendered pages without applied CSS or JavaScript.
     * Image files (e.g. .jpg, .png) are displayed directly in the pane.
     * Other file types are listed but not rendered.
-    * The Preview Pane is not a browser and does not support navigation between pages.\
-
+    * The Preview Pane is not a browser and does not support navigation between pages.<br>
 
     **Known Limitations**
 
@@ -175,12 +169,9 @@ For major changes, work with the project on your local machine:
 
 1. In the file manager view, click Download project archive.
 2. Unzip the file and open the project folder in your preferred code editor (e.g., VS Code).
-3.  Follow the instructions in the `README.md` file to install dependencies and run the local development server (e.g., `npm install`, then `npm run dev`).\
+3.  Follow the instructions in the `README.md` file to install dependencies and run the local development server (e.g., `npm install`, then `npm run dev`).<br>
 
-
-    {% code title="Typical folder structure of a downloaded ComUnity Central project (excluding node_modules, and build artefacts)." %}
-    ```
-    ├── index.html
+    <pre data-title="Typical folder structure of a downloaded ComUnity Central project (excluding node_modules, and build artefacts)."><code>├── index.html
     ├── lib
     |  └── comunity_central-0.0.1.tgz
     ├── package-lock.json
@@ -196,8 +187,7 @@ For major changes, work with the project on your local machine:
     ├── structure.txt
     └── vite.config.js
 
-    ```
-    {% endcode %}
+    </code></pre>
 
 
 4. Make your code changes and test them locally.

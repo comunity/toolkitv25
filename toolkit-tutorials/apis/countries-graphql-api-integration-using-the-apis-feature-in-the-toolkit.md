@@ -52,28 +52,24 @@ To configure the GraphQL API in the ComUnity Developer Toolkit, follow these ste
 
 1. **Obtain the GraphQL Specification Document**
    1. Open the [Apollo GraphQL Playground](https://studio.apollographql.com/public/countries/variant/current/home) for the Countries API.
-   2.  Click the Schema icon in the left panel.\
-
+   2.  Click the Schema icon in the left panel.<br>
 
        <figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
-   3.  Select the **SDL** tab.\
-
+   3.  Select the **SDL** tab.<br>
 
        <figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
    4. Download the **API Schema** as a raw file.
 2. &#x20;**Register the GraphQL API in the Toolkit**
    1. In the ComUnity Developer Toolkit, navigate to **Third Party Services** > **APIs**.
    2. Provide a name and an optional description for your API.
-   3.  In the Provide Service URL field, enter:\
-
+   3.  In the Provide Service URL field, enter:<br>
 
        ```
        https://countries.trevorblades.com/graphql
        ```
 
 
-   4.  &#x20;Click the **Select file** button and upload the schema file downloaded in the previous step.\
-
+   4.  &#x20;Click the **Select file** button and upload the schema file downloaded in the previous step.<br>
 
        <figure><img src="../../.gitbook/assets/image (466).png" alt=""><figcaption><p>Creating a GraphQL Azure API in the Toolkit</p></figcaption></figure>
    5. Click the **Add Azure API to your project** button to register and configure the API in Azure API Management (APIM).\
@@ -85,8 +81,7 @@ To configure the GraphQL API in the ComUnity Developer Toolkit, follow these ste
    4. Open the Settings tab and check for any schema validation errors to confirm the API was successfully registered.
 4. &#x20;**Test the Countries GraphQL API in Azure**
    1. &#x20;In Azure API Management (APIM), navigate to the **Test** tab.
-   2.  Copy and paste the following GraphQL query into the **Query Editor**:\
-
+   2.  Copy and paste the following GraphQL query into the **Query Editor**:<br>
 
        ```graphql
        query Countries {
@@ -100,8 +95,7 @@ To configure the GraphQL API in the ComUnity Developer Toolkit, follow these ste
        ```
 
 
-   3.  &#x20;Click **Send** to execute the query.\
-
+   3.  &#x20;Click **Send** to execute the query.<br>
 
        <figure><img src="../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
    4. &#x20;Verify the response data to confirm that the API is correctly retrieving country details. Once confirmed, you can proceed to define a Virtual Entity for structured interaction with the API within the Toolkit.
@@ -115,15 +109,11 @@ To configure the GraphQL API in the ComUnity Developer Toolkit, follow these ste
     For guidance on configuring table security and surfacing entity data to user roles, refer to:
 
     * &#x20;[JSON Placeholder Todos API Integration in a Simple Blog App](json-placeholder-todos-api-integration-in-a-simple-blog-app.md)
-    * [Setting Up Role-Based Permissions for Entities: Access Control Configuration](../../toolkit-guides/data/setting-up-role-based-permissions-for-entities-access-control-configuration.md)\
-
+    * [Setting Up Role-Based Permissions for Entities: Access Control Configuration](../../toolkit-guides/data/setting-up-role-based-permissions-for-entities-access-control-configuration.md)<br>
 6. **Expose the Countries API via an Virtual Entities and Custom Classes**
-   1.  Go to Custom Classes in the Toolkit select the WebConfigApi class and register your Virtual Entity as shown below (line 21):\
+   1.  Go to Custom Classes in the Toolkit select the WebConfigApi class and register your Virtual Entity as shown below (line 21):<br>
 
-
-       {% code title="WebApiConfig" lineNumbers="true" %}
-       ```csharp
-       using System;
+       <pre class="language-csharp" data-title="WebApiConfig" data-line-numbers><code class="lang-csharp">using System;
        using System.Web.Http;
        using System.Web.Http.OData.Extensions;
 
@@ -143,24 +133,20 @@ To configure the GraphQL API in the ComUnity Developer Toolkit, follow these ste
        			config.MapHttpAttributeRoutes();
 
        			System.Web.Http.OData.Builder.ODataConventionModelBuilder builder = new System.Web.Http.OData.Builder.ODataConventionModelBuilder();
-       			builder.EntitySet<Custom.Country>("Country");
+       			builder.EntitySet&#x3C;Custom.Country>("Country");
 
-       			builder.EntitySet<Custom.NotificationView>("NotificationView");
+       			builder.EntitySet&#x3C;Custom.NotificationView>("NotificationView");
                    config.Routes.MapODataServiceRoute("odata", "odata", builder.GetEdmModel());
        		}
        	}
        }
 
-       ```
-       {% endcode %}
+       </code></pre>
 
 
-   2.  Update the Country entity class as shown below:\
+   2.  Update the Country entity class as shown below:<br>
 
-
-       {% code title="Country " lineNumbers="true" %}
-       ```csharp
-       using System;
+       <pre class="language-csharp" data-title="Country " data-line-numbers><code class="lang-csharp">using System;
        using System.Collections.Generic;
        using System.Linq;
        using System.Web;
@@ -171,7 +157,7 @@ To configure the GraphQL API in the ComUnity Developer Toolkit, follow these ste
        {
            /*
            The following code should be added to the WebApiConfig class to add this class to the Service Root
-           builder.EntitySet<Custom.Country>("Country");
+           builder.EntitySet&#x3C;Custom.Country>("Country");
            */
            public class Country
            {
@@ -182,24 +168,16 @@ To configure the GraphQL API in the ComUnity Developer Toolkit, follow these ste
            }
        }
 
-       ```
-       {% endcode %}
+       </code></pre>
 
 
-   3.  Update your controller class as shown below:\
+   3.  Update your controller class as shown below:<br>
 
-
-       {% hint style="info" %}
-       &#x20;**GraphQL Integration in the Toolkit**
-
-       The ComUnity Developer Toolkit only supports OData-compliant endpoints. To integrate a GraphQL API, all interactions — including **queries** and **mutations** — must be manually transformed into REST-style HTTP requests within custom controller logic. This involves constructing a POST request with the GraphQL operation embedded as a string payload, sending it to the Azure APIM-hosted endpoint, and parsing the response into a usable format. This approach ensures the Toolkit can treat GraphQL-driven data as if it were native OData, making it compatible with Virtual Entities, UI rendering, and internal query mechanisms.
-       {% endhint %}
+       <div data-gb-custom-block data-tag="hint" data-style="info" class="hint hint-info"><p> <strong>GraphQL Integration in the Toolkit</strong></p><p>The ComUnity Developer Toolkit only supports OData-compliant endpoints. To integrate a GraphQL API, all interactions — including <strong>queries</strong> and <strong>mutations</strong> — must be manually transformed into REST-style HTTP requests within custom controller logic. This involves constructing a POST request with the GraphQL operation embedded as a string payload, sending it to the Azure APIM-hosted endpoint, and parsing the response into a usable format. This approach ensures the Toolkit can treat GraphQL-driven data as if it were native OData, making it compatible with Virtual Entities, UI rendering, and internal query mechanisms.</p></div>
 
 
 
-       {% code title="Country Controller" lineNumbers="true" %}
-       ```csharp
-       using System;
+       <pre class="language-csharp" data-title="Country Controller" data-line-numbers><code class="lang-csharp">using System;
        using System.Collections.Generic;
        using System.Linq;
        using System.Web;
@@ -218,7 +196,7 @@ To configure the GraphQL API in the ComUnity Developer Toolkit, follow these ste
                // GET: odata/Country
                [System.Web.Http.OData.EnableQuery]
 
-               public IQueryable<Country> GetCountry()
+               public IQueryable&#x3C;Country> GetCountry()
                {
                    var httpClient = new ComUnity.DataServices.ServiceUtility.ComUnityHttpClient(//***"Application Name"***//, //***"Azure API name"***//);
                    var payload = "{\"query\":\"query Query {\\n  countries {\\n    code\\n    name\\n    native\\n    phone\\n  }\\n}\"}";
@@ -232,7 +210,7 @@ To configure the GraphQL API in the ComUnity Developer Toolkit, follow these ste
                    
                    var responseObject = Newtonsoft.Json.JsonConvert.DeserializeAnonymousType(content, new
                    {
-                       data = new { countries = new List<Country>() },
+                       data = new { countries = new List&#x3C;Country>() },
                    });
 
                    var countries = responseObject.data.countries;
@@ -244,8 +222,7 @@ To configure the GraphQL API in the ComUnity Developer Toolkit, follow these ste
        }
 
 
-       ```
-       {% endcode %}
+       </code></pre>
 
 
 
@@ -266,8 +243,7 @@ To configure the GraphQL API in the ComUnity Developer Toolkit, follow these ste
               ```
               {{= name }}
               ```
-8.  Build and Launch your project and view your countries in your application.\
-
+8.  Build and Launch your project and view your countries in your application.<br>
 
     <figure><img src="../../.gitbook/assets/image (9) (1).png" alt=""><figcaption><p>Countries served from the Countries GraphQL API in an app</p></figcaption></figure>
 

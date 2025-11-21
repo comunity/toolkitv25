@@ -46,11 +46,9 @@ To create a top-level page, follow these steps:
 2. In the **Screen View** under the **Screens** tab, click on the **Screen** you wish to set as a top-level page.
 3. Next, click on the ellipsis icon next to the selected **Screen**.
 4. A modal will appear, providing options for configuring the **Screen** as a top-level page (screenshot shown below).\
-   ![](<../../../.gitbook/assets/image (171).png>)![](<../../../.gitbook/assets/image (172).png>)\
-
+   ![](<../../../.gitbook/assets/image (171).png>)![](<../../../.gitbook/assets/image (172).png>)<br>
 5. In the modal window, click the **Add screen above** tab to insert a new navigation directly above the active page. Alternatively, click the **Add screen below** tab to insert a new navigation directly below the active screen.
-6.  An **Add a new screen** modal window (see screenshot below) will appear. In the **Title** box, enter a unique title for the screen.\
-
+6.  An **Add a new screen** modal window (see screenshot below) will appear. In the **Title** box, enter a unique title for the screen.<br>
 
     <div align="left"><figure><img src="../../../.gitbook/assets/image (182).png" alt="" width="375"><figcaption></figcaption></figure></div>
 7. Select a  type from the options available. The supported Screen types in the ComUnity Toolkit are [Navigation](navigation/) and [Form](form/) pages.
@@ -97,8 +95,7 @@ To create **Data Entry Screens**, follow these steps:
 4. Next, click on the ellipsis icon next to the selected **Screen**.
 5. A modal will appear, providing options for configuring the **Screen** as a top-level page (screenshot shown below).\
    ![](<../../../.gitbook/assets/image (178).png>)![](<../../../.gitbook/assets/image (179).png>)
-6.  Select one of the following relevant options: **Add data entry screens above** or **Add data entry screens below**. This will prompt the **Add data entry screens** modal to appear (screenshot below).\
-
+6.  Select one of the following relevant options: **Add data entry screens above** or **Add data entry screens below**. This will prompt the **Add data entry screens** modal to appear (screenshot below).<br>
 
     <div align="left"><figure><img src="../../../.gitbook/assets/image (170).png" alt="" width="375"><figcaption></figcaption></figure></div>
 7. Inside the **Add data entry screens** modal, you'll find an Entity dropdown. Carefully select the desired entity for which you wish to establish Data Entry Screens.
@@ -126,12 +123,10 @@ To delete a **Screen** and its children, follow these steps:
 1. Open your project in the ComUnity Toolkit and select the Screens tab on the sidebar.
 2. In the **Screen View** under the **Screens** tab, locate and click on the **Screen** you wish to delete.
 3. Click on the ellipsis icon next to the selected **Screen**.
-4.  A modal will appear, providing an option to delete a screen and its children (screenshot shown below):\
-
+4.  A modal will appear, providing an option to delete a screen and its children (screenshot shown below):<br>
 
     <div align="left"><figure><img src="../../../.gitbook/assets/image (183).png" alt="" width="232"><figcaption></figcaption></figure></div>
-5.  Within the modal window, click **Delete screen and children**. This action will trigger a "Delete screen" modal (screenshot shown below):\
-
+5.  Within the modal window, click **Delete screen and children**. This action will trigger a "Delete screen" modal (screenshot shown below):<br>
 
     <div align="left"><figure><img src="../../../.gitbook/assets/image (184).png" alt="" width="375"><figcaption><p>Delete screen modal</p></figcaption></figure></div>
 6. Finally, click the **Delete** button in the modal to confirm the deletion of the child screen and its descendants.

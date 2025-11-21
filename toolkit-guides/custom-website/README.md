@@ -11,8 +11,7 @@ The ComUnity Developer Toolkit is built for flexibility, enabling developers to 
 To create a Custom Website, follow these steps:
 
 1. Open your project in the Toolkit and navigate to the **Custom Website** section.
-2.  If you don't have an existing Custom Web section in your project, you will see a button **Configure a custom website for this project** else your Custom Website will be shown:\
-
+2.  If you don't have an existing Custom Web section in your project, you will see a button **Configure a custom website for this project** else your Custom Website will be shown:<br>
 
     <figure><img src="../../.gitbook/assets/image (484).png" alt=""><figcaption><p>Access Custom Website</p></figcaption></figure>
 3. Click Configure a custom website for this project

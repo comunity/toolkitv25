@@ -31,8 +31,7 @@ To access Themes in the Toolkit and begin customising your app's appearance, fol
 2. **Select your Project**: From the dashboard, select the project you wish to manage.
 3. Open Project Settings: After opening your project in the Toolkit, click the cog icon labelled Project Settings (displayed with a tooltip reading “Project settings”). For additional details on accessing Project Settings, refer to the [General ](general.md)section.
 4.  **Tab View of Supported Clients:** Upon selecting the **Themes** tab, you will be presented with a tab view layout. Each tab represents a supported client platform, such as Android, iOS, Web, and Windows. The tab view allows you to navigate between different clients to customise their specific appearance.\
-    \
-
+    <br>
 
     <figure><img src="../../.gitbook/assets/image (475).png" alt=""><figcaption></figcaption></figure>
 
@@ -71,8 +70,7 @@ The following settings will use the specified default value if not value is set.
 
 #### Additional Resources
 
-* [Android Developer Guide - Themes and Styles](https://developer.android.com/develop/ui/views/theming/themes)\
-
+* [Android Developer Guide - Themes and Styles](https://developer.android.com/develop/ui/views/theming/themes)<br>
 
 ### iOS
 

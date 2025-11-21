@@ -22,19 +22,16 @@ To manage Configuration settings in your project, follow these steps:
 2. **Select your Project**: From the dashboard, select the project you wish to manage.
 3. Open Project Settings: After opening your project in the Toolkit, click the cog icon labelled Project Settings (displayed with a tooltip reading “Project settings”). For additional details on accessing Project Settings, refer to the [General ](../general.md)section.
 4. **Access Environment Settings:** In the _Project Settings_ panel, navigate to the top section where environment tabs are displayed. You will see options for Global, Development environment, QA environment, and Production environment. Click on the relevant environment tab to access its specific settings. Selecting an environment allows you to configure its deployment-related settings, ensuring the appropriate configuration for testing, staging, or live production use.
-5.  **Manage Configuration Settings**: After selecting an environment, navigate to the Configuration tab to manage environment-specific settings. You will see a list of existing default configuration settings displayed in a table format.\
-
+5.  **Manage Configuration Settings**: After selecting an environment, navigate to the Configuration tab to manage environment-specific settings. You will see a list of existing default configuration settings displayed in a table format.<br>
 
     * **Toggle Visibility**:
       * **Use the shield icon to toggle the visibility of each setting**, making it public or private according to your project's requirements.
       * Click the shield icon to toggle the visibility of a configuration setting:
         * Private values are securely stored in Azure Key Vault, ensuring they remain encrypted and protected.
-        * &#x20;Public values remain visible within the configuration settings panel.\
-
+        * &#x20;Public values remain visible within the configuration settings panel.<br>
     * **Use the Same Value for All Environments**: To apply the same value across all environments (Development, QA, and Production), toggle the “Apply globally” capsule-style switch:
       * Enabled: The value is used across all environments.
-      * &#x20;Disabled: You can specify different values for each environment.\
-
+      * &#x20;Disabled: You can specify different values for each environment.<br>
     * **Delete a settings**: To remove a configuration setting:
       * Hover over the setting row – a trash can icon will appear on the right.
       * Click the trash can icon associated with that specific setting.

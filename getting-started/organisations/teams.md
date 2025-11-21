@@ -51,8 +51,7 @@ For Project Owners looking to assign teams to an already existing project:
 2. **Select your Project**: From the dashboard, select the project you wish to manage.
 3. Open Project Settings: After opening your project in the Toolkit, click the cog icon labelled Project Settings (displayed with a tooltip reading “Project settings”). For additional details on accessing Project Settings, refer to the [General ](../manage-your-project/general.md)section.
 4.  **Navigate to Project teams**: In the Project Settings window, select "Project teams."\
-    \
-
+    <br>
 
     <figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption><p>Project teams</p></figcaption></figure>
 5. **Modify Team Assignments**: Click on "Add or Remove a Team from this Project" to adjust your team assignments.

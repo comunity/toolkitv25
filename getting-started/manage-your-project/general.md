@@ -10,8 +10,7 @@
 * **Created**: Shows the date and time when the project was created.
 * **Last Modified**: Displays the date and time of the last modification made to the project.
 *   **Application Title**: Allows you to modify the title of your app. When you create a project, the name you set during the project creation process becomes the default title of your app. The General section offers an opportunity to create a new title distinct from the project name. This flexibility allows you to tailor the app title to better reflect its purpose or branding without altering the project's original name.\
-    \
-
+    <br>
 
     <figure><img src="../../.gitbook/assets/image (474).png" alt=""><figcaption></figcaption></figure>
 
@@ -19,8 +18,7 @@
 
 1. **Login to the ComUnity Developer Toolkit**
 2. **Select your Project**: From the dashboard, select the project you wish to manage.
-3.  **Open Project Settings**: After opening your project in the Toolkit, access **Project settings** by clicking the cog icon with the tooltip "Project settings" (as shown below).\
-
+3.  **Open Project Settings**: After opening your project in the Toolkit, access **Project settings** by clicking the cog icon with the tooltip "Project settings" (as shown below).<br>
 
     <figure><img src="../../.gitbook/assets/image (408).png" alt=""><figcaption></figcaption></figure>
 
@@ -30,8 +28,7 @@
 
 1. **Select General Settings**: In the Project Settings menu, click on the **"General"** option.
 2. **Locate Application Title**: In the General settings section, find the **"Application Title"** field.
-3.  **Enter New Title**: Click on the text field next to **"Application Title"** and enter your desired new title.\
-
+3.  **Enter New Title**: Click on the text field next to **"Application Title"** and enter your desired new title.<br>
 
     <figure><img src="../../.gitbook/assets/image (409).png" alt=""><figcaption><p>Updated Application Title</p></figcaption></figure>
 4. **Save Changes**: After entering the new title, click the "Save" button to apply the changes.

@@ -6,13 +6,11 @@ Communication Events are typically associated with individual entities and are c
 
 To create an event follow these steps:
 
-1.  Open your project in the Toolkit and navigate to the Communications section to view a list of all the events currently associated with your project, if there are any.\
-
+1.  Open your project in the Toolkit and navigate to the Communications section to view a list of all the events currently associated with your project, if there are any.<br>
 
     <figure><img src="../../../.gitbook/assets/image (399).png" alt=""><figcaption></figcaption></figure>
 2. Locate the **(+) Add an event** button and click on it to add a new event to your Communications.
-3.  A modal window titled **Add New Event** will appear on your screen.\
-
+3.  A modal window titled **Add New Event** will appear on your screen.<br>
 
     <div align="left"><figure><img src="../../../.gitbook/assets/image (205).png" alt="" width="375"><figcaption><p>Add New Event modal window</p></figcaption></figure></div>
 4. From the dropdown menu, select the entity you want to link the event to.

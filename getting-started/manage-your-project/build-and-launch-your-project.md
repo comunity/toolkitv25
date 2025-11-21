@@ -26,8 +26,7 @@ To build your project in the Toolkit go to your project Settings, located under 
     To view the progress and outcome of your build, navigate to the top of your project Settings page, just below the navigation bar, where the Build controls are displayed. Here, you can observe the ongoing build progress and the outcome of the most recent build. This section provides you with a convenient overview without the need to keep the modal window open.
 
     By utilising these features, you can effectively manage and monitor the build process of your project within the ComUnity Toolkit. \
-    \
-
+    <br>
 
     <figure><img src="../../.gitbook/assets/image (154).png" alt=""><figcaption><p>Build Progress</p></figcaption></figure>
 

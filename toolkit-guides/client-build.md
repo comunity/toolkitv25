@@ -1,4 +1,4 @@
-# Client Buil
+# Client Build
 
 The **Client Build** feature enables you to generate Android and iOS mobile clients directly from the ComUnity Toolkit without installing or configuring a local development environment. From **version 25.2 onwards**, every project without build errors can be packaged into native clients. This capability is included in the core Toolkit offering, no additional licensing or modules are required.
 
@@ -51,18 +51,9 @@ Some platform-level configuration must be completed by the ComUnity platform tea
 * **Google Maps API Key**
   * Required only if your app uses maps; otherwise enter `none`.
   * Guide: [Get a Google Maps API Key](https://developers.google.com/maps/documentation/embed/get-api-key)
-*   **Firebase Configuration (google-services.json)**\
+*   **Firebase Configuration (google-services.json)**<br>
 
-
-    {% hint style="info" %}
-    **Firebase Package Name Requirement**
-
-    The package\_name in your Firebase google-services.json must exactly match your project’s Application Name.
-
-    In the Toolkit, go to Project Settings › General to find the Application Name (package name) and use it when creating your Firebase Android app.
-
-    Any mismatch will prevent notifications and other Firebase features from working.mm
-    {% endhint %}
+    <div data-gb-custom-block data-tag="hint" data-style="info" class="hint hint-info"><p><strong>Firebase Package Name Requirement</strong></p><p>The package_name in your Firebase google-services.json must exactly match your project’s Application Name.</p><p>In the Toolkit, go to Project Settings › General to find the Application Name (package name) and use it when creating your Firebase Android app.</p><p>Any mismatch will prevent notifications and other Firebase features from working.mm</p></div>
 
     ###
 
@@ -147,8 +138,7 @@ Some platform-level configuration must be completed by the ComUnity platform tea
 * Use **unique Maps API and Firebase keys** for each environment to avoid quota issues.
 * Test early on **physical devices** to check UI behaviour.
 * Optimise icon design for both square and circular cropping.
-* Keep signing certificates securely stored in **Azure DevOps Secure Files**.\
-
+* Keep signing certificates securely stored in **Azure DevOps Secure Files**.<br>
 
 ### Installing and Running the Android App via the `/d` Handler
 
@@ -181,15 +171,13 @@ https://toolkitv3.comunity.me/d/{projectname}/
 
 * If prompted with _“Your phone isn’t allowed to install unknown apps from this source”_, tap **Settings**.
 *   On the **Install unknown apps** screen for your browser (e.g., Chrome), enable **Allow permission**.\
-    \
-
+    <br>
 
     <figure><img src="../.gitbook/assets/Screenshot_20250807_162856_Android System.jpg" alt="" width="188"><figcaption></figcaption></figure>
 * On Samsung devices, **Auto Blocker** may also prevent installation.
   *   Disable it via:\
       `Settings › Security and privacy › Auto Blocker`.\
-      \
-
+      <br>
 
       <div align="left" data-full-width="true"><figure><img src="../.gitbook/assets/Screenshot_20250807_162800_Package installer.jpg" alt="" width="375"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/Screenshot_20250807_162821_Settings.jpg" alt="" width="375"><figcaption></figcaption></figure></div>
 
@@ -197,8 +185,7 @@ https://toolkitv3.comunity.me/d/{projectname}/
 
 * Return to the APK prompt and tap **Install**.
 *   If your phone runs a security scan, approve the result.\
-    \
-
+    <br>
 
     <figure><img src="../.gitbook/assets/Screenshot_20250807_162839_Package installer (1).jpg" alt="" width="188"><figcaption></figcaption></figure>
 
@@ -207,8 +194,7 @@ https://toolkitv3.comunity.me/d/{projectname}/
 * Open the app after installation.
 * Accept the **Terms / Disclaimer** if presented.
 *   If your build includes Firebase configuration (`google-services.json`), you’ll see a **Allow Notifications** prompt, choose **Allow** or **Don’t allow**.\
-    \
-
+    <br>
 
     <figure><img src="../.gitbook/assets/Screenshot_20250807_163021_Permission controller.jpg" alt="" width="188"><figcaption></figcaption></figure>
 

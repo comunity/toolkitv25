@@ -21,9 +21,7 @@ Moreover, **Navigation** pages support the use of dynamic Lists, which are an ef
 *   **Icon**\
     This property allows you to select an icon which is used to prefix the[ Title](./#title).
 
-    {% hint style="warning" %}
-    For [main menu](https://github.com/comunity/comunity-docs/blob/master/toolkit-guides/screens/building-screens/navigation/broken-reference/README.md) items the Icon field is required otherwise broken icon images will be rendered before your menu items.
-    {% endhint %}
+    <div data-gb-custom-block data-tag="hint" data-style="warning" class="hint hint-warning"><p>For <a href="https://github.com/comunity/comunity-docs/blob/master/toolkit-guides/screens/building-screens/navigation/broken-reference/README.md">main menu</a> items the Icon field is required otherwise broken icon images will be rendered before your menu items.</p></div>
 
 ## What comes next?
 

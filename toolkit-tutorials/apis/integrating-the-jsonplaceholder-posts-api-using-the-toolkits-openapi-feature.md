@@ -57,22 +57,19 @@ To configure the OpenAPI API in the ComUnity Developer Toolkit, follow these ste
 
     1. In the ComUnity Developer Toolkit, navigate to **Third Party Services** > **APIs**.
     2. Provide a name and an optional description for your API.
-    3.  In the Provide Service URL field, enter:\
-
+    3.  In the Provide Service URL field, enter:<br>
 
         ```
         https://jsonplaceholder.typicode.com
         ```
 
 
-    4.  Click the **Select** file button and upload the OpenAPI specification file for JSONPlaceholder Posts, which is provided in the [Resources](integrating-the-jsonplaceholder-posts-api-using-the-toolkits-openapi-feature.md#resources) section.\
-
+    4.  Click the **Select** file button and upload the OpenAPI specification file for JSONPlaceholder Posts, which is provided in the [Resources](integrating-the-jsonplaceholder-posts-api-using-the-toolkits-openapi-feature.md#resources) section.<br>
 
         <figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1).png" alt=""><figcaption><p>Registering the OpenAPI API in the Toolkit</p></figcaption></figure>
     5. Click the **Add Azure API to your project** button to register and configure the API in Azure API Management (APIM).
 
-    This process ensures the API is properly registered and available for further integration within the Toolkit.\
-
+    This process ensures the API is properly registered and available for further integration within the Toolkit.<br>
 
     <figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption><p>An OpenAPI API that has been registered in Azure API Management (APIM) and had its operations manually retrieved into the Toolkit by selecting “<strong>Fetch operations from Azure</strong>” from the API options ellipsis  (⋮)  menu.</p></figcaption></figure>
 2. **Verify the API Registration in Azure**:
@@ -89,22 +86,16 @@ To configure the OpenAPI API in the ComUnity Developer Toolkit, follow these ste
        <figure><img src="../../.gitbook/assets/image (5) (1).png" alt=""><figcaption><p>Testing fetch post by id </p></figcaption></figure>
 4.  **Configure Properties and Security of the Post Virtual Entity in the Data Model**: Go back to the ComUnity Developer Toolkit under **Data**. Create a Virtual Entity named **Post**. For detailed instructions on creating Virtual Entities in the Toolkit, refer to the  [Virtual Entities](../../toolkit-guides/data/creating-entities-in-the-data-model-step-by-step-guide.md#virtual-entities)  section.
 
-    Take note to include the following properties for the entity:\
+    Take note to include the following properties for the entity:<br>
 
-
-    {% hint style="info" %}
-    Although the properties in the OpenAPI specification are defined using lowercase names, the Toolkit automatically capitalises all entity property names to align with C# conventions. According to Microsoft’s .NET naming guidelines, public members such as properties should use Pascal casing, where each word begins with an uppercase letter. As a result, all properties in the data model have been capitalised to ensure compatibility with C# standards and to avoid conflicts or unexpected behaviour at runtime.
-
-    For more details, see [Microsoft’s .NET Naming Guidelines](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/identifier-names).
-    {% endhint %}
+    <div data-gb-custom-block data-tag="hint" data-style="info" class="hint hint-info"><p>Although the properties in the OpenAPI specification are defined using lowercase names, the Toolkit automatically capitalises all entity property names to align with C# conventions. According to Microsoft’s .NET naming guidelines, public members such as properties should use Pascal casing, where each word begins with an uppercase letter. As a result, all properties in the data model have been capitalised to ensure compatibility with C# standards and to avoid conflicts or unexpected behaviour at runtime.</p><p>For more details, see <a href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/identifier-names">Microsoft’s .NET Naming Guidelines</a>.</p></div>
 
 
 
     1. &#x20;UserId → int
     2. &#x20;Id → string
     3. &#x20;Title → string
-    4.  Body → string\
-
+    4.  Body → string<br>
 
         <figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption><p><strong>Post</strong> Virtual Entity schema definition</p></figcaption></figure>
 
@@ -113,16 +104,11 @@ To configure the OpenAPI API in the ComUnity Developer Toolkit, follow these ste
     * &#x20;[JSON Placeholder Todos API Integration in a Simple Blog App](json-placeholder-todos-api-integration-in-a-simple-blog-app.md)
     * [Setting Up Role-Based Permissions for Entities: Access Control Configuration](../../toolkit-guides/data/setting-up-role-based-permissions-for-entities-access-control-configuration.md)
 
-    {% hint style="success" %}
-    Ensure that the **Insert** and **View** permissions are granted to your User role.
-    {% endhint %}
+    <div data-gb-custom-block data-tag="hint" data-style="success" class="hint hint-success"><p>Ensure that the <strong>Insert</strong> and <strong>View</strong> permissions are granted to your User role.</p></div>
 5. **Expose the Posts API via Virtual Entities and Custom Classes**:
-   1.  Go to **Custom Classes** in the Toolkit. Select the WebApiConfig class and register your Post Virtual Entity as shown below (line 23):\
+   1.  Go to **Custom Classes** in the Toolkit. Select the WebApiConfig class and register your Post Virtual Entity as shown below (line 23):<br>
 
-
-       {% code title="WebApiConfig" lineNumbers="true" %}
-       ```csharp
-       using System;
+       <pre class="language-csharp" data-title="WebApiConfig" data-line-numbers><code class="lang-csharp">using System;
        using System.Web.Http;
        using System.Web.Http.OData.Extensions;
        using openapitutorial.Custom;
@@ -143,20 +129,18 @@ To configure the OpenAPI API in the ComUnity Developer Toolkit, follow these ste
                    config.MapHttpAttributeRoutes();
 
                    System.Web.Http.OData.Builder.ODataConventionModelBuilder builder = new System.Web.Http.OData.Builder.ODataConventionModelBuilder();
-                   //builder.EntitySet<ClassName>("ClassName");
-                   builder.EntitySet<Custom.Post>("Post");
+                   //builder.EntitySet&#x3C;ClassName>("ClassName");
+                   builder.EntitySet&#x3C;Custom.Post>("Post");
 
                    config.Routes.MapODataServiceRoute("odata", "odata", builder.GetEdmModel());
                }
            }
        }
 
-       ```
-       {% endcode %}
+       </code></pre>
 
 
-   2.  Update the **Post** entity class as shown below:\
-
+   2.  Update the **Post** entity class as shown below:<br>
 
        <pre class="language-csharp" data-title="Post" data-line-numbers><code class="lang-csharp"><strong>using System;
        </strong>using System.Collections.Generic;
@@ -183,12 +167,9 @@ To configure the OpenAPI API in the ComUnity Developer Toolkit, follow these ste
        </code></pre>
 
 
-   3.  Create a new class named **PostsAPI**, where you will define the logic for communicating with the API via Azure API Management, as shown below ensure that you also update your packages as shown:\
+   3.  Create a new class named **PostsAPI**, where you will define the logic for communicating with the API via Azure API Management, as shown below ensure that you also update your packages as shown:<br>
 
-
-       {% code title="PostsAPI" overflow="wrap" lineNumbers="true" %}
-       ```csharp
-       using System;
+       <pre class="language-csharp" data-title="PostsAPI" data-overflow="wrap" data-line-numbers><code class="lang-csharp">using System;
        using System.Collections.Generic;
        using System.Linq;
        using System.Web;
@@ -204,14 +185,14 @@ To configure the OpenAPI API in the ComUnity Developer Toolkit, follow these ste
               /**To replace the API’s URL comment below, navigate to Third Party Services > APIs in the Toolkit, locate your API, and copy its URL.**/
               private static readonly string _baseUrl = //***"API_URL"***//;
            
-               public static List<Post> Posts()
+               public static List&#x3C;Post> Posts()
                {
                  var httpClient = new ComUnity.DataServices.ServiceUtility.ComUnityHttpClient(//***"Application Name"***//, //***"Azure API name"***//);
                    
                    var res = httpClient.GetAsync($"{_baseUrl}/posts").Result;
                    res.EnsureSuccessStatusCode();
                    var content = res.Content.ReadAsStringAsync().Result;
-                   var posts = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Post>>(content);
+                   var posts = Newtonsoft.Json.JsonConvert.DeserializeObject&#x3C;List&#x3C;Post>>(content);
                    return posts.ToList();
                    
                }
@@ -223,7 +204,7 @@ To configure the OpenAPI API in the ComUnity Developer Toolkit, follow these ste
                    var response = httpClient.GetAsync($"{_baseUrl}/posts/{id}").Result;
                    response.EnsureSuccessStatusCode();
                    var content = response.Content.ReadAsStringAsync().Result;
-                   return  Newtonsoft.Json.JsonConvert.DeserializeObject<Post>(content);
+                   return  Newtonsoft.Json.JsonConvert.DeserializeObject&#x3C;Post>(content);
                }
 
                public static Post AddPost(string body)
@@ -237,7 +218,7 @@ To configure the OpenAPI API in the ComUnity Developer Toolkit, follow these ste
                    var response = httpClient.SendAsync(mess).Result;
                    if (response.IsSuccessStatusCode) {
                        var content = response.Content.ReadAsStringAsync().Result;
-                       return Newtonsoft.Json.JsonConvert.DeserializeObject<Post>(content);
+                       return Newtonsoft.Json.JsonConvert.DeserializeObject&#x3C;Post>(content);
                    }
                    return null;
                }
@@ -245,16 +226,12 @@ To configure the OpenAPI API in the ComUnity Developer Toolkit, follow these ste
            }
        }
 
-       ```
-       {% endcode %}
+       </code></pre>
 
 
-   4.  Update your controller class as shown below, ensure that you also update all your packages on your file:\
+   4.  Update your controller class as shown below, ensure that you also update all your packages on your file:<br>
 
-
-       {% code title="Post Controller" lineNumbers="true" %}
-       ```csharp
-       using System.Linq;
+       <pre class="language-csharp" data-title="Post Controller" data-line-numbers><code class="lang-csharp">using System.Linq;
        using System.Web.Http.OData;
        using System.Web.Http.OData.Query;
        using System.Web.Http.OData.Routing;
@@ -265,7 +242,7 @@ To configure the OpenAPI API in the ComUnity Developer Toolkit, follow these ste
            {
                 // GET: odata/Posts
                [EnableQuery]
-               public IQueryable<Post> GetPost()
+               public IQueryable&#x3C;Post> GetPost()
                {
                    return PostsAPI.Posts().AsQueryable();
                }
@@ -292,8 +269,7 @@ To configure the OpenAPI API in the ComUnity Developer Toolkit, follow these ste
            }
        }
 
-       ```
-       {% endcode %}
+       </code></pre>
 
 
    5. Build your project after updating your  **Data** model and **Custom Classes** so as to publish your changes and as well as to confirm that there are no errors in your build, if any exist debug and resolve them before proceeding to the next step.
@@ -335,26 +311,19 @@ To configure the OpenAPI API in the ComUnity Developer Toolkit, follow these ste
         7. Click **Save**.
         8. Insert an **Auto Input** screen control into the **Post by ID** page.
         9. Copy the **Name** value of the **Post by ID**  from the Properties Editor.
-        10. Go back to the **Posts** page screen configured in **step 6a**, select the **List** we configured in **step 6.a.iii**, and set its **Target URL** to: \
+        10. Go back to the **Posts** page screen configured in **step 6a**, select the **List** we configured in **step 6.a.iii**, and set its **Target URL** to: <br>
 
-
-            {% code fullWidth="true" %}
-            ```markup
-            LINK:<<Sytem Default Name of the Post by ID screen>>?postId={{= Id }}
-            ```
-            {% endcode %}
+            <pre class="language-markup" data-full-width="true"><code class="lang-markup">LINK:&#x3C;&#x3C;Sytem Default Name of the Post by ID screen>>?postId={{= Id }}
+            </code></pre>
 
 
 
         These actions enable click-to-navigate functionality from **List items** to the **Post by ID** screen.
 
         For more information, see the section [Dynamic List Rendering in Navigation pages](../../toolkit-guides/screens/building-screens/navigation/lists-in-navigation-pages/dynamic-list-rendering-in-a-navigation-page.md).
-    3.  To creat a **Add a Post** screen:\
+    3.  To creat a **Add a Post** screen:<br>
 
-
-        {% hint style="info" %}
-        The [JSONPlaceholder](https://jsonplaceholder.typicode.com) API simulates a successful record creation (201 Created) for POST requests, but no actual data is stored. The API response is mocked and does not persist changes.
-        {% endhint %}
+        <div data-gb-custom-block data-tag="hint" data-style="info" class="hint hint-info"><p>The <a href="https://jsonplaceholder.typicode.com">JSONPlaceholder</a> API simulates a successful record creation (201 Created) for POST requests, but no actual data is stored. The API response is mocked and does not persist changes.</p></div>
 
 
 
@@ -362,24 +331,21 @@ To configure the OpenAPI API in the ComUnity Developer Toolkit, follow these ste
         2. This action will display supported screen controls under the **Screen Structure** tab.
         3. Add a **Page Link** control onto it just above the List we configured in **step 6a**. A subpage will be created in the hierarchy.
         4. Select the subpage and configure the following values:
-           *   Title: \
-
+           *   Title: <br>
 
                ```
                Add Post
                ```
 
 
-           *   Icon: \
-
+           *   Icon: <br>
 
                ```
                svg/sdk/plus-circle/Bootstrap/regular
                ```
 
 
-           *   Target URL: \
-
+           *   Target URL: <br>
 
                ```
                /Post
@@ -394,8 +360,7 @@ To configure the OpenAPI API in the ComUnity Developer Toolkit, follow these ste
                ```
                ..
                ```
-        8.  Click to select each Auto Input and set its **Exclude** field to:\
-
+        8.  Click to select each Auto Input and set its **Exclude** field to:<br>
 
             ```
             UserId, Id
@@ -405,7 +370,6 @@ To configure the OpenAPI API in the ComUnity Developer Toolkit, follow these ste
         9. Click **Save**.
 
     These actions complete the UI by enabling users to view a list of posts, navigate to a screen displaying the details of a selected post, and submit new posts using a form.
-7.  Build and launch your project to view your posts in the application. Click **Add Post** to navigate to the **Add Post** screen, where you can fill out a form to create a new post. Click on any post in the list to be redirected to the **Post by ID** page, where you can view the post’s details.\
-
+7.  Build and launch your project to view your posts in the application. Click **Add Post** to navigate to the **Add Post** screen, where you can fill out a form to create a new post. Click on any post in the list to be redirected to the **Post by ID** page, where you can view the post’s details.<br>
 
     <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Posts screen in the application</p></figcaption></figure>

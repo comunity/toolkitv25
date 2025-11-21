@@ -4,8 +4,7 @@ Resources are non HTML files e.g. images, stylesheets and scripts which are used
 
 To add a resource, follow these steps:
 
-1.  Open your project in the Toolkit and navigate to Custom Website then select the Resources tab to view a comprehensive list of all existing resources within your Custom Website.\
-
+1.  Open your project in the Toolkit and navigate to Custom Website then select the Resources tab to view a comprehensive list of all existing resources within your Custom Website.<br>
 
     <figure><img src="../../../.gitbook/assets/image (215).png" alt=""><figcaption></figcaption></figure>
 2. Locate the **Add a Resource** button and click on it to add a new template.
@@ -14,8 +13,7 @@ To add a resource, follow these steps:
 4. In the modal window, provide a add a unique page name in the designated **Resource** **Name** box and select a **MimeType**.
 5. Finally, click **Add**.
 6. After successfully creating the resource, it will be added to the Resources view.
-7.  Select the created resource and click the ![](<../../../.gitbook/assets/image (202).png>) icon to build and configure its [settings](resources.md#resource-settings). This action will reveal a modal window dedicated to customising the resource's specific settings.\
-
+7.  Select the created resource and click the ![](<../../../.gitbook/assets/image (202).png>) icon to build and configure its [settings](resources.md#resource-settings). This action will reveal a modal window dedicated to customising the resource's specific settings.<br>
 
     <figure><img src="../../../.gitbook/assets/image (274).png" alt=""><figcaption></figcaption></figure>
 

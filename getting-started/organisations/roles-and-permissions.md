@@ -145,4 +145,4 @@ This section outlines the user role journey from initial signup:
 * **1**: View only
 * **3**: Full access (view and edit)
 
-This format organizes the roles and their permissions in a clear tabular manner, making it easier to understand which components each role has access to and in which environments.\
+This format organizes the roles and their permissions in a clear tabular manner, making it easier to understand which components each role has access to and in which environments.<br>

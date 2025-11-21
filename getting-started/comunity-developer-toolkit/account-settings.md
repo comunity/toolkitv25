@@ -6,8 +6,7 @@ The Manage Your Account menu provides quick access to essential options for mana
 2. [**Notification Settings**](account-settings.md#notification-settings): Customise the types of notifications you receive and how you receive them, tailored to different categories like organisational events, platform events, and project events.
 3. [**Change Password**](account-settings.md#change-password): Securely update your account password to maintain the safety and privacy of your account.
 4. [**Clear Application Cache**](account-settings.md#clear-application-cache): Remove cached data to ensure the application runs smoothly and efficiently.
-5.  [**Sign Out**](account-settings.md#sign-out): Safely log out of your account to protect your personal information and maintain account security.\
-
+5.  [**Sign Out**](account-settings.md#sign-out): Safely log out of your account to protect your personal information and maintain account security.<br>
 
     <figure><img src="../../.gitbook/assets/image (55).png" alt=""><figcaption><p>Access Manage your account menu from avatar - click to view full image</p></figcaption></figure>
 

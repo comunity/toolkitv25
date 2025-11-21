@@ -12,8 +12,7 @@
 To manage the app store URLs associated with your project's hybrid mobile apps, follow these steps:
 
 1. **Access Project Settings**: For steps on how to access Project Settings, refer to the [Access Project Settings](general.md#access-project-settings) section.
-2.  **Navigate to Store URLs**: In the Project Settings menu, click on the "Store URLs" option.\
-
+2.  **Navigate to Store URLs**: In the Project Settings menu, click on the "Store URLs" option.<br>
 
     <figure><img src="../../.gitbook/assets/image (478).png" alt=""><figcaption><p>Store URLs in Project Settings</p></figcaption></figure>
 3. **View Current URLs**: The section will display the current app store URLs associated with your project's hybrid mobile apps.

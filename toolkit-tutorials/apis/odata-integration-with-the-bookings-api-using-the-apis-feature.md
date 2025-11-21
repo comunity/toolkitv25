@@ -55,8 +55,7 @@ Based on the available metadata, the API supports read operations (GET). Create,
    1. Created a project using the **Smart City sample** or similar.
    2. Successfully built and launched the project.
    3. &#x20;Registered a user account and signed in to the web app.
-5. Read the official Azure API Management(APIM) documentation Import an OData API to understand the fundamentals OData API integration on the Azure platform.\
-
+5. Read the official Azure API Management(APIM) documentation Import an OData API to understand the fundamentals OData API integration on the Azure platform.<br>
 
 ## Register the Bookings OData API
 
@@ -64,16 +63,14 @@ Based on the available metadata, the API supports read operations (GET). Create,
 2. Click **Add an Azure API** button.
 3. &#x20;Provide a name (e.g., “Bookings API”) and optional description.
 4. Select the API definition type as **OData**.
-5.  In the **Provide Service** **URL** field, enter:\
-
+5.  In the **Provide Service** **URL** field, enter:<br>
 
     ```
     https://test-bookings-comunity.azurewebsites.net/odata
     ```
 
 
-6.  &#x20;In the **Definition Link** field, enter the base OData endpoint for the Bookings service:\
-
+6.  &#x20;In the **Definition Link** field, enter the base OData endpoint for the Bookings service:<br>
 
     ```
     https://test-bookings-comunity.azurewebsites.net/odata/$metadata
@@ -90,8 +87,7 @@ Once registered, click the ellipsis (⋮) next to the API and select Fetch opera
 2. You will be redirected to **Azure API Management (APIM)**.
 3. Locate your newly created API under **APIs** (use the search function if needed).
 4.  Once you select your API, the **Entity Sets and Functions** tab will open. Click the ellipsis (⋮) next to the Bookings entity set and select Test. You will be redirected to the testing screen. Scroll down and click the **Send** button to execute the request. This action will fetch all bookings from the Bookings API and display the response data.\
-    \
-
+    <br>
 
     <figure><img src="../../.gitbook/assets/image (467).png" alt=""><figcaption><p>The Bookings Entity Set as shown on Azure API Management platform</p></figcaption></figure>
 
@@ -112,8 +108,7 @@ Once registered, click the ellipsis (⋮) next to the API and select Fetch opera
 
 ## Expose the API via Custom Classes
 
-1.  Go to **Custom Classes** in the Toolkit. Select the **WebApiConfig** class and register your **Booking** Virtual Entity as shown below (line 22):\
-
+1.  Go to **Custom Classes** in the Toolkit. Select the **WebApiConfig** class and register your **Booking** Virtual Entity as shown below (line 22):<br>
 
     <pre class="language-csharp" data-title="WebApiConfig" data-line-numbers><code class="lang-csharp"><strong>using System;
     </strong>using System.Web.Http;
@@ -175,8 +170,7 @@ Once registered, click the ellipsis (⋮) next to the API and select Fetch opera
     </code></pre>
 
 
-3.  Update your controller class as shown below, ensure that you also update all your packages on your file:\
-
+3.  Update your controller class as shown below, ensure that you also update all your packages on your file:<br>
 
     <pre class="language-csharp" data-title="BookingController" data-line-numbers><code class="lang-csharp"><strong>using System;
     </strong><strong>using System.Collections.Generic;

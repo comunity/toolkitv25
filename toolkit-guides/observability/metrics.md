@@ -40,7 +40,6 @@ Alerts can be configured in [Grafana](https://grafana.com/)  to notify your team
 Future updates will expand available dashboards and may allow users to select or configure which metrics are displayed directly within the platform.
 
 1.  &#x20;Access the "**Metrics**" tab in the **Observability** section. The Metrics dashboard will automatically display, offering a detailed overview of your project's key performance metrics.\
-    \
-
+    <br>
 
     <figure><img src="../../.gitbook/assets/image (393).png" alt=""><figcaption><p>Metrics </p></figcaption></figure>

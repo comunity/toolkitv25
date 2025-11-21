@@ -29,14 +29,12 @@ To setup Azure logic apps in your project follow the instructions below:
 
 1. **Log In**: Access the Toolkit by entering your credentials.
 2. **Open Your Project**: Locate and select your project within the Toolkit.
-3.  **Access Azure Logic Apps**: In the sidebar, expand the Third Party Services section and click on the Azure Logic Apps tab to begin the setup process. A list of existing Logic Apps in your project, if any, will be displayed on this screen.\
-
+3.  **Access Azure Logic Apps**: In the sidebar, expand the Third Party Services section and click on the Azure Logic Apps tab to begin the setup process. A list of existing Logic Apps in your project, if any, will be displayed on this screen.<br>
 
     <figure><img src="../../.gitbook/assets/image (433).png" alt=""><figcaption></figcaption></figure>
 
 
-4.  Click Create an Azure Logic app button, a pop-up window will appear with the heading **Create an Azure Logic App**. You will see a single input field labeled **Azure Logic App Name**, enter a unique name for your Logic App in the field (e.g., MyLogicApp).\
-
+4.  Click Create an Azure Logic app button, a pop-up window will appear with the heading **Create an Azure Logic App**. You will see a single input field labeled **Azure Logic App Name**, enter a unique name for your Logic App in the field (e.g., MyLogicApp).<br>
 
     <figure><img src="../../.gitbook/assets/image (436).png" alt=""><figcaption><p>Create an Azure Logic app</p></figcaption></figure>
 5. Once created, the Logic App will appear in the screen with the following details:
@@ -49,8 +47,7 @@ To setup Azure logic apps in your project follow the instructions below:
 ## Manage Logic Apps
 
 The ComUnity Developer Toolkit provides several options for managing your Logic Apps efficiently. From accessing detailed configurations in the Azure Portal to refreshing endpoints or removing unused Logic Apps, these tools give you full control over your workflows. Use the features below to ensure your Logic Apps remain up-to-date and optimised for your project’s needs.\
-\
-
+<br>
 
 <figure><img src="../../.gitbook/assets/image (437).png" alt=""><figcaption><p>Manage Azure logic apps</p></figcaption></figure>
 

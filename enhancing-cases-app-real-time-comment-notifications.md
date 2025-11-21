@@ -85,8 +85,7 @@ We need to define a new entity to store comments and link it to case and users.
      * **Staff Role:** `All` permissions (Checked)
      *   **User Role:** `Insert` permission (Checked) and  `View` permission if users need to see comments. Adjust as per your own preferences.\
          \
-         \
-
+         <br>
 
          <figure><img src=".gitbook/assets/image (483).png" alt=""><figcaption><p>Table Security for the Comment Entity</p></figcaption></figure>
 
@@ -97,8 +96,7 @@ We'll add custom C# code to the **Comment** entity. This code will execute when 
 1. **Access Custom Code for Comment Entity:**
    * With the **Comment** entity selected in the Data model, find the **Custom Code** setting in the Properties Editor and open it.
 2. **Update Code to the class constructor:**
-   1.  Locate the constructor function as shown below so as to inject a guid id whenever a comment in injected in the database:\
-
+   1.  Locate the constructor function as shown below so as to inject a guid id whenever a comment in injected in the database:<br>
 
        <pre><code> public Comment() : base()
          {
@@ -287,13 +285,10 @@ Now, let’s update the existing screens in the Cases app to let users view all 
          * **Action:** `Save` (to save the new `Comment` record).
          *   **Document Template (for saving related data):**
 
-             {% code overflow="wrap" %}
-             ```
-             {
+             <pre data-overflow="wrap"><code>{
              "Content":"{{= Content }}", "Commentator@odata.bind":"UserProfile(guid'{{=userguid}}')"
              }
-             ```
-             {% endcode %}
+             </code></pre>
 
              * **Explanation & Important Notes:**
                * `{{= Content }}`: Binds to the content input by the user.
@@ -329,8 +324,7 @@ Now, let’s update the existing screens in the Cases app to let users view all 
    * Switch back to UserA's session.
    * Navigate to the **Notifications** tab/section in your main app navigation (this is a standard Toolkit feature).
    *   UserA should see an in-app notification stating that UserB commented on the case, along with the message content you defined in the INAPP template.\
-       \
-
+       <br>
 
        <figure><img src=".gitbook/assets/image (482).png" alt=""><figcaption></figcaption></figure>
 7. **Verify Custom Code and Event Triggering:**

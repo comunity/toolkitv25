@@ -36,12 +36,10 @@ Users are responsible for ensuring that they have the correct licensing to use t
 
 1. Go to **Project Settings** > **Icons**.
 2. All system icon libraries will appear as tiles, including the **Add Icon** tile view the [Browse Icons](icon-management.md#browse-icons) section above.
-3.  Click the **Add Icon** tile to navigate to the **Add a Custom Icon Library** screen:\
-
+3.  Click the **Add Icon** tile to navigate to the **Add a Custom Icon Library** screen:<br>
 
     <figure><img src="../../.gitbook/assets/image (320).png" alt=""><figcaption></figcaption></figure>
-4.  Click the **Add SVG files** button to upload your icon files from your local machine in the screen showed below:\
-
+4.  Click the **Add SVG files** button to upload your icon files from your local machine in the screen showed below:<br>
 
     When adding a custom icon library, you can upload individual SVG files or a ZIP file containing SVG files. The upload function will recursively search the ZIP file structure for all SVG files and ignore any files with duplicate names.
 
@@ -114,12 +112,10 @@ Icons serve as visual cues that empower users to effortlessly navigate and inter
 Implementing icons into your [List](../../toolkit-guides/screens/building-screens/screen-controls.md#list) is a straightforward process:
 
 1. Locate the list or main menu Item where you wish to implement the icon.&#x20;
-2.  Upon selection, an Icon setting option will appear in your Property Settings, granting access to the icon configuration tools.\
-
+2.  Upon selection, an Icon setting option will appear in your Property Settings, granting access to the icon configuration tools.<br>
 
     <figure><img src="../../.gitbook/assets/image (325).png" alt=""><figcaption></figcaption></figure>
-3.  Click on the (+) icon to reveal the icon editor, a dedicated space for selecting and customising your icons.\
-
+3.  Click on the (+) icon to reveal the icon editor, a dedicated space for selecting and customising your icons.<br>
 
     <figure><img src="../../.gitbook/assets/image (322).png" alt=""><figcaption></figcaption></figure>
 4. Choose the desired icon library. The Toolkit selects Bootstrap icons by default, if Bootstrap does not align with your requirements, explore alternative libraries provided within the Toolkit.

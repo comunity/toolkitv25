@@ -103,8 +103,7 @@ This property allows you to specify the path to a page a user is redirected to a
 
 ## Auto Inputs
 
-All inputs screen control widget creates form fields for all the properties of the entity specified in the [Target URL](./#target-url) or [Entity name](./#entity-name) of the parent form page.\
-
+All inputs screen control widget creates form fields for all the properties of the entity specified in the [Target URL](./#target-url) or [Entity name](./#entity-name) of the parent form page.<br>
 
 <div align="left"><figure><img src="../../../../.gitbook/assets/image (43).png" alt="" width="165"><figcaption><p>Auto Inputs - screen control as shown in the screen view</p></figcaption></figure> <figure><img src="../../../../.gitbook/assets/image (44).png" alt="" width="235"><figcaption><p>Auto Inputs - properties as shown in the Properties editor</p></figcaption></figure></div>
 

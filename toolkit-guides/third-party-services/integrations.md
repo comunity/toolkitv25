@@ -8,8 +8,7 @@ To an an Integration in a selected project, follow these steps:
 
 1. Open your project in the Toolkit and navigate to the Integrations section. Here, you will find a list of all existing integrations in your project if any exist.
 2. To add an integration click,  **Add an integration**.
-3.  An **Add Integration** modal will appear, add a unique name of your Integration in the **Integration Name** box.\
-
+3.  An **Add Integration** modal will appear, add a unique name of your Integration in the **Integration Name** box.<br>
 
     <div align="center"><figure><img src="../../.gitbook/assets/image (161).png" alt="" width="375"><figcaption><p>Adding an Integration to a project named FaultManagementApp</p></figcaption></figure></div>
 4. Select an integration type from the **Integration Type** dropdown menu, currently there is only one supported integration type which is OpenAPI/Swagger.

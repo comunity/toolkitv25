@@ -33,8 +33,7 @@ Delivering a comprehensive icon set handling, the server:
 * **SVG API Utilisation:** Offers access to standard icon repositories, including Font Awesome, Noun Project, and Material Design, complete with on-the-fly rasterisation connected to the image transformation pipeline for efficient icon generation.
 
 \
-By default the ComUnity Developer Toolkit Media Server supports _anonymous_ public read access to storage resources, to increase the security of your applications you may opt to use the [managed media server ](media-server.md#managed-media-server)as it only allows permission based and time-bound access to storage resources.\
-
+By default the ComUnity Developer Toolkit Media Server supports _anonymous_ public read access to storage resources, to increase the security of your applications you may opt to use the [managed media server ](media-server.md#managed-media-server)as it only allows permission based and time-bound access to storage resources.<br>
 
 <figure><img src="../../.gitbook/assets/CPMediaServer (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -124,8 +123,7 @@ This ensures that media files can be tested independently in each environment wi
 
 To upload a media file:
 
-1.  Navigate to Project Settings > Media Server.\
-
+1.  Navigate to Project Settings > Media Server.<br>
 
     <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 2. Select the appropriate environment tab (e.g., _Development environment_).
@@ -140,8 +138,7 @@ Each file uploaded to the media server is stored using the SHA-based naming conv
 Once uploaded, each media file provides:
 
 * File URL: A permanent public URL for direct access or embedding.
-* SHA URL: A deterministic, hashed path derived from the file’s contents and metadata, which prevents duplication and supports version integrity.\
-
+* SHA URL: A deterministic, hashed path derived from the file’s contents and metadata, which prevents duplication and supports version integrity.<br>
 
 Both URLs are displayed at the bottom of the upload panel upon successful upload. You may click on the file entry to copy either URL for use in your application.
 

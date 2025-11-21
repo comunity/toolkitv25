@@ -35,14 +35,12 @@ This section covers the process of **creating entities**, including defining the
 To create a custom entity, follow these steps:
 
 1. In your project settings in the Toolkit navigate to Data then select Diagram or List to view your Data Model.
-2.  Locate the ![](../../.gitbook/assets/ComUnity-Icon-v4-AddEntity-16px.png) icon on the Diagram or List (shown below) view. This icon allows you to add a new entity to your data model.\
-
+2.  Locate the ![](../../.gitbook/assets/ComUnity-Icon-v4-AddEntity-16px.png) icon on the Diagram or List (shown below) view. This icon allows you to add a new entity to your data model.<br>
 
     <figure><img src="../../.gitbook/assets/image (453).png" alt=""><figcaption><p>Diagram view of the Data model<br></p></figcaption></figure>
 
     <figure><img src="../../.gitbook/assets/image (455).png" alt=""><figcaption><p>List view of the Data model<br></p></figcaption></figure>
-3.  Click ![](../../.gitbook/assets/ComUnity-Icon-v4-AddEntity-16px.png) icon, and an **Add a new entity** modal window will appear on your screen.\
-
+3.  Click ![](../../.gitbook/assets/ComUnity-Icon-v4-AddEntity-16px.png) icon, and an **Add a new entity** modal window will appear on your screen.<br>
 
     <div align="left"><figure><img src="../../.gitbook/assets/image (456).png" alt="" width="375"><figcaption><p>Add new entity modal</p></figcaption></figure></div>
 
@@ -79,8 +77,7 @@ For more details, see [Microsoft’s .NET Naming Guidelines](https://learn.micro
 3. The Add Property modal appears.
 4. In the **Name** field, provide a descriptive name for your field. Note that a valid field name  is unique and cannot contain special characters or spaces.
 5. Click “**Add property**” to insert the new property in the specified position.
-6.  Select the newly added property to activate it. Configure its settings in the Properties Editor, including:\
-
+6.  Select the newly added property to activate it. Configure its settings in the Properties Editor, including:<br>
 
     <table><thead><tr><th width="128.62778578362656">  Property  name</th><th width="235.6155899626268">Function</th><th>Value selection</th></tr></thead><tbody><tr><td><strong>Property Type</strong></td><td>Select the type of data to be stored in this field. See <a href="../../reference-articles/data-types.md">Datatypes</a>.</td><td>Select one from the list of 14 options.</td></tr><tr><td><strong>Entity Key</strong></td><td>Sets the primary key.</td><td>Select the checkbox if the field is the primary key.</td></tr><tr><td><strong>Maximum Length</strong></td><td>Defines the maximum number of characters this field can accommodate.</td><td>Enter the maximum number.</td></tr><tr><td><strong>Column Name</strong></td><td>Defines the name for this field.</td><td>Enter a name for this field as it will appear in the database.</td></tr><tr><td><strong>Column Order</strong></td><td>To use composite keys the Entity Framework (EF) requires you to define an order for the key properties. <br>You can do this by using the Column annotation to specify an order. <br>If you have entities with composite foreign keys, then you must specify the same column ordering that you used for the corresponding primary key properties.<br><em>For more information: Go to Entity framework annotations URL</em> <br><a href="https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/data-annotations"><em>https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/data-annotation</em>s</a></td><td>The order value is relative (rather than index-based) so any values can be used. For example, 100 and 200 would be acceptable in place of 1 and 2.</td></tr><tr><td><strong>Database Generated</strong></td><td>An important database features is the ability to have computed properties. <br>If you're mapping your Code First classes to tables that contain computed columns, you don't want Entity Framework to try to update those columns. <br>But you do want the EF to return those values from the database after you've inserted or updated data. <br><em>For more information: Go to Entity framework DatabaseGenerated URL</em><br><a href="https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/data-annotations#databasegenerated"><em>https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/data-annotations#databasegenerated</em></a></td><td>Select one of:<br><em>Computed, Identity, None.</em></td></tr><tr><td><strong>Minimum Length</strong></td><td>Enter a minimum number of characters this field can accommodate</td><td>Enter the minimum number.</td></tr><tr><td><strong>Indexed</strong></td><td>You can create an index on one or more columns using the IndexAttribute. Adding the attribute to one or more properties will cause EF to create the corresponding index in the database when it creates the database..</td><td>Select the checkbox to activate the creation of an Index.</td></tr><tr><td><strong>Field Type</strong></td><td>Select the behaviour type for this field. See <a href="../../reference-articles/field-types.md">Field Types</a>. </td><td>Select the required field type from the dropdown list.</td></tr><tr><td><strong>Title</strong></td><td>You can enter a Title name to define a custom label for the field when it is added to a form in the UI.</td><td></td></tr><tr><td><strong>Default Value</strong></td><td>Enter a default value for this field when a new record is created.</td><td></td></tr></tbody></table>
 
@@ -195,16 +192,14 @@ To create a virtual entity follow these steps:
 
 1. Open your project settings and navigate to the **Data** section.
 2. Locate the ![](https://comunity.gitbook.io/~gitbook/image?url=https%3A%2F%2Fcontent.gitbook.com%2Fcontent%2Fu0RQqzbgKGN4uoL3P89t%2Fblobs%2FnHcxyiXXdB38PLbM5ekH%2Fimage.png\&width=300\&dpr=4\&quality=100\&sign=e80ec206\&sv=2) icon, this icon allows you to add a new virtual entity to your data model.
-3.  Click the ![](https://comunity.gitbook.io/~gitbook/image?url=https%3A%2F%2Fcontent.gitbook.com%2Fcontent%2Fu0RQqzbgKGN4uoL3P89t%2Fblobs%2FnHcxyiXXdB38PLbM5ekH%2Fimage.png\&width=300\&dpr=4\&quality=100\&sign=e80ec206\&sv=2) icon, an **Add a virtual entity** modal window will appear on your screen. \
-
+3.  Click the ![](https://comunity.gitbook.io/~gitbook/image?url=https%3A%2F%2Fcontent.gitbook.com%2Fcontent%2Fu0RQqzbgKGN4uoL3P89t%2Fblobs%2FnHcxyiXXdB38PLbM5ekH%2Fimage.png\&width=300\&dpr=4\&quality=100\&sign=e80ec206\&sv=2) icon, an **Add a virtual entity** modal window will appear on your screen. <br>
 
     <div align="left"><figure><img src="../../.gitbook/assets/image (452).png" alt="" width="375"><figcaption><p>Add virtual entity modal<br></p></figcaption></figure></div>
 4. In the modal window, provide a unique name for your virtual entity in the designated **Name** box.
 5. By default, the checkboxes for **Add entity class**, **Add controller class**, and **Add controller sample code** will be selected. These options generate boilerplate code for the entity and controller classes that are associated with your virtual entity. This code is placed in your project's [Custom Classes](https://comunity.gitbook.io/learning.comunityplatform/toolkit-guides/custom-classes). If you wish to include the generated code, you can leave these checkboxes selected. This will automatically generate the code for you. However, if you prefer to define your own custom entity and controller classes, you can unselect these checkboxes. This allows you to create and specify your own custom classes in the [Custom Classes](https://comunity.gitbook.io/learning.comunityplatform/toolkit-guides/custom-classes) section of your project, tailored to your specific requirements.
 6. Finally, click **OK** to create the virtual entity.
 
-After creating a virtual entity, it will be visible in the Data section, either in the Diagram or List view. In the Diagram view, you can see the newly created virtual entity displayed with a single field, which is typically the entity ID.\
-
+After creating a virtual entity, it will be visible in the Data section, either in the Diagram or List view. In the Diagram view, you can see the newly created virtual entity displayed with a single field, which is typically the entity ID.<br>
 
 <figure><img src="../../.gitbook/assets/image (459).png" alt="" width="280"><figcaption><p>An active newly created virtual entity with a single field called OrderId</p></figcaption></figure>
 

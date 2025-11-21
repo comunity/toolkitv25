@@ -49,8 +49,7 @@ To manage users and their roles within the organisation, proceed as follows:
 4.  **Manage User Roles**: To adjust user roles, click the "View Roles" button next to the respective user. Use the (+) button to assign or remove roles. For more information about the supported roles and their permissions, please refer to the [Supported Roles and Permissions](organisational-management.md#supported-user-roles-and-permissions) section.
 
     <figure><img src="../../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
-5.  **Assign/Remove Roles**: Click the plus icon in the Roles assigned to the user, an "**Assign or remove team member roles**" modal will appear\*\*.\*\* In the **"Assign or remove team member roles"** modal, check or uncheck roles to assign or remove them, respectively.\
-
+5.  **Assign/Remove Roles**: Click the plus icon in the Roles assigned to the user, an "**Assign or remove team member roles**" modal will appear\*\*.\*\* In the **"Assign or remove team member roles"** modal, check or uncheck roles to assign or remove them, respectively.<br>
 
     <figure><img src="../../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>
 6. **Apply Changes**: Click **"Apply"** to save your modifications.

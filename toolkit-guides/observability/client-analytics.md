@@ -12,8 +12,7 @@ To leverage your project's Client Analytics dashboard powered by [Matomo](https:
 
 1. **Enable Observability**: Activate the observability feature in your project. For detailed instructions on enabling observability within the Toolkit, refer to the [Observability Integration](./#observability-integration) guide.
 2.  **Access the Dashboard**: Navigate to the Observability tab. By default, the Client Analytics tab will be displayed, showcasing your analytics dashboard.\
-    \
-
+    <br>
 
     <figure><img src="../../.gitbook/assets/image (387).png" alt=""><figcaption><p>Client Analytics</p></figcaption></figure>
 

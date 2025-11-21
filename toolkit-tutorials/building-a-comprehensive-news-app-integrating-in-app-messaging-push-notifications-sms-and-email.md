@@ -57,12 +57,10 @@ This tutorial is perfect for developers familiar with [C#](https://learn.microso
 In this section, we'll walk you through the process of creating a project by utilizing pre-defined  templates within the ComUnity Developer Toolkit. This approach allows you to leverage existing templates to quickly establish the foundation of your news application. Here are the steps to get started:
 
 1. &#x20;Login into the ComUnity Developer Toolkit.
-2.  Create a project using the **Custom Project** template with a unique title,  add search to add the **News,  Feedback** and **Notification**  templates in the **Select one or more templates to the project** field an illustration is shown in the following diagram:\
-
+2.  Create a project using the **Custom Project** template with a unique title,  add search to add the **News,  Feedback** and **Notification**  templates in the **Select one or more templates to the project** field an illustration is shown in the following diagram:<br>
 
     <figure><img src="../.gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
-3.  **Build your project to verify the integrity of your Data Model and ensure that it is free from any errors.**\
-
+3.  **Build your project to verify the integrity of your Data Model and ensure that it is free from any errors.**<br>
 
     <figure><img src="../.gitbook/assets/image (401).png" alt=""><figcaption><p>Build and Launch</p></figcaption></figure>
 
@@ -70,18 +68,15 @@ In this section, we'll walk you through the process of creating a project by uti
 
 In this section, we will focus on extending the Data Model. This involves creating additional entities that are crucial for configuring various communication channels within your application. We will also establish the necessary associations between these entities to ensure seamless data integration and functionality, in addition to that we will also configure table security settings for these entities to specify entity-level permissions, ensuring data integrity and access control.
 
-1.  Define the following entities in your project's Data Model view [Customising the Data Model](../toolkit-guides/data/customising-the-data-model.md) to learn more if you are not sure how to proceed:\
-
+1.  Define the following entities in your project's Data Model view [Customising the Data Model](../toolkit-guides/data/customising-the-data-model.md) to learn more if you are not sure how to proceed:<br>
 
     <table><thead><tr><th width="156">Entity</th><th width="108">Properties</th><th width="123">Data Types</th><th width="180">Rules</th><th width="117">Required</th><th>Default Value</th></tr></thead><tbody><tr><td>ShareWithFriend</td><td>FriendCell</td><td>string</td><td>          -</td><td>Checked</td><td>     -</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>
 
     &#x20;
-2.  In this step, we'll establish **Table Security** rules for the entities we've previously created. These rules are crucial as they determine who has the permissions to view, edit, and delete data within the table linked to each entity. the images that follow show the desired permission for the entities we added in the previous steps. Adjust the permissions by checking (to grant) or unchecking (to revoke) the relevant boxes for each role:\
-
+2.  In this step, we'll establish **Table Security** rules for the entities we've previously created. These rules are crucial as they determine who has the permissions to view, edit, and delete data within the table linked to each entity. the images that follow show the desired permission for the entities we added in the previous steps. Adjust the permissions by checking (to grant) or unchecking (to revoke) the relevant boxes for each role:<br>
 
     <figure><img src="../.gitbook/assets/image (403).png" alt=""><figcaption></figcaption></figure>
-3.  In this step we will create associations of the entities we created in the step above, using the relationships specified in the table below, view [Creating Entity Associations: Configuring Table Links](../toolkit-guides/data/creating-entity-associations-configuring-table-links.md) to learn more if you are not sure how to proceed:\
-
+3.  In this step we will create associations of the entities we created in the step above, using the relationships specified in the table below, view [Creating Entity Associations: Configuring Table Links](../toolkit-guides/data/creating-entity-associations-configuring-table-links.md) to learn more if you are not sure how to proceed:<br>
 
     <table><thead><tr><th width="155">From Entity</th><th width="124">To Entity</th><th width="172">Relationship Type</th><th width="167">From Entity Navigation Name</th><th width="178">From Relationship</th><th width="165">To Entity Navigation Name</th><th width="150">To Relationship</th></tr></thead><tbody><tr><td>UserProfile</td><td>ShareWithFriend</td><td>One is to Many</td><td>Shares</td><td>0..*</td><td>Sender</td><td>0..1</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>
 
@@ -108,21 +103,17 @@ To enable the feature that allows users to share your application with friends v
 
 1. **Access the Communication Settings:**
    * In the Toolkit, navigate to the sidebar and click on the "**Communication**" menu item. This will display any existing events in your project on the Communication screen.
-   *   Click the "**+Add an event**" button. In the pop-up modal, select "**ShareWithFriend**" under the **Entity** field and "**OnAdd**" under the **Event** field. Leave the **Name** field at its default value "**Default**" and click "**Create**" to create the event.\
-
+   *   Click the "**+Add an event**" button. In the pop-up modal, select "**ShareWithFriend**" under the **Entity** field and "**OnAdd**" under the **Event** field. Leave the **Name** field at its default value "**Default**" and click "**Create**" to create the event.<br>
 
        <figure><img src="../.gitbook/assets/image (404).png" alt=""><figcaption></figcaption></figure>
 2. **Configure the Event:**
-   *   Select the event you just created, click its corresponding **pen icon** this will open the **Action Templates** modal of the current event.\
-
+   *   Select the event you just created, click its corresponding **pen icon** this will open the **Action Templates** modal of the current event.<br>
 
        <figure><img src="../.gitbook/assets/image (405).png" alt=""><figcaption></figcaption></figure>
-   *   Under the **Details** tab, ensure the **Template Name** reads "**OnAddSharewithFriendDefault**".\
-
+   *   Under the **Details** tab, ensure the **Template Name** reads "**OnAddSharewithFriendDefault**".<br>
 
        <figure><img src="../.gitbook/assets/image (406).png" alt=""><figcaption></figcaption></figure>
-   *   Switch to the **SMS** tab and click **"Add SMS Template"** and fill in the fields as instructed below (details for these fields should be provided here).\
-
+   *   Switch to the **SMS** tab and click **"Add SMS Template"** and fill in the fields as instructed below (details for these fields should be provided here).<br>
 
        <table><thead><tr><th width="249">Field</th><th>Value</th></tr></thead><tbody><tr><td>Cell Number</td><td><p></p><pre class="language-csharp"><code class="lang-csharp">@Model.Data.FriendCell
        </code></pre></td></tr><tr><td>Message</td><td><p></p><pre class="language-csharp"><code class="lang-csharp"><strong>@{ var pre = ""; var post = ""; 
@@ -181,8 +172,7 @@ To enable the feature that allows users to share your application with friends v
    * Click on the "**Screens**" menu item in the sidebar.
    * Find the **Feedback** screen, click the three-dot button next to it, and select "**Add screen below**".
    * In the modal that appears, set the **Title** to "**Share**", keep the default setting of "**Form page**" for the **Screen type**, and click the "**Add screen**" button.
-   *   **Configure Screen Properties:** Select the **Share** screen and open the **Properties Editor** to adjust its settings as detailed in the following table. Focus only on the properties mentioned; leave all other properties at their default values unless specified otherwise.\
-
+   *   **Configure Screen Properties:** Select the **Share** screen and open the **Properties Editor** to adjust its settings as detailed in the following table. Focus only on the properties mentioned; leave all other properties at their default values unless specified otherwise.<br>
 
        <table><thead><tr><th width="125" align="center">Properties </th><th align="center">Property Value</th></tr></thead><tbody><tr><td align="center">Title</td><td align="center"><p></p><pre><code>Share App
        </code></pre></td></tr><tr><td align="center">Target URL</td><td align="center"><p></p><pre><code>/UserProfile(guid'{{=userguid}}')/Shares
@@ -190,8 +180,7 @@ To enable the feature that allows users to share your application with friends v
        </code></pre></td></tr><tr><td align="center">Entity Name</td><td align="center">ShareWithFriend</td></tr></tbody></table>
 
 
-   *   **Build Screen Content:** After setting the screen properties, build the content of the Share screen as outlined in the table below. Adjust screen controls and their properties as necessary to achieve the desired layout and functionality. Be sure to click the "**Save**" button in the Properties Editor to apply and preserve your changes.\
-
+   *   **Build Screen Content:** After setting the screen properties, build the content of the Share screen as outlined in the table below. Adjust screen controls and their properties as necessary to achieve the desired layout and functionality. Be sure to click the "**Save**" button in the Properties Editor to apply and preserve your changes.<br>
 
        <table><thead><tr><th width="191">Screen Control</th><th width="176" align="center">Properties </th><th align="center">Property Value</th></tr></thead><tbody><tr><td>Paragraph</td><td align="center">Markdown</td><td align="center"><p></p><pre><code>To share Our App with a friend, please insert their mobile number below:
        </code></pre></td></tr><tr><td>Input</td><td align="center">Property Name</td><td align="center"><p></p><pre><code>FriendCell
@@ -215,21 +204,17 @@ If you need to set up a 'to' email address for receiving test emails or require 
 
 1. **Access the Communication Settings:**
    * In the Toolkit, navigate to the sidebar and click on the "**Communication**" menu item. This will display any existing events in your project on the Communication screen.
-   *   Click the "**+Add an event**" button. In the pop-up modal, select "**Feedback**" under the **Entity** field and "**OnAdd**" under the **Event** field. Leave the **Name** field at its default value "**Default**" and click "**Create**" to create the event.\
-
+   *   Click the "**+Add an event**" button. In the pop-up modal, select "**Feedback**" under the **Entity** field and "**OnAdd**" under the **Event** field. Leave the **Name** field at its default value "**Default**" and click "**Create**" to create the event.<br>
 
        <figure><img src="../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
 2. **Configure the Event:**
-   *   Select the event you just created, click its corresponding **pen icon** this will open the **Action Templates** modal of the current event.\
-
+   *   Select the event you just created, click its corresponding **pen icon** this will open the **Action Templates** modal of the current event.<br>
 
        <figure><img src="../.gitbook/assets/image (86).png" alt=""><figcaption></figcaption></figure>
-   *   Under the **Details** tab, ensure the **Template Name** reads "**OnAddFeedbackDefault**".\
-
+   *   Under the **Details** tab, ensure the **Template Name** reads "**OnAddFeedbackDefault**".<br>
 
        <figure><img src="../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
-   *   Switch to the **Email** tab and click **"Add Email Template"** and fill in the fields as instructed below (details for these fields should be provided here).\
-
+   *   Switch to the **Email** tab and click **"Add Email Template"** and fill in the fields as instructed below (details for these fields should be provided here).<br>
 
        <table><thead><tr><th width="249">Field</th><th>Value</th></tr></thead><tbody><tr><td>To Address</td><td><p></p><pre class="language-csharp"><code class="lang-csharp">@Model.App.CustomerSupportEmailAddress
        </code></pre></td></tr><tr><td>FromAddress</td><td><p></p><pre><code>@Model.App.FromAddress
@@ -279,23 +264,19 @@ To enable the feature that allows users to receive in-app notifications about ne
 
 1. **Access the Communication Settings:**
    * In the Toolkit, navigate to the sidebar and click on the "**Communication**" menu item. This will display any existing events in your project on the Communication screen.
-   *   Click the "**+Add an event**" button. In the pop-up modal, select "**News**" under the **Entity** field and "**OnAdd**" under the **Event** field. Leave the **Name** field at its default value "**Default**" and click "**Create**" to create the event.\
-
+   *   Click the "**+Add an event**" button. In the pop-up modal, select "**News**" under the **Entity** field and "**OnAdd**" under the **Event** field. Leave the **Name** field at its default value "**Default**" and click "**Create**" to create the event.<br>
 
        <figure><img src="../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
 2.  **Configure the Event:**
 
-    *   Select the event you just created, click its corresponding **pen icon** this will open the **Action Templates** modal of the current event.\
-
+    *   Select the event you just created, click its corresponding **pen icon** this will open the **Action Templates** modal of the current event.<br>
 
         <figure><img src="../.gitbook/assets/image (86).png" alt=""><figcaption></figcaption></figure>
-    *   Under the **Details** tab, ensure the **Template Name** reads "**OnAddNewsDefault**" and fill in the fields as instructed below (details for these fields should be provided in the table below)\
-
+    *   Under the **Details** tab, ensure the **Template Name** reads "**OnAddNewsDefault**" and fill in the fields as instructed below (details for these fields should be provided in the table below)<br>
 
         <figure><img src="../.gitbook/assets/image (68).png" alt=""><figcaption></figcaption></figure>
 
-    &#x20;\
-
+    &#x20;<br>
 
     <table><thead><tr><th width="249">Field</th><th>Value</th></tr></thead><tbody><tr><td>Member OData List URL</td><td><p></p><pre class="language-csharp"><code class="lang-csharp">@Model.App.DataServiceUrl/UserProfile
     </code></pre></td></tr><tr><td>Member ID OData Field</td><td><p></p><pre><code>Id
@@ -304,8 +285,7 @@ To enable the feature that allows users to receive in-app notifications about ne
 
 
     * Click "**Save**" to finalise the event details configuration.
-    *   Select **In App** tab, fill in the fields **User Id**,  **Action**, **Title** and **Message**, as instructed below (details for these field values should be provided in the table below):\
-
+    *   Select **In App** tab, fill in the fields **User Id**,  **Action**, **Title** and **Message**, as instructed below (details for these field values should be provided in the table below):<br>
 
         <figure><img src="../.gitbook/assets/image (415).png" alt=""><figcaption></figcaption></figure>
 
@@ -355,16 +335,13 @@ To enable communications, specify channel priorities within the channel settings
 
 To initialise communication channels, follow these steps:
 
-1.  In the Toolkit, navigate to the Project name in the bottom left of the navigation bar click the Project Settings **cog** icons, the Project settings modal will appear:\
-
+1.  In the Toolkit, navigate to the Project name in the bottom left of the navigation bar click the Project Settings **cog** icons, the Project settings modal will appear:<br>
 
     <figure><img src="../.gitbook/assets/image (83).png" alt=""><figcaption><p>Project Settings</p></figcaption></figure>
-2.  Select the **Communications** tab to view **Channel Priorities** in your project if any exist:\
-
+2.  Select the **Communications** tab to view **Channel Priorities** in your project if any exist:<br>
 
     <figure><img src="../.gitbook/assets/image (82).png" alt=""><figcaption><p>Channel Priorities</p></figcaption></figure>
-3.  Click **+Add a channel priority** button in the **Add a channel priority** modal that appears select **EMAIL** and click the **Add** button.\
-
+3.  Click **+Add a channel priority** button in the **Add a channel priority** modal that appears select **EMAIL** and click the **Add** button.<br>
 
     <figure><img src="../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
 4. Repeat the step above to select on channels **INAPP** and **SMS**.

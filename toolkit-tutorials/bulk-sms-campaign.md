@@ -26,22 +26,19 @@ The first step is to confirm that the correct platform authorisation roles and a
 * Application Roles: These are project-specific roles introduced via the **UserRoles** template.
   * We need to dynamically create an application role called **Recipient,** this role to identify and segment the target audience for campaigns.
   * This role is stored in the UserRole entity and allows you to segment users and query them in the **Data** model.
-  *   To seed the **Recipient** role in the **UserRole** in the table go to **Data** > **List** and select the **UserRole** entity in the **Properties Editor** click to expand **Custom Code** and identify a function called **onSeed** and update its logic as shown in the code- snippet below:\
+  *   To seed the **Recipient** role in the **UserRole** in the table go to **Data** > **List** and select the **UserRole** entity in the **Properties Editor** click to expand **Custom Code** and identify a function called **onSeed** and update its logic as shown in the code- snippet below:<br>
 
-
-      {% code title="Dynamically seeding the Recipient role in the UserRoles table" %}
-      ```csharp
-      // START auto-generated - OnSeed
+      <pre class="language-csharp" data-title="Dynamically seeding the Recipient role in the UserRoles table"><code class="lang-csharp">// START auto-generated - OnSeed
       public static void OnSeed(testcampaigns0842042025Context context)
       {
-      	var requiredRoles = new List<string>
+      	var requiredRoles = new List&#x3C;string>
       	{
       		"User",
       		"Staff",
       		"Recipient"
       	};
 
-      	if (context.UserRole.Count() < requiredRoles.Count)
+      	if (context.UserRole.Count() &#x3C; requiredRoles.Count)
       	{
       		foreach (var role in requiredRoles)
       		{
@@ -58,8 +55,7 @@ The first step is to confirm that the correct platform authorisation roles and a
       	// END auto-generated, add custom code below this line
       }
 
-      ```
-      {% endcode %}
+      </code></pre>
   * Save your changes
 
 ### Build Your Project
@@ -70,8 +66,7 @@ Build your project to ensure that platform and application roles are correctly g
 
 1. Create two user accounts with different email addresses.
 2. Navigate to **App Users & Roles** in **Project Settings**, then open the **Development** environment tab.
-3.  Assign the **Staff** role to one user — this grants the necessary authorisation to manage and send campaigns. You can confirm this capability by going to **Screens** > **Administration** > **User Admin Options** > **Edit User Role**, this screen helps you manage user roles and its added to the project as part of the UserRole template:\
-
+3.  Assign the **Staff** role to one user — this grants the necessary authorisation to manage and send campaigns. You can confirm this capability by going to **Screens** > **Administration** > **User Admin Options** > **Edit User Role**, this screen helps you manage user roles and its added to the project as part of the UserRole template:<br>
 
     <figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -159,9 +154,7 @@ An interceptor is custom code that executes when a data event occurs. You will a
 
 
 
-    {% code title="Triggers the Action Template" lineNumbers="true" %}
-    ```csharp
-     // START auto-generated - OnAdd
+    <pre class="language-csharp" data-title="Triggers the Action Template" data-line-numbers><code class="lang-csharp"> // START auto-generated - OnAdd
     public override void OnAdd(campaign010920250515Context context) {
         base.OnAdd(context);
         // END auto-generated, add custom code below this line
@@ -189,8 +182,7 @@ An interceptor is custom code that executes when a data event occurs. You will a
         );
     }	 
     	
-    ```
-    {% endcode %}
+    </code></pre>
 4. **Save** the **Custom Code**.
 5. **Build your project** to persist these changes.
 

@@ -35,8 +35,7 @@ APIs management is particularly useful when:
 * Centralising API Security & Access Control: By leveraging Azure’s security policies, developers can manage authentication, authorisation, and traffic control without implementing custom security layers.&#x20;
 * Enhancing Performance & Scalability: API Management enables caching, request throttling, and rate limiting, ensuring optimal performance under high load.&#x20;
 * Monitoring & Logging API Traffic: Developers can track API usage, detect anomalies, and gain insights through Azure APIM’s built-in monitoring tools.&#x20;
-* Managing API Versions & Lifecycle: The Toolkit enables versioning and gradual rollouts of API changes, minimising disruptions for consumers. For further insights, explore Azure API Management Use Cases.\
-
+* Managing API Versions & Lifecycle: The Toolkit enables versioning and gradual rollouts of API changes, minimising disruptions for consumers. For further insights, explore Azure API Management Use Cases.<br>
 
 ## API Configuration Workflow&#x20;
 
@@ -69,8 +68,7 @@ Generated files are stored under **Custom Classes**, where they can be extended 
 1. Navigate to **Third Party Services > Azure APIs**.
 2. Select an API from the list to open its configuration screen.
 3.  Click the **`</>` Generate code** icon next to the API name.\
-    \
-
+    <br>
 
     <figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 

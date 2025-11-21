@@ -6,8 +6,7 @@ To create a page in your **Custom Website**, follow these steps:
 
 1. Open your project in the Toolkit and navigate to Custom Website then select the Pages tab.
 2. Locate the **Add a Page**  button and click on it to add a new page.
-3.  A modal window titled **Add a Page** will appear on your screen.\
-
+3.  A modal window titled **Add a Page** will appear on your screen.<br>
 
     <div align="left"><figure><img src="../../../.gitbook/assets/image (255).png" alt="" width="375"><figcaption></figcaption></figure></div>
 4. In the modal window, provide a add a unique page name in the designated **Page Name** box.

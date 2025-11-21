@@ -214,17 +214,23 @@ Infrastructure management features are available to users with appropriate admin
 #### Steps to Access
 
 1. **Log In**: Access the Toolkit by entering your credentials.
-2. **Open Your Project**: Locate and select your project within the Toolkit.
-3. **Navigate to Infrastructure**: From the main menu sidebar, find and click on "Infrastructure". You will be presented with the infrastructure management interface.
+2.  After successful login you will be redirected to the **Home** screen:
+
+    <figure><img src="../../.gitbook/assets/image (493).png" alt=""><figcaption></figcaption></figure>
+3.  **Navigate to Infrastructure**: From the top main menu bar, find and click on **Infrastructure**. You will be presented with the infrastructure management interface.
+
+    <figure><img src="../../.gitbook/assets/image (494).png" alt=""><figcaption></figcaption></figure>
 
 #### Interface Overview
 
-The Infrastructure Management interface has two main sections:
+The Infrastructure Management interface has sections:
 
-1. **Infrastructure Scripts** - Where you add, deploy, and manage deployment scripts
-2. **Azure Infrastructure** - Where you enable/disable environments and view environment settings
+1. **All resources** - Where you view all your Azure resources
+2. **Resource Groups** - Where you view your Resources Groups
+3. **Resource Types** - Where you view the types of the supported resources.
+4. **Infrastructure Scripts** - Where you add, deploy, and manage deployment scripts
 
-{% hint style="danger" %}
+{% hint style="info" %}
 The current infrastructure management interface will change in future releases. The screens are not according to the final design specifications. The layout will be significantly different, but the core functionality for managing infrastructure scripts will remain similar.
 {% endhint %}
 
@@ -239,7 +245,9 @@ Infrastructure scripts are **ARM (Azure Resource Manager) templates** that autom
 5. Configures networking and firewall rules
 6. Verifies installation success at each step
 
-These scripts are available within the Infrastructure section when you access a specific environment (QA or Production).
+These scripts are available within the **Infrastructure** section when you select the **Infrastructure Scripts** tab.
+
+<figure><img src="../../.gitbook/assets/image (495).png" alt=""><figcaption></figcaption></figure>
 
 #### Available Script Types
 

@@ -49,8 +49,7 @@ After a successful mirror creation, the entry appears in the UI, where users can
 \
 To create a Fabric Mirror follow these steps:
 
-1.  Navigate to **Third Party Services** > **Microsoft Fabric** in the Toolkit. \
-
+1.  Navigate to **Third Party Services** > **Microsoft Fabric** in the Toolkit. <br>
 
     <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>Microsoft Fabric integration in the ComUnity Developer Toolkit</p></figcaption></figure>
 2.  Click **"Create a Microsoft Fabric mirror"** to open the Microsoft Fabric mirror creation dialog.&#x20;
@@ -63,8 +62,7 @@ To create a Fabric Mirror follow these steps:
 7.  Processing time depends on the size of the data being mirrored. After successful mirroring, your Fabric Mirror will appear in the UI with its details.&#x20;
 
     <figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
-8.  Click the ellipsis (⋮) menu next to your mirror entry, then select **“Refresh replication status”** to check if the Fabric mirror has been fully deployed on the Fabric Portal.\
-
+8.  Click the ellipsis (⋮) menu next to your mirror entry, then select **“Refresh replication status”** to check if the Fabric mirror has been fully deployed on the Fabric Portal.<br>
 
     <figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 9.  View deployment status of your Microsoft Fabric mirror:

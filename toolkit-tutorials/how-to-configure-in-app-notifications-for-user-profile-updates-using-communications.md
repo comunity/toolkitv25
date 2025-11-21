@@ -2,8 +2,7 @@
 
 In this tutorial, we demonstrate how to configure in-app notifications for user profile updates using the **Communications** service in the **ComUnity Developer Toolkit**. This ensures that users receive a personal notification within the application whenever their own profile is updated—either by themselves or by another user, such as an administrator.
 
-To enable this functionality, it is mandatory to include the **Notifications** template in your project, if it is not already integrated by default. The Notifications templates provides the required structure to support in-app notifications. If it is not included, you will need to build a custom implementation to facilitate notification delivery within your application.\
-
+To enable this functionality, it is mandatory to include the **Notifications** template in your project, if it is not already integrated by default. The Notifications templates provides the required structure to support in-app notifications. If it is not included, you will need to build a custom implementation to facilitate notification delivery within your application.<br>
 
 ## What You’ll Learn
 
@@ -49,13 +48,11 @@ Follow the steps below to configure this:
 
 1. With your project open in the Toolkit, navigate to the **Communications** section using the sidebar.
 2. Click the **+ Add** an event button.
-3.  In the Add Event modal, complete the fields as follows:\
-
+3.  In the Add Event modal, complete the fields as follows:<br>
 
     * Entity: UserProfile
     * Event: OnChange
-    * Name: leave the default value (Default)\
-
+    * Name: leave the default value (Default)<br>
 
     <figure><img src="../.gitbook/assets/image (468).png" alt=""><figcaption></figcaption></figure>
 4. Click **Create**.
@@ -71,8 +68,7 @@ Once the event is created, configure the in-app message that will be sent to the
 1. Locate the event you just created in the list.
 2. Click the pen icon to open the **Action Templates** modal.
 3. Select the **In App** tab.
-4.  Fill in the fields using the following values:\
-
+4.  Fill in the fields using the following values:<br>
 
     <table><thead><tr><th width="121.7421875">Field</th><th>Value</th><th>Description</th></tr></thead><tbody><tr><td>User ID</td><td><p></p><pre><code>@Model.EventData.Id
     </code></pre></td><td>Defines the dynamic value of the recipient’s user id for the in-app notification. This value is passed to the Communications service as part of the payload when the service is invoked in the OnChange interceptor of the UserProfile entity.</td></tr><tr><td>Title</td><td><p></p><pre><code>User profile successfully updated
@@ -97,12 +93,9 @@ Follow the steps below to integrate the event:
 3. Click **More Settings** > **Custom Code**.
 4. A code editor will open displaying the generated custom class for UserProfile.
 5. Locate the **OnChange** method in the file.
-6.  Below the comment that marks where custom logic can be added, insert the following line:\
+6.  Below the comment that marks where custom logic can be added, insert the following line:<br>
 
-
-    {% code overflow="wrap" lineNumbers="true" fullWidth="true" %}
-    ```aspnet
-    // START auto-generated - OnChange
+    <pre class="language-aspnet" data-overflow="wrap" data-line-numbers data-full-width="true"><code class="lang-aspnet">// START auto-generated - OnChange
     // ProjectNamespace is automatically generated based on your project name
     		public override void OnChange(ProjectNamespaceContext context)
     		{
@@ -113,7 +106,7 @@ Follow the steps below to integrate the event:
     			var appName = Config.AppName();
     			var comsService = Config.ComsService();
 
-    			if (appName != null && comsService != null)
+    			if (appName != null &#x26;&#x26; comsService != null)
     			{
     				var payload = ComsServices.JsonSerialize(this); 
 
@@ -131,8 +124,7 @@ Follow the steps below to integrate the event:
     		}
     		
 
-    ```
-    {% endcode %}
+    </code></pre>
 
 
 7. Close the editor and click **Save** to apply your changes.
@@ -163,8 +155,7 @@ With the INAPP channel enabled, the system is now configured to deliver notifica
 {% hint style="info" %}
 At this point, you must contact ComUnity Support to manually restart the Communications service for your project. There is ongoing work to automate this process, but currently, this step is required to activate communication features in a newly configured project.
 
-\
-
+<br>
 {% endhint %}
 
 
@@ -187,8 +178,7 @@ Follow the steps below:
 This confirms that the in-app notification has been triggered and successfully delivered to the signed-in user.
 
 {% hint style="info" %}
-If no notification appears, ensure the INAPP channel is enabled and the Communications service has been restarted. Contact ComUnity Support to manually restart the service. This step is currently required but will be automated in a future release.\
-
+If no notification appears, ensure the INAPP channel is enabled and the Communications service has been restarted. Contact ComUnity Support to manually restart the service. This step is currently required but will be automated in a future release.<br>
 {% endhint %}
 
 

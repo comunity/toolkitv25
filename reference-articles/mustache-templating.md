@@ -18,8 +18,7 @@ The fields in the Toolkit that typically support templated values are **Data Pat
 
 **Key Features**:
 
-1.  **Templating in Markdown:** \
-
+1.  **Templating in Markdown:** <br>
 
     ```markdown
     __Logged in as: {{=identifier}}__

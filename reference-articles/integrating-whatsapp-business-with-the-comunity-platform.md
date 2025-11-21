@@ -22,8 +22,7 @@ You need a Facebook Business Manager account as part of the verification process
 6. Create a Facebook Business Manager account: If you haven't already, create a Facebook Business Manager account by following the instructions here: [https://www.facebook.com/business/help/1710077379203657](https://www.facebook.com/business/help/1710077379203657). This account is necessary for the verification process during the application for a [Twilio](https://www.twilio.com/en-us) Phone Number with WhatsApp capabilities.
 7. Apply for a [Twilio](https://www.twilio.com/en-us) Phone Number with WhatsApp capabilities: After testing your application in the Sandbox, apply for a [Twilio](https://www.twilio.com/en-us) Phone Number with WhatsApp capabilities. Go to the [Twilio](https://www.twilio.com/en-us) Console, navigate to the Programmable Messaging section, and then click on **WhatsApp** in the left sidebar. Follow the instructions to submit your application for a WhatsApp-enabled [Twilio](https://www.twilio.com/en-us) number. Note that this process requires approval from WhatsApp and may take a few weeks.
 8. Configure your [Twilio](https://www.twilio.com/en-us) Phone Number: Once your application is approved, and you have a [Twilio](https://www.twilio.com/en-us) Phone Number with WhatsApp capabilities, configure the number in the [Twilio](https://www.twilio.com/en-us) Console. Set the webhook URLs for incoming messages and status updates, which will point to your application's endpoints.
-9. Deploy your application: With your [Twilio](https://www.twilio.com/en-us) WhatsApp Sender account set up and your application developed, deploy your application to a live environment.\
-
+9. Deploy your application: With your [Twilio](https://www.twilio.com/en-us) WhatsApp Sender account set up and your application developed, deploy your application to a live environment.<br>
 
 <figure><img src="../.gitbook/assets/image (156).png" alt=""><figcaption></figcaption></figure>
 
