@@ -742,10 +742,14 @@ Ensure you have completed the prerequisites:
 #### Step 1: Choose Your Deployment Script
 
 1. Navigate to **Infrastructure > QA Environment > Infrastructure Scripts**
-2. Click **"Add Script"** button.
+2.  Click **"Add Script"** button.<br>
+
+    <figure><img src="../../.gitbook/assets/image (499).png" alt=""><figcaption></figcaption></figure>
 3. You'll see two main script options:
    * **QA Environment with Dedicated SQL Server**
-   * **QA Environment with Shared SQL Server**
+   *   **QA Environment with Shared SQL Server**<br>
+
+       <figure><img src="../../.gitbook/assets/image (496).png" alt=""><figcaption></figcaption></figure>
 4. **Select the appropriate script** based on your decision from the SQL Server architecture section
 
 #### Step 2: Configure Deployment Parameters
@@ -819,17 +823,20 @@ Before proceeding:
 
 #### Step 4: Add the Script
 
-1. Click the button to **add the script** to your environment
-2. The script appears in the infrastructure scripts list:
-   * Script name shown
-   * Status: **"New"** (not yet deployed)
-   * Script URL/identifier visible
-3. **Review the script entry** one final time before deploying
+1. Click the **Add** button to **add the script** to your environment
+2.  The script appears in the infrastructure scripts list:
+
+    * Script name shown
+    * Status: **"New"** (not yet deployed)
+
+    <figure><img src="../../.gitbook/assets/image (500).png" alt=""><figcaption></figcaption></figure>
 
 #### Step 5: Deploy the QA Environment
 
 1. Locate your newly added script in the list
-2. Click **"Deploy"** next to the script
+2.  Click **"Deploy script"** next to the script<br>
+
+    <figure><img src="../../.gitbook/assets/image (498).png" alt=""><figcaption></figcaption></figure>
 3. Deployment begins immediately:
    * Status changes to **"Busy"**
    * ARM template submitted to Azure
@@ -908,6 +915,10 @@ If you want to watch platform installation in real-time:
 {% hint style="info" %}
 You don't need to watch the installation - it runs completely automated. This is only useful for troubleshooting an or observation.
 {% endhint %}
+
+<figure><img src="../../.gitbook/assets/image (501).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (502).png" alt=""><figcaption><p><strong>qa</strong> environment ongoing deployment</p></figcaption></figure>
 
 #### Step 7: Verify Deployment Completion
 
