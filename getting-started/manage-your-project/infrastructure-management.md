@@ -8,8 +8,6 @@ The Infrastructure Management feature allows administrators to deploy and manage
 **Current documentation is based on implementation as of v25.3.** Interface and functionality subject to change in future releases. The screens shown are not according to final design specifications, as these designs became available after the development cycle had begun. The layout will be significantly different in future releases, but core functionality for managing infrastructure scripts will remain similar.
 {% endhint %}
 
-#### Important Context
-
 When you purchase and deploy the ComUnity Toolkit from the Azure Marketplace, it is installed into **your own Azure subscription**. The Toolkit operates as a self-contained environment within your Azure infrastructure. The **Development environment is created automatically** during initial deployment from the marketplace.
 
 The Infrastructure Management feature allows you to subsequently provision additional environments (QA and Production) as needed for your development lifecycle.
@@ -20,7 +18,7 @@ Before using Infrastructure Management features to create QA or Production envir
 
 #### 1. Active Development Environment
 
-Your initial Toolkit deployment from Azure Marketplace must be complete and operational. This automatically creates your Development environment with all necessary platform components.
+Your initial Toolkit deployment from [Azure Marketplace ](https://marketplace.microsoft.com/en-ie/product/virtual-machines/comunity.comunity-rapid-digitsation-platform?tab=Overview)must be complete and operational. This automatically creates your Development environment with all necessary platform components.
 
 #### 2. Azure Subscription Access
 
@@ -53,7 +51,9 @@ An Azure App Registration with appropriate permissions is **required** for the D
 
 These values are configured in the Toolkit under the Deployment Agent platform component settings.
 
-> **📝 Note:** Detailed documentation for App Registration setup is in development. Contact ComUnity support for step-by-step guidance on creating and configuring the App Registration with the correct permissions. Without this configuration, project builds and new environment deployments will fail when attempting to create databases.
+{% hint style="warning" %}
+Detailed documentation for App Registration setup is in development. Contact ComUnity support for step-by-step guidance on creating and configuring the App Registration with the correct permissions. Without this configuration, project builds and new environment deployments will fail when attempting to create databases.
+{% endhint %}
 
 #### 5. Understanding of SQL Server Options
 
@@ -98,7 +98,9 @@ You can navigate away from the infrastructure screen during deployment and retur
 
 Access to infrastructure management features is controlled through role-based access (RBA). Only users with the required permissions can create, manage, or deploy infrastructure scripts.
 
-> **Note:** Infrastructure scripts require activation in each environment to match the specific deployment contexts of your project, similar to other primary features in the Toolkit.
+{% hint style="info" %}
+Infrastructure scripts require activation in each environment to match the specific deployment contexts of your project, similar to other primary features in the Toolkit.
+{% endhint %}
 
 ### Understanding the Toolkit Architecture
 
@@ -222,7 +224,9 @@ The Infrastructure Management interface has two main sections:
 1. **Infrastructure Scripts** - Where you add, deploy, and manage deployment scripts
 2. **Azure Infrastructure** - Where you enable/disable environments and view environment settings
 
-> **Important Design Note:** The current infrastructure management interface will change in future releases. The screens are not according to the final design specifications. The layout will be significantly different, but the core functionality for managing infrastructure scripts will remain similar.
+{% hint style="danger" %}
+The current infrastructure management interface will change in future releases. The screens are not according to the final design specifications. The layout will be significantly different, but the core functionality for managing infrastructure scripts will remain similar.
+{% endhint %}
 
 ### Understanding Infrastructure Scripts
 
@@ -321,17 +325,17 @@ Running these scripts in an existing environment will attempt to create new infr
 
 #### Only Use Full Environment Scripts When:
 
-✅ Creating your first QA environment after initial Toolkit deployment\
-✅ Creating your first Production environment\
-✅ Setting up isolated testing environments in separate Azure subscriptions\
-✅ Provisioning fresh infrastructure under administrator guidance
+* &#x20;Creating your first QA environment after initial Toolkit deployment
+* Creating your first Production environment
+* Setting up isolated testing environments in separate Azure subscriptions
+* Provisioning fresh infrastructure under administrator guidance
 
 #### Never Use Full Environment Scripts:
 
-❌ In the current Toolkit Next environment\
-❌ In existing Production environments\
-❌ To "refresh" or "update" an existing environment\
-❌ In shared development environments
+* &#x20;In the current Toolkit Next environment
+* &#x20;In existing Production environments
+* To "refresh" or "update" an existing environment
+* In shared development environments
 
 **If you need to modify an existing environment, contact support for guidance rather than running deployment scripts.**
 
@@ -509,7 +513,9 @@ If you're uncertain which option is best for your specific situation:
 * **Review Azure Costs**: Monitor your Dev environment's Azure costs to estimate additional servers
 * **Assess Your Workload**: Analyze your application's database usage patterns in Dev before deciding
 
-> **Remember:** You can use different approaches for different environments. A common pattern is Shared SQL for QA (lower cost) and Dedicated SQL for Production (better isolation and performance).
+{% hint style="info" %}
+You can use different approaches for different environments. A common pattern is Shared SQL for QA (lower cost) and Dedicated SQL for Production (better isolation and performance).
+{% endhint %}
 
 ### What Gets Created: Full Environment Deployment
 
@@ -640,23 +646,23 @@ You can monitor the installation by:
 
 After successful deployment, you have:
 
-✅ Fully configured Azure infrastructure\
-✅ All platform components installed and running\
-✅ IIS websites configured and accessible\
-✅ Databases created and initialized\
-✅ Default platform icons loaded\
-✅ Services running and ready to accept deployments\
-✅ Environment accessible via Public IP address (HTTP initially)
+* &#x20;Fully configured Azure infrastructure
+* &#x20;All platform components installed and running
+* IIS websites configured and accessible
+* Databases created and initialised
+* &#x20;Default platform icons loaded
+* Services running and ready to accept deployments
+* Environment accessible via Public IP address (HTTP initially)
 
 #### What Still Needs Configuration
 
 After deployment completes, you'll need to manually configure:
 
-❗ **App Registration** - Set Client ID and Secret in Deployment Agent\
-❗ **Observability URLs** - Configure monitoring endpoints (if using observability)\
-❗ **Domain Name** - Point custom domain to Public IP (optional but recommended for Production)\
-❗ **SSL Certificate** - Install certificate and configure HTTPS (optional but recommended for Production)\
-❗ **Enable Environment** - Turn on the environment in Infrastructure settings
+* ❗ **App Registration** - Set Client ID and Secret in Deployment Agent
+* ❗ **Observability URLs** - Configure monitoring endpoints (if using observability)
+* ❗ **Domain Name** - Point custom domain to Public IP (optional but recommended for Production)
+* ❗ **SSL Certificate** - Install certificate and configure HTTPS (optional but recommended for Production)
+* ❗ **Enable Environment** - Turn on the environment in Infrastructure settings
 
 #### Default Access Credentials
 
@@ -665,7 +671,9 @@ The newly deployed environment includes default credentials:
 **Username:** `admin@comunityplatform.com`\
 **Password:** `admin`
 
-> **⚠️ Security Warning:** Change these default credentials immediately after first login, especially for Production environments.
+{% hint style="info" %}
+Change these default credentials immediately after first login, especially for Production environments.
+{% endhint %}
 
 #### Accessing Your New Environment
 
@@ -686,26 +694,28 @@ Check these items to confirm everything deployed correctly:
 
 **In Azure Portal:**
 
-* \[ ] Resource group exists with all expected resources
-* \[ ] VM is running
-* \[ ] SQL Server exists (dedicated) or databases exist on shared server
-* \[ ] Storage account created
-* \[ ] Public IP address assigned
+```
+[ ] Resource group exists with all expected resources
+[ ] VM is running
+[ ] SQL Server exists (dedicated) or databases exist on shared server
+[ ] Storage account created
+[ ] Public IP address assigned
+```
 
 **In the Toolkit (new environment):**
 
-* \[ ] Can login with default credentials
-* \[ ] Can navigate through Toolkit interface
-* \[ ] Platform Settings shows all components
-* \[ ] Can create a test project (after configuring App Registration)
+```
+[ ] Can login with default credentials
+[ ] Can navigate through Toolkit interface
+[ ] Platform Settings shows all components
+[ ] Can create a test project (after configuring App Registration)
+```
 
 **Common Issues:**
 
 * Deployment shows "Deployed" but some resources missing → Check Azure deployment logs
 * Can't access via IP address → Check NSG firewall rules, verify VM is running
 * Can't login → Platform installation may have failed, check VM installation logs
-
-***
 
 ### Testing Infrastructure Deployment
 
@@ -812,22 +822,20 @@ Since this was a test, clean up the resources to avoid unnecessary Azure costs:
    * Click "Delete"
    * This permanently removes all resources in the group
 
-> **Important:** Always clean up test resources to avoid ongoing Azure storage costs, even though they're minimal.
-
-#### Known Issue
-
-There is currently an alignment issue with the status display in the infrastructure scripts list. The functionality works correctly, but the visual alignment of status information needs adjustment. This will be addressed in a future release.
+{% hint style="success" %}
+Always clean up test resources to avoid ongoing Azure storage costs, even though they're minimal
+{% endhint %}
 
 #### What You've Learned
 
 By completing this test, you now understand:
 
-✅ How to navigate to Infrastructure Scripts\
-✅ How to add a deployment script with parameters\
-✅ How to initiate deployment\
-✅ How status monitoring works\
-✅ How to verify resources in Azure Portal\
-✅ The complete workflow for infrastructure deployment
+* How to navigate to Infrastructure Scripts
+* How to add a deployment script with parameters
+* How to initiate deployment
+* How status monitoring works
+* How to verify resources in Azure Portal
+* The complete workflow for infrastructure deployment
 
 This exact same workflow applies to full environment deployments. The only differences for full environments are:
 
@@ -838,8 +846,6 @@ This exact same workflow applies to full environment deployments. The only diffe
 
 You're now ready to deploy a full QA or Production environment!
 
-***
-
 ### Deploying QA Environment
 
 Once you've tested the deployment workflow with the BLOB Storage script and confirmed your setup is correct, you're ready to deploy a complete QA environment.
@@ -848,11 +854,11 @@ Once you've tested the deployment workflow with the BLOB Storage script and conf
 
 Ensure you have completed the prerequisites:
 
-✅ Development environment is operational\
-✅ App Registration configured with Client ID and Secret\
-✅ Decided between Shared vs. Dedicated SQL Server (see decision guide above)\
-✅ Tested deployment workflow with BLOB Storage script\
-✅ Have access to Azure Portal for monitoring
+* ✅ Development environment is operational
+* ✅ App Registration configured with Client ID and Secret
+* ✅ Decided between Shared vs. Dedicated SQL Server (see decision guide above)
+* ✅ Tested deployment workflow with BLOB Storage script
+* ✅ Have access to Azure Portal for monitoring
 
 #### Step 1: Choose Your Deployment Script
 
@@ -919,7 +925,9 @@ Some parameters may be auto-filled or determined by the script:
 * Storage account settings
 * Network configuration details
 
-> **Note:** The current version of the deployment interface doesn't expose all parameters that will be available in future releases. The script uses reasonable defaults for unexposed parameters.
+{% hint style="info" %}
+The current version of the deployment interface doesn't expose all parameters that will be available in future releases. The script uses reasonable defaults for unexposed parameters.
+{% endhint %}
 
 #### Step 3: Review Configuration
 
@@ -1018,7 +1026,9 @@ If you want to watch platform installation in real-time:
     ```
 7. The log shows each component being installed and tested
 
-> **Note:** You don't need to watch the installation - it runs completely automated. This is only useful for troubleshooting or satisfying curiosity.
+{% hint style="info" %}
+You don't need to watch the installation - it runs completely automated. This is only useful for troubleshooting an or observation.
+{% endhint %}
 
 #### Step 7: Verify Deployment Completion
 
@@ -1099,8 +1109,6 @@ If deployment fails or takes longer than expected:
   * Setup.log from VM (if accessible)
   * Resource group name and subscription ID
 
-***
-
 ### Post-Deployment Setup
 
 After your QA environment deployment completes successfully, several important steps remain before the environment is fully operational and ready for use.
@@ -1131,7 +1139,9 @@ New environments are not automatically available within the Toolkit. You must ma
 * Does not affect the actual infrastructure
 * Does not back up or restore environment data
 
-> **Future Functionality:** In upcoming releases, enabling/disabling will control environment state: disabling will shut down and back up the environment, enabling will restore it. This functionality is planned but not yet implemented.
+{% hint style="info" %}
+In upcoming releases, enabling/disabling will control environment state: disabling will shut down and back up the environment, enabling will restore it. This functionality is planned but not yet implemented.
+{% endhint %}
 
 #### Step 2: Verify Deployment Success
 
@@ -1181,7 +1191,9 @@ The Deployment Agent requires App Registration credentials to create databases a
    * Copy Client Secret from App Registration
 4. Save the changes
 
-> **Important:** If you haven't created an App Registration yet, this must be done before you can successfully deploy projects. Contact support for step-by-step guidance on creating and configuring the App Registration with correct permissions.
+{% hint style="info" %}
+If you haven't created an App Registration yet, this must be done before you can successfully deploy projects. Contact support for step-by-step guidance on creating and configuring the App Registration with correct permissions.
+{% endhint %}
 
 #### Step 4: Configure Observability URLs (If Using Observability)
 
@@ -1195,7 +1207,9 @@ If your project uses observability features, update the monitoring endpoints:
 3. Locate the **Observability URL** fields
 4. Update with correct monitoring endpoints
 
-> **Current Status:** Observability URL configuration is still being finalized. In some cases, these values should be auto-populated during deployment but currently are not. This will be improved in future releases.
+{% hint style="info" %}
+Observability URL configuration is still being finalised. In some cases, these values should be auto-populated during deployment but currently are not. This will be improved in future releases.
+{% endhint %}
 
 #### Step 5: Change Default Credentials (Security)
 
@@ -1227,7 +1241,9 @@ Currently, the QA environment is accessed via IP address over HTTP. For Producti
    * Update platform URLs to use HTTPS
    * Update redirect URLs in Auth configuration
 
-> **Note:** Domain and SSL configuration is currently a manual process. Documentation for these steps is in development. Contact support for detailed guidance, especially for Production environments where HTTPS is strongly recommended.
+{% hint style="info" %}
+Domain and SSL configuration is currently a manual process. Documentation for these steps is in development. Contact support for detailed guidance, especially for Production environments where HTTPS is strongly recommended.
+{% endhint %}
 
 #### Step 7: Deploy Your First Project to QA
 
@@ -1271,19 +1287,21 @@ For Production environments, configure backup policies:
 
 Use this checklist to ensure all setup steps are complete:
 
-* \[ ] Environment enabled in Toolkit (Infrastructure > Azure Infrastructure)
-* \[ ] Can access environment via Public IP address
-* \[ ] Can login with default credentials
-* \[ ] Default credentials changed to secure passwords
-* \[ ] App Registration configured (Client ID and Secret)
-* \[ ] Deployment Agent can connect to Azure (test with project build)
-* \[ ] Observability URLs configured (if using observability)
-* \[ ] Environment appears in project deployment dropdowns
-* \[ ] Successfully deployed and tested a project in the environment
-* \[ ] Domain name configured (Production recommended)
-* \[ ] SSL certificate installed (Production recommended)
-* \[ ] Backup policies configured (Production recommended)
-* \[ ] Team members have appropriate access/credentials
+```
+[ ] Environment enabled in Toolkit (Infrastructure > Azure Infrastructure)
+[ ] Can access environment via Public IP address
+[ ] Can login with default credentials
+[ ] Default credentials changed to secure passwords
+[ ] App Registration configured (Client ID and Secret)
+[ ] Deployment Agent can connect to Azure (test with project build)
+[ ] Observability URLs configured (if using observability)
+[ ] Environment appears in project deployment dropdowns
+[ ] Successfully deployed and tested a project in the environment
+[ ] Domain name configured (Production recommended)
+[ ] SSL certificate installed (Production recommended)
+[ ] Backup policies configured (Production recommended)
+[ ] Team members have appropriate access/credentials
+```
 
 #### Common Post-Deployment Issues
 
@@ -1347,7 +1365,9 @@ To see detailed information about a deployed script:
 
 To modify script parameters after adding but before deploying:
 
-> **Note:** You can only edit scripts with "New" status. Once deployed, script parameters cannot be changed through the Toolkit interface.
+{% hint style="info" %}
+You can only edit scripts with "New" status. Once deployed, script parameters cannot be changed through the Toolkit interface.
+{% endhint %}
 
 1. Locate the script with **"New"** status
 2. Click the **three-dot menu (⋮)**
@@ -1370,7 +1390,9 @@ To modify script parameters after adding but before deploying:
 
 If you need to redeploy an environment:
 
-> **⚠️ Warning:** Redeployment is not currently supported through the Toolkit interface. Attempting to redeploy will likely cause issues.
+{% hint style="warning" %}
+Redeployment is not currently supported through the Toolkit interface. Attempting to redeploy will likely cause issues.
+{% endhint %}
 
 **Do NOT:**
 
@@ -1501,8 +1523,6 @@ The behavior of the delete function will change in future releases:
 
 **Rationale:** Accidentally deleting an entire environment (especially Production) is catastrophic. Future versions will make this harder to do unintentionally while still allowing removal of test/temporary resources.
 
-***
-
 ### Environment Management
 
 The Infrastructure Management section includes environment availability controls that determine whether environments appear in deployment screens throughout the Toolkit.
@@ -1553,9 +1573,11 @@ When you enable or disable an environment and save changes:
 * No backup or shutdown occurs
 * No data is moved or protected
 
-> **Important:** Currently, enable/disable only controls Toolkit visibility. It does not affect actual infrastructure. This is a limitation of the v25.3 implementation.
+{% hint style="info" %}
+Currently, enable/disable only controls Toolkit visibility. It does not affect actual infrastructure. This is a limitation of the v25.3 implementation.
+{% endhint %}
 
-#### Intended Future Behavior
+#### Intended Future Behaviour
 
 The enable/disable functionality is designed for future capabilities:
 
@@ -1586,7 +1608,9 @@ The enable/disable functionality is designed for future capabilities:
 * Reduce spending on temporarily unused environments
 * Quick environment recovery when needed again
 
-> **Status:** This functionality is not yet implemented. The infrastructure exists in the interface but the automation does not. This is on the development roadmap for future releases.
+{% hint style="info" %}
+**Status:** This functionality is not yet implemented. The infrastructure exists in the interface but the automation does not. This is on the development roadmap for future releases.
+{% endhint %}
 
 #### Accessing Environment Settings
 
@@ -2357,27 +2381,31 @@ As the Toolkit evolves, documentation will be updated to reflect new features an
 
 Before deploying QA or Production:
 
-* \[ ] Development environment operational
-* \[ ] App Registration created and configured
-* \[ ] Decided: Shared or Dedicated SQL Server
-* \[ ] Resource group name chosen
-* \[ ] VM and SQL passwords prepared (stored securely)
-* \[ ] Tested workflow with BLOB Storage script
-* \[ ] Verified permissions and Azure access
-* \[ ] Time allocated (45-60 minutes for deployment + 30 minutes for configuration)
+```
+[ ] Development environment operational
+[ ] App Registration created and configured
+[ ] Decided: Shared or Dedicated SQL Server
+[ ] Resource group name chosen
+[ ] VM and SQL passwords prepared (stored securely)
+[ ] Tested workflow with BLOB Storage script
+[ ] Verified permissions and Azure access
+[ ] Time allocated (45-60 minutes for deployment + 30 minutes for configuration)
+```
 
 After deployment completes:
 
-* \[ ] Status shows "Deployed" in Toolkit
-* \[ ] All resources visible in Azure Portal
-* \[ ] VM is running
-* \[ ] Can access environment via IP address
-* \[ ] Logged in with default credentials
-* \[ ] Changed default password
-* \[ ] Enabled environment in Azure Infrastructure
-* \[ ] Configured App Registration in Deployment Agent
-* \[ ] Deployed test project successfully
-* \[ ] Verified project works in new environment
+```
+[ ] Status shows "Deployed" in Toolkit
+[ ] All resources visible in Azure Portal
+[ ] VM is running
+[ ] Can access environment via IP address
+[ ] Logged in with default credentials
+[ ] Changed default password
+[ ] Enabled environment in Azure Infrastructure
+[ ] Configured App Registration in Deployment Agent
+[ ] Deployed test project successfully
+[ ] Verified project works in new environment
+```
 
 #### Status Values Reference
 
@@ -2427,18 +2455,3 @@ Resources created by full environment deployment:
 * Password: `admin`
 
 **⚠️ Change immediately after first login!**
-
-#### Support Contact Information
-
-When contacting support, have ready:
-
-* Toolkit version (v25.3)
-* Environment name (Dev/QA/Prod)
-* Azure subscription ID
-* Resource group name
-* Description of issue
-* Screenshots of errors
-* Log files (if accessible)
-
-**Support channels:** \[To be provided by ComUnity]
-
