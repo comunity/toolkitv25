@@ -1,25 +1,6 @@
 # Infrastructure Management
 
-### Table of Contents
-
-1. [Overview](https://claude.ai/chat/04350528-21d1-46ac-927d-f1cb7b27d660#overview)
-2. [Prerequisites](https://claude.ai/chat/04350528-21d1-46ac-927d-f1cb7b27d660#prerequisites)
-3. [Key Features](https://claude.ai/chat/04350528-21d1-46ac-927d-f1cb7b27d660#key-features)
-4. [Understanding the Toolkit Architecture](https://claude.ai/chat/04350528-21d1-46ac-927d-f1cb7b27d660#understanding-the-toolkit-architecture)
-5. [Accessing Infrastructure Management](https://claude.ai/chat/04350528-21d1-46ac-927d-f1cb7b27d660#accessing-infrastructure-management)
-6. [Understanding Infrastructure Scripts](https://claude.ai/chat/04350528-21d1-46ac-927d-f1cb7b27d660#understanding-infrastructure-scripts)
-7. [Choosing Between Shared and Dedicated SQL Server](https://claude.ai/chat/04350528-21d1-46ac-927d-f1cb7b27d660#choosing-between-shared-and-dedicated-sql-server)
-8. [What Gets Created: Full Environment Deployment](https://claude.ai/chat/04350528-21d1-46ac-927d-f1cb7b27d660#what-gets-created-full-environment-deployment)
-9. [Testing Infrastructure Deployment](https://claude.ai/chat/04350528-21d1-46ac-927d-f1cb7b27d660#testing-infrastructure-deployment)
-10. [Deploying QA Environment](https://claude.ai/chat/04350528-21d1-46ac-927d-f1cb7b27d660#deploying-qa-environment)
-11. [Post-Deployment Setup](https://claude.ai/chat/04350528-21d1-46ac-927d-f1cb7b27d660#post-deployment-setup)
-12. [Managing Deployment Scripts](https://claude.ai/chat/04350528-21d1-46ac-927d-f1cb7b27d660#managing-deployment-scripts)
-13. [Environment Management](https://claude.ai/chat/04350528-21d1-46ac-927d-f1cb7b27d660#environment-management)
-14. [Troubleshooting](https://claude.ai/chat/04350528-21d1-46ac-927d-f1cb7b27d660#troubleshooting)
-15. [Best Practices](https://claude.ai/chat/04350528-21d1-46ac-927d-f1cb7b27d660#best-practices)
-16. [Related Documentation](https://claude.ai/chat/04350528-21d1-46ac-927d-f1cb7b27d660#related-documentation)
-
-### Overview
+## Overview
 
 The Infrastructure Management feature allows administrators to deploy and manage Azure environments for their Toolkit projects through pre-configured deployment scripts. This integration automates infrastructure provisioning, eliminating the need for manual Azure resource management.
 
