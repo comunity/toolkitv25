@@ -725,138 +725,9 @@ Check these items to confirm everything deployed correctly:
 * Can't access via IP address → Check NSG firewall rules, verify VM is running
 * Can't login → Platform installation may have failed, check VM installation logs
 
-### Testing Infrastructure Deployment
 
-Before deploying a full QA or Production environment (which takes 45-60 minutes), it's recommended to test the infrastructure deployment workflow using the BLOB Storage Container script. This simple script completes in minutes and uses the exact same workflow as full environments.
 
-#### Why Test First?
-
-* **Learn the workflow** without time commitment
-* **Verify your permissions** are correctly configured
-* **Understand status monitoring** and how deployments progress
-* **Confirm Azure connectivity** and resource creation
-* **Practice the process** before committing to full deployment
-
-#### Testing with BLOB Storage Script
-
-**Step 1: Navigate to QA Infrastructure Scripts**
-
-1. From the main menu, click **Infrastructure**
-2. Select **QA Environment** from the environment list
-3. Click on **Infrastructure Scripts** section
-
-You'll see instructions for setting up and managing infrastructure scripts.
-
-**Step 2: Add the BLOB Storage Script**
-
-1. Click the **"Create a function app"** button (or similar button to add a script)
-   * Note: Button text may not exactly match the script being created due to current UI limitations
-2. In the configuration interface, provide the required parameter:
-   * **Resource Group Name**: Enter a name for the test resource group
-     * Example: `qa-test-storage`
-     * Use lowercase letters, numbers, and hyphens only
-     * Make it descriptive so you can easily identify and delete it later
-3. Click the button to **add the script**
-4. The script appears in the infrastructure scripts list with status **"New"**
-
-**Step 3: Deploy the Script**
-
-1. Locate your newly added script in the list
-2. Click **"Deploy"** next to the script
-3. The deployment begins immediately:
-   * Status changes to **"Busy"**
-   * Background process starts creating Azure resources
-   * You can navigate away from this screen and continue working
-
-**Step 4: Monitor Progress**
-
-While deployment runs:
-
-* **Status indicator** updates automatically (no page refresh needed)
-* **You can navigate away** and work on other Toolkit items
-* **Return to check progress** anytime by navigating back to Infrastructure Scripts
-
-**In the Toolkit:**
-
-* Watch the status field - it will show "Busy" during deployment
-* When complete, status updates to "Deployed" or "Success"
-
-**In Azure Portal** (optional - to watch resource creation in real-time):
-
-1. Open Azure Portal in another browser tab
-2. Navigate to **Resource Groups**
-3. Find your resource group (name you specified)
-4. Click **"Deployments"** in the left sidebar
-5. Watch as the deployment progresses:
-   * Shows each resource being created
-   * Displays success/failure status
-   * Provides detailed error messages if issues occur
-
-**Typical Timeline:**
-
-* **0-2 minutes**: Deployment starts, ARM template submitted to Azure
-* **2-5 minutes**: Resource group and storage account created
-* **5+ minutes**: Deployment completes, status updates to "Deployed"
-
-**Step 5: Verify in Azure**
-
-After deployment completes successfully:
-
-1. **In Azure Portal**, navigate to Resource Groups
-2. Find your resource group (the name you specified)
-3. **Verify it contains:**
-   * One storage account resource
-4. **This confirms:**
-   * Your permissions are correct
-   * The deployment workflow functions properly
-   * Azure resource creation works as expected
-   * You understand how to monitor status
-
-**Step 6: Clean Up Test Resources**
-
-Since this was a test, clean up the resources to avoid unnecessary Azure costs:
-
-1. **Option A: Delete via Toolkit** (if available in your version)
-   * Navigate back to Infrastructure Scripts
-   * Click the three-dot menu (⋮) next to the script
-   * Select "Delete"
-   * Confirm deletion
-   * This removes both the script entry AND the Azure resources
-2. **Option B: Delete via Azure Portal** (recommended method)
-   * Navigate to Resource Groups in Azure Portal
-   * Find your test resource group
-   * Click "Delete resource group"
-   * Type the resource group name to confirm
-   * Click "Delete"
-   * This permanently removes all resources in the group
-
-{% hint style="success" %}
-Always clean up test resources to avoid ongoing Azure storage costs, even though they're minimal
-{% endhint %}
-
-#### What You've Learned
-
-By completing this test, you now understand:
-
-* How to navigate to Infrastructure Scripts
-* How to add a deployment script with parameters
-* How to initiate deployment
-* How status monitoring works
-* How to verify resources in Azure Portal
-* The complete workflow for infrastructure deployment
-
-This exact same workflow applies to full environment deployments. The only differences for full environments are:
-
-* Longer deployment time (45-60 minutes vs. 5 minutes)
-* More parameters to configure
-* More Azure resources created
-* Platform components installed
-
-You're now ready to deploy a full QA or Production environment!
-
-### Deploying QA Environment
-
-Once you've tested the deployment workflow with the BLOB Storage script and confirmed your setup is correct, you're ready to deploy a complete QA environment.
+### Deploying QA Environment.
 
 #### Before You Begin
 
@@ -871,7 +742,7 @@ Ensure you have completed the prerequisites:
 #### Step 1: Choose Your Deployment Script
 
 1. Navigate to **Infrastructure > QA Environment > Infrastructure Scripts**
-2. Click **"Create a function app"** (or add script button)
+2. Click **"Add Script"** button.
 3. You'll see two main script options:
    * **QA Environment with Dedicated SQL Server**
    * **QA Environment with Shared SQL Server**
