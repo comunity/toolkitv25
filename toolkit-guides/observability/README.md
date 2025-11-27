@@ -17,14 +17,11 @@ The Toolkit's observability feature is designed to be environment-specific, nece
 3.  **Navigate to Observability**: From the main menu, find and click on "**Observability**". You will be presented with instructions for enabling observability within your project.<br>
 
     <figure><img src="../../.gitbook/assets/image (390).png" alt=""><figcaption></figcaption></figure>
-4.  **Access Environment Settings**: Go to the Environmental Setting and select the Observability page to proceed with the setup.<br>
+4.  **Access Project Settings**: Go to the **Project Settings** and select the **Observability** tab to proceed with the setup. This initiates a background process to enable observability; wait until this process completes.<br>
 
-    <figure><img src="../../.gitbook/assets/image (389).png" alt=""><figcaption><p>Access Environment Settings</p></figcaption></figure>
-5.  **Activate Observability**: Click the "**Create Page Analytics Configuration**" button. This initiates a background process to enable observability; wait until this process completes.<br>
-
-    <figure><img src="../../.gitbook/assets/image (427).png" alt=""><figcaption><p>Activate Page Analytics in Environmental Settings</p></figcaption></figure>
-6. **Explore Observability Data**: After activation, you can access detailed information regarding observability in your deployment environment. This includes tabs like "**Client Analytics**" "**Metrics**" and "**Traces**" each offering specific insights.
-7.  **Access Dashboards**: To view your observability dashboards, use the main navigation to select "Observability." The default view will be "**Client Analytics**," but you can switch to "**Metrics**" or "**Traces**" to view their respective dashboards.\
+    <figure><img src="../../.gitbook/assets/image (503).png" alt=""><figcaption></figcaption></figure>
+5. **Explore Observability Data**: After activation, you can access detailed information regarding observability in your deployment environment. This includes tabs like "**Client Analytics**" "**Metrics**" and "**Traces**" each offering specific insights.
+6.  **Access Dashboards**: To view your observability dashboards, use the main navigation to select "Observability." The default view will be "**Client Analytics**," but you can switch to "**Metrics**" or "**Traces**" to view their respective dashboards.\
     <br>
 
     <figure><img src="../../.gitbook/assets/image (391).png" alt=""><figcaption></figcaption></figure>
