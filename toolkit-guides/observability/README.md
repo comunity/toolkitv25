@@ -21,8 +21,7 @@ The Toolkit's observability feature is designed to be environment-specific, nece
 
     <figure><img src="../../.gitbook/assets/image (503).png" alt=""><figcaption></figcaption></figure>
 5. **Explore Observability Data**: After activation, you can access detailed information regarding observability in your deployment environment. This includes tabs like "**Client Analytics**" "**Metrics**" and "**Traces**" each offering specific insights.
-6.  **Access Dashboards**: To view your observability dashboards, use the main navigation to select "Observability." The default view will be "**Client Analytics**," but you can switch to "**Metrics**" or "**Traces**" to view their respective dashboards.\
-    <br>
+6.  **Access Dashboards**: To view your observability dashboards, use the main navigation to select "Observability." The default view will be "**Client Analytics**," but you can switch to "**Metrics**" or "**Traces**" to view their respective dashboards.<br>
 
     <figure><img src="../../.gitbook/assets/image (391).png" alt=""><figcaption></figcaption></figure>
 

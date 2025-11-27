@@ -1,8 +1,11 @@
+---
+description: >-
+  The ComUnity Platform's metrics functionality is a crucial component for
+  monitoring your project's performance, providing an in-depth view of various
+  operational aspects through the Metrics dashboard.
+---
+
 # Metrics
-
-
-
-> The ComUnity Platform's metrics functionality is a crucial component for monitoring your project's performance, providing an in-depth view of various operational aspects through the Metrics dashboard. This dashboard presents critical data points and trends that are vital for maintaining and optimising your project's health and performance.
 
 The ComUnity Platform’s metrics functionality is a crucial component for monitoring your project’s performance, providing an in-depth view of various operational aspects through the Metrics dashboard. This dashboard presents critical data points and trends that are vital for maintaining and optimising your project’s health and performance.
 
