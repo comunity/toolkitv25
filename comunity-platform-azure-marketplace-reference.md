@@ -11,7 +11,7 @@
 
 ### Overview
 
-This document provides technical reference information for the ComUnity Platform Azure Marketplace offering. Use this alongside the [Deployment Guide ](comunity-platform-azure-marketplace-reference.md)for detailed specifications, credential management, and architecture details. For an introduction to ComUnity and platform engineering concepts, see the [ComUnity Platform - Technical Overview](./) section.
+This document provides technical reference information for the ComUnity Platform Azure Marketplace offering. Use this alongside the [Deployment Guide ](toolkit-tutorials/comunity-platform-azure-marketplace-deployment-guide.md)for detailed specifications, credential management, and architecture details. For an introduction to ComUnity and platform engineering concepts, see the [ComUnity Platform - Technical Overview](./) section.
 
 ***
 
@@ -307,12 +307,12 @@ Support contact details are displayed in the Managed Application overview page a
 
 ### Related Documentation
 
-| Document                                                                                                | Description                                              |
-| ------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| [**Azure Marketplace Deployment Guide**](https://claude.ai/chat/Azure_Marketplace_Deployment_Guide.md)  | Step-by-step deployment instructions                     |
-| [**Infrastructure Management Guide**](getting-started/manage-your-project/infrastructure-management.md) | Creating QA and Production environments                  |
-| **App Registration Setup Guide**                                                                        | Configuring Azure AD for project builds (Coming Soon...) |
-| [**Observability Setup Guide**](toolkit-guides/observability/)                                          | Configuring monitoring and analytics                     |
-| [**Platform Architecture Documentation**](./)                                                           | Technical architecture overview                          |
+| Document                                                                                                            | Description                                              |
+| ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| [**Azure Marketplace Deployment Guide**](toolkit-tutorials/comunity-platform-azure-marketplace-deployment-guide.md) | Step-by-step deployment instructions                     |
+| [**Infrastructure Management Guide**](getting-started/manage-your-project/infrastructure-management.md)             | Creating QA and Production environments                  |
+| **App Registration Setup Guide**                                                                                    | Configuring Azure AD for project builds (Coming Soon...) |
+| [**Observability Setup Guide**](toolkit-guides/observability/)                                                      | Configuring monitoring and analytics                     |
+| [**Platform Architecture Documentation**](./)                                                                       | Technical architecture overview                          |
 
 ***
