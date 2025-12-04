@@ -1,6 +1,7 @@
 # Table of contents
 
-* [ComUnity Technical Overview](README.md)
+* [ComUnity Platform - Technical Overview](README.md)
+* [ComUnity Platform – Azure Marketplace Reference](comunity-platform-azure-marketplace-reference.md)
 
 ## Getting Started
 
@@ -24,7 +25,6 @@
   * [Store URLs](getting-started/manage-your-project/store-urls.md)
   * [Extending Visual Studio Projects](getting-started/manage-your-project/extending-visual-studio-projects.md)
   * [Infrastructure Management](getting-started/manage-your-project/infrastructure-management.md)
-  * [Azure Marketplace Self-Service Deployment Guide](getting-started/manage-your-project/azure-marketplace-self-service-deployment-guide.md)
 * [Organisations](getting-started/organisations/README.md)
   * [Roles and Permissions](getting-started/organisations/roles-and-permissions.md)
   * [Organisational Management](getting-started/organisations/organisational-management.md)
@@ -103,6 +103,8 @@
   * [Integrating the JSONPlaceholder Posts API Using the Toolkit’s OpenAPI Feature](toolkit-tutorials/apis/integrating-the-jsonplaceholder-posts-api-using-the-toolkits-openapi-feature.md)
   * [OData Integration with the Bookings API Using the APIs feature](toolkit-tutorials/apis/odata-integration-with-the-bookings-api-using-the-apis-feature.md)
 * [How to Configure In-App Notifications for User Profile Updates Using Communications](toolkit-tutorials/how-to-configure-in-app-notifications-for-user-profile-updates-using-communications.md)
+* [ComUnity Platform - Azure Marketplace Deployment Guide](toolkit-tutorials/comunity-platform-azure-marketplace-deployment-guide.md)
+* [ComUnity Platform - Azure Marketplace Deployment Guide](toolkit-tutorials/comunity-platform-azure-marketplace-deployment-guide-1.md)
 
 ***
 
