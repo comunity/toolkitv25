@@ -1,11 +1,5 @@
 # ComUnity Platform - Azure Marketplace Deployment Guide
 
-## ComUnity Platform – Azure Marketplace Deployment Guide
-
-**City-as-a-Platform: Digital Service Platform for Cities**
-
-Version 1.0 | December 2025
-
 ### Overview
 
 The ComUnity Developer Toolkit is available as a managed application on Azure Marketplace under the name **"City-as-a-Platform: Digital Service Platform for Cities (preview)"**. This guide walks you through deploying the toolkit from marketplace purchase to accessing your fully functional development environment.
@@ -74,11 +68,13 @@ Seven plans are available, scaled by target municipality size:
 4. Search for **"City-as-a-Platform"** or **"ComUnity"**
 5. Select **"City-as-a-Platform: Digital Service Platform for Cities (preview)"**
 
-![Marketplace Offer](https://claude.ai/chat/images/marketplace-offer.png) _Screenshot: Marketplace offer page showing plan selection dropdown_
-
 #### Step 2: Select Your Plan
 
-1. On the offer page, select your **Subscription**
+On the offer page, you'll see the plan selection dropdown with all seven options available:
+
+<figure><img src="../.gitbook/assets/Screenshot 2025-12-01 140541.png" alt=""><figcaption></figcaption></figure>
+
+1. Select your **Subscription**
 2. Click the **Plan** dropdown to see all seven options
 3. Select **Innovator** for testing (as recommended in the listing)
 4. Click **Create** to proceed to the configuration form
@@ -89,10 +85,12 @@ Complete the **Basics** tab with the following settings:
 
 **Project Details**
 
-| Field              | Action                                                                |
-| ------------------ | --------------------------------------------------------------------- |
-| **Subscription**   | Select the Azure subscription for deployment                          |
-| **Resource group** | Click **Create new** and enter a name (e.g., `JPGTestMarketplaceDec`) |
+| Field              | Action                                       |
+| ------------------ | -------------------------------------------- |
+| **Subscription**   | Select the Azure subscription for deployment |
+| **Resource group** | Click **Create new** and enter a name        |
+
+<figure><img src="../.gitbook/assets/Screenshot 2025-12-01 140648.png" alt=""><figcaption></figcaption></figure>
 
 **Instance Details**
 
@@ -108,12 +106,12 @@ Complete the **Basics** tab with the following settings:
 
 | Field                      | Action                                                                                        |
 | -------------------------- | --------------------------------------------------------------------------------------------- |
-| **Application Name**       | Enter a unique name (e.g., `JPGTestMarketPlaceApp`)                                           |
+| **Application Name**       | Enter a unique name for your deployment                                                       |
 | **Managed Resource Group** | Auto-populated (e.g., `mrg-city-as-a-platform24_4-preview-20251201140556`). Cannot be edited. |
 
-Click **Review + create** to proceed.
+<figure><img src="../.gitbook/assets/Screenshot 2025-12-01 141356.png" alt=""><figcaption></figcaption></figure>
 
-![Configuration Form](https://claude.ai/chat/images/configuration-form.png) _Screenshot: Basics tab with all fields completed_
+Click **Review + create** to proceed.
 
 #### Step 4: Review and Create
 
@@ -123,13 +121,19 @@ Click **Review + create** to proceed.
 4. Check the box: **"I agree to the terms and conditions above"**
 5. Click **Create** to begin deployment
 
-> **Note:** The Co-Admin Access Permission grants ComUnity administrative access to your Azure resources for support and management purposes.
+<figure><img src="../.gitbook/assets/Screenshot 2025-12-01 141534.png" alt=""><figcaption></figcaption></figure>
 
-![Review and Create](https://claude.ai/chat/images/review-create.png) _Screenshot: Review + create tab showing validation and terms_
+> **Note:** The Co-Admin Access Permission grants ComUnity administrative access to your Azure resources for support and management purposes.
 
 ***
 
 ### Monitoring Deployment
+
+#### Deployment Started
+
+After clicking Create, you'll see the deployment in progress notification:
+
+<figure><img src="../.gitbook/assets/Screenshot 2025-12-01 141653.png" alt=""><figcaption></figcaption></figure>
 
 #### Understanding the Resource Structure
 
@@ -144,14 +148,25 @@ Your Resource Group (e.g., JPGTestMarketplaceDec)
 
 #### Viewing Deployment Progress
 
-1. After clicking Create, you'll see **"Deployment is in progress"**
-2. Navigate to **Resource Groups** in the left menu
-3. Click on your resource group (e.g., JPGTestMarketplaceDec)
-4. Click on the **Managed Application** (e.g., JPGTestMarketPlaceApp)
-5. Click the **Managed resource group** link in the Essentials section
-6. Under Settings in the left sidebar, click **Deployments** to see detailed progress
+1. Navigate to **Resource Groups** in the left menu
+2. Click on your resource group
 
-![Deployment Progress](https://claude.ai/chat/images/deployment-progress.png) _Screenshot: Deployment details showing resources being created_
+<figure><img src="../.gitbook/assets/Screenshot 2025-12-01 141917.png" alt=""><figcaption></figcaption></figure>
+
+3. Click on the **Managed Application**
+
+<figure><img src="../.gitbook/assets/Screenshot 2025-12-01 142003.png" alt=""><figcaption></figcaption></figure>
+
+4. Click the **Managed resource group** link in the Essentials section
+5. Under Settings in the left sidebar, click **Deployments** to see detailed progress
+
+<figure><img src="../.gitbook/assets/Screenshot 2025-12-01 141816.png" alt=""><figcaption></figcaption></figure>
+
+#### Viewing Operation Details
+
+Click on any resource to see operation details including duration and status:
+
+<figure><img src="../.gitbook/assets/Screenshot 2025-12-01 141837.png" alt=""><figcaption></figcaption></figure>
 
 #### Deployment Phases
 
@@ -177,11 +192,15 @@ This is the longest step. The script installs all platform components on the VM 
 
 > **Note:** You can safely close your browser – deployment continues in the background. Use the Refresh button to check status.
 
+#### Viewing Created Resources
+
+Once deployment progresses, you can see all resources in the Managed Resource Group:
+
+<figure><img src="../.gitbook/assets/Screenshot 2025-12-01 142103.png" alt=""><figcaption></figcaption></figure>
+
 #### Confirming Successful Deployment
 
 Deployment is complete when the Deployments view shows all items as **"Succeeded"** with green checkmarks, especially the Custom Script Extension.
-
-![Deployment Complete](https://claude.ai/chat/images/deployment-complete.png) _Screenshot: All resources showing Succeeded status_
 
 ***
 
@@ -194,7 +213,7 @@ Deployment is complete when the Deployments view shows all items as **"Succeeded
 3. Click on the **Virtual Machine** resource
 4. In the VM Overview, locate and copy the **Public IP address**
 
-![VM Public IP](https://claude.ai/chat/images/vm-public-ip.png) _Screenshot: Virtual Machine overview showing Public IP address_
+
 
 #### Step 2: Access the Toolkit
 
@@ -238,16 +257,6 @@ The Deployment Agent needs Azure permissions to create databases. Without App Re
 | **Custom Domain & SSL**     | Configure a domain name and SSL certificate for HTTPS access           |
 | **Observability URLs**      | Connect observability dashboard endpoints                              |
 | **Additional Environments** | Use Infrastructure Management to create QA and Production environments |
-
-#### Support Contact
-
-Support details are visible in the Managed Application overview page:
-
-| Method    | Contact                                                                                     |
-| --------- | ------------------------------------------------------------------------------------------- |
-| **Email** | anns@comunityplatform.com                                                                   |
-| **Phone** | +27 82 453 9034                                                                             |
-| **Web**   | [comunityplatform.com/get\_started.html](https://www.comunityplatform.com/get_started.html) |
 
 ***
 
@@ -305,17 +314,13 @@ This should delete both the marketplace resource group and the managed resource 
 
 ### Related Documentation
 
-| Document                                                                                 | Description                             |
-| ---------------------------------------------------------------------------------------- | --------------------------------------- |
-| [**Azure Marketplace Reference**](https://claude.ai/chat/Azure_Marketplace_Reference.md) | Technical specifications and reference  |
-| **Infrastructure Management Guide**                                                      | Creating QA and Production environments |
-| **App Registration Setup Guide**                                                         | Configuring Azure AD for project builds |
-| **Observability Setup Guide**                                                            | Configuring monitoring and analytics    |
+| Document                                                                                                   | Description                                            |
+| ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| [**Azure Marketplace Reference**](../comunity-platform-azure-marketplace-reference.md)                     | Technical specifications and credentials               |
+| [**Infrastructure Management Guide**](../getting-started/manage-your-project/infrastructure-management.md) | Creating QA and Production environments                |
+| **App Registration Setup Guide**                                                                           | Configuring Azure AD for project builds(Coming soon..) |
+| [**Observability Setup Guide**](../toolkit-guides/observability/)                                          | Configuring monitoring and analytics                   |
 
 ***
 
-### Document History
-
-| Version | Date          | Changes         |
-| ------- | ------------- | --------------- |
-| 1.0     | December 2025 | Initial release |
+***

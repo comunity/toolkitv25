@@ -104,7 +104,6 @@
   * [OData Integration with the Bookings API Using the APIs feature](toolkit-tutorials/apis/odata-integration-with-the-bookings-api-using-the-apis-feature.md)
 * [How to Configure In-App Notifications for User Profile Updates Using Communications](toolkit-tutorials/how-to-configure-in-app-notifications-for-user-profile-updates-using-communications.md)
 * [ComUnity Platform - Azure Marketplace Deployment Guide](toolkit-tutorials/comunity-platform-azure-marketplace-deployment-guide.md)
-* [ComUnity Platform - Azure Marketplace Deployment Guide](toolkit-tutorials/comunity-platform-azure-marketplace-deployment-guide-1.md)
 
 ***
 
