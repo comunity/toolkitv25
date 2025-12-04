@@ -3,7 +3,7 @@ cover: .gitbook/assets/logo with background new.png
 coverY: 0
 ---
 
-# ComUnity Technical Overview
+# ComUnity Platform - Technical Overview
 
 ### ComUnity Digital Service Delivery Platform <a href="#ytzuxy6wlum8" id="ytzuxy6wlum8"></a>
 
@@ -56,4 +56,11 @@ Digital Service Delivery Teams are the multidisciplinary, compact, co-located, a
 
 Digital platforms built on the principles of platform engineering offer the concept of a “paved road.” This avoids the complex processes and standards of traditional development, implementation and maintenance. Instead, it provides optimised processes developed using accepted best practices and processes, pre-defined tools, and development languages.
 
-<figure><img src=".gitbook/assets/paved_rod_of_comunity.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/https___content.gitbook.com_content_4qoenWmth4wZNXJmDDGY_blobs_wcndvh5fHz8GGTZt1u0z_paved_rod_of_comunity.avif" alt=""><figcaption></figcaption></figure>
+
+
+
+### Getting Started
+
+Ready to deploy? See the [Azure Marketplace Deployment Guide](toolkit-tutorials/comunity-platform-azure-marketplace-deployment-guide.md) to set up your ComUnity Platform instance.\
+<br>
