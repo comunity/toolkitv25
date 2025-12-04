@@ -5,9 +5,11 @@
 * 📘[ **Azure Marketplace Deployment Guide**](toolkit-tutorials/comunity-platform-azure-marketplace-deployment-guide.md) – Step-by-step deployment instructions
 * 📄 **Download as Word Document** – For offline use
 
+{% file src=".gitbook/assets/Azure_Marketplace_Deployment_Guide.docx" %}
+
 ***
 
-### Purpose
+### Overview
 
 This document provides technical reference information for the ComUnity Platform Azure Marketplace offering. Use this alongside the [Deployment Guide ](comunity-platform-azure-marketplace-reference.md)for detailed specifications, credential management, and architecture details.
 
