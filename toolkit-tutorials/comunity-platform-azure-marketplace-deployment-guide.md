@@ -153,10 +153,9 @@ Your Resource Group (e.g., JPGTestMarketplaceDec)
 
 <figure><img src="../.gitbook/assets/Screenshot 2025-12-01 141917.png" alt=""><figcaption></figcaption></figure>
 
-3. Click on the **Managed Application**
+3.  Click on the **Managed Application**
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-12-01 142003.png" alt=""><figcaption></figcaption></figure>
-
+    <figure><img src="../.gitbook/assets/image (504).png" alt=""><figcaption></figcaption></figure>
 4. Click the **Managed resource group** link in the Essentials section
 5. Under Settings in the left sidebar, click **Deployments** to see detailed progress
 
