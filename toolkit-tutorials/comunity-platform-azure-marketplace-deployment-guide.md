@@ -37,9 +37,9 @@ Seven plans are available, scaled by target municipality size:
 | **Metropolis**  | Metropolitan areas                                           |
 | **Mega City**   | Major metropolitan regions                                   |
 
-> **Note:** All plans deploy identical toolkit resources. The difference is in billing structure.
-
-***
+{% hint style="info" %}
+All plans deploy identical toolkit resources. The difference is in billing structure.
+{% endhint %}
 
 ### Prerequisites
 
@@ -55,8 +55,6 @@ Seven plans are available, scaled by target municipality size:
 * ✓ Resource group naming convention decided
 * ✓ Password ready (12+ characters with upper, lower, numbers, special characters)
 * ✓ 90 minutes available for deployment and initial setup
-
-***
 
 ### Deployment Process
 
@@ -101,7 +99,9 @@ Complete the **Basics** tab with the following settings:
 | **Password**         | Enter a strong password (this is used for VM administrator access)       |
 | **Confirm password** | Re-enter the password                                                    |
 
-> ⚠️ **Password Requirements:** Minimum 12 characters, must include uppercase, lowercase, numbers, and special characters. **Save this password securely!**
+{% hint style="warning" %}
+**Password Requirements:** Minimum 12 characters, must include uppercase, lowercase, numbers, and special characters. **Save this password securely!**
+{% endhint %}
 
 **Managed Application Details**
 
@@ -126,9 +126,9 @@ Click **Review + create** to proceed.
 
     <figure><img src="../.gitbook/assets/image (510).png" alt=""><figcaption></figcaption></figure>
 
-> **Note:** The Co-Admin Access Permission grants ComUnity administrative access to your Azure resources for support and management purposes.
-
-***
+{% hint style="info" %}
+The Co-Admin Access Permission grants ComUnity administrative access to your Azure resources for support and management purposes.
+{% endhint %}
 
 ### Monitoring Deployment
 
@@ -189,7 +189,9 @@ This is the longest step. The script installs all platform components on the VM 
 * Communications Server
 * And more...
 
-> **Note:** You can safely close your browser – deployment continues in the background. Use the Refresh button to check status.
+{% hint style="info" %}
+You can safely close your browser – deployment continues in the background. Use the Refresh button to check status.
+{% endhint %}
 
 #### Viewing Created Resources
 
@@ -201,8 +203,6 @@ Once deployment progresses, you can see all resources in the Managed Resource Gr
 
 Deployment is complete when the Deployments view shows all items as **"Succeeded"** with green checkmarks, especially the Custom Script Extension.
 
-***
-
 ### Accessing Your Toolkit
 
 #### Step 1: Get the Public IP Address
@@ -212,15 +212,15 @@ Deployment is complete when the Deployments view shows all items as **"Succeeded
 3. Click on the **Virtual Machine** resource
 4. In the VM Overview, locate and copy the **Public IP address**
 
-
-
 #### Step 2: Access the Toolkit
 
 1. Open a new browser tab
 2. Enter the IP address (e.g., `http://42.212.32.44`)
 3. The ComUnity Platform Toolkit login page should load
 
-> **Note:** If the page doesn't load, wait 2–3 minutes for services to fully start.
+{% hint style="info" %}
+&#x20;If the page doesn't load, wait 2–3 minutes for services to fully start.
+{% endhint %}
 
 #### Step 3: Log In
 
@@ -231,21 +231,25 @@ Use the default credentials:
 | **Username** | admin@communityplatform.com |
 | **Password** | admin                       |
 
-> ⚠️ **SECURITY:** Change these default credentials immediately after first login.
-
-***
+{% hint style="warning" %}
+⚠️ **SECURITY:** Change these default credentials immediately after first login.
+{% endhint %}
 
 ### Post-Deployment Setup
 
 #### Immediate Actions
 
-* \[ ] Change the default admin password
-* \[ ] Update the admin email address
-* \[ ] Create additional user accounts as needed
+```
+[ ] Change the default admin password
+[ ] Update the admin email address
+[ ] Create additional user accounts as needed
+```
 
 #### App Registration Setup (Required for Project Building)
 
-> ⚠️ **IMPORTANT:** You cannot build projects until App Registration is configured.
+{% hint style="danger" %}
+**IMPORTANT:** You cannot build projects until App Registration is configured.
+{% endhint %}
 
 The Deployment Agent needs Azure permissions to create databases. Without App Registration, project builds will fail. Contact ComUnity support for assistance with this setup.
 
@@ -256,8 +260,6 @@ The Deployment Agent needs Azure permissions to create databases. Without App Re
 | **Custom Domain & SSL**     | Configure a domain name and SSL certificate for HTTPS access           |
 | **Observability URLs**      | Connect observability dashboard endpoints                              |
 | **Additional Environments** | Use Infrastructure Management to create QA and Production environments |
-
-***
 
 ### Troubleshooting
 
@@ -287,11 +289,11 @@ The Deployment Agent needs Azure permissions to create databases. Without App Re
 
 **Solution:** Contact support to complete App Registration setup.
 
-***
-
 ### Deleting Your Deployment
 
-> ⚠️ **WARNING:** Deletion permanently removes all data and cannot be undone.
+{% hint style="warning" %}
+**WARNING:** Deletion permanently removes all data and cannot be undone.
+{% endhint %}
 
 #### When to Delete
 
@@ -309,8 +311,6 @@ The Deployment Agent needs Azure permissions to create databases. Without App Re
 
 This should delete both the marketplace resource group and the managed resource group with all platform resources.
 
-***
-
 ### Related Documentation
 
 | Document                                                                                                   | Description                                            |
@@ -319,7 +319,3 @@ This should delete both the marketplace resource group and the managed resource 
 | [**Infrastructure Management Guide**](../getting-started/manage-your-project/infrastructure-management.md) | Creating QA and Production environments                |
 | **App Registration Setup Guide**                                                                           | Configuring Azure AD for project builds(Coming soon..) |
 | [**Observability Setup Guide**](../toolkit-guides/observability/)                                          | Configuring monitoring and analytics                   |
-
-***
-
-***
