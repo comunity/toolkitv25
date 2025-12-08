@@ -72,7 +72,7 @@ Seven plans are available, scaled by target municipality size:
 
 On the offer page, you'll see the plan selection dropdown with all seven options available:
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-12-01 140541.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (506).png" alt=""><figcaption></figcaption></figure>
 
 1. Select your **Subscription**
 2. Click the **Plan** dropdown to see all seven options
@@ -90,8 +90,9 @@ Complete the **Basics** tab with the following settings:
 | **Subscription**   | Select the Azure subscription for deployment |
 | **Resource group** | Click **Create new** and enter a name        |
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-12-01 140648.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (509).png" alt=""><figcaption></figcaption></figure>
 
+\
 **Instance Details**
 
 | Field                | Action                                                                   |
@@ -108,8 +109,9 @@ Complete the **Basics** tab with the following settings:
 | -------------------------- | --------------------------------------------------------------------------------------------- |
 | **Application Name**       | Enter a unique name for your deployment                                                       |
 | **Managed Resource Group** | Auto-populated (e.g., `mrg-city-as-a-platform24_4-preview-20251201140556`). Cannot be edited. |
+|                            |                                                                                               |
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-12-01 141356.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (505).png" alt=""><figcaption></figcaption></figure>
 
 Click **Review + create** to proceed.
 
@@ -119,9 +121,10 @@ Click **Review + create** to proceed.
 2. Review the configuration summary under **Basics**
 3. Read the **Co-Admin Access Permission** section
 4. Check the box: **"I agree to the terms and conditions above"**
-5. Click **Create** to begin deployment
+5.  Click **Create** to begin deployment\
+    <br>
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-12-01 141534.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (510).png" alt=""><figcaption></figcaption></figure>
 
 > **Note:** The Co-Admin Access Permission grants ComUnity administrative access to your Azure resources for support and management purposes.
 
@@ -133,7 +136,7 @@ Click **Review + create** to proceed.
 
 After clicking Create, you'll see the deployment in progress notification:
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-12-01 141653.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (511).png" alt=""><figcaption></figcaption></figure>
 
 #### Understanding the Resource Structure
 
@@ -149,23 +152,20 @@ Your Resource Group (e.g., JPGTestMarketplaceDec)
 #### Viewing Deployment Progress
 
 1. Navigate to **Resource Groups** in the left menu
-2. Click on your resource group
+2.  Click on your resource group:
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-12-01 141917.png" alt=""><figcaption></figcaption></figure>
-
+    <figure><img src="../.gitbook/assets/image (512).png" alt=""><figcaption></figcaption></figure>
 3.  Click on the **Managed Application**
 
     <figure><img src="../.gitbook/assets/image (504).png" alt=""><figcaption></figcaption></figure>
 4. Click the **Managed resource group** link in the Essentials section
-5. Under Settings in the left sidebar, click **Deployments** to see detailed progress
-
-<figure><img src="../.gitbook/assets/Screenshot 2025-12-01 141816.png" alt=""><figcaption></figcaption></figure>
+5. Under Settings in the left sidebar, click **Deployments** to see detailed progress.
 
 #### Viewing Operation Details
 
 Click on any resource to see operation details including duration and status:
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-12-01 141837.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (513).png" alt=""><figcaption></figcaption></figure>
 
 #### Deployment Phases
 
@@ -195,7 +195,7 @@ This is the longest step. The script installs all platform components on the VM 
 
 Once deployment progresses, you can see all resources in the Managed Resource Group:
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-12-01 142103.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (514).png" alt=""><figcaption></figcaption></figure>
 
 #### Confirming Successful Deployment
 
