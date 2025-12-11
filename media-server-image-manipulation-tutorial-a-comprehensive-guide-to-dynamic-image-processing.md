@@ -9,9 +9,7 @@ The ComUnity Platform Media Server provides powerful image manipulation capabili
 * Reduced storage requirements - store one image, generate multiple variations
 * Automatic caching of transformed images for improved performance
 * Browser-friendly delivery with partial GET requests for large files
-* Device-adaptive content optimization
-
-***
+* Device-adaptive content optimisation
 
 ### 2. Understanding URL Structure
 
@@ -31,8 +29,6 @@ All image manipulation requests follow a consistent URL pattern:
 | **g**    | Graphics Magick | `/u/g/<<SHA File Name>>/<<modifier>>`                    |
 
 The **'g' (Graphics Magick)** argument is where all image manipulation happens. You append modifiers to transform images dynamically.
-
-***
 
 ### 3. Image Modifier Reference
 
@@ -56,8 +52,6 @@ Automatically adjusts the orientation of an image based on its EXIF metadata. Th
 /u/g/image.png/$autoOrient
 ```
 
-***
-
 #### 3.2 $blur - Gaussian Blur
 
 **Syntax:** `$blur/<<radius>>/<<sigma>>`
@@ -77,8 +71,6 @@ Applies a Gaussian blur to reduce noise or soften details. The radius parameter 
 /u/g/image.png/$blur/5/2
 ```
 
-***
-
 #### 3.3 $border - Add Border
 
 **Syntax:** `$border/<<width>>/<<height>>/<<colour>>`
@@ -97,8 +89,6 @@ Adds a colored border around the image. The color can be specified using hexadec
 /u/g/image.png/$border/5/5/FF0000
 ```
 
-***
-
 #### 3.4 $charcoal - Charcoal Effect
 
 **Syntax:** `$charcoal/<<factor>>`
@@ -112,8 +102,6 @@ Applies a charcoal sketch effect by emphasizing edges and contours while reducin
 ```
 /u/g/image.png/$charcoal/2
 ```
-
-***
 
 #### 3.5 $colorize - Color Tint
 
@@ -129,8 +117,6 @@ Applies a color tint by blending the original colors with specified RGB values (
 /u/g/image.png/$colorize/100/50/0
 ```
 
-***
-
 #### 3.6 $contrast - Adjust Contrast
 
 **Syntax:** `$contrast/<<+-multiplier>>`
@@ -142,8 +128,6 @@ Adjusts image contrast by multiplying pixel values. Values > 1 increase contrast
 ```
 /u/g/image.png/$contrast/1.5
 ```
-
-***
 
 #### 3.7 $crop - Crop Image
 
@@ -158,8 +142,6 @@ Crops the image to specified dimensions. X represents width, Y represents height
 ```
 /u/g/image.png/$crop/300/200
 ```
-
-***
 
 #### 3.8 $drawText - Add Text Overlay
 
@@ -182,8 +164,6 @@ Adds text at specified coordinates with custom color and size.
 /u/g/image.png/$drawText/20/50/Copyright/FFFFFF/24
 ```
 
-***
-
 #### 3.9 $enhance - Enhance Image
 
 **Syntax:** `$enhance`
@@ -195,8 +175,6 @@ Applies automatic enhancement by adjusting brightness, contrast, and sharpness t
 ```
 /u/g/image.png/$enhance
 ```
-
-***
 
 #### 3.10 $equalize - Histogram Equalization
 
@@ -212,8 +190,6 @@ Applies histogram equalization to improve contrast by evenly distributing pixel 
 /u/g/image.png/$equalize
 ```
 
-***
-
 #### 3.11 $flatten - Flatten Layers
 
 **Syntax:** `$flatten`
@@ -228,8 +204,6 @@ Merges all image layers into a single layer. This is a destructive operation.
 /u/g/image.png/$flatten
 ```
 
-***
-
 #### 3.12 $flip - Flip Vertically
 
 **Syntax:** `$flip`
@@ -242,8 +216,6 @@ Flips the image along the vertical axis (left to right), creating a mirror image
 /u/g/image.png/$flip
 ```
 
-***
-
 #### 3.13 $flop - Flip Horizontally
 
 **Syntax:** `$flop`
@@ -255,8 +227,6 @@ Flips the image along the horizontal axis (top to bottom), creating an upside-do
 ```
 /u/g/image.png/$flop
 ```
-
-***
 
 #### 3.14 $normalize - Normalize Contrast
 
@@ -272,8 +242,6 @@ Adjusts contrast and brightness so that the full range of pixel values is utiliz
 /u/g/image.png/$normalize
 ```
 
-***
-
 #### 3.15 $oil - Oil Painting Effect
 
 **Syntax:** `$oil/<<radius>>`
@@ -285,8 +253,6 @@ Simulates an oil painting by applying brushstroke-like textures. Larger radius v
 ```
 /u/g/image.png/$oil/3
 ```
-
-***
 
 #### 3.16 $resize - Resize Image
 
@@ -311,8 +277,6 @@ Resizes the image with various options for handling aspect ratio and dimensions.
 /u/g/image.png/$resize/800/600/m  (maintain aspect ratio)
 ```
 
-***
-
 #### 3.17 $rotate - Rotate Image
 
 **Syntax:** `$rotate/<<colour>>/<<degrees>>`
@@ -327,8 +291,6 @@ Rotates the image by specified degrees with an optional background color for emp
 /u/g/image.png/$rotate/FFFFFF/45
 ```
 
-***
-
 #### 3.18 $sepia - Sepia Tone
 
 **Syntax:** `$sepia`
@@ -341,8 +303,6 @@ Applies a vintage sepia tone effect by reducing saturation and applying a browni
 /u/g/image.png/$sepia
 ```
 
-***
-
 #### 3.19 $thumb - Create Thumbnail
 
 **Syntax:** `$thumb/<<size>>`
@@ -354,8 +314,6 @@ Creates a thumbnail with specified maximum size.
 ```
 /u/g/image.png/$thumb/150
 ```
-
-***
 
 #### 3.20 $type - Change Image Type
 
@@ -380,8 +338,6 @@ Converts the image to a specified type.
 /u/g/image.png/$type/Grayscale
 ```
 
-***
-
 ### 4. Practical Examples
 
 Here are real-world examples combining multiple modifiers:
@@ -394,8 +350,6 @@ Auto-orient, resize to 200x200, and enhance:
 /u/g/profile.jpg/$autoOrient/$resize/200/200/!/$enhance
 ```
 
-***
-
 #### 4.2 Product Image Optimization
 
 Resize maintaining aspect ratio, add white border, and normalize:
@@ -403,8 +357,6 @@ Resize maintaining aspect ratio, add white border, and normalize:
 ```
 /u/g/product.png/$resize/800/600/m/$border/10/10/FFFFFF/$normalize
 ```
-
-***
 
 #### 4.3 Vintage Photo Effect
 
@@ -414,8 +366,6 @@ Apply sepia tone and slight blur for aged look:
 /u/g/photo.jpg/$sepia/$blur/1/0.5
 ```
 
-***
-
 #### 4.4 Artistic Rendering
 
 Convert to charcoal sketch and adjust contrast:
@@ -423,8 +373,6 @@ Convert to charcoal sketch and adjust contrast:
 ```
 /u/g/landscape.jpg/$charcoal/2/$contrast/1.3
 ```
-
-***
 
 #### 4.5 Watermarked Image
 
@@ -434,11 +382,9 @@ Resize and add text watermark:
 /u/g/photo.jpg/$resize/1200/800/m/$drawText/20/760/Copyright2024/FFFFFF/24
 ```
 
-***
-
 ### 5. Best Practices
 
-#### 5.1 Performance Optimization
+#### 5.1 Performance Optimisation
 
 * **Leverage caching:** The Media Server automatically caches transformed images, reducing CPU usage on subsequent requests
 * **Chain modifiers efficiently:** Combine multiple operations in a single request rather than making sequential requests
@@ -463,8 +409,6 @@ Resize and add text watermark:
 * **Excessive rotation:** Large rotation angles may cause quality degradation; use `$autoOrient` when possible
 * **Modifier order:** Some operations should be performed in specific order (e.g., crop before resize for better quality)
 
-***
-
 ### 6. Quick Reference Table
 
 Common modifier combinations for frequent use cases:
@@ -479,8 +423,6 @@ Common modifier combinations for frequent use cases:
 | High Contrast B\&W  | `$type/Grayscale/$contrast/1.5/$normalize`              |
 | Watermarked Photo   | `$resize/1920/1080/m/$drawText/20/1040/©2024/FFFFFF/18` |
 
-***
-
 ### 7. Conclusion
 
 The Media Server's image manipulation capabilities provide a powerful and flexible solution for dynamic image processing. By chaining modifiers in the URL, you can transform images on-the-fly without the overhead of storing multiple versions.
@@ -493,17 +435,7 @@ The Media Server's image manipulation capabilities provide a powerful and flexib
 * Consider security with managed vs public servers
 * Start with high-quality source images
 
-For more information on the ComUnity Platform Media Services, refer to the official documentation or contact your development team.
-
-***
-
 ### Additional Resources
 
 * [Graphics Magick Documentation](http://www.graphicsmagick.org/)
-* ComUnity Platform Media Services Documentation
-* Media Server Upload UI Guide
 
-***
-
-_Document Version: 1.0_\
-&#xNAN;_&#x4C;ast Updated: December 2025_
