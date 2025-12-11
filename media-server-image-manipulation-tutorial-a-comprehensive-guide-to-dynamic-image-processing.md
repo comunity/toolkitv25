@@ -2,7 +2,7 @@
 
 ### 1. Introduction
 
-The ComUnity Platform Media Server provides powerful image manipulation capabilities through URL-based modifiers derived from Graphics Magick. This allows you to dynamically transform images on-the-fly without storing multiple versions of the same image.
+The ComUnity Developer Toolkit's Media Server provides powerful image manipulation capabilities through URL-based modifiers derived from [Graphics Magick](http://www.graphicsmagick.org/). This allows you to dynamically transform images on-the-fly without storing multiple versions of the same image.
 
 **Key benefits include:**
 
