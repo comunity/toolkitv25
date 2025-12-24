@@ -77,6 +77,7 @@
   * [Metrics](toolkit-guides/observability/metrics.md)
   * [Traces](toolkit-guides/observability/traces.md)
 * [Client Build](toolkit-guides/client-build.md)
+* [Tags](toolkit-guides/tags.md)
 * [Third Party Services](toolkit-guides/third-party-services/README.md)
   * [Azure Function Apps](toolkit-guides/third-party-services/azure-function-apps-integration.md)
   * [Azure Logic Apps](toolkit-guides/third-party-services/azure-logic-apps.md)
