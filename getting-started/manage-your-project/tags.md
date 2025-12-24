@@ -14,7 +14,7 @@ The tagging system operates through three distinct levels, each serving a specif
 
 **Tag Values** are the specific classifications applied to individual resources. For instance, an environment tag might have values like dev, test, or prod, while a stack tag could have values like observability, platform, or security. These values drive the dynamic grouping capabilities in the Infrastructure Catalogue.
 
-<figure><img src="../.gitbook/assets/image (516).png" alt=""><figcaption><p>Tag hierarchy showing Categories (Infrastructure, FinOps) containing Tag Names (environment, stack, owner) with Required/Optional indicators</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (516).png" alt=""><figcaption><p>Tag hierarchy showing Categories (Infrastructure, FinOps) containing Tag Names (environment, stack, owner) with Required/Optional indicators</p></figcaption></figure>
 
 ### Role-Based Access Control for Categories
 
@@ -34,7 +34,7 @@ Users assigned to a particular role can only see categories and their associated
 
 The Organisation administrator role typically has access to all categories regardless of their role assignment, enabling comprehensive oversight and management of the tagging system. The None option creates categories that are accessible to all users, useful for universal classification schemes that should be available organisation-wide.
 
-<div data-full-width="true"><figure><img src="../.gitbook/assets/image (515).png" alt=""><figcaption><p>Role selection dropdown when creating a category, showing available roles: None, Azure Developer, Developer, Lead Developer, Operations, Organisation administrator, and Viewer</p></figcaption></figure></div>
+<div data-full-width="true"><figure><img src="../../.gitbook/assets/image (515).png" alt=""><figcaption><p>Role selection dropdown when creating a category, showing available roles: None, Azure Developer, Developer, Lead Developer, Operations, Organisation administrator, and Viewer</p></figcaption></figure></div>
 
 
 
@@ -114,7 +114,7 @@ The Organisation administrator role typically has access to all categories regar
 
 **Result:** The tag is assigned to the resource and syncs to Azure. You can verify by expanding the resource details in the catalogue or checking the Azure Portal.
 
-<figure><img src="../.gitbook/assets/image (518).png" alt=""><figcaption><p>Resource Properties dialog showing Tag Category dropdown (Data selected), Tag Name field, and tag value input. Note the 'Project : No value assigned yet' indicator for required tags</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (518).png" alt=""><figcaption><p>Resource Properties dialog showing Tag Category dropdown (Data selected), Tag Name field, and tag value input. Note the 'Project : No value assigned yet' indicator for required tags</p></figcaption></figure>
 
 **Tips:**
 
@@ -143,7 +143,7 @@ The Organisation administrator role typically has access to all categories regar
 * A yellow **"\~untagged\~"** section for resources without that tag assigned
 * Resources nested under their respective tag value sections
 
-<figure><img src="../.gitbook/assets/image (519).png" alt=""><figcaption><p>Resources grouped by 'test-tag' showing three sections: 'group-A', 'group-B', and '~untagged~' (highlighted in yellow) for resources without the tag assigned</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (519).png" alt=""><figcaption><p>Resources grouped by 'test-tag' showing three sections: 'group-A', 'group-B', and '~untagged~' (highlighted in yellow) for resources without the tag assigned</p></figcaption></figure>
 
 **To change grouping:**
 
