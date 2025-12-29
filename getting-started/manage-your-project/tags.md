@@ -104,13 +104,19 @@ The Organisation administrator role typically has access to all categories regar
 
 1. Navigate to **Infrastructure > Catalogue**
 2. Locate the resource you want to tag in the resource list
-3. Click **"View properties"** for that resource
-4. In the "Resource Properties" dialog:
+3. Click **View properties** for that resource to view its current meta data information which may include preconfigured tags.
+4.  Click the ellipsis button adjacent to **View Properties** and select the **Edit resources tag**:<br>
+
+    <figure><img src="../../.gitbook/assets/image (520).png" alt=""><figcaption><p>Edit resource tags</p></figcaption></figure>
+5.  A **Resource Properties** dialog will appear:<br>
+
+    <figure><img src="../../.gitbook/assets/image (521).png" alt=""><figcaption><p>Resource Properties Dialog</p></figcaption></figure>
+6. In the Resource Properties dialog:
    * Select a **Tag Category** from the dropdown (you'll only see categories assigned to your role)
    * Select a **Tag Name** from the dropdown (shows tags within the selected category)
    * The interface displays existing tag assignments and shows which tags need values
-5. Enter a **Tag value** in the text field (e.g., "dev", "prod", "observability")
-6. Click **Save**
+7. Enter a **Tag value** in the text field (e.g., "dev", "prod", "observability")
+8. Click **Save**
 
 **Result:** The tag is assigned to the resource and syncs to Azure. You can verify by expanding the resource details in the catalogue or checking the Azure Portal.
 
