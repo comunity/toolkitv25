@@ -171,7 +171,7 @@ You may see metrics labeled P99 or P95 - these are **percentiles**.
 
 1. Check if error rate also increased (errors often cause latency)
 2. Look at Concurrent Responses - are requests backing up?
-3. View [traces](https://claude.ai/chat/link) from the spike period to identify slow operations
+3. View traces from the spike period to identify slow operations
 4. Common causes:
    * Slow database queries
    * External API timeouts
@@ -185,7 +185,7 @@ You may see metrics labeled P99 or P95 - these are **percentiles**.
 
 1. Check if service is actually down (Concurrent Responses = 0?)
 2. Look for deployment events at that time
-3. Check [logs](https://claude.ai/chat/link) for startup errors or crashes
+3. Check logs for startup errors or crashes
 4. Verify with team if intentional (maintenance, feature flag change)
 
 ### Using Time Controls
