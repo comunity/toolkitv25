@@ -47,19 +47,22 @@ The Organisation administrator role typically has access to all categories regar
 
 **Steps:**
 
-1. Navigate to **Organisation Settings** in the ComUnity Toolkit
-2. Select **Tags** from the left navigation menu
-3. Click **"Create a new category"** at the bottom of the categories list
-4. In the "Create a new category" dialog:
-   * Enter a **Category name** (e.g., "Infrastructure", "FinOps", "Security")
+1. Login as a Toolkit Administrator.
+2.  Navigate to **Organisation Settings > Tags** in the ComUnity Toolkit.<br>
+
+    <figure><img src="../../.gitbook/assets/image (525).png" alt=""><figcaption></figcaption></figure>
+3. Select **Tags** from the left navigation menu.
+4. Click **"**_**Create a new category**_**"** at the bottom of the categories list.
+5. In the "_**Create a new category**_" dialog:
+   * Enter a **Category name** (e.g., "_Infrastructure_", "_FinOps_", "_Security_")
    * Select the appropriate **Role** from the dropdown to control who can access this category:
      * Choose **None** if all users should see this category
-     * Choose a specific role (e.g., Developer, Operations) to restrict access
-5. Click **Create**
+     * Choose a specific role (e.g., _**Developer**_, _**Operations**_) to restrict access
+6. Click **Create**
 
-**Result:** The new category appears in the categories list. You can now add tags to this category.
+The new category appears in the categories list. You can now add tags to this category.
 
-**Tips:**
+_Tips_**:**
 
 * Use descriptive category names that clearly indicate their purpose
 * Consider your organisation's role structure when assigning category access
@@ -75,23 +78,26 @@ The Organisation administrator role typically has access to all categories regar
 
 **Steps:**
 
-1. Navigate to **Organisation Settings > Tags**
-2. Locate the category you want to add tags to
-3. Click **"View category"** or the dropdown arrow to expand the category
-4. Click **"Add Tag name"** within the expanded category
-5. In the "Create a new Tag" dialog:
+1. Login as a Toolkit Administrator.
+2.  Navigate to **Organisation Settings > Tags**<br>
+
+    <figure><img src="../../.gitbook/assets/image (526).png" alt=""><figcaption></figcaption></figure>
+3. Locate the category you want to add tags to.
+4. Click **"**_**View category**_**"** or the dropdown arrow to expand the category
+5. Click **"**_**Add Tag name**_**"** within the expanded category
+6. In the "Create a new Tag" dialog:
    * Enter a **Tag name** (e.g., "environment", "stack", "owner")
    * (Optional) Enter a **Description** to provide context for users
    * Check the **Required** checkbox if this tag must be assigned to all resources
-6. Click **Create**
+7. Click "_**Create**_**"**
 
-**Result:** The tag appears in the category with an indicator showing whether it's Required or Optional. The tag is now available for users with appropriate role access to assign to resources.
+The tag appears in the category with an indicator showing whether it's "_Required_" or "_Optional_". The tag is now available for users with appropriate role access to assign to resources.
 
-**Tips:**
+_Tips:_
 
-* Use lowercase, hyphenated names for consistency (e.g., "cost-centre", not "Cost Centre")
-* Mark tags as Required only when enforcement is truly necessary
-* The Description field helps users understand what values are appropriate
+* Use lowercase, hyphenated names for consistency (e.g., "_**cost-centre**_", not "_**Cost Centre**_")
+* Mark tags as "_**Required**_" only when enforcement is truly necessary
+* The "_**Description**_" field helps users understand what values are appropriate
 
 ## Configuring Pre-defined Tag Values
 
@@ -108,22 +114,29 @@ Pre-defined options are particularly useful for tags where you want to enforce a
 
 **Steps:**
 
-1. Navigate to **Organisation Settings > Tags**
-2. Expand the category containing the tag you want to configure
-3. Click on the tag name to open the **"Editing a tag"** dialog
-4. Locate the **"Pre-defined options"** field below the Required checkbox
-5. Enter a value in the Pre-defined options text field (e.g., "dev")
-6. Click the **"Add"** button to add the value to the pre-defined list
-7. Repeat steps 5-6 for each value you want to add (e.g., "prod", "qa", "staging")
-8. Click **Save** to apply the changes
+1. Login as a Toolkit Administrator.
+2.  Navigate to **Organisation Settings > Tags**<br>
 
-**Result:** The pre-defined values appear as removable tags below the input field (e.g., "dev ×", "prod ×", "qa ×"). When users assign this tag to resources, they will see these values in a dropdown menu for easy selection.
+    <figure><img src="../../.gitbook/assets/image (524).png" alt=""><figcaption></figcaption></figure>
+3.  Expand the category containing the tag you want to configure:<br>
+
+    <figure><img src="../../.gitbook/assets/image (529).png" alt=""><figcaption></figcaption></figure>
+4.  Click on the tag name to open the **"Editing a tag"** dialog:<br>
+
+    <figure><img src="../../.gitbook/assets/image (527).png" alt=""><figcaption></figcaption></figure>
+5. Locate the **"**_**Pre-defined options**_**"** field below the Required checkbox
+6. Enter a value in the Pre-defined options text field (e.g., "dev")
+7. Click the **"**_**Add**_**"** button to add the value to the pre-defined list
+8. Repeat steps 5-6 for each value you want to add (e.g., "prod", "qa", "staging")
+9. Click **Save** to apply the changes
+
+The pre-defined values appear as removable tags below the input field (e.g., "_dev ×_", "_prod ×_", "_qa ×_"). When users assign this tag to resources, they will see these values in a dropdown menu for easy selection.
 
 ### Removing Pre-defined Options
 
 To remove a pre-defined value from a tag:
 
-1. Open the **"Editing a tag"** dialog for the tag
+1. Open the **"**_**Editing a tag**_**"** dialog for the tag
 2. Locate the value you want to remove in the list of pre-defined options
 3. Click the **×** (close) icon next to the value
 4. Click **Save** to apply the changes
@@ -131,8 +144,6 @@ To remove a pre-defined value from a tag:
 {% hint style="info" %}
 Removing a pre-defined option does not affect resources that have already been assigned that value. Existing tag assignments remain intact. However, users will no longer be able to select the removed value when assigning tags to new resources.
 {% endhint %}
-
-
 
 ### How Pre-defined Options Appear to Users
 
@@ -152,58 +163,59 @@ When a tag has pre-defined options configured, users assigning that tag to a res
 
 **Steps:**
 
-1. Navigate to **Infrastructure > Catalogue**
-2. Locate the resource you want to tag in the resource list
-3. Click **View properties** for that resource to view its current meta data information which may include preconfigured tags.
-4.  Click the ellipsis button adjacent to **View Properties** and select the **Edit resources tag**:<br>
+1. Login as a **Toolkit Administrator**.
+2. Navigate to **Infrastructure > Catalogue**
+3. Locate the resource you want to tag in the resource list
+4. Click **View properties** for that resource to view its current meta data information which may include preconfigured tags.
+5.  Click the ellipsis button adjacent to **View Properties** and select the **Edit resources tag**:<br>
 
     <figure><img src="../../.gitbook/assets/image (520).png" alt=""><figcaption><p>Edit resource tags</p></figcaption></figure>
-5.  A **Resource Properties** dialog will appear:<br>
+6.  A **Resource Properties** dialog will appear:<br>
 
     <figure><img src="../../.gitbook/assets/image (521).png" alt=""><figcaption><p>Resource Properties Dialog</p></figcaption></figure>
-6. In the Resource Properties dialog:
+7. In the Resource Properties dialog:
    * Select a **Tag Category** from the dropdown (you'll only see categories assigned to your role)
    * Select a **Tag Name** from the dropdown (shows tags within the selected category)
    * The interface displays existing tag assignments and shows which tags need values
-7. Enter a **Tag value** in the text field (e.g., "dev", "prod", "observability")
-8. Click **Save**
+8. Enter a **Tag value** in the text field (e.g., "dev", "prod", "observability")
+9. Click **Save**
 
-**Result:** The tag is assigned to the resource and syncs to Azure. You can verify by expanding the resource details in the catalogue or checking the Azure Portal.
+The tag is assigned to the resource and syncs to Azure. You can verify by expanding the resource details in the catalogue or checking the Azure Portal.
 
 <figure><img src="../../.gitbook/assets/image (518).png" alt=""><figcaption><p>Resource Properties dialog showing Tag Category dropdown (Data selected), Tag Name field, and tag value input. Note the 'Project : No value assigned yet' indicator for required tags</p></figcaption></figure>
 
-**Tips:**
+_Tips:_
 
-* Use consistent tag values across resources (e.g., always "dev", not mixing "dev", "development", "Development")
-* Required tags show a red indicator and "No value assigned yet" message
+* Use consistent tag values across resources (e.g., always "_dev_", not mixing "_dev_", "_development_", "Development")
+* Required tags show a red indicator and "_No value assigned yet_" message
 * You can assign multiple tags to a single resource by selecting different categories and tag names
-* Previously assigned tags appear as removable badges (e.g., "environment : dev ⊗")
+* Previously assigned tags appear as removable badges (e.g., "_environment : dev ⊗_")
 
 ### How to Use Group By Tag
 
 **Prerequisites:**
 
 * At least one resource must have tag values assigned
-* Access to the Infrastructure Catalogue
+* Access to the _**Infrastructure**_ > _**Catalogue**_
 
 **Steps:**
 
-1. Navigate to **Infrastructure > Catalogue**
-2. Locate the **"Group By Tag"** dropdown above the resource table
-3. Click the dropdown and select a tag name (e.g., "stack", "environment", "owner")
-4. The resource list reorganizes into collapsible sections based on tag values
+1. Navigate to _**Infrastructure**_**&#x20;>&#x20;**_**Catalogue**_
+2. Locate the **"**_**Group By Tag**_**"** dropdown above the resource table
+3. Click the dropdown and select a tag name (e.g., "_stack_", "_environment_", "_owner_")
+4. The resource list reorganises into collapsible sections based on tag values
 
-**Result:** Resources are grouped under section headers matching their tag values. You'll see:
+Resources are grouped under section headers matching their tag values. You'll see:
 
 * Gray section headers for each unique tag value (e.g., "observability", "platform")
-* A yellow **"\~untagged\~"** section for resources without that tag assigned
+* A yellow **"**_**\~untagged\~**_**"** section for resources without that tag assigned
 * Resources nested under their respective tag value sections
 
 <figure><img src="../../.gitbook/assets/image (519).png" alt=""><figcaption><p>Resources grouped by 'test-tag' showing three sections: 'group-A', 'group-B', and '~untagged~' (highlighted in yellow) for resources without the tag assigned</p></figcaption></figure>
 
 **To change grouping:**
 
-* Select a different tag from the "Group By Tag" dropdown
+* Select a different tag from the "_Group By Tag_" dropdown
 * The view updates immediately to show groupings for the new tag
 
 **Tips:**
@@ -227,7 +239,7 @@ When a tag has pre-defined options configured, users assigning that tag to a res
 3. Click the **"Tag"** dropdown
 4. Select a specific tag value to filter by (e.g., "dev", "observability")
 
-**Result:** The resource list shows only resources with the selected tag value. Resources without that tag value are hidden from view.
+The resource list shows only resources with the selected tag value. Resources without that tag value are hidden from view.
 
 **To clear the filter:**
 
@@ -256,13 +268,13 @@ When a tag has pre-defined options configured, users assigning that tag to a res
    * Click on a tag value (e.g., "dev")
 5. Azure displays all resources with that tag assignment
 
-**Result:** You can verify that tags created in ComUnity Toolkit are properly synchronised to Azure and visible in Azure's native tag management interface.
+You can verify that tags created in ComUnity Toolkit are properly synchronised to Azure and visible in Azure's native tag management interface.
 
-**Tips:**
+_Tips:_
 
 * Tags sync immediately when saved in ComUnity Toolkit
 * Azure's tag interface shows the same tag names and values
-* You can also view tags on individual resources in Azure Portal under the resource's "Tags" section
+* You can also view tags on individual resources in Azure Portal under the resource's "_Tags_" section
 
 ### Common Use Cases
 
@@ -274,9 +286,9 @@ Organisations implement tagging strategies for diverse operational needs, each t
 
 **Configuration:**
 
-* Create a category: "Infrastructure" (Role: Developer or Operations)
+* Create a category: "_Infrastructure_" (Role: Developer or Operations)
 * Add tag: "environment" (Required)
-* Common values: "dev", "test", "staging", "prod"
+* Common values: "_dev_", "_test_", "_staging_", "_prod_"
 
 **Benefits:**
 
@@ -293,10 +305,10 @@ Organisations implement tagging strategies for diverse operational needs, each t
 
 * Create a category: "FinOps" (Role: Finance team role or Organisation administrator)
 * Add tags:
-  * "business-unit" (Required)
-  * "cost-centre" (Required)
-  * "project" (Optional)
-* Common values: Specific to your organization (e.g., "sales", "engineering", "CC-12345", "Project-Phoenix")
+  * "_business-unit_" (Required)
+  * "_cost-centre_" (Required)
+  * "_project_" (Optional)
+* Common values: Specific to your organisation (e.g., "sales", "engineering", "CC-12345", "Project-Phoenix")
 
 **Benefits:**
 
@@ -313,10 +325,10 @@ Organisations implement tagging strategies for diverse operational needs, each t
 
 * Create a category: "Infrastructure" (Role: Operations)
 * Add tags:
-  * "stack" (Required)
-  * "owner" (Required)
+  * "_stack_" (Required)
+  * "_owner_" (Required)
 * Common values:
-  * stack: "observability", "platform", "networking", "security"
+  * stack: "_observability_", "_platform_", "_networking_", "_security_"
   * owner: Team names or individual names
 
 **Benefits:**
@@ -334,8 +346,8 @@ Organisations implement tagging strategies for diverse operational needs, each t
 
 * Create a category: "Compliance" (Role: Organisation administrator or Security role)
 * Add tags:
-  * "data-classification" (Required)
-  * "compliance-scope" (Required)
+  * "_data-classification_" (Required)
+  * "_compliance-scope_" (Required)
 * Common values:
   * data-classification: "public", "internal", "confidential", "restricted"
   * compliance-scope: "GDPR", "HIPAA", "PCI-DSS", "None"
