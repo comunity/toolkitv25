@@ -4,7 +4,7 @@ The Tags feature in the ComUnity Developer Toolkit provides a powerful organisat
 
 Tags offer a flexible framework for organising resources through a three-tier structure: Categories contain Tags, which are assigned Values on individual resources. This hierarchical approach allows teams to establish governance standards while maintaining the flexibility to adapt to diverse operational requirements.
 
-### Understanding the Tag Structure
+## Understanding the Tag Structure
 
 The tagging system operates through three distinct levels, each serving a specific purpose in the organisational hierarchy.
 
@@ -16,11 +16,15 @@ The tagging system operates through three distinct levels, each serving a specif
 
 <figure><img src="../../.gitbook/assets/image (516).png" alt=""><figcaption><p>Tag hierarchy showing Categories (Infrastructure, FinOps) containing Tag Names (environment, stack, owner) with Required/Optional indicators</p></figcaption></figure>
 
+## Managing Tag Categories
+
+Tag categories form the foundation of your tagging system, providing both organisational structure and security boundaries. This section covers how categories use role-based access control to ensure appropriate access, and guides you through creating categories and adding tags to them.
+
 ### Role-Based Access Control for Categories
 
 Tag categories implement role-based access control to ensure users only interact with tags appropriate to their organisational responsibilities. When creating a category, administrators assign it to a specific role, which determines who can view and use the tags within that category.
 
-The available roles include:
+**The available roles include:**
 
 * **None** - Accessible to all users
 * **Azure Developer** - Restricted to Azure Developer role
@@ -34,11 +38,7 @@ Users assigned to a particular role can only see categories and their associated
 
 The Organisation administrator role typically has access to all categories regardless of their role assignment, enabling comprehensive oversight and management of the tagging system. The None option creates categories that are accessible to all users, useful for universal classification schemes that should be available organisation-wide.
 
-<div data-full-width="true"><figure><img src="../../.gitbook/assets/image (515).png" alt=""><figcaption><p>Role selection dropdown when creating a category, showing available roles: None, Azure Developer, Developer, Lead Developer, Operations, Organisation administrator, and Viewer</p></figcaption></figure></div>
-
-
-
-### How to Create a Tag Category
+### Create a Tag Category
 
 **Prerequisites:**
 
@@ -54,7 +54,7 @@ The Organisation administrator role typically has access to all categories regar
    * Enter a **Category name** (e.g., "Infrastructure", "FinOps", "Security")
    * Select the appropriate **Role** from the dropdown to control who can access this category:
      * Choose **None** if all users should see this category
-     * Choose a specific role (e.g., **Developer**, **Operations**) to restrict access
+     * Choose a specific role (e.g., Developer, Operations) to restrict access
 5. Click **Create**
 
 **Result:** The new category appears in the categories list. You can now add tags to this category.
@@ -66,7 +66,7 @@ The Organisation administrator role typically has access to all categories regar
 * Finance-related tags should typically use specific roles to control access to cost data
 * General operational tags can use "None" for broad accessibility
 
-### How to Add Tags to a Category
+### Assign Tags to a Category
 
 **Prerequisites:**
 
@@ -93,7 +93,57 @@ The Organisation administrator role typically has access to all categories regar
 * Mark tags as Required only when enforcement is truly necessary
 * The Description field helps users understand what values are appropriate
 
-### How to Assign Tags to Resources
+## Configuring Pre-defined Tag Values
+
+Pre-defined options allow administrators to specify a set of standardised values for a tag. When users assign this tag to resources, they can select from these pre-defined values through a dropdown menu, ensuring consistency across the organisation and reducing data entry errors.
+
+Pre-defined options are particularly useful for tags where you want to enforce a controlled vocabulary, such as environment names (dev, test, staging, prod), regions, or cost centres. Instead of allowing free-form text entry, users select from administrator-defined values.
+
+**Prerequisites:**
+
+* Organisation administrator access
+* An existing tag (or you can add pre-defined options when creating a new tag)
+
+### Assign Pre-defined Options to a Tag
+
+**Steps:**
+
+1. Navigate to **Organisation Settings > Tags**
+2. Expand the category containing the tag you want to configure
+3. Click on the tag name to open the **"Editing a tag"** dialog
+4. Locate the **"Pre-defined options"** field below the Required checkbox
+5. Enter a value in the Pre-defined options text field (e.g., "dev")
+6. Click the **"Add"** button to add the value to the pre-defined list
+7. Repeat steps 5-6 for each value you want to add (e.g., "prod", "qa", "staging")
+8. Click **Save** to apply the changes
+
+**Result:** The pre-defined values appear as removable tags below the input field (e.g., "dev ×", "prod ×", "qa ×"). When users assign this tag to resources, they will see these values in a dropdown menu for easy selection.
+
+### Removing Pre-defined Options
+
+To remove a pre-defined value from a tag:
+
+1. Open the **"Editing a tag"** dialog for the tag
+2. Locate the value you want to remove in the list of pre-defined options
+3. Click the **×** (close) icon next to the value
+4. Click **Save** to apply the changes
+
+{% hint style="info" %}
+Removing a pre-defined option does not affect resources that have already been assigned that value. Existing tag assignments remain intact. However, users will no longer be able to select the removed value when assigning tags to new resources.
+{% endhint %}
+
+
+
+### How Pre-defined Options Appear to Users
+
+When a tag has pre-defined options configured, users assigning that tag to a resource will see a dropdown menu instead of a free-text input field. This provides several benefits:
+
+* **Consistency:** All resources use the same standardised values
+* **Speed:** Users can quickly select from available options without typing
+* **Accuracy:** Eliminates typos and variations (e.g., "dev" vs "Dev" vs "development")
+* **Discoverability:** Users can see all valid options at a glance
+
+### Assign Tags to Resources
 
 **Prerequisites:**
 
