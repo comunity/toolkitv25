@@ -372,4 +372,4 @@ To configure the OpenAPI API in the ComUnity Developer Toolkit, follow these ste
     These actions complete the UI by enabling users to view a list of posts, navigate to a screen displaying the details of a selected post, and submit new posts using a form.
 7.  Build and launch your project to view your posts in the application. Click **Add Post** to navigate to the **Add Post** screen, where you can fill out a form to create a new post. Click on any post in the list to be redirected to the **Post by ID** page, where you can view the post’s details.<br>
 
-    <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Posts screen in the application</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Posts screen in the application</p></figcaption></figure>
