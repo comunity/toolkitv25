@@ -742,9 +742,11 @@ Conclusion: Backend performance issue, not UX issue
 4. Review trace duration and identify bottlenecks
 5. Optimise slow operations
 
+
+
 ### Tips for Effective Analytics Use
 
-#### DO:
+#### ✅ DO:
 
 * **Check analytics regularly** - Weekly for production apps minimum
 * **Focus on trends, not single days** - Day-to-day fluctuations are normal
@@ -754,7 +756,7 @@ Conclusion: Backend performance issue, not UX issue
 * **Correlate with other data** - Link to Logs, Metrics, Traces when investigating issues
 * **Test on real devices** - Don't rely only on data, experience it yourself
 
-#### DON'T:
+#### ❌ DON'T:
 
 * **Obsess over vanity metrics** - Total visits matter less than engagement and conversion
 * **Ignore context** - Traffic drop might be expected (weekend, holiday)

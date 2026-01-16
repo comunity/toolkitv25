@@ -9,7 +9,7 @@ description: >-
 
 The ComUnity Platform’s metrics functionality is a crucial component for monitoring your project’s performance, providing an in-depth view of various operational aspects through the Metrics dashboard. This dashboard presents critical data points and trends that are vital for maintaining and optimising your project’s health and performance.
 
-The Metrics dashboard is one of three core components of the ComUnity Platform’s Observability framework, alongside [Traces](traces.md) and [Client Analytics](client-analytics.md).
+The Metrics dashboard is one of four core components of the ComUnity Platform’s Observability framework, alongside [Traces](traces.md), [Client Analytics](client-analytics.md) and [Logs](logs.md).
 
 While metrics focus on system performance, traces provide detailed request-level insights, and client analytics capture user behaviour and interaction data.
 
@@ -266,7 +266,7 @@ See Alerts for how to configure notifications.
 
 The metrics system uses:
 
-* **Grafana** for visualisation and dashboards
-* **Prometheus** for metrics collection and storage
-* **Thanos** for long-term metric retention
+* [Grafana](https://grafana.com/docs/loki/latest/?pg=oss-loki\&plcmt=quick-links) for visualisation and dashboards
+* [ Prometheus](https://prometheus.io/) for metrics collection and storage
+* [Thanos](https://thanos.io/) for long-term metric retention
 

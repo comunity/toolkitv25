@@ -85,28 +85,45 @@ The power of the ComUnity Platform's observability comes from how these tools in
 
 ### Quick Start Guide
 
-#### Step 1: Enable Observability
+#### Step 1: Access Observability
 
-Observability is enabled per environment. Follow these steps for each deployment environment:
+Observability is segmented per environment, with Metrics, Traces, and Logs supported by default in each active environment. Client Analytics requires manual enablement. Follow the steps below to enable Client Analytics for each deployment environment.
 
-1. **Log into the Toolkit** with your credentials
-2. **Open your project** from the project list
-3. **Navigate to Observability** in the main menu
-4. **Go to Project Settings** → **Observability** tab
-5. **Click "Enable Observability"** and wait for the background process to complete
-6. **Access your dashboards** from Observability menu
+### Enabling Client Analytics
 
-**Screenshot needed:** Project Settings → Observability tab
+**Prerequisites:**
+
+* Access to the ComUnity Developer Toolkit
+* Project with at least one active environment
+
+**Steps:**
+
+1. Log into the Toolkit with your credentials
+2. Open your project from the project list
+3. Navigate to **Observability** in the main menu
+4.  Go to **Project Settings > Environment tab> Observability** tab:<br>
+
+    <figure><img src="../../.gitbook/assets/image (530).png" alt=""><figcaption></figcaption></figure>
+5. Click **"Activate Page Analytics"** and wait for the background process to complete
+6. Access your dashboards from the **Observability** menu
+
+Client Analytics is enabled for the selected environment. Your observability dashboards are now accessible from the Observability menu.
+
+{% hint style="success" %}
+You'll need to enable Client Analytics separately for **Development**, **QA**, and **Production** environments.
+{% endhint %}
 
 **Time to enable:** Approximately 2-3 minutes per environment
-
-{% hint style="danger" %}
-You'll need to enable observability separately for **Development**, **QA**, and **Production** environments.
-{% endhint %}
 
 #### Step 2: Access Your Dashboards
 
 Once enabled, you can access four integrated dashboards:
+
+<figure><img src="../../.gitbook/assets/image (531).png" alt=""><figcaption><p>Metrics Dashboard</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (532).png" alt=""><figcaption><p>Logs Dashboard</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (533).png" alt=""><figcaption><p>Traces Dashboard</p></figcaption></figure>
 
 **Metrics Dashboard**
 
