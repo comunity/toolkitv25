@@ -21,9 +21,9 @@ Monitor your application's health with real-time performance data.
 * Service health and availability
 * Custom business metrics
 
-**When to use:** Daily health checks, performance optimization, capacity planning
+**When to use:** Daily health checks, performance optimisation, capacity planning
 
-**Explore Metrics →**
+[**Explore Metrics →**](metrics.md)
 
 #### Logs: Detailed Event Records
 
@@ -34,11 +34,11 @@ Search and analyse detailed logs to understand what happened and why.
 * Error messages and stack traces
 * User actions and system events
 * API requests and responses
-* Application behavior and debugging info
+* Application behaviour and debugging info
 
 **When to use:** Troubleshooting errors, debugging issues, audit trails
 
-**Explore Logs →**
+[**Explore Logs →**](logs.md)
 
 #### Traces: Request Flow Visualisation
 
@@ -53,7 +53,7 @@ Follow individual requests through your entire system to identify bottlenecks an
 
 **When to use:** Debugging slow requests, understanding service interactions, optimizing workflows
 
-**Explore Traces →**
+[**Explore Traces →**](traces.md)
 
 #### Client Analytics: User Behaviour
 
@@ -66,9 +66,9 @@ Understand how users interact with your application through privacy-first analyt
 * Geographic distribution and device types
 * User flows and drop-off points
 
-**When to use:** Feature adoption analysis, UX optimization, understanding user behavior
+**When to use:** Feature adoption analysis, UX optimisation, understanding user behaviour
 
-**Explore Client Analytics →**
+[**Explore Client Analytics →**](client-analytics.md)
 
 ### How These Tools Work Together
 
@@ -100,7 +100,9 @@ Observability is enabled per environment. Follow these steps for each deployment
 
 **Time to enable:** Approximately 2-3 minutes per environment
 
-**Note:** You'll need to enable observability separately for Development, QA, and Production environments.
+{% hint style="danger" %}
+You'll need to enable observability separately for **Development**, **QA**, and **Production** environments.
+{% endhint %}
 
 #### Step 2: Access Your Dashboards
 
@@ -131,7 +133,7 @@ Once enabled, you can access four integrated dashboards:
 
 * Track user engagement
 * Understand feature adoption
-* Analyze user flows
+* Analyse user flows
 * Monitor traffic sources
 
 #### Step 3: Instrument Your Application (Optional)
@@ -204,23 +206,12 @@ The platform automatically collects infrastructure metrics, logs, and traces. Fo
 
 #### Documentation
 
-* **Metrics Guide** - Understanding dashboards and creating alerts
-* **Logs Guide** - Searching logs and debugging with LogQL
-* **Traces Guide** - Reading trace visualizations and finding bottlenecks
-* **Client Analytics Guide** - Understanding user behavior and analytics
+* [**Metrics Guide**](metrics.md) - Understanding dashboards and creating alerts
+* [**Logs Guide**](logs.md) - Searching logs and debugging with LogQL
+* [**Traces Guide**](traces.md) - Reading trace visualisations and finding bottlenecks
+* [**Client Analytics Guide**](client-analytics.md) - Understanding user behavior and analytics
 * **Troubleshooting Guide** - Common issues and solutions _(coming soon)_
 * **Quick Reference** - Query cheat sheets and glossary _(coming soon)_
-
-#### Technical Documentation
-
-For platform administrators and advanced configuration:
-
-* **Technical Documentation** - Architecture, configuration, and operations
-
-#### Support
-
-* **Support Channel:** \[link or email]
-* **Office Hours:** \[if applicable]
 
 ### Best Practices
 
@@ -271,7 +262,7 @@ For platform administrators and advanced configuration:
 **Use traces to find bottlenecks:**
 
 * Identify longest operations
-* Optimize database queries
+* Optimise database queries
 * Cache expensive operations
 * Consider async processing
 
@@ -289,7 +280,7 @@ All observability data stays on your infrastructure. No data is sent to third-pa
 
 #### Privacy Compliance
 
-* **GDPR compliant:** IP anonymization, consent management
+* **GDPR compliant:** IP anonymisation, consent management
 * **CCPA compliant:** User opt-out and data deletion
 * **HIPAA compatible:** Can be configured for healthcare applications
 
@@ -301,10 +292,10 @@ Observability data access is controlled through ComUnity Platform permissions. U
 
 #### Technology Stack
 
-* **Metrics:** Prometheus + Grafana + Thanos
-* **Logs:** Loki with LogQL query language
-* **Traces:** Jaeger + OpenTelemetry + Tempo
-* **Analytics:** Matomo (open-source, privacy-first)
+* **Metrics:**[ Prometheus](https://prometheus.io/) + [Grafana](https://grafana.com/docs/loki/latest/?pg=oss-loki\&plcmt=quick-links) + [Thanos](https://thanos.io/)
+* **Logs:** [Loki with LogQL](https://grafana.com/docs/loki/latest/query/) query language
+* **Traces:** [Jaeger](https://www.jaegertracing.io/docs/) + [OpenTelemetry](https://opentelemetry.io/) + [Tempo](https://grafana.com/docs/tempo/latest/)
+* **Analytics:** [Matomo](https://matomo.org/guides/) (open-source, privacy-first)
 
 #### Data Retention
 
@@ -323,18 +314,18 @@ Observability data access is controlled through ComUnity Platform permissions. U
 
 #### Just Enabled Observability?
 
-1. **Understand Metrics →** Start with your service health dashboard
-2. **Learn Log Searching →** Find and debug errors quickly
-3. **Explore Traces →** Visualise request flows
+1. [**Understand Metrics →**](metrics.md) Start with your service health dashboard
+2. [**Learn Log Searching →** ](logs.md)Find and debug errors quickly
+3. [**Explore Traces →**](traces.md) Visualise request flows
 
 #### Ready for Advanced Features?
 
 1. **Set Up Alerts →** Get notified when issues occur _(coming soon)_
 2. **Add Custom Instrumentation →** Track business metrics _(coming soon)_
-3. **Read Technical Docs →** Deep dive into configuration
 
 #### Need Help?
 
 * Review the troubleshooting guides for common issues
-* Contact support through \[channel/email]
+* Contact support through _support@comunityplatform.com_
 * Check the quick reference for query syntax
+
