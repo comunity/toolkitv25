@@ -266,9 +266,18 @@ Before adding custom logging, ensure your project is configured to send logs to 
 
 1. Open your project in the Toolkit.
 2. Navigate to **Settings** → **Environment** → **Configuration**.
-3. Locate the **Observability Log URL** setting.
-4. Verify the URL points to the production observability stack (not a test environment).
+3. Locate the **ObservabilityLogHttpUrl** setting.
+4. Verify the URL is set to the production observability endpoint:
+
+```
+   https://otelpub.obs.comunity.me/v1/logs
+```
+
 5. Save any changes and rebuild your project if necessary.
+
+{% hint style="warning" %}
+If this URL points to a test or development observability stack (e.g., contains `.dev.` in the URL), your logs will not appear in the production Logs interface. Ensure the URL matches the production endpoint shown above.
+{% endhint %}
 
 #### Step-by-Step Instructions
 
@@ -278,22 +287,20 @@ Before adding custom logging, ensure your project is configured to send logs to 
 4. Click on **Custom Code** property to open the Code Editor for that entity.
 5. **Click the green Code Snippets button** in the top right corner(Code Snippets in image below)
 6. **Select the appropriate log snippet**:
+   1. _Info Log_
+   2. _Warning Log_
+   3. _Error Log_
+   4. _Log with Attributes_
+7. **Copy the snippet code**.
+8. **Paste into the desired method** (e.g., `OnAdd`, `OnUpdate`, `OnDelete`).
+9. **Customise the log message** to describe what is being logged.
+10. **Add the required import** if not already present (see Troubleshooting below).
+11. **Save and publish** your project.
+12. **Trigger the event** (e.g., add a record) to generate the log entry.
 
-* Info Log
-* Warning Log
-* Error Log
-* Log with Attributes
+<figure><img src="../../.gitbook/assets/image (535).png" alt=""><figcaption><p>Editing Custom Code of a selected Entity</p></figcaption></figure>
 
-1. **Copy the snippet code**.
-2. **Paste into the desired method** (e.g., `OnAdd`, `OnUpdate`, `OnDelete`).
-3. **Customise the log message** to describe what is being logged.
-4. **Add the required import** if not already present (see Troubleshooting below).
-5. **Save and publish** your project.
-6. **Trigger the event** (e.g., add a record) to generate the log entry.
-
-<figure><img src="../../.gitbook/assets/image (535).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/image (536).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (536).png" alt=""><figcaption><p>Project Logs</p></figcaption></figure>
 
 #### Available Log Snippets
 
@@ -525,11 +532,11 @@ When troubleshooting custom functionality you’ve built:
 
 The Logs feature integrates with the Grafana observability stack:
 
-| Component         | Purpose                     | Documentation    |
-| ----------------- | --------------------------- | ---------------- |
-| **Grafana Loki**  | Log aggregation and storage | Used for Logs    |
-| **Grafana Tempo** | Distributed tracing         | Used for Traces  |
-| **Prometheus**    | Metrics collection          | Used for Metrics |
+| Component                                                           | Purpose                     | Documentation    |
+| ------------------------------------------------------------------- | --------------------------- | ---------------- |
+| [**Grafana Loki**](https://grafana.com/docs/loki/latest/)           | Log aggregation and storage | Used for Logs    |
+| [**Grafana Tempo**](https://grafana.com/docs/tempo/latest/)         | Distributed tracing         | Used for Traces  |
+| [**Prometheus**](https://prometheus.io/docs/introduction/overview/) | Metrics collection          | Used for Metrics |
 
 The Toolkit interface provides a streamlined view of Loki logs without requiring separate Grafana credentials or navigation. If you have direct access to Grafana, you can also view logs there with additional query capabilities.
 
@@ -565,9 +572,9 @@ These enhancements are dependent on platform component updates and are subject t
 
 ### Related Topics
 
-* Metrics — Monitor application performance and resource utilisation
-* Traces — Track request flows and identify performance bottlenecks
-* Client Analytics — Understand user engagement and application usage patterns
+* [Metrics](metrics.md) — Monitor application performance and resource utilisation
+* [Traces](traces.md) — Track request flows and identify performance bottlenecks
+* [Client Analytics](client-analytics.md) — Understand user engagement and application usage patterns
 
 {% hint style="info" %}
 The Logs interface design may be updated based on UX team feedback. Future releases may include improved layout options for component selection and additional filtering capabilities.
