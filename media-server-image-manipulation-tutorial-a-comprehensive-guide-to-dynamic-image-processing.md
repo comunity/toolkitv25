@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Media Server Image Manipulation Tutorial  A Comprehensive Guide to Dynamic Image Processing
 
 ### 1. Introduction
