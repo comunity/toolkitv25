@@ -1,293 +1,189 @@
-# Media Server Image Manipulation Tutorial  A Comprehensive Guide to Dynamic Image Processing
+# Media Server Image Manipulation Tutorial: A Comprehensive Guide to Dynamic Image Processing
 
-## Introduction
+In this tutorial, you'll upload an image to the ComUnity Platform Media Server, add it to an application screen, and then apply transformations to create different versions of the same image—all without editing the original file.
 
-The ComUnity Platform Media Server provides robust capabilities for managing media assets including images, documents, and other file types. This tutorial will guide you through the process of uploading images to the Media Server and using them in your application screens.
+By the end, you'll have a working image displayed in your app with rotation applied, and you'll know how to resize, crop, and apply effects to any image using simple URL modifications.
 
-**You will learn how to:**
+### Before You Begin
 
-* Upload images to the Media Server via the Toolkit UI
-* Understand the SHA-based file naming convention
-* Access uploaded files using File URL and SHA URL
-* Add images to application screens using the Image control
-* Apply image manipulation modifiers to transform images
+Make sure you have:
 
-### Uploading Images to the Media Server
+* Access to the ComUnity Developer Toolkit
+* An existing project open in the Toolkit
+* An image file ready to upload (PNG or JPEG work best for image manipulation)
 
-The Media Server Upload interface provides a convenient, environment-specific upload utility for managing media assets. Each deployment environment (Development, QA, and Production) has its own dedicated Media Server, ensuring that media files can be tested independently without risk to live data.
+### Step 1: Open the Media Server
 
-#### Step 1: Navigate to Media Server Settings
+Let's start by navigating to where you'll upload your image.
 
-1. Open your project in the ComUnity Developer Toolkit.
-2. Click on the **Settings icon** (gear) next to your project name to open Project Settings.
-3. Select your target environment tab (e.g., **Development environment**).
-4. In the left sidebar, click on **Media Server**.
+1. In your project, click the **Settings icon** (the gear) next to your project name. The Project Settings dialog opens.
+2. You'll see environment tabs at the top: **Global**, **Development environment**, **QA environment**, and **Production environment**. Click on **Development environment** since we're just testing for now.
+3. In the left sidebar, click on **Media server**.
 
-{% hint style="info" %}
-Each deployment environment has its own Media Server. Files uploaded to the Development environment will not be available in QA or Production until uploaded separately to those environments.
-{% endhint %}
+You should now see the Media Server upload interface with a drag-and-drop area and an "Uploaded Files" panel on the right.
 
-#### Step 2: Understanding the Environment Tabs
+> Each environment has its own separate Media Server. This means an image you upload to Development won't exist in QA or Production until you upload it there too. This keeps your testing isolated from your live application.
 
-At the top of the Project Settings dialog, you will see environment tabs:
+### Step 2: Upload Your Image
 
-| Environment                 | Purpose                          |
-| --------------------------- | -------------------------------- |
-| **Global**                  | For shared project-wide settings |
-| **Development environment** | For testing during development   |
-| **QA environment**          | For quality assurance testing    |
-| **Production environment**  | For live deployment              |
+Now let's get your image into the Media Server.
 
-Select the appropriate environment tab first, then click on **Media Server** in the sidebar to access that environment's media upload interface.
+1. Find your image file on your computer.
+2. Drag it into the upload area, or click **"Select a file"** to browse.
+3. Wait a moment while the file uploads. Once complete, your file appears in the **Uploaded Files** panel on the right with a green checkmark.
+4. Click on your uploaded file in the list. At the bottom of the panel, you'll see two URLs appear:
+   * **File URL** – Uses your original filename, like: `https://toolkitv3.comunity.me/u/f/my-photo.png`
+   * **SHA URL** – Uses a unique hash based on the file contents, like: `https://toolkitv3.comunity.me/u/d/77d55728427f43cce27624d37658dd11292f1f8c42d288af059b27297127e551.139.127.120.0.2048.1368.png`
+5. Copy the **SHA URL** – you'll need this in the next step. The SHA URL is longer but it's what you'll use when you want to manipulate the image later.
 
-![Media Server Upload Interface](https://claude.ai/chat/Screenshot_2026-01-26_at_09_44_14.png) _Figure 1: Media Server Upload Interface showing the Development environment selected_
+> Notice the numbers in the SHA filename? For images, the Media Server embeds colour and dimension information right in the filename: `SHA.red.green.blue.alpha.width.height.extension`. This helps the server process your image efficiently.
 
-#### Step 3: Upload Your File
+### Step 3: Add the Image to a Screen
 
-1. _(Optional)_ Enter an **Upload path** to specify a subdirectory under `/u/` for organizing your files.
-2. Drag and drop your image file into the upload area, or click the **"Select a file"** button to browse.
-3. Wait for the upload to complete. The file will appear in the **Uploaded Files** panel on the right.
+With your image uploaded, let's display it in your application.
 
-> **Note:** Each file uploaded to the media server is stored using a SHA-based naming convention that prevents duplicate uploads and supports version integrity.
+1. Close the Project Settings dialog and click **Screens** in the left sidebar.
+2. Select the screen where you want to add your image, or create a new screen.
+3. In the **Screen Controls** panel on the right, find the **Image** control.
+4. Drag the Image control onto your screen structure where you want the image to appear.
+5. With the Image control selected, look at the **Properties** panel. You'll see an **Image** field.
+6. Paste the SHA URL you copied earlier into this field.
+7. The **Image Preview** below should now show your image. If it looks correct, click **Save**.
 
-#### Step 4: Access Your Uploaded File URLs
+Your image is now part of your screen. When users view this screen in your app, they'll see the image you uploaded.
 
-Once uploaded, each media file provides two types of URLs:
+### Step 4: Rotate the Image Using URL Modifiers
 
-| URL Type     | Description                                                                                                                           |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
-| **File URL** | A permanent public URL using the friendly filename for direct access or embedding.                                                    |
-| **SHA URL**  | A deterministic, hashed path derived from the file's contents and metadata. This prevents duplication and supports version integrity. |
+Here's where the Media Server becomes powerful. Instead of opening an image editor to rotate your photo, you can simply modify the URL.
 
-![File URLs After Upload](https://claude.ai/chat/Screenshot_2026-01-26_at_09_44_42.png) _Figure 2: File URL and SHA URL displayed after successful upload_
+Let's rotate your image 180 degrees:
 
-Both URLs are displayed at the bottom of the upload panel. You can click on the file entry to copy either URL for use in your application.
+1.  Take your SHA URL. It currently looks something like:
 
-{% hint style="info" %}
-The SHA URL is particularly useful when you need to ensure that content hasn't changed, as any modification to the file would result in a different SHA hash.&#x20;
-{% endhint %}
+    ```
+    https://toolkitv3.comunity.me/u/d/77d55728427f43cce...png
+    ```
+2.  Change `/u/d/` to `/u/g/` – this tells the Media Server you want to apply graphics manipulation:
 
-#### SHA File Naming Convention
+    ```
+    https://toolkitv3.comunity.me/u/g/77d55728427f43cce...png
+    ```
+3.  Add the rotation modifier at the end:
 
-All files uploaded to the media server follow a SHA-based file naming convention:
+    ```
+    https://toolkitv3.comunity.me/u/g/77d55728427f43cce...png/$rotate/white/180
+    ```
+4. Go back to your Image control's Properties and replace the URL with this new one.
+5. Check the Image Preview – your image should now be upside down!
 
-**For image file types:**
+The `$rotate/white/180` part tells the server to rotate 180 degrees and fill any empty space with white. You can use any colour name or hex code, and any degree value.
 
-```
-SHA_of_file.red.green.blue.alpha.width.height.file_extension
-```
+### Step 5: Try More Transformations
 
-Example:
+Now that you understand how modifiers work, try these on your image:
 
-```
-081b278349bb8499788bca8427f11063c73a666a66a8422840311e3397de5ad5.186.188.189.0.300.300.png
-```
-
-**For other file types:**
-
-```
-SHA_of_file.file_extension
-```
-
-Example:
+**Create a thumbnail (150 pixels):**
 
 ```
-0aa941b04274ae04dc5a9bd214f7d5214f36e6de.txt
+/u/g/YOUR_SHA_FILENAME/$thumb/150
 ```
 
-{% hint style="warning" %}
-The SHA File Naming convention prevents duplicate file uploads. However, note that uploading an existing file will overwrite it. Always verify you're not accidentally replacing important files.
-{% endhint %}
-
-## Adding Images to Application Screens
-
-After uploading your images to the Media Server, you can use them in your application screens using the Image screen control. This section demonstrates how to add and configure an image on a screen.
-
-#### Step 1: Navigate to the Screens Section
-
-1. In the left sidebar of the Toolkit, click on **"Screens"**.
-2. Select the screen where you want to add an image, or create a new screen.
-
-#### Step 2: Add an Image Control
-
-1. In the **Screen Controls** panel on the right, locate the **"Image"** control.
-2. Drag the Image control and drop it onto your screen structure.
-3. A placeholder image will appear in the screen preview.
-
-![Screen View with Image Control](https://claude.ai/chat/Screenshot_2026-01-26_at_09_43_51.png) _Figure 3: Screen View showing Image control with Properties panel_
-
-#### Step 3: Configure the Image Properties
-
-When you select an Image control, the Properties panel displays the following options:
-
-| Property          | Description                                                                                             |
-| ----------------- | ------------------------------------------------------------------------------------------------------- |
-| **Name**          | The system-generated name of the image control (e.g., NewsBanner2).                                     |
-| **Image**         | The SHA URL or file path of the image. You can upload a new image or paste a URL from the Media Server. |
-| **Image Preview** | Shows a preview of the selected image before saving.                                                    |
-
-#### Step 4: Set the Image Source
-
-You have two options to set the image:
-
-**Option A: Upload directly**
-
-* Click the **"Upload image"** button in the Properties panel.
-* Select an image file from your computer.
-
-**Option B: Use Media Server URL**
-
-* Copy the SHA URL from your Media Server upload.
-* Paste it into the **"Image"** field in the Properties panel.
-
-#### Step 5: Save Your Changes
-
-1. Verify the image appears correctly in the Image Preview.
-2. Click the **"Save"** button at the bottom of the Properties panel.
-
-### Part 3: Image Manipulation Using URL Modifiers
-
-The ComUnity Media Server supports powerful image manipulation capabilities through URL modifiers. When fetching images, you can append optional arguments to transform them on-the-fly without modifying the original file.
-
-#### Understanding URL Structure
-
-The basic format for retrieving images with manipulation is:
+**Resize to exactly 300×200 pixels:**
 
 ```
-<<Base URL>>/u/g/<<SHA File Name>>/<<modifier>>
+/u/g/YOUR_SHA_FILENAME/$resize/300/200/!
 ```
 
-**URL Arguments:**
-
-| Argument | Type            | URL Format                                               |
-| -------- | --------------- | -------------------------------------------------------- |
-| `d`      | Direct          | `/u/d/<<SHA File Name>>`                                 |
-| `f`      | Friendly        | `/u/f/<<Friendly File Name>>`                            |
-| `g`      | Graphics Magick | `/u/g/<<SHA File Name>>/<<modifier>>`                    |
-| `icon`   | Icon            | `/u/icon/<<RRGGBB>>/<<size>>/<<opacity>>/<<icon_image>>` |
-
-#### Common Image Modifiers
-
-Here are the most frequently used image manipulation modifiers:
-
-| Modifier                            | Description                                                                                                                                                 |
-| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `$resize/width/height/options`      | Resize image to specified width and height. Options: `m` (maintain ratio), `!` (exact size), `p` (percentage), `g` (only if exceeds), `s` (only if smaller) |
-| `$rotate/color/degrees`             | Rotate image by specified degrees. Background color fills empty space.                                                                                      |
-| `$crop/x/y`                         | Crop image to specified width (x) and height (y) in pixels.                                                                                                 |
-| `$thumb/size`                       | Create a thumbnail with specified maximum size.                                                                                                             |
-| `$blur/radius/sigma`                | Apply Gaussian blur. Higher radius = more blur.                                                                                                             |
-| `$sepia`                            | Apply sepia tone effect for a vintage look.                                                                                                                 |
-| `$autoOrient`                       | Auto-rotate based on EXIF data. Useful for mobile uploads.                                                                                                  |
-| `$flip`                             | Flip vertically (mirror along horizontal axis).                                                                                                             |
-| `$flop`                             | Flip horizontally (mirror along vertical axis).                                                                                                             |
-| `$charcoal/factor`                  | Apply charcoal sketch effect. Higher factor = more pronounced.                                                                                              |
-| `$colorize/red/green/blue`          | Apply color tint (values 0-255).                                                                                                                            |
-| `$contrast/multiplier`              | Adjust contrast. Values >1 increase, <1 decrease contrast.                                                                                                  |
-| `$enhance`                          | Apply automatic image enhancement algorithm.                                                                                                                |
-| `$equalize`                         | Apply histogram equalization for improved contrast.                                                                                                         |
-| `$normalize`                        | Normalize brightness and contrast across full pixel range.                                                                                                  |
-| `$oil/radius`                       | Apply oil painting effect. Larger radius = more pronounced.                                                                                                 |
-| `$border/width/height/color`        | Add a border around the image.                                                                                                                              |
-| `$drawText/x/y/text/color/fontSize` | Add text overlay at specified position.                                                                                                                     |
-
-#### Example: Using Image Manipulation in a Screen
-
-The screenshot below shows an image being used in a Content control with rotation applied:
-
-![Image with Rotation Modifier](https://claude.ai/chat/Screenshot_2026-01-26_at_09_44_55.png) _Figure 4: Image with rotation modifier ($rotate/180) applied in Content control_
-
-In this example, the Markdown field contains an image reference with a rotation modifier:
-
-```markdown
-![Alt text]
-(/u/g/acece449d9339a6298c2fd5a26f9aa1ffbb0e885c7f1e
-c421987a98c6fb43747.197.201.202.255.3024.1700.png/$rotate/180)
-```
-
-{% hint style="info" %}
-The `$rotate/180` modifier at the end of the URL rotates the image 180 degrees. You can chain multiple modifiers by appending them with forward slashes.
-{% endhint %}
-
-#### Chaining Multiple Modifiers
-
-You can apply multiple transformations by chaining modifiers:
+**Resize to fit within 400×300 while keeping proportions:**
 
 ```
-/u/g/<<SHA File Name>>/$resize/300/200/$sepia/$blur/2/1
+/u/g/YOUR_SHA_FILENAME/$resize/400/300/m
 ```
 
-This example would:
-
-1. Resize the image to 300x200 pixels
-2. Apply sepia tone
-3. Apply a slight blur
-
-### Part 4: Best Practices and Tips
-
-#### File Organisation
-
-* Use descriptive filenames before uploading to make files easier to identify.
-* Consider using the Upload path field to organize files into logical subdirectories.
-* Keep track of your File URLs and SHA URLs for easy reference.
-
-#### Performance Optimisation
-
-* Use the `$thumb` modifier to create smaller versions for thumbnails and previews.
-* Apply `$resize` to reduce bandwidth when full-resolution images aren't needed.
-* The Media Server caches transformed images, so repeated requests are served quickly.
-
-#### Mobile Considerations
-
-* Always use `$autoOrient` for images that may be uploaded from mobile devices.
-* This ensures images display correctly regardless of how the device was held when the photo was taken.
-
-#### Environment Management
-
-* Test uploads in Development environment before promoting to QA or Production.
-* Remember that file deletions are permanent and scoped to the selected environment only.
-* Each environment has its own Media Server, so you'll need to upload files to each environment where they're needed.
-* Use the same filenames across environments for consistency in your application code.
-
-{% hint style="warning" %}
-Deletion is permanent and scoped to the selected environment only. Always double-check before deleting files, especially in Production.
-{% endhint %}
-
-### Summary
-
-In this tutorial, you learned how to:
-
-1. Navigate to Media Server settings via **Project Settings > \[Environment] > Media Server**
-2. Upload images using drag-and-drop or file selection
-3. Understand the difference between File URL and SHA URL
-4. Add Image controls to screens and configure their properties
-5. Apply image manipulation modifiers like resize, rotate, crop, and effects
-
-For more detailed information about all available modifiers and advanced features, refer to the complete Media Server documentation in the ComUnity Platform documentation.
-
-### Quick Reference Card
-
-#### Navigation Path
+**Apply a vintage sepia effect:**
 
 ```
-Project Settings > Development/QA/Production environment > Media Server
+/u/g/YOUR_SHA_FILENAME/$sepia
 ```
 
-#### URL Patterns
+**Add a soft blur:**
 
 ```
-Direct access:     /u/d/<<SHA File Name>>
-Friendly name:     /u/f/<<Friendly File Name>>  
-With modifiers:    /u/g/<<SHA File Name>>/<<modifier>>
+/u/g/YOUR_SHA_FILENAME/$blur/3/2
 ```
 
-#### Most Used Modifiers
+**Combine multiple effects** – just chain them together:
 
 ```
-$resize/width/height/m    - Resize maintaining aspect ratio
-$thumb/size               - Create thumbnail
-$rotate/color/degrees     - Rotate image
-$crop/width/height        - Crop to size
-$autoOrient               - Fix mobile orientation
-$sepia                    - Vintage effect
+/u/g/YOUR_SHA_FILENAME/$resize/300/300/m/$sepia/$blur/2/1
 ```
+
+This creates a 300×300 thumbnail with sepia toning and a subtle blur, all from a single URL.
+
+***
+
+### Step 6: Fix Mobile Photo Orientation
+
+If you're building an app where users upload photos from their phones, you'll encounter a common problem: photos appear rotated incorrectly. This happens because phones store rotation data separately from the image itself.
+
+The fix is simple. Add `$autoOrient` to your image URL:
+
+```
+/u/g/YOUR_SHA_FILENAME/$autoOrient
+```
+
+This reads the photo's orientation data and rotates it correctly. For any user-uploaded mobile photos, this modifier should be your default.
+
+### Step 7: Upload to Other Environments
+
+Your image works perfectly in Development. Now let's prepare it for QA testing.
+
+1. Open **Project Settings** again.
+2. This time, click the **QA environment** tab.
+3. Click **Media server** in the sidebar.
+4. Upload the same image file.
+
+The image now exists in both Development and QA. When you're ready for production, repeat this process on the **Production environment** tab.
+
+> Your image URLs will work the same way in each environment—only the base URL changes. The SHA filename stays identical because it's based on the file contents, not where you uploaded it.
+
+### What You've Learned
+
+You've completed a full workflow with the ComUnity Media Server:
+
+1. You navigated to the Media Server through Project Settings, selecting your environment first.
+2. You uploaded an image and discovered the two URL types—File URL for readable links and SHA URL for version integrity.
+3. You added the image to a screen using the Image control.
+4. You learned that changing `/u/d/` to `/u/g/` enables image manipulation.
+5. You applied transformations like rotation, resizing, and effects by adding modifiers to the URL.
+6. You discovered `$autoOrient` for handling mobile uploads.
+7. You understood that each environment has its own Media Server, keeping development isolated from production.
+
+### Quick Reference
+
+When you need to manipulate images, remember this pattern:
+
+```
+Change:  /u/d/filename  (direct access)
+To:      /u/g/filename/$modifier  (graphics manipulation)
+```
+
+Common modifiers you'll use often:
+
+* `$thumb/size` – Create a thumbnail
+* `$resize/width/height/m` – Resize maintaining aspect ratio
+* `$rotate/color/degrees` – Rotate the image
+* `$crop/width/height` – Crop to size
+* `$autoOrient` – Fix mobile photo orientation
+* `$sepia` – Vintage effect
+* `$blur/radius/sigma` – Soften the image
+
+The server caches your transformed images, so the first request does the processing and subsequent requests are served instantly.
+
+### Next Steps
+
+Now that you're comfortable with the basics, try:
+
+* Using the `$drawText` modifier to add watermarks to images
+* Creating an icon set using the `/u/icon/` path with custom colours
+* Setting up a content screen that displays user-uploaded photos with `$autoOrient` applied automatically

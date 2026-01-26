@@ -110,7 +110,7 @@
 ***
 
 * [Media Server Image Manipulation Tutorial  A Comprehensive Guide to Dynamic Image Processing](media-server-image-manipulation-tutorial-a-comprehensive-guide-to-dynamic-image-processing.md)
-* [Media Server Image Manipulation Tutorial  A Comprehensive Guide to Dynamic Image Processing](media-server-image-manipulation-tutorial-a-comprehensive-guide-to-dynamic-image-processing-1.md)
+* [Media Server Image Manipulation Tutorial: A Comprehensive Guide to Dynamic Image Processing](media-server-image-manipulation-tutorial-a-comprehensive-guide-to-dynamic-image-processing-1.md)
 * [Enhancing Cases App: Real-time Comment Notifications](enhancing-cases-app-real-time-comment-notifications.md)
 
 ## Reference articles
