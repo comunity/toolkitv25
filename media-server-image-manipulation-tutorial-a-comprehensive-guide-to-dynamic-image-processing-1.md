@@ -79,8 +79,6 @@ Here's where the Media Server becomes powerful. Instead of opening an image edit
 3. With the Content control selected, look at the **Properties** panel. You'll see a **Markdown** field.
 4. Enter your image using Markdown image syntax, but this time construct the URL for graphics manipulation. Change `/u/d/` to `/u/g/` and add your modifier at the end:
 
-markdown
-
 ```markdown
    ![Alt text](/u/g/acece449d9339a6298c2fd5a26f9aa1ffbb0e885c7f1ec421987a98c6fb43747.197.201.202.255.3024.1700.png/$rotate/180)
 ```
@@ -103,15 +101,11 @@ Now that you understand how modifiers work, try these variations in your Content
 
 **Create a thumbnail (150 pixels):**
 
-markdown
-
 ```markdown
 ![Thumbnail](/u/g/YOUR_SHA_FILENAME/$thumb/150)
 ```
 
 **Resize to exactly 300×200 pixels:**
-
-markdown
 
 ```markdown
 ![Resized](/u/g/YOUR_SHA_FILENAME/$resize/300/200/!)
@@ -119,15 +113,11 @@ markdown
 
 **Resize to fit within 400×300 while keeping proportions:**
 
-markdown
-
 ```markdown
 ![Resized](/u/g/YOUR_SHA_FILENAME/$resize/400/300/m)
 ```
 
 **Apply a vintage sepia effect:**
-
-markdown
 
 ```markdown
 ![Sepia](/u/g/YOUR_SHA_FILENAME/$sepia)
@@ -135,15 +125,11 @@ markdown
 
 **Add a soft blur:**
 
-markdown
-
 ```markdown
 ![Blurred](/u/g/YOUR_SHA_FILENAME/$blur/3/2)
 ```
 
 **Combine multiple effects** – just chain them together:
-
-markdown
 
 ```markdown
 ![Combined](/u/g/YOUR_SHA_FILENAME/$resize/300/300/m/$sepia/$blur/2/1)
@@ -156,8 +142,6 @@ This creates a 300×300 thumbnail with sepia toning and a subtle blur, all from 
 If you're building an app where users upload photos from their phones, you'll encounter a common problem: photos appear rotated incorrectly. This happens because phones store rotation data separately from the image itself.
 
 The fix is simple. Add `$autoOrient` to your image URL in the Markdown:
-
-markdown
 
 ```markdown
 ![Photo](/u/g/YOUR_SHA_FILENAME/$autoOrient)
