@@ -40,13 +40,13 @@ To create a custom entity, follow these steps:
     <figure><img src="../../.gitbook/assets/image (453).png" alt=""><figcaption><p>Diagram view of the Data model<br></p></figcaption></figure>
 
     <figure><img src="../../.gitbook/assets/image (455).png" alt=""><figcaption><p>List view of the Data model<br></p></figcaption></figure>
-3.  Click ![](../../.gitbook/assets/ComUnity-Icon-v4-AddEntity-16px.png) icon, and an **Add a new entity** modal window will appear on your screen.<br>
+3.  Click ![](../../.gitbook/assets/ComUnity-Icon-v4-AddEntity-16px.png) icon, and an **Add ntity** modal window will appear on your screen.<br>
 
     <div align="left"><figure><img src="../../.gitbook/assets/image (456).png" alt="" width="375"><figcaption><p>Add new entity modal</p></figcaption></figure></div>
 
 
 4. In the **Entity Name** box, provide a descriptive name for your entity. Choose a name that represents the object or concept it represents in your application. Note that a valid entity name is unique and cannot contain special characters or spaces.
-5. Finally, click on the **Add an entity** button to create your custom entity.
+5. Finally, click on the **Add ntity** button to create your custom entity.
 
 ### Adding Entity Fields and Configuring Field Settings
 
