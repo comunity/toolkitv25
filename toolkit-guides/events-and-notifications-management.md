@@ -12,7 +12,7 @@ In the ComUnity Toolkit, an event represents any significant occurrence or chang
 
 **Accessing Events**
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>Events and Notifications</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Events and Notifications</p></figcaption></figure>
 
 1. **Notification Panel**:
    * Click on the bell icon located in the top-right corner of the dashboard to access the notification panel.
@@ -20,7 +20,7 @@ In the ComUnity Toolkit, an event represents any significant occurrence or chang
 2. **Events Page**:
    *   To view all events, click on the **Show all events and notifications** link at the bottom of the notification panel. This will take you to the comprehensive events management page.<br>
 
-       <figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Events Management</p></figcaption></figure>
+       <figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Events Management</p></figcaption></figure>
 
 ## **Filtering and Managing Events**
 

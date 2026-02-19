@@ -56,26 +56,24 @@ To make a tag category available at project level, a Toolkit Administrator must 
 
 Project users can assign tags through two methods:
 
-**Method 1: From the Resource**
+_**Method 1**_**: From the Resource**
 
 1. Navigate to _**Third party**_ services and select the resource type (e.g., Azure function apps, Azure logic apps, Azure APIs)
 2. Locate the resource in the list
 3.  Click "_**View details**_" or the ellipsis menu (⋯)<br>
 
-    <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 4.  Select "_**Edit function app tags**_" (or equivalent for the resource type), a _**Resource Properties**_ dialog will appear:<br>
 
-    <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
-5. Select _**Tag Name**_ and assign _**Tag value**_ and save:\
-   \
-   <br>
+    <figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+5. Select _**Tag Name**_ and assign _**Tag value**_ and save:<br>
 
-**Method 2: From Project Settings**
+_**Method 2**_**: From Project Settings**
 
 1. Navigate to _**Project Settings**_ (cog icon)
 2.  Select "_**Tags**_" from the left navigation<br>
 
-    <figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 3. View available tag categories and add tag names as needed
 
 Tags assigned at project level sync to Azure, enabling consistent resource classification across the platform and Azure Portal.
@@ -233,119 +231,94 @@ _Tips:_
 * You can assign multiple tags to a single resource by selecting different categories and tag names
 * Previously assigned tags appear as removable badges (e.g., "_environment : dev ⊗_")
 
-### How to Use Group By Tag
+### Filtering and Grouping Resources by Tag
+
+The Infrastructure Catalogue provides a powerful workflow for managing tags across large numbers of resources. By combining hierarchical filtering, grouping, and bulk updates, administrators can efficiently organise and tag resources.
+
+#### How the Workflow Fits Together
+
+| Action                        | Purpose                                                  |
+| ----------------------------- | -------------------------------------------------------- |
+| **Tag filter (hierarchical)** | Controls **which resources** are visible                 |
+| **Group By Tag**              | Controls **how resources are organised** into sections   |
+| **Section ellipsis (⋯)**      | Allows **bulk update** for all resources in that section |
+
+#### _Step 1_: Filter Resources Using the Hierarchical Tag Filter
+
+The Tag dropdown in the filter toolbar supports hierarchical selection. Tags are organised by parent (tag name) and children (tag values).
 
 **Prerequisites:**
 
-* At least one resource must have tag values assigned
-* Access to the _**Infrastructure**_ > _**Catalogue**_
+* Access to _**Infrastructure**_ > _**Catalogue**_
+* Tags and tag values must exist in the system
 
 **Steps:**
 
-1. Navigate to _**Infrastructure**_**&#x20;>&#x20;**_**Catalogue**_
-2. Locate the **"**_**Group By Tag**_**"** dropdown above the resource table
-3. Click the dropdown and select a tag name (e.g., "_stack_", "_environment_", "_owner_")
-4. The resource list reorganises into collapsible sections based on tag values
+1. Navigate to _**Infrastructure**_ > _**Catalogue**_
+2. Locate the _**Tag**_ dropdown in the filter toolbar
+3. Click to open the dropdown - you will see parent tags (e.g., "environment", "stack", "owner") and their child values (e.g., dev, prod, qa)
+4.  Select a parent tag to automatically include all its child values:<br>
 
-Resources are grouped under section headers matching their tag values. You'll see:
-
-* Gray section headers for each unique tag value (e.g., "observability", "platform")
-* A yellow **"**_**\~untagged\~**_**"** section for resources without that tag assigned
-* Resources nested under their respective tag value sections
-
-<figure><img src="../../.gitbook/assets/image (519).png" alt=""><figcaption><p>Resources grouped by 'test-tag' showing three sections: 'group-A', 'group-B', and '~untagged~' (highlighted in yellow) for resources without the tag assigned</p></figcaption></figure>
-
-**To change grouping:**
-
-* Select a different tag from the "_Group By Tag_" dropdown
-* The view updates immediately to show groupings for the new tag
+    <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+5. Deselect individual child values to narrow your results
+6. The resource list updates dynamically as you adjust selections
 
 **Tips:**
 
-* Grouping by "environment" helps distinguish dev/test/prod resources
-* Grouping by "stack" shows infrastructure organization
-* The "\~untagged\~" section helps identify resources that need categorization
-* Sections are collapsible - click to expand/collapse
+* The dropdown shows selected items in the filter pill (e.g., "environment, dev, prod...")
+* Use this to start broad and progressively narrow your view
+* Multiple parent tags can be selected simultaneously
 
-### Bulk Update Tags
+#### _Step 2_: Organise Results Using Group By Tag
 
-The Infrastructure Catalogue allows you to update tags for multiple resources simultaneously, significantly reducing the time required to tag large numbers of resources. This is particularly useful when working with the "~~untagged~~" group to bring resources into compliance with your tagging strategy.
-
-**Prerequisites:**
-
-* Access to the Infrastructure > Catalogue
-* Organisation administrator access or appropriate role permissions
-* Resources visible in the catalogue
+Once filtered, use Group By Tag to organise resources into sections based on tag values.
 
 **Steps:**
 
-1. Navigate to Infrastructure > Catalogue
-2. Use Group By Tag to organise resources (e.g., group by "environment" or "stack")
-3. Locate the group you want to update - the yellow "~~untagged~~" section shows resources without the selected tag assigned
-4. Select the resources you want to tag or use the group selection to select all resources within that group
-5. Click the bulk update option to open the tag assignment dialog
-6. Select the Tag Category, Tag Name, and enter the Tag Value
-7. Click Save to apply the tag to all selected resources
+1. Locate the **Group By Tag** dropdown below the filter toolbar
+2.  Select a tag name (e.g., "environment")<br>
 
-The tags sync to Azure for all updated resources. Depending on the number of resources being updated, the operation may take a moment to complete.
+    <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+3. Resources reorganise into sections with grey headers showing each tag value (e.g., "dev", "prod", "qa")
+4. Resources without the selected tag appear under a yellow **"**~~**untagged**~~**"** section header
 
 **Tips:**
 
-* Use filtering to narrow down resources before performing a bulk update
-* When tagging many resources at once, the system may encounter rate limits - if this occurs, the operation will retry automatically and complete successfully
-* Start with a small batch to verify your tag values are correct before updating larger groups
-* The "~~untagged~~" group is ideal for identifying resources that need categorisation during compliance audits
+* Sections display the tag value as a header row
+* Use grouping to quickly identify which resources need tagging
+* The "~~untagged~~" section highlights resources requiring attention
 
-### How to Filter Resources by Tags
+#### _Step 3_: Bulk Update Tags from Section Headers
 
-**Prerequisites:**
-
-* Resources must have tag values assigned
-* Access to the Infrastructure Catalogue
-
-**Steps:**
-
-1. Navigate to **Infrastructure > Catalogue**
-2. Locate the **"Tag"** filter dropdown in the toolbar (top of the page)
-3. Click the **"Tag"** dropdown
-4. Select a specific tag value to filter by (e.g., "dev", "observability")
-
-The resource list shows only resources with the selected tag value. Resources without that tag value are hidden from view.
-
-**To clear the filter:**
-
-* Select **"All Tags"** from the Tag dropdown
-* The view returns to showing all resources
-
-**Combining Filters and Grouping:**
-
-* You can use the Tag filter and Group By Tag simultaneously
-* Example: Filter by "environment:dev" then Group By "stack" to see how dev resources are organised by **stack**
-
-### Hierarchical Tag Filtering
-
-The Infrastructure Catalogue supports hierarchical filtering, allowing you to quickly narrow down resources by selecting tag categories and their associated tags in a parent-child relationship.
-
-When you select a parent category (e.g., "Infrastructure"), the filter automatically includes all tags within that category. As you deselect individual tags, the resource list narrows to show only resources matching your remaining selections.
+Each section header includes an ellipsis menu (⋯) that allows you to bulk update all resources within that section.
 
 **Prerequisites:**
 
-* Access to the Infrastructure > Catalogue
-* Resources must have tag values assigned
+* Resources must be grouped using Group By Tag
+* Appropriate permissions to edit resource tags
 
 **Steps:**
 
-1. Navigate to Infrastructure > Catalogue
-2. Locate the Tag filter area in the toolbar
-3. Select a tag category to automatically include all tags within it
-4. Deselect individual tags to narrow your results
-5. The resource list updates dynamically as you adjust your selections
+1. Group resources by a tag (e.g., "environment")
+2. Locate the section you want to update (e.g., "~~untagged~~")
+3. Click the **ellipsis (⋯)** on the section header row
+4. The "Tag Value for \[tag]" dialog opens with:
+   * **Tag:** Pre-selected based on your Group By Tag selection
+   * **Tag Name:** Displays the tag being updated
+   *   **Tag value:** Dropdown to select the value to apply<br>
+
+       <figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Bulk Tag updates</p></figcaption></figure>
+5. Select the desired tag value from the dropdown
+6. Click **Save**
+
+All resources in that section are updated with the selected tag value and synced to Azure.
 
 **Tips:**
 
-* Use hierarchical filtering to start broad and progressively narrow your view
-* This approach is particularly useful when auditing large numbers of resources across related tag groups
-* Combine hierarchical filtering with Group By Tag for powerful resource discovery
+* This is the most efficient way to tag multiple resources at once
+* When tagging many resources, the system may encounter rate limits - if this occurs, the operation retries automatically and completes successfully
+* Use the "~~untagged~~" section to quickly bring resources into compliance with your tagging strategy
+* After bulk updating, resources move from "~~untagged~~" to their new tag value section
 
 ### How to Verify Tags in Azure Portal
 

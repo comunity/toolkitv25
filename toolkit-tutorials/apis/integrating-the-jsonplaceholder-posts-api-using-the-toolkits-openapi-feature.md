@@ -66,7 +66,7 @@ To configure the OpenAPI API in the ComUnity Developer Toolkit, follow these ste
 
     4.  Click the **Select** file button and upload the OpenAPI specification file for JSONPlaceholder Posts, which is provided in the [Resources](integrating-the-jsonplaceholder-posts-api-using-the-toolkits-openapi-feature.md#resources) section.<br>
 
-        <figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Registering the OpenAPI API in the Toolkit</p></figcaption></figure>
+        <figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Registering the OpenAPI API in the Toolkit</p></figcaption></figure>
     5. Click the **Add Azure API to your project** button to register and configure the API in Azure API Management (APIM).
 
     This process ensures the API is properly registered and available for further integration within the Toolkit.<br>
@@ -372,4 +372,4 @@ To configure the OpenAPI API in the ComUnity Developer Toolkit, follow these ste
     These actions complete the UI by enabling users to view a list of posts, navigate to a screen displaying the details of a selected post, and submit new posts using a form.
 7.  Build and launch your project to view your posts in the application. Click **Add Post** to navigate to the **Add Post** screen, where you can fill out a form to create a new post. Click on any post in the list to be redirected to the **Post by ID** page, where you can view the post’s details.<br>
 
-    <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Posts screen in the application</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Posts screen in the application</p></figcaption></figure>
