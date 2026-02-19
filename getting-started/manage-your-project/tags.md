@@ -50,7 +50,7 @@ At the project level, only tag categories assigned the "Organisation administrat
 * **Data integrity:** Sensitive categories such as FinOps (cost-centre, business-unit) and Infrastructure (environment, stack) remain controlled at the platform level
 * **Simplified experience:** Project users see only the tags relevant to their work, reducing complexity and the risk of misconfiguration
 
-To make a tag category available at project level, a Toolkit Administrator must assign it the "Organisation administrator" role when creating or editing the category in Organisation Settings > Tags.
+To make a tag category available at project level, a Toolkit Administrator must assign it the "_**Organisation administrator**_" role when creating or editing the category in _**Organisation Settings**_ > _**Tags**_.
 
 **Methods for Assigning Tags**
 
@@ -60,14 +60,22 @@ Project users can assign tags through two methods:
 
 1. Navigate to _**Third party**_ services and select the resource type (e.g., Azure function apps, Azure logic apps, Azure APIs)
 2. Locate the resource in the list
-3. Click "_**View details**_" or the ellipsis menu (⋯)
-4. Select "_**Edit function app tags**_" (or equivalent for the resource type)
-5. Assign tag values and save
+3.  Click "_**View details**_" or the ellipsis menu (⋯)<br>
+
+    <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+4.  Select "_**Edit function app tags**_" (or equivalent for the resource type), a _**Resource Properties**_ dialog will appear:<br>
+
+    <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+5. Select _**Tag Name**_ and assign _**Tag value**_ and save:\
+   \
+   <br>
 
 **Method 2: From Project Settings**
 
 1. Navigate to _**Project Settings**_ (cog icon)
-2. Select "_**Tags**_" from the left navigation
+2.  Select "_**Tags**_" from the left navigation<br>
+
+    <figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 3. View available tag categories and add tag names as needed
 
 Tags assigned at project level sync to Azure, enabling consistent resource classification across the platform and Azure Portal.
