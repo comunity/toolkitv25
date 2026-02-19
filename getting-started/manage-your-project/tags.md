@@ -38,6 +38,18 @@ Users assigned to a particular role can only see categories and their associated
 
 The Organisation administrator role typically has access to all categories regardless of their role assignment, enabling comprehensive oversight and management of the tagging system. The None option creates categories that are accessible to all users, useful for universal classification schemes that should be available organisation-wide.
 
+**Project-Level Tag Visibility**
+
+When accessing tags from within a Project (Project > Settings > Tags), users only see tag categories that have been assigned the "Organisation administrator" role. This controlled visibility allows project teams to tag their own Azure resources - such as function apps, logic apps, and APIs deployed from the project - without exposing infrastructure or finance-related tag categories that are managed at the platform level.
+
+To make a tag category visible at the project level:
+
+1. Navigate to Organisation Settings > Tags
+2. Create or edit the category
+3. Set the Role to "Organisation administrator"
+
+Project users can then assign values to these tags on resources deployed from their project, enabling cost tracking, ownership attribution, and other classifications relevant to their specific deployment.
+
 ### Create a Tag Category
 
 **Prerequisites:**
@@ -225,6 +237,35 @@ Resources are grouped under section headers matching their tag values. You'll se
 * The "\~untagged\~" section helps identify resources that need categorization
 * Sections are collapsible - click to expand/collapse
 
+### Bulk Update Tags
+
+The Infrastructure Catalogue allows you to update tags for multiple resources simultaneously, significantly reducing the time required to tag large numbers of resources. This is particularly useful when working with the "~~untagged~~" group to bring resources into compliance with your tagging strategy.
+
+**Prerequisites:**
+
+* Access to the Infrastructure > Catalogue
+* Organisation administrator access or appropriate role permissions
+* Resources visible in the catalogue
+
+**Steps:**
+
+1. Navigate to Infrastructure > Catalogue
+2. Use Group By Tag to organise resources (e.g., group by "environment" or "stack")
+3. Locate the group you want to update - the yellow "~~untagged~~" section shows resources without the selected tag assigned
+4. Select the resources you want to tag or use the group selection to select all resources within that group
+5. Click the bulk update option to open the tag assignment dialog
+6. Select the Tag Category, Tag Name, and enter the Tag Value
+7. Click Save to apply the tag to all selected resources
+
+The tags sync to Azure for all updated resources. Depending on the number of resources being updated, the operation may take a moment to complete.
+
+**Tips:**
+
+* Use filtering to narrow down resources before performing a bulk update
+* When tagging many resources at once, the system may encounter rate limits - if this occurs, the operation will retry automatically and complete successfully
+* Start with a small batch to verify your tag values are correct before updating larger groups
+* The "~~untagged~~" group is ideal for identifying resources that need categorisation during compliance audits
+
 ### How to Filter Resources by Tags
 
 **Prerequisites:**
@@ -250,6 +291,31 @@ The resource list shows only resources with the selected tag value. Resources wi
 
 * You can use the Tag filter and Group By Tag simultaneously
 * Example: Filter by "environment:dev" then Group By "stack" to see how dev resources are organised by **stack**
+
+### Hierarchical Tag Filtering
+
+The Infrastructure Catalogue supports hierarchical filtering, allowing you to quickly narrow down resources by selecting tag categories and their associated tags in a parent-child relationship.
+
+When you select a parent category (e.g., "Infrastructure"), the filter automatically includes all tags within that category. As you deselect individual tags, the resource list narrows to show only resources matching your remaining selections.
+
+**Prerequisites:**
+
+* Access to the Infrastructure > Catalogue
+* Resources must have tag values assigned
+
+**Steps:**
+
+1. Navigate to Infrastructure > Catalogue
+2. Locate the Tag filter area in the toolbar
+3. Select a tag category to automatically include all tags within it
+4. Deselect individual tags to narrow your results
+5. The resource list updates dynamically as you adjust your selections
+
+**Tips:**
+
+* Use hierarchical filtering to start broad and progressively narrow your view
+* This approach is particularly useful when auditing large numbers of resources across related tag groups
+* Combine hierarchical filtering with Group By Tag for powerful resource discovery
 
 ### How to Verify Tags in Azure Portal
 
