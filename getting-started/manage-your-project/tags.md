@@ -38,17 +38,39 @@ Users assigned to a particular role can only see categories and their associated
 
 The Organisation administrator role typically has access to all categories regardless of their role assignment, enabling comprehensive oversight and management of the tagging system. The None option creates categories that are accessible to all users, useful for universal classification schemes that should be available organisation-wide.
 
-**Project-Level Tag Visibility**
+#### Assigning Tags at Project Level
 
-When accessing tags from within a Project (Project > Settings > Tags), users only see tag categories that have been assigned the "Organisation administrator" role. This controlled visibility allows project teams to tag their own Azure resources - such as function apps, logic apps, and APIs deployed from the project - without exposing infrastructure or finance-related tag categories that are managed at the platform level.
+Project users can assign tags to Azure resources deployed from their project. This enables project teams to classify their own resources for ownership tracking, project attribution, and client-specific categorisation.
 
-To make a tag category visible at the project level:
+**Why Only Certain Tag Categories Are Visible**
 
-1. Navigate to Organisation Settings > Tags
-2. Create or edit the category
-3. Set the Role to "Organisation administrator"
+At the project level, only tag categories assigned the "Organisation administrator" role are visible. This design ensures:
 
-Project users can then assign values to these tags on resources deployed from their project, enabling cost tracking, ownership attribution, and other classifications relevant to their specific deployment.
+* **Separation of concerns:** Project teams manage their own resource classifications without accessing platform-level infrastructure or finance tags
+* **Data integrity:** Sensitive categories such as FinOps (cost-centre, business-unit) and Infrastructure (environment, stack) remain controlled at the platform level
+* **Simplified experience:** Project users see only the tags relevant to their work, reducing complexity and the risk of misconfiguration
+
+To make a tag category available at project level, a Toolkit Administrator must assign it the "Organisation administrator" role when creating or editing the category in Organisation Settings > Tags.
+
+**Methods for Assigning Tags**
+
+Project users can assign tags through two methods:
+
+**Method 1: From the Resource**
+
+1. Navigate to _**Third party**_ services and select the resource type (e.g., Azure function apps, Azure logic apps, Azure APIs)
+2. Locate the resource in the list
+3. Click "_**View details**_" or the ellipsis menu (⋯)
+4. Select "_**Edit function app tags**_" (or equivalent for the resource type)
+5. Assign tag values and save
+
+**Method 2: From Project Settings**
+
+1. Navigate to _**Project Settings**_ (cog icon)
+2. Select "_**Tags**_" from the left navigation
+3. View available tag categories and add tag names as needed
+
+Tags assigned at project level sync to Azure, enabling consistent resource classification across the platform and Azure Portal.
 
 ### Create a Tag Category
 
