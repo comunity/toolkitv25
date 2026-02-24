@@ -262,6 +262,231 @@ See Alerts for how to configure notifications.
 * **Need to be notified?** → Set up Alerts for automatic notifications
 * **Want custom metrics?** → Learn about Instrumentation
 
+## Platform Metrics
+
+Platform Metrics provides infrastructure and platform-level visibility for administrators managing the ComUnity Platform. Unlike project-level metrics which focus on application performance, Platform Metrics exposes underlying infrastructure health, resource consumption, and platform-wide service performance.
+
+Platform Metrics is accessed through **Platform > Observability** and consists of two views: **Dashboard** and **Metrics**.
+
+### Dashboard
+
+The Dashboard provides a pre-configured overview of key metrics organised into three sections.
+
+#### Infrastructure Metrics
+
+Infrastructure metrics monitor the underlying Azure resources supporting the platform.
+
+| Metric           | Description                                          |
+| ---------------- | ---------------------------------------------------- |
+| Server DTU       | Database Transaction Unit consumption percentage     |
+| Database metrics | Performance across dev, QA, and production databases |
+| VM CPU usage     | Virtual machine processor utilisation                |
+
+#### Platform Metrics
+
+Platform metrics monitor the core services that power the ComUnity Platform.
+
+| Metric             | Description                            |
+| ------------------ | -------------------------------------- |
+| Core Web Vitals    | Frontend performance indicators        |
+| Availability Agent | Platform availability monitoring       |
+| Request handling   | Platform request processing statistics |
+
+#### Application Metrics
+
+Application metrics show the impact of individual applications on platform resources.
+
+| Metric              | Description                                                       |
+| ------------------- | ----------------------------------------------------------------- |
+| Per-app performance | Resource consumption by application (e.g., ComCity, Toolkit apps) |
+
+#### Dashboard Features
+
+| Feature            | Description                                 |
+| ------------------ | ------------------------------------------- |
+| Individual refresh | Refresh button on each graph to reload data |
+| Refresh All        | Update all graphs simultaneously            |
+| Hover values       | View specific values at a point in time     |
+| Expand graph       | Eye icon to view individual graph in detail |
+
+**Tips:**
+
+* Data retrieval may occasionally require multiple refresh attempts due to observability stack performance
+* Graphs display time ranges in their titles (e.g., "last minute", "last 3 hours")
+* When viewing an expanded graph preview, you cannot currently zoom or change the time range - this functionality is planned for a future release
+* Dashboard customisation (add/remove graphs) is planned for a future release
+
+***
+
+### Metrics
+
+The Metrics view allows you to explore individual metrics with configurable filters, time ranges, and query options.
+
+#### Accessing Metrics
+
+1. Navigate to **Platform > Observability**
+2. Select the **Metrics** tab
+
+#### Configuration Options
+
+**Time Range**
+
+Select the time period for your metric data.
+
+| Option          | Use case              |
+| --------------- | --------------------- |
+| Last 5 minutes  | Real-time monitoring  |
+| Last 15 minutes | Recent activity       |
+| Last 30 minutes | Short-term trends     |
+| Last 1 hour     | Hourly patterns       |
+| Last 3 hours    | Extended monitoring   |
+| Last 6 hours    | Half-day view         |
+| Last 12 hours   | Day shift coverage    |
+| Last 24 hours   | Daily patterns        |
+| Last 2 days     | Short-term comparison |
+| Last 7 days     | Weekly trends         |
+| Last 30 days    | Monthly analysis      |
+
+**Metric**
+
+Select the metric to visualise.
+
+**Infrastructure Metrics (azure\_\*):**
+
+| Metric                                        | Description         |
+| --------------------------------------------- | ------------------- |
+| azure\_sql\_server\_dtu\_consumption\_percent | Database DTU usage  |
+| azure\_storage\_account\_used\_capacity       | Storage consumption |
+| azure\_vm\_cpu\_usage                         | VM CPU utilisation  |
+
+**Platform Metrics (platform\_\*):**
+
+| Metric                                          | Description                       |
+| ----------------------------------------------- | --------------------------------- |
+| platform\_accepting\_request\_worker            | Request worker availability       |
+| platform\_concurrent\_request\_total            | Concurrent requests               |
+| platform\_concurrent\_response\_total           | Concurrent responses              |
+| platform\_last\_hour\_count\_total              | Requests in last hour             |
+| platform\_last\_hour\_egress\_bytes\_per\_app   | Egress bytes per app (hourly)     |
+| platform\_last\_hour\_latency\_total            | Latency total (hourly)            |
+| platform\_last\_minute\_count\_total            | Requests in last minute           |
+| platform\_last\_minute\_egress\_bytes\_per\_app | Egress bytes per app (per minute) |
+
+**Label Filters**
+
+Filter metrics by specific labels to narrow results.
+
+| Label            | Description                            |
+| ---------------- | -------------------------------------- |
+| instance         | Specific instance reporting the metric |
+| instance\_name   | Friendly name of the instance          |
+| job              | Service or job reporting the metric    |
+| resource\_group  | Azure resource group                   |
+| resource\_uri    | Azure resource URI                     |
+| subscription\_id | Azure subscription identifier          |
+| tenant\_id       | Azure tenant identifier                |
+
+**Steps to apply a filter:**
+
+1. Select a label from the "Label filters" dropdown
+2. Select an operator (= or !=)
+3. Select or enter a value
+4. Click **Refresh**
+
+**Operations**
+
+Apply aggregation operations to combine multiple data series.
+
+| Operation | Description                         |
+| --------- | ----------------------------------- |
+| sum       | Sum all values together             |
+| rate      | Calculate per-second rate of change |
+
+**Span Gaps**
+
+Enable to fill breaks in the graph where no data was collected. This smooths the visualisation when there are gaps in time series data.
+
+**UsePromQL Query**
+
+For advanced users, enable this option to write custom Prometheus Query Language queries.
+
+**Steps:**
+
+1. Check the **UsePromQL query** checkbox
+2. The PromQL query field becomes editable
+3. Enter your custom query
+4. Click **Refresh**
+
+**Example queries:**
+
+```
+rate(platform_last_hour_count_total[5m])
+sum(azure_vm_cpu_usage)
+```
+
+For PromQL syntax, refer to the [Prometheus documentation](https://prometheus.io/docs/prometheus/latest/querying/basics/).
+
+#### Graph Visualisation
+
+The graph displays metric data with:
+
+| Element         | Description                                                    |
+| --------------- | -------------------------------------------------------------- |
+| Y-axis          | Metric values (auto-scaled)                                    |
+| X-axis          | Time intervals based on selected range                         |
+| Legend          | Data series identified by colour-coded promitor-scraper labels |
+| Multiple series | Different data sources appear as separate coloured lines       |
+
+***
+
+### Project Metrics
+
+Project users access metrics through **Project > Observability**. The metrics available at project level focus on application-specific performance rather than infrastructure.
+
+#### Available Metrics
+
+| Metric            | Description                       |
+| ----------------- | --------------------------------- |
+| Server latency    | Response time for the application |
+| Concurrency       | Concurrent requests being handled |
+| Requests per hour | Application request volume        |
+
+#### Key Differences from Platform Metrics
+
+| Aspect                    | Platform Metrics               | Project Metrics         |
+| ------------------------- | ------------------------------ | ----------------------- |
+| Access                    | Platform > Observability       | Project > Observability |
+| Audience                  | Platform administrators        | Project users           |
+| Scope                     | Infrastructure + platform-wide | Application-specific    |
+| Infrastructure visibility | Yes (CPU, DTU, storage)        | No                      |
+| Custom queries            | Yes (PromQL)                   | No                      |
+| Label filters             | Yes                            | No                      |
+
+#### Why the Difference?
+
+Project users running applications in a shared environment cannot take action on infrastructure metrics like high CPU usage. Showing only application-relevant metrics keeps the interface focused and actionable.
+
+For example, if CPU usage is high on the shared platform, a project user cannot resolve this - it requires platform administrator intervention. Therefore, exposing CPU metrics at project level would create confusion without enabling action.
+
+### Current Limitations
+
+| Limitation              | Details                                                                                                  |
+| ----------------------- | -------------------------------------------------------------------------------------------------------- |
+| Environment separation  | Currently shows dev environment only; QA and Production filtering not yet implemented                    |
+| VM coverage             | Only dev server metrics captured; QA and Production VMs pending infrastructure setup                     |
+| Friendly names          | Metrics display technical names (e.g., azure\_vm\_cpu\_usage); friendly names planned for future release |
+| Dashboard customisation | Cannot add/remove dashboard graphs; planned for future release                                           |
+| Multiple queries        | Cannot combine multiple metrics in a single graph view                                                   |
+| Graph preview zoom      | Cannot zoom or change time range in expanded graph preview; planned for future release                   |
+| Cumulative users        | The cumulative users metric requires a database query that has not yet been implemented                  |
+
+### Related Resources
+
+* [Prometheus Query Language Documentation](https://prometheus.io/docs/prometheus/latest/querying/basics/)
+* Traces
+* Logs
+* Project Metrics (for application-level monitoring)
+
 ### Technical Details
 
 The metrics system uses:
