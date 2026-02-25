@@ -270,7 +270,10 @@ Platform Metrics is accessed through **Platform > Observability** and consists o
 
 ### Dashboard
 
-The Dashboard provides a pre-configured overview of key metrics organised into three sections.
+The Dashboard provides a pre-configured overview of key metrics organised into three sections:\
+<br>
+
+<figure><img src="../../.gitbook/assets/image (543).png" alt=""><figcaption></figcaption></figure>
 
 #### Infrastructure Metrics
 
@@ -316,16 +319,17 @@ Application metrics show the impact of individual applications on platform resou
 * When viewing an expanded graph preview, you cannot currently zoom or change the time range - this functionality is planned for a future release
 * Dashboard customisation (add/remove graphs) is planned for a future release
 
-***
-
 ### Metrics
 
-The Metrics view allows you to explore individual metrics with configurable filters, time ranges, and query options.
+The **Metrics** view allows you to explore individual metrics with configurable filters, time ranges, and query options.
 
 #### Accessing Metrics
 
 1. Navigate to **Platform > Observability**
-2. Select the **Metrics** tab
+2.  Select the **Metrics** tab\
+    <br>
+
+    <figure><img src="../../.gitbook/assets/image (542).png" alt=""><figcaption></figcaption></figure>
 
 #### Configuration Options
 
@@ -436,8 +440,6 @@ The graph displays metric data with:
 | X-axis          | Time intervals based on selected range                         |
 | Legend          | Data series identified by colour-coded promitor-scraper labels |
 | Multiple series | Different data sources appear as separate coloured lines       |
-
-***
 
 ### Project Metrics
 
