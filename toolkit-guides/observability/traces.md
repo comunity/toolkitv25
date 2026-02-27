@@ -81,7 +81,7 @@ If you see a white screen or cannot access Platform Traces, verify that your acc
 3. Navigate to **Observability** in the main menu.
 4.  Select the **Traces** tab.<br>
 
-    <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>Traces</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Traces</p></figcaption></figure>
 
 ## Platform Traces - Interface
 
@@ -325,7 +325,7 @@ When you don't have a specific `trace_id` but want to explore system behavior or
 
 When you open a trace, you'll see a waterfall-style visualisation.
 
-<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### The Timeline (Horizontal Axis)
 

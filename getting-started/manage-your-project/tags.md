@@ -62,10 +62,10 @@ _**Method 1**_**: From the Resource**
 2. Locate the resource in the list
 3.  Click "_**View details**_" or the ellipsis menu (⋯)<br>
 
-    <figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 4.  Select "_**Edit function app tags**_" (or equivalent for the resource type), a _**Resource Properties**_ dialog will appear:<br>
 
-    <figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 5. Select _**Tag Name**_ and assign _**Tag value**_ and save:<br>
 
 _**Method 2**_**: From Project Settings**
@@ -73,7 +73,7 @@ _**Method 2**_**: From Project Settings**
 1. Navigate to _**Project Settings**_ (cog icon)
 2.  Select "_**Tags**_" from the left navigation<br>
 
-    <figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 3. View available tag categories and add tag names as needed
 
 Tags assigned at project level sync to Azure, enabling consistent resource classification across the platform and Azure Portal.
@@ -259,7 +259,7 @@ The Tag dropdown in the filter toolbar supports hierarchical selection. Tags are
 3. Click to open the dropdown - you will see parent tags (e.g., "environment", "stack", "owner") and their child values (e.g., dev, prod, qa)
 4.  Select a parent tag to automatically include all its child values:<br>
 
-    <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 5. Deselect individual child values to narrow your results
 6. The resource list updates dynamically as you adjust selections
 
@@ -278,7 +278,7 @@ Once filtered, use Group By Tag to organise resources into sections based on tag
 1. Locate the **Group By Tag** dropdown below the filter toolbar
 2.  Select a tag name (e.g., "environment")<br>
 
-    <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 3. Resources reorganise into sections with grey headers showing each tag value (e.g., "dev", "prod", "qa")
 4. Resources without the selected tag appear under a yellow **"**~~**untagged**~~**"** section header
 
@@ -307,7 +307,7 @@ Each section header includes an ellipsis menu (⋯) that allows you to bulk upda
    * **Tag Name:** Displays the tag being updated
    *   **Tag value:** Dropdown to select the value to apply<br>
 
-       <figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Bulk Tag updates</p></figcaption></figure>
+       <figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Bulk Tag updates</p></figcaption></figure>
 5. Select the desired tag value from the dropdown
 6. Click **Save**
 

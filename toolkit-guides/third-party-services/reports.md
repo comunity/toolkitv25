@@ -129,7 +129,7 @@ The Toolkit's Reports feature is environment-specific, allowing you to configure
     * **Dataset Id**: Enter the corresponding PowerBI Dataset ID (found in your PowerBI workspace dataset settings)
     * **Embedded URL**: Provide the PowerBI embed URL for the report (optional, depending on your PowerBI configuration)
 
-    <figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 7. **Save Configuration**: Click "Save changes" to complete the report setup. The Toolkit will validate and store your configuration.
 8. **Repeat for Additional Reports**: Add as many reports as needed for your project by repeating steps 6-8.
 

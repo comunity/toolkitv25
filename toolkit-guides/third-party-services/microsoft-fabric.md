@@ -51,17 +51,17 @@ To create a Fabric Mirror follow these steps:
 
 1.  Navigate to **Third Party Services** > **Microsoft Fabric** in the Toolkit. <br>
 
-    <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Microsoft Fabric integration in the ComUnity Developer Toolkit</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Microsoft Fabric integration in the ComUnity Developer Toolkit</p></figcaption></figure>
 2.  Click **"Create a Microsoft Fabric mirror"** to open the Microsoft Fabric mirror creation dialog.&#x20;
 
-    <figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 3. Provide an optional description for your mirror in the field provided.&#x20;
 4. By default, all tables in your project, including future tables, are selected since the  **"Mirror future tables"** field is checked.&#x20;
 5. To select specific tables, uncheck the **"Mirror future tables"** field then uncheck undesired tables from the list shown.&#x20;
 6. Click the **"Create Fabric Mirror"** button to initiate the process.&#x20;
 7.  Processing time depends on the size of the data being mirrored. After successful mirroring, your Fabric Mirror will appear in the UI with its details.&#x20;
 
-    <figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 8.  Click the ellipsis (⋮) menu next to your mirror entry, then select **“Refresh replication status”** to check if the Fabric mirror has been fully deployed on the Fabric Portal.<br>
 
     <figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>

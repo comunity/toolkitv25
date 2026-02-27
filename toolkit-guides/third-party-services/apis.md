@@ -74,7 +74,7 @@ Generated files are stored under **Custom Classes**, where they can be extended 
 
 This opens the **Generate Code** dialog for the selected API:
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 **Generation Options**
 
