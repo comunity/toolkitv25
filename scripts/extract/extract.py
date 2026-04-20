@@ -148,6 +148,10 @@ def is_external(href: str) -> bool:
 def normalize_internal(src_path: Path, root: Path, href: str) -> Optional[str]:
     """Resolve a relative href from src_path to a repo-relative POSIX path.
     Returns None if it escapes the repo or is not resolvable.
+
+    Folder-style hrefs (e.g. `foo/bar/` or `../observability/`) are resolved
+    to `<folder>/README.md` when that file exists — this is how GitBook
+    links from one section to another's index page.
     """
     if not href or href.startswith("#"):
         return None
@@ -165,6 +169,14 @@ def normalize_internal(src_path: Path, root: Path, href: str) -> Optional[str]:
         rel = resolved.relative_to(root.resolve())
     except ValueError:
         return None
+    # If the target is a directory (or the href ends with `/`), try its README.md
+    if resolved.is_dir() or href.rstrip().endswith("/"):
+        readme = resolved / "README.md"
+        if readme.exists():
+            try:
+                return readme.relative_to(root.resolve()).as_posix()
+            except ValueError:
+                return None
     return rel.as_posix()
 
 
@@ -357,13 +369,22 @@ def build_all_doc_ids(root: Path) -> Dict[str, str]:
 
 
 def iter_markdown_files(root: Path) -> List[Path]:
+    """Walk docs-only markdown files.
+
+    Exclusions:
+      * Any path under a dot-folder (.github, .gitbook, etc.)
+      * Anything under `scripts/` (the extractor's own README/dist is not docs)
+      * `SUMMARY.md` at the repo root (it's a TOC, not content — we already
+        used it to build the section map)
+    """
     files = []
     for md in root.rglob("*.md"):
-        # Skip anything under dot-folders or the script's own dist
         parts = md.relative_to(root).parts
         if any(p.startswith(".") for p in parts):
             continue
-        if "scripts" in parts and "dist" in parts:
+        if parts and parts[0] == "scripts":
+            continue
+        if parts == ("SUMMARY.md",):
             continue
         files.append(md)
     files.sort()
