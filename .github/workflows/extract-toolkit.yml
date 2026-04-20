@@ -1,0 +1,45 @@
+name: Extract Toolkit Docs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/*.md'
+      - 'scripts/extract/**'
+      - '.github/workflows/extract-toolkit.yml'
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: 'Public docs base URL for citations'
+        required: false
+        default: 'https://comunity.gitbook.io/learning.comunityplatform/25.x'
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run extractor
+        run: |
+          python3 scripts/extract/extract.py \
+            --root . \
+            --out  scripts/extract/dist \
+            --base-url "${{ github.event.inputs.base_url || 'https://comunity.gitbook.io/learning.comunityplatform/25.x' }}"
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: toolkit-knowledge-base
+          path: |
+            scripts/extract/dist/toolkit.jsonl
+            scripts/extract/dist/links.json
+            scripts/extract/dist/toolkit.txt
+          if-no-files-found: error
+          retention-days: 30
