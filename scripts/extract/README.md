@@ -45,6 +45,31 @@ to your LLM system-prompt as a lookup table: when the model answers, it cites
 by doc id, and you resolve the id to `{title, public_url}` for the user-facing
 citation.
 
+## Quality framework
+
+After extraction, run the quality tiers to get a weighted completeness score:
+
+```sh
+python3 scripts/extract/quality/run_quality.py
+# → scripts/extract/dist/quality-report.{json,md}
+```
+
+Currently active tiers (no network, no extra dependencies):
+
+| Tier | Weight | Checks |
+| --- | ---: | --- |
+| structural        | 20% | doc-count parity, required fields, empty content, section assignment |
+| content_fidelity  | 25% | char retention, heading / code-fence / table preservation |
+| link_integrity    | 20% | internal-doc resolution, image resolution, unresolved-link rate, citation-map coverage |
+
+Verdict thresholds: **PASS** ≥ 90 with no tier < 75; **FAIL** if overall < 75
+or any tier < 50; otherwise **WARN**. CI fails the job only on FAIL — warnings
+are surfaced in the report and on the run summary.
+
+Tiers 4 (citation liveness — HEAD every public_url) and 5 (QA answerability
+against curated questions) are scaffolded in `scripts/extract/quality/tiers.py`
+and will be enabled once we decide CI cadence and seed the question set.
+
 ## Gotchas
 
 - GitBook asset URLs may not 1:1 match the repo path on every GitBook site.
